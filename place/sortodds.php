@@ -8,10 +8,17 @@ $totalRaces = count($allOdds);
 for($r=1; $r <= $totalRaces; $r++){
     $odds = $allOdds[$r];
     $proba = [];
+    $sum = 0;
     for($i=1; $i <= count($odds); $i++){
         if(isset($odds[$i])) {
-            $proba[$i] = 100 * round((log($odds[$i]) / $odds[$i]) / exp(1) , 4);
+            $proba[$i] = 100 * round((log($odds[$i]) / $odds[$i])  , 4);
+            $sum += $proba[$i];
         }
+    }
+    for($i=1; $i <= count($odds); $i++){
+        //adjust to 100 percentage
+        $proba[$i] = round( $proba[$i] * 100 / $sum, 2);
+
     }
     arsort($proba);
     $probas[$r] = $proba;
