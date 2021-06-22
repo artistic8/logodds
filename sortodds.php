@@ -27,10 +27,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\tRace $raceNumber\n";
     $outtext .= "\t\t*/\n";
     $tmpArray = $probas[$raceNumber];
+    $tmpSum = 0;
+    $fiftyMarked = false;
     foreach ($tmpArray as $i => $val){
         $outtext .= "\t\t$i => $val,\n";
+        $tmpSum += $val;
+        if($tmpSum > 50 && $fiftyMarked === false) {
+            $outtext .= "\t\t'Sum' => $tmpSum,\n";
+            $fiftyMarked = true;
+        }
     }
-    
+    $outtext .= "\t\t'Sum' => $tmpSum,\n";
     $outtext .= "\t],\n";
 }
 
