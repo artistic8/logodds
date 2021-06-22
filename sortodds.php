@@ -13,6 +13,7 @@ for($r=1; $r <= $totalRaces; $r++){
             $proba[$i] = 100 * round((log($odds[$i]) / $odds[$i]) / exp(1) , 4);
         }
     }
+    arsort($proba);
     $probas[$r] = $proba;
 }
 
@@ -25,9 +26,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t/**\n";
     $outtext .= "\t\tRace $raceNumber\n";
     $outtext .= "\t\t*/\n";
-    for($i = 1; $i <= count($probas[$raceNumber]); $i++) {
-        $x = $probas[$raceNumber][$i];
-        $outtext .= "\t\t$i => $x,\n";
+    $tmpArray = $probas[$raceNumber];
+    foreach ($tmpArray as $i => $val){
+        $outtext .= "\t\t$i => $val,\n";
     }
     
     $outtext .= "\t],\n";
