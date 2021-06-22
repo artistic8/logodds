@@ -44,7 +44,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $fiftyMarked = true;
         }
     }
+    $average = round($tmpSum / count($tmpArray), 2);
     $outtext .= "\t\t'Sum' => $tmpSum,\n";
+    $outtext .= "\t\t'Avg' => $average,\n";
     $outtext .= "\t],\n";
 }
 
