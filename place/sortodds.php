@@ -35,13 +35,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t*/\n";
     $tmpArray = $probas[$raceNumber];
     $tmpSum = 0;
-    $fiftyMarked = false;
+    $thirtyMarked = false;
+    $sixtyMarked = false;
     foreach ($tmpArray as $i => $val){
         $outtext .= "\t\t$i => $val,\n";
         $tmpSum += $val;
-        if($tmpSum > 50 && $fiftyMarked === false) {
+        if($tmpSum > 33 && $thirtyMarked === false) {
             $outtext .= "\t\t'Sum' => $tmpSum,\n";
-            $fiftyMarked = true;
+            $thirtyMarked = true;
+        }
+        if($tmpSum > 66 && $sixtyMarked === false) {
+            $outtext .= "\t\t'Sum' => $tmpSum,\n";
+            $sixtyMarked = true;
         }
     }
     $outtext .= "\t\t'Sum' => $tmpSum,\n";
