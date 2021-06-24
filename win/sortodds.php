@@ -42,17 +42,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $oddN = 0;
     $evenN = 0;
     $primeN = 0;
-    $fiftyMarked = false;
     foreach ($tmpArray as $i => $val){
         $outtext .= "\t\t$i => $val,\n";
         if($i % 2 === 0) $evenN += $val;
         else $oddN += $val;
         if(isPrime($i)) $primeN += $val;
         $tmpSum += $val;
-        if($tmpSum > 50 && $fiftyMarked === false) {
-            $outtext .= "\t\t'Sum' => $tmpSum,\n";
-            $fiftyMarked = true;
-        }
     }
     $outtext .= "\t\t'Primes' => $primeN,\n";
     $outtext .= "\t\t'Odds' => $oddN,\n";

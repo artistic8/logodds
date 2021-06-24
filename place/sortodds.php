@@ -39,8 +39,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t*/\n";
     $tmpArray = $probas[$raceNumber];
     $tmpSum = 0;
-    $thirtyMarked = false;
-    $sixtyMarked = false;
     $oddN = 0;
     $evenN = 0;
     $primeN = 0;
@@ -50,14 +48,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         else $oddN += $val;
         if(isPrime($i)) $primeN += $val;
         $tmpSum += $val;
-        if($tmpSum > 33 && $thirtyMarked === false) {
-            $outtext .= "\t\t'Sum' => $tmpSum,\n";
-            $thirtyMarked = true;
-        }
-        if($tmpSum > 66 && $sixtyMarked === false) {
-            $outtext .= "\t\t'Sum' => $tmpSum,\n";
-            $sixtyMarked = true;
-        }
     }
     $outtext .= "\t\t'Primes' => $primeN,\n";
     $outtext .= "\t\t'Odds' => $oddN,\n";
