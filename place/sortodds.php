@@ -1,7 +1,7 @@
 <?php
 
 function isPrime($x){
-    return in_array($x, [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]);
+    return in_array($x, [2, 3, 5, 7, 11, 13, 17, 19, 23]);
 }
 
 $allOdds = include("getodds.php");
