@@ -1,5 +1,9 @@
 <?php
 
+function isPrime($x){
+    return in_array($x, [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]);
+}
+
 $allOdds = include("getodds.php");
 $probas = [];
 
@@ -35,18 +39,25 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t*/\n";
     $tmpArray = $probas[$raceNumber];
     $tmpSum = 0;
+    $oddN = 0;
+    $evenN = 0;
+    $primeN = 0;
     $fiftyMarked = false;
     foreach ($tmpArray as $i => $val){
         $outtext .= "\t\t$i => $val,\n";
+        if($i % 2 === 0) $evenN += $val;
+        else $oddN += $val;
+        if(isPrime($i)) $primeN += $val;
         $tmpSum += $val;
         if($tmpSum > 50 && $fiftyMarked === false) {
             $outtext .= "\t\t'Sum' => $tmpSum,\n";
             $fiftyMarked = true;
         }
     }
-    $average = round($tmpSum / count($tmpArray), 2);
+    $outtext .= "\t\t'Primes' => $primeN,\n";
+    $outtext .= "\t\t'Odds' => $oddN,\n";
+    $outtext .= "\t\t'Evens' => $evenN,\n";
     $outtext .= "\t\t'Sum' => $tmpSum,\n";
-    $outtext .= "\t\t'Avg' => $average,\n";
     $outtext .= "\t],\n";
 }
 
