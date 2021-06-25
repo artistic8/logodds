@@ -19,6 +19,7 @@ for($r=1; $r <= $totalRaces; $r++){
             $proba[$i] = 100 * (log($odds[$i]) / $odds[$i]) / exp(1);
             $sum += $proba[$i];
         }
+        else $proba[$i] = 0;
     }
     for($i=1; $i <= count($odds); $i++){
         //adjust to 100 percentage
