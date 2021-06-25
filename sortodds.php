@@ -1,10 +1,15 @@
 <?php
 
+if(!isset($argv[1])) die("Race Date Not Entered!!\n");
+
+$raceDate = trim($argv[1]);
+$currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
+
 function isPrime($x){
     return in_array($x, [2, 3, 5, 7, 11, 13, 17, 19, 23]);
 }
 
-$allOdds = include("getodds.php");
+$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
 $probas = [];
 
 $totalRaces = count($allOdds);
@@ -28,7 +33,7 @@ for($r=1; $r <= $totalRaces; $r++){
     $probas[$r] = $proba;
 }
 
-$outFile = "probas.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
