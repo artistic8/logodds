@@ -8,6 +8,12 @@ $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
 $probas = [];
 
+$reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
+         19, 21, 23, 25, 27, 30, 32, 34, 36];
+
+$blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
+          22, 24, 26, 28, 29, 31, 33, 35];
+
 $totalRaces = count($allOdds);
 
 for($r=1; $r <= $totalRaces; $r++){
@@ -41,11 +47,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t*/\n";
     $tmpArray = $probas[$raceNumber];
     $tmpSum = 0;
-    $indicators = ['Odds' => 0, 'Evens' => 0];
+    $indicators = ['Odds' => 0, 'Evens' => 0, 
+                   'Blacks' =>0, 'Reds' => 0, 'Greens' => 0
+    ];
     foreach ($tmpArray as $i => $val){
         $outtext .= "\t\t$i => $val,\n";
         if($i % 2 === 0) $indicators['Evens'] += $val;
         else $indicators['Odds'] += $val;
+        if(in_array($i, $blacks)) $indicators['Blacks'] += $val;
+        elseif(in_array($i, $reds)) $indicators['Reds'] += $val;
+        else  $indicators['Greens'] += $val;
         $tmpSum += $val;
     }
     arsort($indicators);
