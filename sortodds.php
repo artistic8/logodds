@@ -50,19 +50,63 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $indicators = ['Odds' => 0, 'Evens' => 0, 
                    'Blacks' =>0, 'Reds' => 0, 'Greens' => 0
     ];
+    $numberOfBlackOdds = 0;
+    $numberOfBlackEvens = 0;
+    $numberOfRedOdds = 0;
+    $numberOfRedEvens = 0;
+
+    $numberOfEvens = 0;
+    $numberOfOdds = 0;
+    $numberOfBlacks = 0;
+    $numberOfReds = 0;
+    
     foreach ($tmpArray as $i => $val){
         $outtext .= "\t\t$i => $val,\n";
-        if($i % 2 === 0) $indicators['Evens'] += $val;
-        else $indicators['Odds'] += $val;
-        if(in_array($i, $blacks)) $indicators['Blacks'] += $val;
-        elseif(in_array($i, $reds)) $indicators['Reds'] += $val;
+        if($i % 2 === 0) {
+            if(in_array($i, $blacks)) $numberOfBlackEvens ++;
+            elseif(in_array($i, $reds)) $numberOfRedEvens ++;
+            $numberOfEvens ++;
+            $indicators['Evens'] += $val;
+        }
+        else {
+            if(in_array($i, $blacks)) $numberOfBlackOdds ++;
+            elseif(in_array($i, $reds)) $numberOfRedOdds ++;
+            $numberOfOdds ++;
+            $indicators['Odds'] += $val;
+        }
+        if(in_array($i, $blacks)) {
+            $numberOfBlacks ++;
+            $indicators['Blacks'] += $val;
+        }
+        elseif(in_array($i, $reds)) {
+            $numberOfReds ++;
+            $indicators['Reds'] += $val;
+        }
         else  $indicators['Greens'] += $val;
         $tmpSum += $val;
     }
+
+    $actualProbabilities = [];
+    $actualProbabilities['Black and Odd'] = ($numberOfBlackOdds / $numberOfOdds) * $indicators['Odds'];
+    $actualProbabilities['Black and Even'] = ($numberOfBlackEvens / $numberOfEvens) * $indicators['Evens'];
+    $actualProbabilities['Red and Odd'] = ($numberOfRedOdds / $numberOfOdds) * $indicators['Odds'];
+    $actualProbabilities['Red and Even'] = ($numberOfRedEvens / $numberOfEvens) * $indicators['Evens'];
+    $indicators['Actual Blacks'] = $actualProbabilities['Black and Odd'] + $actualProbabilities['Black and Even'];
+    $indicators['Actual Reds'] = $actualProbabilities['Red and Odd'] + $actualProbabilities['Red and Even'];
+
+    $actualProbabilities['Odd and Black'] = ($numberOfBlackOdds / $numberOfBlacks) * $indicators['Blacks'];
+    $actualProbabilities['Odd and Red'] = ($numberOfRedOdds / $numberOfReds) * $indicators['Reds'];
+    $actualProbabilities['Even and Red'] = ($numberOfRedEvens / $numberOfReds) * $indicators['Reds'];
+    $actualProbabilities['Even and Black'] = ($numberOfBlackEvens / $numberOfBlacks) * $indicators['Blacks'];
+    
+    $indicators['Actual Evens'] = $actualProbabilities['Even and Red'] + $actualProbabilities['Even and Black'];
+    $indicators['Actual Odds'] = $actualProbabilities['Odd and Red'] + $actualProbabilities['Odd and Black'];
+    
     arsort($indicators);
     foreach($indicators as $label => $indicator) {
         $outtext .= "\t\t'$label' => $indicator,\n";
     }
+   
     $outtext .= "\t\t'Sum' => $tmpSum,\n";
     $outtext .= "\t],\n";
 }
