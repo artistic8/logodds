@@ -101,8 +101,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     
     $indicators['Actual Evens'] = $actualProbabilities['Even and Red'] + $actualProbabilities['Even and Black'];
     $indicators['Actual Odds'] = $actualProbabilities['Odd and Red'] + $actualProbabilities['Odd and Black'];
-    
+    $indicators2 = [];
+    $labels1 = ['Blacks', 'Reds'];
+    $labels2 = ['Evens', 'Odds'];
+    foreach($labels1 as $label1){
+        foreach($labels2 as $label2){
+                $indicators2["$label1 and Actual $label2"] = $indicators[$label1] + $indicators[$label2];
+        }
+    }
     arsort($indicators);
+    arsort($indicators2);
+    foreach($indicators2 as $label => $indicator) {
+        $outtext .= "\t\t'$label' => $indicator,\n";
+    }
     foreach($indicators as $label => $indicator) {
         $outtext .= "\t\t'$label' => $indicator,\n";
     }
