@@ -6,12 +6,13 @@ if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 else {
     $raceDate = trim($argv[1]);
     if(strlen($raceDate) !== 4) die("Incorrect Day Format!! Use MMDD\n");
-    $tmp = $raceDate;
-    $tmp[4] = $raceDate[3];
-    $tmp[3] = $raceDate[2];
-    $tmp[2]= "-";
-    $raceDate = $tmp;
 }
+
+$tmp = $raceDate;
+$tmp[4] = $raceDate[3];
+$tmp[3] = $raceDate[2];
+$tmp[2]= "-";
+$raceDateFormat = $currentYear . "-" . $tmp;
 
 if(!isset($argv[2])) $venue = "ST";
 else $venue = trim($argv[2]);
@@ -29,7 +30,7 @@ for($r = 1; $r <= $totalRaces; $r++){
 
     $outtext .= "\t$r => [\n";
 
-    $oddsJSON = file_get_contents("https://bet.hkjc.com/racing/getJSON.aspx?type=winplaodds&date=$currentYear-$raceDate&venue=$venue&start=$r&end=$r");
+    $oddsJSON = file_get_contents("https://bet.hkjc.com/racing/getJSON.aspx?type=winplaodds&date=$raceDateFormat&venue=$venue&start=$r&end=$r");
 
     $odds = json_decode($oddsJSON, true);
     $odds = $odds["OUT"];
