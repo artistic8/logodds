@@ -48,18 +48,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $probas[$raceNumber];
     $tmpSum = 0;
 
-    $indicators = ['Odds' => 0, 'Evens' => 0, 
-                   'Blacks' =>0, 'Reds' => 0
-    ];
+    $indicators = [ 'Blacks' =>0, 'Reds' => 0 ];
     
     foreach ($tmpArray as $i => $val){
         $outtext .= "\t\t$i => $val,\n";
-        if($i % 2 === 0) {
-            $indicators['Evens'] += $val;
-        }
-        else {
-            $indicators['Odds'] += $val;
-        }
         if(in_array($i, $blacks)) {
             $indicators['Blacks'] += $val;
         }
