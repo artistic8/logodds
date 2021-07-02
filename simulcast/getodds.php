@@ -13,7 +13,7 @@ else {
     $raceDate = $tmp;
 }
 
-if(!isset($argv[2])) $venue = "ST";
+if(!isset($argv[2])) $venue = "S1";
 else $venue = trim($argv[2]);
 
 $outDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
