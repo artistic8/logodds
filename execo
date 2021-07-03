@@ -1,0 +1,2 @@
+php getodds.php 0703 S1 8;
+php sortodds.php 0703
