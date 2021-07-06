@@ -63,13 +63,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     arsort($indicators);
 
-    $indicators2 = ['red pos' => 0, 'black pos' => 0];
+    $indicators2 = ['red (odd) position' => 0, 'black (even) position' => 0];
 
     $values = array_values($tmpArray);
     for($j = 0; $j < count($values); $j ++)
     {
-        if(in_array($j + 1, [1, 3, 5, 7])) $indicators2['red pos'] += $values[$j];
-        elseif(in_array($j + 1, [2, 4, 6, 8, 10])) $indicators2['black pos'] += $values[$j];
+        if(in_array($j + 1, [1, 3, 5, 7])) $indicators2['red (odd) position'] += $values[$j];
+        elseif(in_array($j + 1, [2, 4, 6, 8, 10])) $indicators2['black (even) position'] += $values[$j];
     }
 
     arsort($indicators2);
