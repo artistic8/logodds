@@ -1,2 +1,2 @@
-php getodds.php 0704;
+php getodds.php 0707 HV 9;
 php sortodds.php 0704
