@@ -48,28 +48,32 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $probas[$raceNumber];
     $tmpSum = 0;
 
-    $indicators = [ 'Blacks' =>0, 'Reds' => 0 ];
+    $indicators = [ 'B' => 0, 'R' => 0 ];
     
     foreach ($tmpArray as $i => $val){
         $outtext .= "\t\t$i => $val,\n";
         if(in_array($i, $blacks)) {
-            $indicators['Blacks'] += $val;
+            $indicators['B'] += $val;
         }
         elseif(in_array($i, $reds)) {
-            $indicators['Reds'] += $val;
+            $indicators['R'] += $val;
         }
         $tmpSum += $val;
     }
 
     arsort($indicators);
 
-    $indicators2 = ['red (odd) position' => 0, 'black (even) position' => 0];
+    $indicators2 = ['R (O) position' => 0, 'B (E) position' => 0];
 
     $values = array_values($tmpArray);
     for($j = 0; $j < count($values); $j ++)
     {
-        if(in_array($j + 1, [1, 3, 5, 7])) $indicators2['red (odd) position'] += $values[$j];
-        elseif(in_array($j + 1, [2, 4, 6, 8, 10])) $indicators2['black (even) position'] += $values[$j];
+        if(in_array($j + 1, [1, 3, 5, 7])) $indicators2['R (O) position'] += $values[$j];
+        elseif(in_array($j + 1, [2, 4, 6, 8, 10])) $indicators2['B (E) position'] += $values[$j];
+    }
+
+    if(abs($indicators2['R (O) position'] - $indicators2['B (E) position']) < 0.9) {
+        $indicators2 = ['Equal positions R(O) and B(E)' => 'true'];
     }
 
     arsort($indicators2);
