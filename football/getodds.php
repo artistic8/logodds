@@ -10,26 +10,32 @@ $oddsJSON = file_get_contents("https://bet.hkjc.com/football/getJSON.aspx?jsonty
 $odds = json_decode($oddsJSON, true);
 $odds = $odds[1];
 $matches = $odds["matches"];
+$matches = [ $matches[0] ];
 
 foreach($matches as $match){
     $homeTeam = $match["homeTeam"]["teamNameEN"];
     $awayTeam = $match["awayTeam"]["teamNameEN"];
     $matchLabel = $homeTeam . " vs " . $awayTeam;
 
-    $outtext .= "\t$matchLabel => [\n";    
+    $outtext .= "\t\"$matchLabel\" => [\n";    
 
     $crsOdds = $match["crsodds"];
 
-    var_dump($crsOdds); die();
+    $matchOdds = [];
+    
+    $matchOdds[1] = $crsOdds["S0100"]; //Home wins 1-0
+    $matchOdds[3] = $crsOdds["S0200"]; //Homw wins 2-0
+    $matchOdds[5] = $crsOdds["S0201"]; //Homw wins 2-1
+    $matchOdds[7] = $crsOdds["S0300"]; //Homw wins 3-0
+    $matchOdds[9] = $crsOdds["S0301"]; //Homw wins 3-1
+    $matchOdds[12] = $crsOdds["S0302"]; //Homw wins 3-2
+    $matchOdds[14] = $crsOdds["S0400"]; //Homw wins 4-0
+    $matchOdds[16] = $crsOdds["S0401"]; //Homw wins 4-1
+    $matchOdds[18] = $crsOdds["S0402"]; //Homw wins 4-2
 
-    $odds = explode(";",$odds);
-
-    for($k = 1; $k < count($odds); $k++) {
-        $lineParts = explode("=", $odds[$k]);
-        $runner = $lineParts[0];
-        $currentOdds = $lineParts[1];
-        if($currentOdds !== "SCR"){
-            $outtext .= "\t\t$runner => $currentOdds,\n";
+    for($k = 1; $k <= count($matchOdds); $k++) {
+        if(isset($matchOdds[$k])){
+            $outtext .= "\t\t$k => $matchOdds[$k],\n";
         }
     }
     $outtext .= "\t],\n";
