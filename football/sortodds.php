@@ -1,11 +1,6 @@
 <?php
 
-if(!isset($argv[1])) die("Race Date Not Entered!!\n");
-
-$raceDate = trim($argv[1]);
-$currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
-
-$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
+$allOdds = include(__DIR__ . DIRECTORY_SEPARATOR . "odds.php");
 $probas = [];
 
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
@@ -14,10 +9,36 @@ $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18,
 $blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
           22, 24, 26, 28, 29, 31, 33, 35];
 
-$totalRaces = count($allOdds);
+$allMatches = array_keys($allOdds);
 
-for($r=1; $r <= $totalRaces; $r++){
-    $odds = $allOdds[$r];
+$designations = [
+    1 => "1-0",
+    3 => "2-0",
+    5 => "2-1",
+    7 => "3-0",
+    9 => "3-1",
+    12 => "3-2",
+    14 => "4-0",
+    16 => "4-1",
+    18 => "4-2",
+    19 => "5-0",
+    21 => "5-1",
+    23 => "5-2",
+    2 => "0-1",
+    4 => "0-2",
+    6 => "1-2",
+    8 => "0-3",
+    10 => "1-3",
+    11 => "2-3",
+    13 => "0-4",
+    15 => "1-4",
+    17 => "2-4",
+    20 => "0-5",
+    22 => "1-5",
+    24 => "2-5"
+];
+
+foreach($allOdds as $r => $odds){
     $proba = [];
     $sum = 0;
     for($i=1; $i <= count($odds); $i++){
@@ -36,22 +57,28 @@ for($r=1; $r <= $totalRaces; $r++){
     $probas[$r] = $proba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
+$outFile = __DIR__ . DIRECTORY_SEPARATOR . "probas.php";
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
-for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
+foreach($probas as $raceNumber => $tmpArray) {
     $outtext .= "\t'$raceNumber' => [\n";
     $outtext .= "\t\t/**\n";
     $outtext .= "\t\tRace $raceNumber\n";
     $outtext .= "\t\t*/\n";
-    $tmpArray = $probas[$raceNumber];
     $tmpSum = 0;
 
     $indicators = [ 'B' => 0, 'R' => 0 ];
+
+    $lineCount = 0;
     
     foreach ($tmpArray as $i => $val){
-        $outtext .= "\t\t$i => $val,\n";
+        if($lineCount < 6){
+            $outtext .= "\t\t$i ";
+            $outtext .= "/*" . $designations[$i] . "*/";
+            $outtext .= " => $val,\n";
+            $lineCount ++;
+        }
         if(in_array($i, $blacks)) {
             $indicators['B'] += $val;
         }
