@@ -68,8 +68,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $values = array_values($tmpArray);
     for($j = 0; $j < count($values); $j ++)
     {
-        if(in_array($j + 1, [1, 3, 5, 7])) $indicators2['R (O) position'] += $values[$j];
-        elseif(in_array($j + 1, [2, 4, 6, 8, 10])) $indicators2['B (E) position'] += $values[$j];
+        if(($j + 1) % 2 === 1) $indicators2['R (O) position'] += $values[$j];
+        else $indicators2['B (E) position'] += $values[$j];
     }
 
     if(abs($indicators2['R (O) position'] - $indicators2['B (E) position']) < 0.9) {
