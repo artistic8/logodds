@@ -20,14 +20,11 @@ for($r=1; $r <= $totalRaces; $r++){
     $odds = $allOdds[$r];
     $proba = [];
     $sum = 0;
-    for($i=1; $i <= count($odds); $i++){
-        if(isset($odds[$i])) {
-            $proba[$i] = 100 * (log($odds[$i]) / $odds[$i]) / exp(1);
+    foreach($odds as $i => $oddsI){
+            $proba[$i] = 100 * (log($oddsI) / $oddsI) / exp(1);
             $sum += $proba[$i];
-        }
-        else $proba[$i] = 0;
-    }
-    for($i=1; $i <= count($odds); $i++){
+            }
+    foreach($odds as  $i => $oddsI){
         //adjust to 100 percentage
         $proba[$i] = round( $proba[$i] * 100 / $sum, 2);
 
