@@ -16,6 +16,8 @@ $blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
 
 $totalRaces = count($allOdds);
 
+if($raceDate == "0731") $totalRaces = 10;
+
 for($r=1; $r <= $totalRaces; $r++){
     if(!isset($allOdds[$r])) continue;
     $odds = $allOdds[$r];
