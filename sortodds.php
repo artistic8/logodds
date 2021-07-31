@@ -17,6 +17,7 @@ $blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
 $totalRaces = count($allOdds);
 
 for($r=1; $r <= $totalRaces; $r++){
+    if(!isset($allOdds[$r])) continue;
     $odds = $allOdds[$r];
     $proba = [];
     $sum = 0;
@@ -38,6 +39,7 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
+    if(!isset($probas[$raceNumber])) continue;
     $outtext .= "\t'$raceNumber' => [\n";
     $outtext .= "\t\t/**\n";
     $outtext .= "\t\tRace $raceNumber\n";
