@@ -31,7 +31,7 @@ $outtext .= "return [\n";
 if(isset($argv[3])) $totalRaces = trim($argv[3]);
 else $totalRaces = 10;
 
-for($r = 2; $r <= $totalRaces; $r++){
+for($r = 1; $r <= $totalRaces; $r++){
 
     $outtext .= "\t$r => [\n";
 
