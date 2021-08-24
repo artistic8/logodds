@@ -1,93 +1,47 @@
 <?php
 
-if(!isset($argv[1])) die("Race Date Not Entered!!\n");
+$currentDir = __DIR__;
 
-$raceDate = trim($argv[1]);
-$currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
-
-$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
+$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
 $probas = [];
 
-$reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
-         19, 21, 23, 25, 27, 30, 32, 34, 36];
+$reds = [1, 3, 5, 7];
+$blacks = [0, 2, 4, 6];
 
-$blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
-          22, 24, 26, 28, 29, 31, 33, 35];
-
-$totalRaces = count($allOdds);
-
-if($raceDate == "0731") $totalRaces = 10;
-
-for($r=1; $r <= $totalRaces; $r++){
-    if(!isset($allOdds[$r])) continue;
-    $odds = $allOdds[$r];
-    $proba = [];
-    $sum = 0;
-    foreach($odds as $i => $oddsI){
-            $proba[$i] = 100 * (log($oddsI) / $oddsI) / exp(1);
-            $sum += $proba[$i];
-            }
-    foreach($odds as  $i => $oddsI){
-        //adjust to 100 percentage
-        $proba[$i] = round( $proba[$i] * 100 / $sum, 2);
-
-    }
-    arsort($proba);
-    $probas[$r] = $proba;
-}
-
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "ttgoals.php";
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
-for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
-    if(!isset($probas[$raceNumber])) continue;
-    $outtext .= "\t'$raceNumber' => [\n";
-    $outtext .= "\t\t/**\n";
-    $outtext .= "\t\tRace $raceNumber\n";
-    $outtext .= "\t\t*/\n";
-    $tmpArray = $probas[$raceNumber];
-    $tmpSum = 0;
-
-    $indicators = [ 'B' => 0, 'R' => 0 ];
-    
-    foreach ($tmpArray as $i => $val){
-        $outtext .= "\t\t$i => $val,\n";
-        if(in_array($i, $blacks)) {
-            $indicators['B'] += $val;
+foreach($allOdds as $matchLabel => $odds){
+    $selected = [];
+    if($odds[0] <= $odds[1]) $selected[] = 0;
+    if($odds[1] <= ($odds[0] + $odds[2]) / 2) $selected[] = 1;
+    if($odds[2] <= ($odds[1] + $odds[3]) / 2) $selected[] = 2;
+    if($odds[3] <= ($odds[2] + $odds[4]) / 2) $selected[] = 3;
+    if($odds[4] <= ($odds[3] + $odds[5]) / 2) $selected[] = 4;
+    if($odds[5] <= ($odds[4] + $odds[6]) / 2) $selected[] = 5;
+    if($odds[6] <= ($odds[5] + $odds[7]) / 2) $selected[] = 6;
+    if($odds[7] <= $odds[6]) $selected[] = 7;
+    $totalBlack = 0;
+    $totalRed = 0;
+    foreach($selected as $s => $sOdd){
+        if(in_array($sOdd, $blacks)) $totalBlack += $odds[$sOdd];
+        elseif(in_array($sOdd, $reds)) $totalRed += $odds[$sOdd];
+    }
+    if($totalRed < $totalBlack) {
+        foreach($selected as $s => $sOdd) {
+            if(in_array($s, $blacks)) unset($selected[$s]);
         }
-        elseif(in_array($i, $reds)) {
-            $indicators['R'] += $val;
+    }
+    else {
+        foreach($selected as $s => $sOdd) {
+            if(in_array($s, $reds)) unset($selected[$s]);
         }
-        $tmpSum += $val;
     }
-
-    arsort($indicators);
-
-    $indicators2 = ['R (O) position' => 0, 'B (E) position' => 0];
-
-    $values = array_values($tmpArray);
-    for($j = 0; $j < count($values); $j ++)
-    {
-        if(($j + 1) % 2 === 1) $indicators2['R (O) position'] += $values[$j];
-        else $indicators2['B (E) position'] += $values[$j];
+    $outtext .= "\t'$matchLabel' => [\n";
+    foreach($selected as $s => $sOdd){
+        $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
     }
-
-    if(abs($indicators2['R (O) position'] - $indicators2['B (E) position']) < 0.9) {
-        $indicators2 = ['Equal positions R(O) and B(E)' => 'true'];
-    }
-
-    arsort($indicators2);
-
-    foreach($indicators2 as $label => $indicator) {
-        $outtext .= "\t\t'$label' => $indicator,\n";
-    }
-
-    foreach($indicators as $label => $indicator) {
-        $outtext .= "\t\t'$label' => $indicator,\n";
-    }
-   
-    $outtext .= "\t\t'Sum' => $tmpSum,\n";
     $outtext .= "\t],\n";
 }
 

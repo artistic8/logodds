@@ -25,7 +25,7 @@ for($k = 0; $k < $totalMatches ; $k++){
         6 => str_replace("100@", "", $ttgodds["P6"]),
         7 => str_replace("100@", "", $ttgodds["M7"]),
     ];
-    $outtext .= "\t$matchLabel => [\n";
+    $outtext .= "\t\"$matchLabel\" => [\n";
 
     for($tg = 0; $tg <= 7; $tg++) {
         $outtext .= "\t\t$tg => $ttgodds[$tg],\n";
