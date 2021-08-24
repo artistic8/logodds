@@ -29,19 +29,18 @@ foreach($allOdds as $matchLabel => $odds){
         if(in_array($sOdd, $blacks)) $totalBlack += $odds[$sOdd];
         elseif(in_array($sOdd, $reds)) $totalRed += $odds[$sOdd];
     }
-    var_dump($totalBlack);
-    var_dump($totalRed);
-    die();
+    
     if($totalRed < $totalBlack) {
         foreach($selected as $s => $sOdd) {
-            if(in_array($s, $blacks)) unset($selected[$s]);
+            if(in_array($s, $blacks)) unset($selected[$sOdd]);
         }
     }
     else {
         foreach($selected as $s => $sOdd) {
-            if(in_array($s, $reds)) unset($selected[$s]);
+            if(in_array($s, $reds)) unset($selected[$sOdd]);
         }
     }
+    
     $outtext .= "\t'$matchLabel' => [\n";
     foreach($selected as $s => $sOdd){
         $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
