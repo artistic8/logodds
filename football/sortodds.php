@@ -8,7 +8,7 @@ $probas = [];
 $reds = [1, 3, 5, 7];
 $blacks = [0, 2, 4, 6];
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "ttgoals.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "TTGOALS.php";
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
