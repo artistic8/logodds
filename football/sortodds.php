@@ -25,24 +25,24 @@ foreach($allOdds as $matchLabel => $odds){
     $totalBlack = 0;
     $totalRed = 0;
     
-    foreach($selected as $s => $sOdd){
+    foreach($selected as $sOdd){
         if(in_array($sOdd, $blacks)) $totalBlack += $odds[$sOdd];
         elseif(in_array($sOdd, $reds)) $totalRed += $odds[$sOdd];
     }
     
     if($totalRed < $totalBlack) {
-        foreach($selected as $s => $sOdd) {
-            if(in_array($s, $blacks)) unset($selected[$sOdd]);
+        foreach($selected as $sOdd) {
+            if(in_array($sOdd, $blacks)) unset($selected[$sOdd]);
         }
     }
     else {
-        foreach($selected as $s => $sOdd) {
-            if(in_array($s, $reds)) unset($selected[$sOdd]);
+        foreach($selected as $sOdd) {
+            if(in_array($sOdd, $reds)) unset($selected[$sOdd]);
         }
     }
     
     $outtext .= "\t'$matchLabel' => [\n";
-    foreach($selected as $s => $sOdd){
+    foreach($selected as $sOdd){
         $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
     }
     $outtext .= "\t],\n";
