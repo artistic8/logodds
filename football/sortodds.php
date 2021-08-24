@@ -13,6 +13,7 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 foreach($allOdds as $matchLabel => $odds){
+    $outtext .= "\t'$matchLabel' => [\n";
     $selected = [];
     if($odds[0] <= $odds[1]) $selected[] = 0;
     if($odds[1] <= ($odds[0] + $odds[2]) / 2) $selected[] = 1;
@@ -31,20 +32,16 @@ foreach($allOdds as $matchLabel => $odds){
     }
     
     if($totalRed < $totalBlack) {
-        foreach($selected as $sOdd) {
-            if(in_array($sOdd, $blacks)) unset($selected[$sOdd]);
+        foreach($reds as $sOdd) {
+            if(in_array($sOdd, $selected)) $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
         }
     }
     else {
-        foreach($selected as $sOdd) {
-            if(in_array($sOdd, $reds)) unset($selected[$sOdd]);
+        foreach($blacks as $sOdd) {
+            if(in_array($sOdd, $selected)) $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
         }
     }
-    var_dump($selected); die();
-    $outtext .= "\t'$matchLabel' => [\n";
-    foreach($selected as $sOdd){
-        $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
-    }
+   
     $outtext .= "\t],\n";
 }
 
