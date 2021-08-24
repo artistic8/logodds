@@ -24,10 +24,14 @@ foreach($allOdds as $matchLabel => $odds){
     if($odds[7] <= $odds[6]) $selected[] = 7;
     $totalBlack = 0;
     $totalRed = 0;
+    
     foreach($selected as $s => $sOdd){
         if(in_array($sOdd, $blacks)) $totalBlack += $odds[$sOdd];
         elseif(in_array($sOdd, $reds)) $totalRed += $odds[$sOdd];
     }
+    var_dump($totalBlack);
+    var_dump($totalRed);
+    die();
     if($totalRed < $totalBlack) {
         foreach($selected as $s => $sOdd) {
             if(in_array($s, $blacks)) unset($selected[$s]);
