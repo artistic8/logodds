@@ -40,7 +40,7 @@ foreach($allOdds as $matchLabel => $odds){
             if(in_array($sOdd, $reds)) unset($selected[$sOdd]);
         }
     }
-    
+    var_dump($selected); die();
     $outtext .= "\t'$matchLabel' => [\n";
     foreach($selected as $sOdd){
         $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
