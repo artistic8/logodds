@@ -15,14 +15,16 @@ $outtext .= "return [\n";
 foreach($allOdds as $matchLabel => $odds){
     $outtext .= "\t'$matchLabel' => [\n";
     $selected = [];
-    if($odds[0] <= $odds[1]) $selected[] = 0;
+    // if($odds[0] <= $odds[1]) $selected[] = 0;
+    if($odds[0] <= ($odds[1] + $odds[7]) / 2) $selected[] = 0;
     if($odds[1] <= ($odds[0] + $odds[2]) / 2) $selected[] = 1;
     if($odds[2] <= ($odds[1] + $odds[3]) / 2) $selected[] = 2;
     if($odds[3] <= ($odds[2] + $odds[4]) / 2) $selected[] = 3;
     if($odds[4] <= ($odds[3] + $odds[5]) / 2) $selected[] = 4;
     if($odds[5] <= ($odds[4] + $odds[6]) / 2) $selected[] = 5;
     if($odds[6] <= ($odds[5] + $odds[7]) / 2) $selected[] = 6;
-    if($odds[7] <= $odds[6]) $selected[] = 7;
+    if($odds[7] <= ($odds[6] + $odds[0]) / 2) $selected[] = 7;
+    // if($odds[7] <= $odds[6]) $selected[] = 7;
     $totalBlack = 0;
     $totalRed = 0;
     
