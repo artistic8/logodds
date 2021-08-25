@@ -34,12 +34,12 @@ foreach($allOdds as $matchLabel => $odds){
     }
     
     if($totalRed < $totalBlack) {
-        foreach($reds as $sOdd) {
+        foreach($blacks as $sOdd) {
             if(in_array($sOdd, $selected)) $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
         }
     }
     else {
-        foreach($blacks as $sOdd) {
+        foreach($reds as $sOdd) {
             if(in_array($sOdd, $selected)) $outtext .= "\t\t $sOdd => $odds[$sOdd],\n";
         }
     }
