@@ -49,7 +49,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $indicators = [ 'B' => 0, 'R' => 0 ];
     
     foreach ($tmpArray as $i => $val){
-        $outtext .= "\t\t$i => $val,\n";
         if(in_array($i, $blacks)) {
             $indicators['B'] += $val;
         }
@@ -70,31 +69,45 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     if(abs($indicators2['R (O) position'] - $indicators2['B (E) position']) < 0.9) {
-        $indicators2 = ['Equal positions R(O) and B(E)' => 'true'];
-    }
-
-    arsort($indicators2);
-
-    foreach($indicators2 as $label => $indicator) {
-        $outtext .= "\t\t'$label' => $indicator,\n";
-    }
-
-    foreach($indicators as $label => $indicator) {
-        $outtext .= "\t\t'$label' => $indicator,\n";
+        $outtext .= "\t\t Equal positions. \n";
     }
 
     $runners = array_keys($tmpArray);
     $qin10 = array_slice($runners, 0, 4);
-    if($indicators[0] == 'B'){
-        $sBlacks = array_intersect($runners, $blacks);
+    $qpl30 = array_slice($runners, 0, 3);
+    $sBlacks = array_values(array_intersect($runners, $blacks));
+    $sReds = array_values(array_intersect($runners, $reds));
+    if($indicators["B"] > $indicators["R"]){
         $firstBlack = $sBlacks[0];
         $secondBlack = $sBlacks[1];
+        $lastThreeReds = array_slice($sReds, -3);
+        $qpl20 = $firstBlack . " X "  . implode(", ", $lastThreeReds);
+        $qpl10 = $secondBlack . " X "  . implode(", ", $lastThreeReds);
+        if(!in_array(1, $lastThreeReds) && $firstBlack != 1 && $secondBlack != 1){
+            $qplOthers = "1, " . implode(", ", $lastThreeReds);
+        }
+        else{
+            $qplOthers = implode(", ", $lastThreeReds);
+        }
     }
     else{
-        $sReds = array_intersect($runners, $reds);
-        var_dump($sReds); die();
+        $firstRed = $sReds[0];
+        $secondRed = $sReds[1];
+        $lastThreeBlacks = array_slice($sBlacks, -3);
+        $qpl20 = $firstRed . " X "  . implode(", ", $lastThreeBlacks);
+        $qpl10 = $secondRed . " X "  . implode(", ", $lastThreeBlacks);
+        if(!in_array(1, $lastThreeBlacks) && $firstRed != 1 && $secondRed != 1){
+            $qplOthers = "1, " . implode(", ", $lastThreeBlacks);
+        }
+        else{
+            $qplOthers = implode(", ", $lastThreeBlacks);
+        }
     }
     $outtext .= "\t\t'Qin 10' => " . implode(", ", $qin10) . ",\n";
+    $outtext .= "\t\t'Qpl 30' => " . implode(", ", $qpl30) . ",\n";
+    $outtext .= "\t\t'Qpl 20' => " . $qpl20 . ",\n";
+    $outtext .= "\t\t'Qpl 10' => " . $qpl10 . ",\n";
+    $outtext .= "\t\t'Qpl 10' => " . $qplOthers . ",\n";
    
     $outtext .= "\t],\n";
 }
