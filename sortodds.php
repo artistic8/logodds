@@ -45,7 +45,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\tRace $raceNumber\n";
     $outtext .= "\t\t*/\n";
     $tmpArray = $probas[$raceNumber];
-    $tmpSum = 0;
 
     $indicators = [ 'B' => 0, 'R' => 0 ];
     
@@ -57,7 +56,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         elseif(in_array($i, $reds)) {
             $indicators['R'] += $val;
         }
-        $tmpSum += $val;
     }
 
     arsort($indicators);
@@ -84,8 +82,20 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($indicators as $label => $indicator) {
         $outtext .= "\t\t'$label' => $indicator,\n";
     }
+
+    $runners = array_keys($tmpArray);
+    $qin10 = array_slice($runners, 0, 4);
+    if($indicators[0] == 'B'){
+        $sBlacks = array_intersect($runners, $blacks);
+        $firstBlack = $sBlacks[0];
+        $secondBlack = $sBlacks[1];
+    }
+    else{
+        $sReds = array_intersect($runners, $reds);
+        var_dump($sReds); die();
+    }
+    $outtext .= "\t\t'Qin 10' => " . implode(", ", $qin10) . ",\n";
    
-    $outtext .= "\t\t'Sum' => $tmpSum,\n";
     $outtext .= "\t],\n";
 }
 
