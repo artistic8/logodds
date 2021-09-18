@@ -77,10 +77,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $qpl30 = array_slice($runners, 0, 3);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
+    $trio = $qin10;
     if($indicators["B"] > $indicators["R"]){
         $firstBlack = $sBlacks[0];
         $secondBlack = $sBlacks[1];
+        $trio[] = $firstBlack;
+        $trio[] = $secondBlack;
         $lastThreeReds = array_slice($sReds, -3);
+        $trio = array_merge($trio, $lastThreeReds);
         $qpl20 = $firstBlack . " X "  . implode(", ", $lastThreeReds);
         $qpl10 = $secondBlack . " X "  . implode(", ", $lastThreeReds);
         if(!in_array(1, $lastThreeReds) && $firstBlack != 1 && $secondBlack != 1){
@@ -93,7 +97,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     else{
         $firstRed = $sReds[0];
         $secondRed = $sReds[1];
+        $trio[] = $firstRed;
+        $trio[] = $secondRed;
         $lastThreeBlacks = array_slice($sBlacks, -3);
+        $trio = array_merge($trio, $lastThreeBlacks);
         $qpl20 = $firstRed . " X "  . implode(", ", $lastThreeBlacks);
         $qpl10 = $secondRed . " X "  . implode(", ", $lastThreeBlacks);
         if(!in_array(1, $lastThreeBlacks) && $firstRed != 1 && $secondRed != 1){
@@ -103,11 +110,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $qplOthers = implode(", ", $lastThreeBlacks);
         }
     }
-    $outtext .= "\t\t'Qin 10' => " . implode(", ", $qin10) . ",\n";
-    $outtext .= "\t\t'Qpl 30' => " . implode(", ", $qpl30) . ",\n";
-    $outtext .= "\t\t'Qpl 20' => " . $qpl20 . ",\n";
-    $outtext .= "\t\t'Qpl 10' => " . $qpl10 . ",\n";
-    $outtext .= "\t\t'Qpl 10' => " . $qplOthers . ",\n";
+    $trio = array_values(array_unique($trio));
+    if(!in_array(1, $trio)) $trio[] = 1;
+    asort($trio);
+    
+    $outtext .= "\t\t'Qin 10' => " . "'" . implode(", ", $qin10) . "'" . ",\n";
+    $outtext .= "\t\t'Qpl 30' => " . "'" . implode(", ", $qpl30) . "'" . ",\n";
+    $outtext .= "\t\t'Qpl 20' => " . "'" . $qpl20 . "'" . ",\n";
+    $outtext .= "\t\t'Qpl 10' => " . "'" . $qpl10 . "'" . ",\n";
+    $outtext .= "\t\t'Qpl 10' => " . "'" . $qplOthers . "'" . ",\n";
+    $outtext .= "\t\t'Trio' => " . "'" . implode(", ", $trio) . "'" . ",\n";
    
     $outtext .= "\t],\n";
 }
