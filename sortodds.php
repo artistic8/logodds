@@ -79,46 +79,33 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $sReds = array_values(array_intersect($runners, $reds));
     $trio = $qin10;
     if($indicators["B"] > $indicators["R"]){
-        $firstBlack = $sBlacks[0];
-        $secondBlack = $sBlacks[1];
-        $trio[] = $firstBlack;
-        $trio[] = $secondBlack;
+        $firstThree = array_slice($sBlacks, 0, 3);
         $lastThreeReds = array_slice($sReds, -3);
+        $trio = array_merge($trio, $firstThree);
         $trio = array_merge($trio, $lastThreeReds);
-        $qpl20 = $firstBlack . " X "  . implode(", ", $lastThreeReds);
-        $qpl10 = $secondBlack . " X "  . implode(", ", $lastThreeReds);
-        if(!in_array(1, $lastThreeReds) && $firstBlack != 1 && $secondBlack != 1){
-            $qplOthers = "1, " . implode(", ", $lastThreeReds);
-        }
-        else{
-            $qplOthers = implode(", ", $lastThreeReds);
-        }
+        $qpl10 = implode(", ", $firstThree) . " X "  . implode(", ", $lastThreeReds);
+        $lastThree = $lastThreeReds;
     }
     else{
-        $firstRed = $sReds[0];
-        $secondRed = $sReds[1];
-        $trio[] = $firstRed;
-        $trio[] = $secondRed;
+        $firstThree = array_slice($sReds, 0, 3);
         $lastThreeBlacks = array_slice($sBlacks, -3);
+        $trio = array_merge($trio, $firstThree);
         $trio = array_merge($trio, $lastThreeBlacks);
-        $qpl20 = $firstRed . " X "  . implode(", ", $lastThreeBlacks);
-        $qpl10 = $secondRed . " X "  . implode(", ", $lastThreeBlacks);
-        if(!in_array(1, $lastThreeBlacks) && $firstRed != 1 && $secondRed != 1){
-            $qplOthers = "1, " . implode(", ", $lastThreeBlacks);
-        }
-        else{
-            $qplOthers = implode(", ", $lastThreeBlacks);
-        }
+        $qpl10 = implode(", ", $firstThree) . " X "  . implode(", ", $lastThreeBlacks);
+        $lastThree = $lastThreeBlacks;
     }
     $trio = array_values(array_unique($trio));
     if(!in_array(1, $trio)) $trio[] = 1;
     asort($trio);
+
+    if(!in_array(1, $firstThree) && !in_array(1, $lastThree)) $lastThree[] = 1;
     
+    $outtext .= "\t\t'Win' => " . "'" . implode(", ", $firstThree) . "'" . ",\n";
+    $outtext .= "\t\t'Pla' => " . "'" . implode(", ", $lastThree) . "'" . ",\n";
     $outtext .= "\t\t'Qin 10' => " . "'" . implode(", ", $qin10) . "'" . ",\n";
     $outtext .= "\t\t'Qpl 30' => " . "'" . implode(", ", $qpl30) . "'" . ",\n";
-    $outtext .= "\t\t'Qpl 20' => " . "'" . $qpl20 . "'" . ",\n";
     $outtext .= "\t\t'Qpl 10' => " . "'" . $qpl10 . "'" . ",\n";
-    $outtext .= "\t\t'Qpl 10' => " . "'" . $qplOthers . "'" . ",\n";
+    $outtext .= "\t\t'Qpl 10' => " . "'" . implode(", ", $lastThree) . "'" . ",\n";
     $outtext .= "\t\t'Trio' => " . "'" . implode(", ", $trio) . "'" . ",\n";
    
     $outtext .= "\t],\n";
