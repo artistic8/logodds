@@ -95,16 +95,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $lastThree = $lastThreeBlacks;
     }
     $trio = array_values(array_unique($trio));
-    if(!in_array(1, $trio)) $trio[] = 1;
     asort($trio);
 
-    if(!in_array(1, $firstThree) && !in_array(1, $lastThree)) $lastThree[] = 1;
-    
     $outtext .= "\t\t'Win' => " . "'" . implode(", ", $firstThree) . "'" . ",\n";
     $outtext .= "\t\t'Pla' => " . "'" . implode(", ", $lastThree) . "'" . ",\n";
+    $outtext .= "\t\t'Qpl 10' => " . "'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qin 10' => " . "'" . implode(", ", $qin10) . "'" . ",\n";
     $outtext .= "\t\t'Qpl 30' => " . "'" . implode(", ", $qpl30) . "'" . ",\n";
-    $outtext .= "\t\t'Qpl 10' => " . "'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qpl 10' => " . "'" . implode(", ", $lastThree) . "'" . ",\n";
     $outtext .= "\t\t'Trio' => " . "'" . implode(", ", $trio) . "'" . ",\n";
    
