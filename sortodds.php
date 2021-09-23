@@ -46,64 +46,45 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t*/\n";
     $tmpArray = $probas[$raceNumber];
 
-    $indicators = [ 'B' => 0, 'R' => 0 ];
-    
-    foreach ($tmpArray as $i => $val){
-        if(in_array($i, $blacks)) {
-            $indicators['B'] += $val;
-        }
-        elseif(in_array($i, $reds)) {
-            $indicators['R'] += $val;
-        }
-    }
-
-    arsort($indicators);
-
-    $indicators2 = ['R (O) position' => 0, 'B (E) position' => 0];
+    $indicators = ['R (O) position' => 0, 'B (E) position' => 0];
 
     $values = array_values($tmpArray);
     for($j = 0; $j < count($values); $j ++)
     {
-        if(($j + 1) % 2 === 1) $indicators2['R (O) position'] += $values[$j];
-        else $indicators2['B (E) position'] += $values[$j];
+        if(($j + 1) % 2 === 1) $indicators['R (O) position'] += $values[$j];
+        else $indicators['B (E) position'] += $values[$j];
     }
 
-    if(abs($indicators2['R (O) position'] - $indicators2['B (E) position']) < 0.9) {
+    if(abs($indicators['R (O) position'] - $indicators['B (E) position']) < 0.9) {
         $outtext .= "\t\t Equal positions. \n";
     }
 
     $runners = array_keys($tmpArray);
-    $qin10 = array_slice($runners, 0, 4);
-    $qpl30 = array_slice($runners, 0, 3);
+    $first4 = array_slice($runners, 0, 4);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
-    $trio = $qin10;
-    if($indicators["B"] > $indicators["R"]){
+
+    if(in_array($runners[0], $blacks)){
         $firstThree = array_slice($sBlacks, 0, 3);
+        $firstThreeReds = array_slice($sReds, 0, 3);
         $lastThreeReds = array_slice($sReds, -3);
-        $trio = array_merge($trio, $firstThree);
-        $trio = array_merge($trio, $lastThreeReds);
-        $qpl10 = implode(", ", $firstThree) . " X "  . implode(", ", $lastThreeReds);
-        $lastThree = $lastThreeReds;
+        $fct = implode(", ", $firstThree) . " X "  . implode(", ", $firstThreeReds);
+        $qpl = implode(", ", $firstThree) . " X "  . implode(", ", $lastThreeReds);
     }
     else{
         $firstThree = array_slice($sReds, 0, 3);
+        $firstThreeBlacks = array_slice($sBlacks, 0, 3);
         $lastThreeBlacks = array_slice($sBlacks, -3);
-        $trio = array_merge($trio, $firstThree);
-        $trio = array_merge($trio, $lastThreeBlacks);
-        $qpl10 = implode(", ", $firstThree) . " X "  . implode(", ", $lastThreeBlacks);
-        $lastThree = $lastThreeBlacks;
+        $fct = implode(", ", $firstThree) . " X "  . implode(", ", $firstThreeBlacks);
+        $qpl = implode(", ", $firstThree) . " X "  . implode(", ", $lastThreeBlacks);
     }
-    $trio = array_values(array_unique($trio));
-    asort($trio);
 
-    $outtext .= "\t\t'Win' => " . "'" . implode(", ", $firstThree) . "'" . ",\n";
-    $outtext .= "\t\t'Pla' => " . "'" . implode(", ", $lastThree) . "'" . ",\n";
-    $outtext .= "\t\t'Qpl 10' => " . "'" . $qpl10 . "'" . ",\n";
-    $outtext .= "\t\t'Qin 10' => " . "'" . implode(", ", $qin10) . "'" . ",\n";
-    $outtext .= "\t\t'Qpl 30' => " . "'" . implode(", ", $qpl30) . "'" . ",\n";
-    $outtext .= "\t\t'Qpl 10' => " . "'" . implode(", ", $lastThree) . "'" . ",\n";
-    $outtext .= "\t\t'Trio' => " . "'" . implode(", ", $trio) . "'" . ",\n";
+    $place = array_diff($first4, $firstThree);
+
+    $outtext .= "\t\t'PLA' => " . "'" . implode(", ", $place) . "'" . ",\n";
+    $outtext .= "\t\t'WIN' => " . "'" . implode(", ", $firstThree) . "'" . ",\n";
+    $outtext .= "\t\t'FCT' => " . "'" . $fct . "'" . ",\n";
+    $outtext .= "\t\t'QPL' => " . "'" . $qpl . "'" . ",\n";
    
     $outtext .= "\t],\n";
 }
