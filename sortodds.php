@@ -28,7 +28,6 @@ for($r=1; $r <= $totalRaces; $r++){
     foreach($odds as  $i => $oddsI){
         //adjust to 100 percentage
         $proba[$i] = round( $proba[$i] * 100 / $sum, 2);
-
     }
     arsort($proba);
     $probas[$r] = $proba;
@@ -56,10 +55,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     if(abs($indicators['R (O) position'] - $indicators['B (E) position']) < 0.9) {
-        $outtext .= "\t\t Equal positions. \n";
+        $outtext .= "\t\t'Equal positions.' \n";
     }
 
     $runners = array_keys($tmpArray);
+    $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
     $first4 = array_slice($runners, 0, 4);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
