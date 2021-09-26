@@ -76,7 +76,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     $outtext .= "\t\t'Qin(opt $20)' => " . "'" . implode(", ", $first4) . "'" . ",\n";
-    $outtext .= "\t\t'QPL' => " . "'" . $qpl . "'" . ",\n";
+    $outtext .= "\t\t'Qpl' => " . "'" . $qpl . "'" . ",\n";
    
     $outtext .= "\t],\n";
 }
