@@ -65,25 +65,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $sReds = array_values(array_intersect($runners, $reds));
 
     if(in_array($runners[0], $blacks)){
-        $firstThree = array_slice($sBlacks, 0, 3);
-        $firstThreeReds = array_slice($sReds, 0, 3);
+        $firstTwo = array_slice($sBlacks, 0, 2);
         $lastThreeReds = array_slice($sReds, -3);
-        $fct = implode(", ", $firstThree) . " X "  . implode(", ", $firstThreeReds);
-        $qpl = implode(", ", $firstThree) . " X "  . implode(", ", $lastThreeReds);
+        $qpl = implode(", ", $firstTwo) . " X "  . implode(", ", $lastThreeReds);
     }
     else{
-        $firstThree = array_slice($sReds, 0, 3);
-        $firstThreeBlacks = array_slice($sBlacks, 0, 3);
+        $firstTwo = array_slice($sReds, 0, 2);
         $lastThreeBlacks = array_slice($sBlacks, -3);
-        $fct = implode(", ", $firstThree) . " X "  . implode(", ", $firstThreeBlacks);
-        $qpl = implode(", ", $firstThree) . " X "  . implode(", ", $lastThreeBlacks);
+        $qpl = implode(", ", $firstTwo) . " X "  . implode(", ", $lastThreeBlacks);
     }
 
-    $place = array_diff($first4, $firstThree);
-
-    $outtext .= "\t\t'PLA' => " . "'" . implode(", ", $place) . "'" . ",\n";
-    $outtext .= "\t\t'WIN' => " . "'" . implode(", ", $firstThree) . "'" . ",\n";
-    $outtext .= "\t\t'FCT' => " . "'" . $fct . "'" . ",\n";
+    $outtext .= "\t\t'Qin(opt $20)' => " . "'" . implode(", ", $first4) . "'" . ",\n";
     $outtext .= "\t\t'QPL' => " . "'" . $qpl . "'" . ",\n";
    
     $outtext .= "\t],\n";
