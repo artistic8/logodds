@@ -1,2 +1,2 @@
-php getodds.php 0926 ST 10;
-php sortodds.php 0926
+php getodds.php 1001 ST 10;
+php sortodds.php 1001
