@@ -65,26 +65,33 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
 
-    if(in_array($runners[0], $blacks)){
+    $first1 = $runners[0];
+
+    if(in_array($first1, $blacks)){
         $first2 = array_slice($sBlacks, 0, 2);
+        $firstThreeReds = array_slice($sReds, 0, 3);
         $lastThreeReds = array_slice($sReds, -3);
         $lastThreeBlacks = array_slice($sBlacks, -3);
         $first3 = array_values(array_unique(array_merge($first3, $first2)));
+        $qpl0 = $first1 . " X "  . implode(", ", $firstThreeReds);
         $qpl1 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeReds);
         $qpl2 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeBlacks);
     }
     else{
         $first2 = array_slice($sReds, 0, 2);
+        $firstThreeBlacks = array_slice($sBlacks, 0, 3);
         $lastThreeBlacks = array_slice($sBlacks, -3);
         $lastThreeReds = array_slice($sReds, -3);
         $first3 = array_values(array_unique(array_merge($first3, $first2)));
+        $qpl0 = $first1 . " X "  . implode(", ", $firstThreeBlacks);
         $qpl1 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeBlacks);
         $qpl2 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeReds);
     }
 
     $outtext .= "\t\t'Qin(opt $20, ideal $40)' => " . "'" . implode(", ", $first4) . "'" . ",\n";
+    $outtext .= "\t\t'Qpl($30, ideal $50)' => " . "'" . $qpl0 . "'" . ",\n";
     $outtext .= "\t\t'Qpl($10, ideal $20)' => " . "'" . $qpl1 . "'" . ",\n";
-    $outtext .= "\t\t'-------------------------------------',\n";
+    $outtext .= "\t\t'-----------ideally-----------------',\n";
     $outtext .= "\t\t'Qpl($10)' => " . "'" . $qpl2 . "'" . ",\n";
    
     $outtext .= "\t],\n";
