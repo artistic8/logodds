@@ -1,2 +1,2 @@
-php getodds.php 1016 S1 2;
+php getodds.php 1016 S2 6;
 php sortodds.php 1016
