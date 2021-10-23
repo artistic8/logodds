@@ -88,11 +88,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qpl2 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeReds);
     }
 
-    $outtext .= "\t\t'Qin(opt $20, ideal $40)' => " . "'" . implode(", ", $first4) . "'" . ",\n";
-    $outtext .= "\t\t'Qpl($30, ideal $50)' => " . "'" . $qpl0 . "'" . ",\n";
-    $outtext .= "\t\t'Qpl($10, ideal $20)' => " . "'" . $qpl1 . "'" . ",\n";
+    $outtext .= "\t\t'Qin(opt $20, ideal $40)' \n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
+    $outtext .= "\t\t'Qpl($30, ideal $50)' \n" . "\t\t\t'" . $qpl0 . "'" . ",\n";
+    $outtext .= "\t\t'Qpl($10, ideal $20)' \n" . "\t\t\t'" . $qpl1 . "'" . ",\n";
     $outtext .= "\t\t'-----------ideally-----------------',\n";
-    $outtext .= "\t\t'Qpl($10)' => " . "'" . $qpl2 . "'" . ",\n";
+    $outtext .= "\t\t'Qpl($10)' \n" . "\t\t\t'" . $qpl2 . "'" . ",\n";
    
     $outtext .= "\t],\n";
 }
