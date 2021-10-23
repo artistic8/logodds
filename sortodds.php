@@ -62,6 +62,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
     $first3 = array_slice($runners, 0, 3);
     $first4 = array_slice($runners, 0, 4);
+    $qinBlacks = array_intersect($blacks,$first4);
+    $qinReds = array_intersect($reds,$first4);
+    $poorQin =implode(", ",$qinBlacks) . " X " . implode(", ", $qinReds);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
 
@@ -88,11 +91,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qpl2 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeReds);
     }
 
-    $outtext .= "\t\t'Qin(opt $20, ideal $40)' \n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
-    $outtext .= "\t\t'Qpl($30, ideal $50)' \n" . "\t\t\t'" . $qpl0 . "'" . ",\n";
-    $outtext .= "\t\t'Qpl($10, ideal $20)' \n" . "\t\t\t'" . $qpl1 . "'" . ",\n";
+    $outtext .= "\t\t'Poor man\'s bet (Qin)' ,\n" . "\t\t\t'" . $poorQin . "'" . ",\n";
+    $outtext .= "\t\t'Qin(opt $20, ideal $40)' ,\n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
+    $outtext .= "\t\t'Qpl($30, ideal $50)' ,\n" . "\t\t\t'" . $qpl0 . "'" . ",\n";
+    $outtext .= "\t\t'Qpl($10, ideal $20)' ,\n" . "\t\t\t'" . $qpl1 . "'" . ",\n";
     $outtext .= "\t\t'-----------ideally-----------------',\n";
-    $outtext .= "\t\t'Qpl($10)' \n" . "\t\t\t'" . $qpl2 . "'" . ",\n";
+    $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl2 . "'" . ",\n";
    
     $outtext .= "\t],\n";
 }
