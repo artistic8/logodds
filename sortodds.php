@@ -64,11 +64,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $first4 = array_slice($runners, 0, 4);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
-    $qinBlacks = array_intersect($blacks,$first4);
-    if(empty($qinBlacks)) $qinBlacks = array_slice($sBlacks,0,1);
-    $qinReds = array_intersect($reds,$first4);
-    if(empty($qinReds)) $qinReds = array_slice($sReds,0,1);
-    $poorQin =implode(", ",$qinBlacks) . " X " . implode(", ", $qinReds);
+    $qplBlacks = array_intersect($blacks,$first4);
+    if(empty($qplBlacks)) $qplBlacks = array_slice($sBlacks,0,1);
+    $qplReds = array_intersect($reds,$first4);
+    if(empty($qplReds)) $qplReds = array_slice($sReds,0,1);
+    $poorQpl =implode(", ",$qplBlacks) . " X " . implode(", ", $qplReds);
+    if(count($qplBlacks) >= 2 && count($qplReds) >= 2) $poorQin = "Qin1: " . implode(", ", $qplBlacks) . ", Qin2: " . implode(", ", $qplReds);
+    elseif(count($qplBlacks) >= 2) $poorQin = implode(", ", $qplBlacks);
+    else $poorQin = implode(", ", $qplReds);
 
     $first1 = $runners[0];
 
@@ -93,7 +96,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qpl2 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeReds);
     }
 
-    $outtext .= "\t\t'Poor man\'s bet (Qin)' ,\n" . "\t\t\t'" . $poorQin . "'" . ",\n";
+    $outtext .= "\t\t'Poor man\'s bet' ,\n" . "\t\t\t'Qpl' => '" . $poorQpl . "'" . ",\n";
+    $outtext .= "\t\t\t'Qin' => '" . $poorQin . "'" . ",\n";
     $outtext .= "\t\t'Qin(opt $20, ideal $40)' ,\n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
     $outtext .= "\t\t'Qpl($30, ideal $50)' ,\n" . "\t\t\t'" . $qpl0 . "'" . ",\n";
     $outtext .= "\t\t'Qpl($10, ideal $20)' ,\n" . "\t\t\t'" . $qpl1 . "'" . ",\n";

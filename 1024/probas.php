@@ -6,8 +6,9 @@ return [
 		Race 1
 		*/
 		'1, 7, 4, 13, 12, 8, 9, 2, 6, 14, 3, 11, 10, 5',
-		'Poor man\'s bet (Qin)' ,
-			'4, 13 X 1, 7',
+		'Poor man\'s bet' ,
+			'Qpl' => '4, 13 X 1, 7',
+			'Qin' => 'Qin1: 4, 13, Qin2: 1, 7',
 		'Qin(opt $20, ideal $40)' ,
 			'1, 7, 4, 13',
 		'Qpl($30, ideal $50)' ,
@@ -23,8 +24,9 @@ return [
 		Race 2
 		*/
 		'5, 6, 8, 2, 3, 9, 11, 4, 1, 7, 12, 10',
-		'Poor man\'s bet (Qin)' ,
-			'2, 6, 8 X 5',
+		'Poor man\'s bet' ,
+			'Qpl' => '2, 6, 8 X 5',
+			'Qin' => '2, 6, 8',
 		'Qin(opt $20, ideal $40)' ,
 			'5, 6, 8, 2',
 		'Qpl($30, ideal $50)' ,
@@ -40,8 +42,9 @@ return [
 		Race 3
 		*/
 		'1, 12, 5, 8, 2, 3, 13, 6, 7, 9, 14, 11, 10, 4',
-		'Poor man\'s bet (Qin)' ,
-			'8 X 1, 5, 12',
+		'Poor man\'s bet' ,
+			'Qpl' => '8 X 1, 5, 12',
+			'Qin' => '1, 5, 12',
 		'Qin(opt $20, ideal $40)' ,
 			'1, 12, 5, 8',
 		'Qpl($30, ideal $50)' ,
@@ -57,8 +60,9 @@ return [
 		Race 4
 		*/
 		'8, 5, 4, 6, 7, 13, 10, 3, 12, 1, 14, 2, 11, 9',
-		'Poor man\'s bet (Qin)' ,
-			'4, 6, 8 X 5',
+		'Poor man\'s bet' ,
+			'Qpl' => '4, 6, 8 X 5',
+			'Qin' => '4, 6, 8',
 		'Qin(opt $20, ideal $40)' ,
 			'8, 5, 4, 6',
 		'Qpl($30, ideal $50)' ,
@@ -74,8 +78,9 @@ return [
 		Race 5
 		*/
 		'1, 5, 8, 2, 3, 6, 13, 4, 9, 14, 12, 7, 11, 10',
-		'Poor man\'s bet (Qin)' ,
-			'2, 8 X 1, 5',
+		'Poor man\'s bet' ,
+			'Qpl' => '2, 8 X 1, 5',
+			'Qin' => 'Qin1: 2, 8, Qin2: 1, 5',
 		'Qin(opt $20, ideal $40)' ,
 			'1, 5, 8, 2',
 		'Qpl($30, ideal $50)' ,
@@ -91,8 +96,9 @@ return [
 		Race 6
 		*/
 		'6, 7, 9, 1, 8, 11, 3, 5, 4, 2, 10, 12',
-		'Poor man\'s bet (Qin)' ,
-			'6 X 1, 7, 9',
+		'Poor man\'s bet' ,
+			'Qpl' => '6 X 1, 7, 9',
+			'Qin' => '1, 7, 9',
 		'Qin(opt $20, ideal $40)' ,
 			'6, 7, 9, 1',
 		'Qpl($30, ideal $50)' ,
@@ -108,8 +114,9 @@ return [
 		Race 7
 		*/
 		'8, 7, 12, 1, 11, 3, 4, 5, 9, 2, 10, 13, 6, 14',
-		'Poor man\'s bet (Qin)' ,
-			'8 X 1, 7, 12',
+		'Poor man\'s bet' ,
+			'Qpl' => '8 X 1, 7, 12',
+			'Qin' => '1, 7, 12',
 		'Qin(opt $20, ideal $40)' ,
 			'8, 7, 12, 1',
 		'Qpl($30, ideal $50)' ,
@@ -125,8 +132,9 @@ return [
 		Race 8
 		*/
 		'4, 5, 6, 11, 12, 3, 8, 1, 9, 10, 7, 2',
-		'Poor man\'s bet (Qin)' ,
-			'4, 6, 11 X 5',
+		'Poor man\'s bet' ,
+			'Qpl' => '4, 6, 11 X 5',
+			'Qin' => '4, 6, 11',
 		'Qin(opt $20, ideal $40)' ,
 			'4, 5, 6, 11',
 		'Qpl($30, ideal $50)' ,
@@ -142,8 +150,9 @@ return [
 		Race 9
 		*/
 		'11, 3, 9, 4, 2, 10, 5, 8, 6, 7, 1, 12',
-		'Poor man\'s bet (Qin)' ,
-			'4, 11 X 3, 9',
+		'Poor man\'s bet' ,
+			'Qpl' => '4, 11 X 3, 9',
+			'Qin' => 'Qin1: 4, 11, Qin2: 3, 9',
 		'Qin(opt $20, ideal $40)' ,
 			'11, 3, 9, 4',
 		'Qpl($30, ideal $50)' ,
@@ -159,8 +168,9 @@ return [
 		Race 10
 		*/
 		'3, 9, 2, 8, 13, 7, 4, 1, 6, 11, 10, 12, 5',
-		'Poor man\'s bet (Qin)' ,
-			'2, 8 X 3, 9',
+		'Poor man\'s bet' ,
+			'Qpl' => '2, 8 X 3, 9',
+			'Qin' => 'Qin1: 2, 8, Qin2: 3, 9',
 		'Qin(opt $20, ideal $40)' ,
 			'3, 9, 2, 8',
 		'Qpl($30, ideal $50)' ,
