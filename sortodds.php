@@ -62,11 +62,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
     $first3 = array_slice($runners, 0, 3);
     $first4 = array_slice($runners, 0, 4);
-    $qinBlacks = array_intersect($blacks,$first4);
-    $qinReds = array_intersect($reds,$first4);
-    $poorQin =implode(", ",$qinBlacks) . " X " . implode(", ", $qinReds);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
+    $qinBlacks = array_intersect($blacks,$first4);
+    if(empty($qinBlacks)) $qinBlacks = array_slice($sBlacks,0,1);
+    $qinReds = array_intersect($reds,$first4);
+    if(empty($qinReds)) $qinReds = array_slice($sReds,0,1);
+    $poorQin =implode(", ",$qinBlacks) . " X " . implode(", ", $qinReds);
 
     $first1 = $runners[0];
 
