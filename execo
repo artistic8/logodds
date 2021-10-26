@@ -1,2 +1,2 @@
-php getodds.php 1024 ST 10;
-php sortodds.php 1024
+php getodds.php 1027 ST 8;
+php sortodds.php 1027
