@@ -76,6 +76,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $firstFourBlacks = array_slice($sBlacks, 0, 4);
         $toWin = array_unique(array_values(array_merge($first4, $firstFourBlacks)));
         asort($toWin);
+        $fct1 = array_intersect($first4,$blacks);
+        $fct2 = array_intersect($first4,$reds);
         $first3 = array_values(array_unique(array_merge($first3, $first2)));
         $qpl30 = $first1 . " X "  . implode(", ", $firstThreeReds);
         $qpl20 = $second . " X "  . implode(", ", $firstThreeReds);
@@ -91,6 +93,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $firstFourReds = array_slice($sReds, 0, 4);
         $toWin = array_unique(array_values(array_merge($first4, $firstFourReds)));
         asort($toWin);
+        $fct1 = array_intersect($first4,$reds);
+        $fct2 = array_intersect($first4,$blacks);
         $first3 = array_values(array_unique(array_merge($first3, $first2)));
         $qpl30 = $first1 . " X "  . implode(", ", $firstThreeBlacks);
         $qpl20 = $second . " X "  . implode(", ", $firstThreeBlacks);
@@ -100,6 +104,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $outtext .= "\t\t'Poor man\'s bet' ,\n";
     $outtext .= "\t\t\t'Win' => '" . implode(", ", $toWin) . "'" . ",\n";
+    $outtext .= "\t\t\t'Qpl/Qin/Fct' => '" . implode(", ", $fct1) . "' X '" . implode(", ", $fct2) . "'" . ",\n";
     $outtext .= "\t\t'Qin(opt $20)' ,\n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
     $outtext .= "\t\t'Qpl($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     $outtext .= "\t\t'Qpl($20)' ,\n" . "\t\t\t'" . $qpl20 . "'" . ",\n";
