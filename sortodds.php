@@ -74,7 +74,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $lastThreeReds = array_slice($sReds, -3);
         $lastThreeBlacks = array_slice($sBlacks, -3);
         $firstFourBlacks = array_slice($sBlacks, 0, 4);
-        $poorWin = array_slice($firstFourBlacks, -2);
+        $firstSixBlacks = array_slice($sBlacks, 0, 6);
+        $poorWin = array_slice($firstSixBlacks, -4);
         $toWin = array_unique(array_values(array_merge($first4, $firstFourBlacks)));
         asort($toWin);
         $first3 = array_values(array_unique(array_merge($first3, $first2)));
@@ -90,7 +91,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $lastThreeBlacks = array_slice($sBlacks, -3);
         $lastThreeReds = array_slice($sReds, -3);
         $firstFourReds = array_slice($sReds, 0, 4);
-        $poorWin = array_slice($firstFourReds, -2);
+        $firstSixReds = array_slice($sReds, 0, 6);
+        $poorWin = array_slice($firstSixReds, -4);
         $toWin = array_unique(array_values(array_merge($first4, $firstFourReds)));
         asort($toWin);
         $first3 = array_values(array_unique(array_merge($first3, $first2)));
