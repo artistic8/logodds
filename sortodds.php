@@ -110,7 +110,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'Qpl($20)' ,\n" . "\t\t\t'" . $qpl20 . "'" . ",\n";
     $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'-----------ideally-----------------',\n";
-    $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl2 . "'" . ",\n";
+    $outtext .= "\t\t'Qpl, Qin($10)' ,\n" . "\t\t\t'" . $qpl2 . "'" . ",\n";
    
     $outtext .= "\t],\n";
 }
