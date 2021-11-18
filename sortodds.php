@@ -59,6 +59,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     $runners = array_keys($tmpArray);
+    $outsdider = end($runners);
     $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
     $first3 = array_slice($runners, 0, 3);
     $first4 = array_slice($runners, 0, 4);
@@ -102,8 +103,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qpl2 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeReds);
     }
 
+    if(!in_array($outsdider, $poorWin)) $poorWin[] = $outsdider;
+
+    asort($poorWin);
+
     $outtext .= "\t\t'Poor man\'s bet' ,\n";
     $outtext .= "\t\t\t'Win' => '" . implode(", ", $poorWin) . "'" . ",\n";
+    $outtext .= "\t\t'Qin/Tce|Trio/F4' ,\n" . "\t\t\t'" . implode(", ", $poorWin) . "'" . ",\n";
     $outtext .= "\t\t'Qin($10), Tce($1)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
     $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
     $outtext .= "\t\t'Qpl($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
