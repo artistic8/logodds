@@ -109,6 +109,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $outtext .= "\t\t'Poor man\'s bet' ,\n";
     $outtext .= "\t\t\t'Win' => '" . implode(", ", $poorWin) . "'" . ",\n";
+// Add qin favorite X $poorWin
     $outtext .= "\t\t'Qin/Tce|Trio/F4' ,\n" . "\t\t\t'" . implode(", ", $poorWin) . "'" . ",\n";
     $outtext .= "\t\t'Qin($10), Tce($1)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
     $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
