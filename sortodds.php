@@ -82,8 +82,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $first3 = array_values(array_unique(array_merge($first3, $first2)));
         $qpl30 = $first1 . " X "  . implode(", ", $firstThreeReds);
         $qpl20 = $second . " X "  . implode(", ", $firstThreeReds);
-        $qpl10 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeReds);
-        $qpl2 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeBlacks);
+        $qpl10 = $first1 . " X "  . implode(", ", $lastThreeReds) . ", "  . implode(", ", $lastThreeBlacks);
     }
     else{
         $first2 = array_slice($sReds, 0, 2);
@@ -99,8 +98,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $first3 = array_values(array_unique(array_merge($first3, $first2)));
         $qpl30 = $first1 . " X "  . implode(", ", $firstThreeBlacks);
         $qpl20 = $second . " X "  . implode(", ", $firstThreeBlacks);
-        $qpl10 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeBlacks);
-        $qpl2 = implode(", ", $first3) . " X "  . implode(", ", $lastThreeReds);
+        $qpl10 = $first1 . " X "  . implode(", ", $lastThreeBlacks) . ", "  . implode(", ", $lastThreeReds);
     }
 
     if(!in_array($outsdider, $poorWin)) $poorWin[] = $outsdider;
@@ -109,16 +107,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $outtext .= "\t\t'Poor man\'s bet' ,\n";
     $outtext .= "\t\t\t'Win' => '" . implode(", ", $poorWin) . "'" . ",\n";
-    $outtext .= "\t\t\t'Qin' => '$first1 X " . implode(", ", $poorWin) . "'" . ",\n";
-// Add qin favorite X $poorWin
     $outtext .= "\t\t'Qin/Tce|Trio/F4' ,\n" . "\t\t\t'" . implode(", ", $poorWin) . "'" . ",\n";
     $outtext .= "\t\t'Qin($10), Tce($1)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
     $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
     $outtext .= "\t\t'Qpl($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     $outtext .= "\t\t'Qpl($20)' ,\n" . "\t\t\t'" . $qpl20 . "'" . ",\n";
     $outtext .= "\t\t'Qpl, Qin($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
-    $outtext .= "\t\t'-----------ideally-----------------',\n";
-    $outtext .= "\t\t'Qpl, Qin($10)' ,\n" . "\t\t\t'" . $qpl2 . "'" . ",\n";
    
     $outtext .= "\t],\n";
 }
