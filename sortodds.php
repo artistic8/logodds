@@ -59,7 +59,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     $runners = array_keys($tmpArray);
-    $outsdider = end($runners);
     $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
     $first3 = array_slice($runners, 0, 3);
     $first4 = array_slice($runners, 0, 4);
@@ -100,8 +99,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qpl20 = $second . " X "  . implode(", ", $firstThreeBlacks);
         $qpl10 = $first1 . " X "  . implode(", ", $lastThreeBlacks) . ", "  . implode(", ", $lastThreeReds);
     }
-
-    if(!in_array($outsdider, $poorWin)) $poorWin[] = $outsdider;
 
     asort($poorWin);
 
