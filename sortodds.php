@@ -39,11 +39,16 @@ $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
+
+    $tmpArray = $probas[$raceNumber];
+    $runners = array_keys($tmpArray);
+
+    if(count($runners) < 10) continue;
+    
     $outtext .= "\t'$raceNumber' => [\n";
     $outtext .= "\t\t/**\n";
     $outtext .= "\t\tRace $raceNumber\n";
     $outtext .= "\t\t*/\n";
-    $tmpArray = $probas[$raceNumber];
 
     $indicators = ['R (O) position' => 0, 'B (E) position' => 0];
 
@@ -58,7 +63,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $outtext .= "\t\t'Equal positions.' \n";
     }
 
-    $runners = array_keys($tmpArray);
     $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
     $first3 = array_slice($runners, 0, 3);
     $first4 = array_slice($runners, 0, 4);
