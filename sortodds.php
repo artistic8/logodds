@@ -110,16 +110,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t\t'Win' => '" . implode(", ", $poorWin) . "'" . ",\n";
     $outtext .= "\t\t\t'QQpl' => '$first1, $second',\n";
     $outtext .= "\t\t'QQpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
-    //add qpl and move up fourth 
-    $outtext .= "\t\t'Qin/Tce|Trio/F4' ,\n" . "\t\t\t'" . implode(", ", $poorWin) . "'" . ",\n";
-    //move up third and keep only the dominant color
-    $outtext .= "\t\t'Qin($10), Tce($1)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
-    $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . implode(", ", $first4) . "'" . ",\n";
-    //add qin andmove up 1st 
-    $outtext .= "\t\t'Qpl($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
-    //move up second 
-    $outtext .= "\t\t'Qpl($20)' ,\n" . "\t\t\t'" . $qpl20 . "'" . ",\n";
-   
+    $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
+    // $outtext .= "\t\t'Qpl($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
+    // $outtext .= "\t\t'Qpl($20)' ,\n" . "\t\t\t'" . $qpl20 . "'" . ",\n";
+    $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
+    // $outtext .= "\t\t'Qin($10), Tce($1)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
+    $outtext .= "\t\t'Qpl' ,\n" . "\t\t\t'" . implode(", ", $poorWin) . "'" . ",\n";
+    // $outtext .= "\t\t'QQpl/Trio/F4' ,\n" . "\t\t\t'" . implode(", ", $poorWin) . "'" . ",\n";
+  
     $outtext .= "\t],\n";
 }
 
