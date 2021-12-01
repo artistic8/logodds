@@ -109,7 +109,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'Poor man\'s bet' ,\n";
     $outtext .= "\t\t\t//'Win' => '" . implode(", ", $poorWin) . "'" . ",\n";
     $outtext .= "\t\t\t'QQpl($20)' => '$first1, $second',\n";
-    $outtext .= "\t\t'QQpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
+    $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qin($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     // $outtext .= "\t\t'Qpl($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     // $outtext .= "\t\t'Qpl($20)' ,\n" . "\t\t\t'" . $qpl20 . "'" . ",\n";
