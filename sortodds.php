@@ -117,8 +117,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
         // $outtext .= "\t\t'Qin($10), Tce($1)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
     }
-    $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . implode(", ", $poorWin) . "'" . ",\n";
-    // $outtext .= "\t\t'QQpl/Trio/F4' ,\n" . "\t\t\t'" . implode(", ", $poorWin) . "'" . ",\n";
   
     $outtext .= "\t],\n";
 }
