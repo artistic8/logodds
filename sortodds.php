@@ -104,7 +104,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $newQin) . "'" . ",\n";
         $outtext .= "\t\t'QQpl($10)' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
     }
-    
+    $outtext .= "\t\t'WATCH!' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
     $outtext .= "\t],\n";
 }
 
