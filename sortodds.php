@@ -78,6 +78,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $toWin = array_unique(array_values(array_merge($first4, $firstFourBlacks)));
         asort($toWin);
         $qpl30 = $first1 . " X "  . implode(", ", $firstThreeReds);
+        $setBmore = $firstThreeReds;
         $qpl10 = $first1 . " X "  . implode(", ", $lastThreeReds) . ", "  . implode(", ", $lastThreeBlacks);
     }
     else{
@@ -88,15 +89,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $toWin = array_unique(array_values(array_merge($first4, $firstFourReds)));
         asort($toWin);
         $qpl30 = $first1 . " X "  . implode(", ", $firstThreeBlacks);
+        $setBmore = $firstThreeBlacks;
         $qpl10 = $first1 . " X "  . implode(", ", $lastThreeBlacks) . ", "  . implode(", ", $lastThreeReds);
     }
 
+    $setA = $toWin;
+    $setB = array_unique(array_values(array_merge([$first1], $lastThreeBlacks, $lastThreeReds, $setBmore)));
+    $difference = array_diff($setA, $setB);
     $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qin($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     if(count($toWin) <= 6){
         $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
     }
-  
+    $outtext .= "\t\t'Diff' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
     $outtext .= "\t],\n";
 }
 
