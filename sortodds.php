@@ -100,8 +100,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'Qin($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     if(count($toWin) <= 6){
         $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
+        $outtext .= "\t\t'Diff' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
     }
-    $outtext .= "\t\t'Diff' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
+    
     $outtext .= "\t],\n";
 }
 
