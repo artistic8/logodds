@@ -98,13 +98,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $difference = array_diff($setA, $setB);
     $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qin($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
-    if(count($toWin) <= 6){
-        $newQin = array_diff($toWin, $difference);
-        // $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
-        $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $newQin) . "'" . ",\n";
-        $outtext .= "\t\t'QQpl($10)' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
-    }
-    $outtext .= "\t\t'WATCH!' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
+    $qin = array_diff($toWin, $difference);
+    $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $qin) . "'" . ",\n";
+    $outtext .= "\t\t'QQpl($10)' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
     $outtext .= "\t],\n";
 }
 
