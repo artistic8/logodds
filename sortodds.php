@@ -64,7 +64,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
-    $first3 = array_slice($runners, 0, 3);
     $first4 = array_slice($runners, 0, 4);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
@@ -72,50 +71,30 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $first1 = $runners[0];
 
     if(in_array($first1, $blacks)){
-        $first2 = array_slice($sBlacks, 0, 2);
-        $second = end($first2);
         $firstThreeReds = array_slice($sReds, 0, 3);
         $lastThreeReds = array_slice($sReds, -3);
         $lastThreeBlacks = array_slice($sBlacks, -3);
         $firstFourBlacks = array_slice($sBlacks, 0, 4);
-        $firstSixBlacks = array_slice($sBlacks, 0, 6);
-        $poorWin = array_slice($firstSixBlacks, -4);
         $toWin = array_unique(array_values(array_merge($first4, $firstFourBlacks)));
         asort($toWin);
-        $first3 = array_values(array_unique(array_merge($first3, $first2)));
         $qpl30 = $first1 . " X "  . implode(", ", $firstThreeReds);
-        $qpl20 = $second . " X "  . implode(", ", $firstThreeReds);
         $qpl10 = $first1 . " X "  . implode(", ", $lastThreeReds) . ", "  . implode(", ", $lastThreeBlacks);
     }
     else{
-        $first2 = array_slice($sReds, 0, 2);
-        $second = end($first2);
         $firstThreeBlacks = array_slice($sBlacks, 0, 3);
         $lastThreeBlacks = array_slice($sBlacks, -3);
         $lastThreeReds = array_slice($sReds, -3);
         $firstFourReds = array_slice($sReds, 0, 4);
-        $firstSixReds = array_slice($sReds, 0, 6);
-        $poorWin = array_slice($firstSixReds, -4);
         $toWin = array_unique(array_values(array_merge($first4, $firstFourReds)));
         asort($toWin);
-        $first3 = array_values(array_unique(array_merge($first3, $first2)));
         $qpl30 = $first1 . " X "  . implode(", ", $firstThreeBlacks);
-        $qpl20 = $second . " X "  . implode(", ", $firstThreeBlacks);
         $qpl10 = $first1 . " X "  . implode(", ", $lastThreeBlacks) . ", "  . implode(", ", $lastThreeReds);
     }
 
-    asort($poorWin);
-
-    $outtext .= "\t\t'Poor man\'s bet' ,\n";
-    $outtext .= "\t\t\t//'Win' => '" . implode(", ", $poorWin) . "'" . ",\n";
-    $outtext .= "\t\t\t'QQpl($20)' => '$first1, $second',\n";
     $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qin($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
-    // $outtext .= "\t\t'Qpl($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
-    // $outtext .= "\t\t'Qpl($20)' ,\n" . "\t\t\t'" . $qpl20 . "'" . ",\n";
     if(count($toWin) <= 6){
         $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
-        // $outtext .= "\t\t'Qin($10), Tce($1)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
     }
   
     $outtext .= "\t],\n";
