@@ -97,7 +97,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $setB = array_unique(array_values(array_merge([$first1], $lastThreeBlacks, $lastThreeReds, $setBmore)));
     $difference = array_diff($setA, $setB);
     $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
-    $outtext .= "\t\t'Qin($30)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
+    $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     $qin = array_diff($toWin, $difference);
     $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $qin) . "'" . ",\n";
     $outtext .= "\t\t'QQpl($10)' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
