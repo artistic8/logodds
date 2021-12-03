@@ -100,7 +100,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     $qin = array_diff($toWin, $difference);
     $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $qin) . "'" . ",\n";
-    $outtext .= "\t\t'QQpl($10)' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
+    if(count($qin) >= 5){
+        $outtext .= "\t\t//Diff: " . implode(", ", $difference) ."\n";
+    }
+    else {
+        $outtext .= "\t\t'Qin($10), Qpl($30)' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
+    }
     $outtext .= "\t],\n";
 }
 
