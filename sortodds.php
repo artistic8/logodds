@@ -33,7 +33,8 @@ for($r=1; $r <= $totalRaces; $r++){
     $probas[$r] = $proba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
+$timestamp = time();
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas$timestamp.php";
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
