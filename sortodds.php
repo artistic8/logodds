@@ -43,7 +43,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
 
-    if(count($runners) <= 10) continue;
+    if(count($runners) <= 8) continue;
 
     $missing = $runners;
     
@@ -56,46 +56,49 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $first4 = array_slice($runners, 0, 4);
     $sBlacks = array_values(array_intersect($runners, $blacks));
-    $outtext .= "\t\t'B: " . implode(", ", $sBlacks) . "',\n";
     $sReds = array_values(array_intersect($runners, $reds));
-    $outtext .= "\t\t'R: " . implode(", ", $sReds) . "',\n";
-   
+       
     $first1 = $runners[0];
-    $missing = array_diff($missing,[$first1]);
 
     if(in_array($first1, $blacks)){
-        $firstThreeReds = array_slice($sReds, 0, 3);
-        $missing = array_diff($missing, $firstThreeReds);
-        $lastThreeReds = array_slice($sReds, -3);
-        $lastThreeBlacks = array_slice($sBlacks, -3);
-        $firstFourBlacks = array_slice($sBlacks, 0, 4);
-        $toWin = array_unique(array_values(array_merge($first4, $firstFourBlacks)));
-        asort($toWin);
-        $qpl30 = $first1 . " X "  . implode(", ", $firstThreeReds);
-        $setBmore = $firstThreeReds;
-        $qpl10 = $first1 . " X "  . implode(", ", $lastThreeReds) . ", "  . implode(", ", $lastThreeBlacks);
+       $favorites = $sBlacks;
+       $others = $sReds;
     }
     else{
-        $firstThreeBlacks = array_slice($sBlacks, 0, 3);
-        $missing = array_diff($missing, $firstThreeBlacks);
-        $lastThreeBlacks = array_slice($sBlacks, -3);
-        $lastThreeReds = array_slice($sReds, -3);
-        $firstFourReds = array_slice($sReds, 0, 4);
-        $toWin = array_unique(array_values(array_merge($first4, $firstFourReds)));
-        asort($toWin);
-        $qpl30 = $first1 . " X "  . implode(", ", $firstThreeBlacks);
-        $setBmore = $firstThreeBlacks;
-        $qpl10 = $first1 . " X "  . implode(", ", $lastThreeBlacks) . ", "  . implode(", ", $lastThreeReds);
+       $favorites = $sReds;
+       $others =$sBlacks;
     }
 
-    $missing = array_diff($missing, $lastThreeBlacks);
-    $missing = array_diff($missing, $lastThreeReds);
-    $missing = array_diff($missing, $toWin);
+    $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
+    $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
 
-    $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
-    $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
-    $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
-    $outtext .= "\t\t'Missing: " . implode(", ", $missing) . "'" . ",\n";
+    $qpls = [];
+    
+    $qpls[]= $favorites[1] . ' X ' . $favorites[0];
+    $qpls[]= $favorites[1] . ' X ' . $others[0];
+    $qpls[]= $favorites[1] . ' X ' . $others[1];
+    $qpls[]= $favorites[1] . ' X ' . $others[2];
+    $qpls[]= $favorites[2] . ' X ' . $others[3];
+
+    $qpls[]= $others[0] . ' X ' . $favorites[0];
+    $qpls[]= $others[0] . ' X ' . $others[3];
+
+    $qpls[]= $others[2] . ' X ' . $others[0];
+    $qpls[]= $others[2] . ' X ' . $favorites[1];
+
+    if(isset($favorites[4])) $qpls[] = $favorites[4] . ' X ' . $favorites[0];
+    if(isset($others[4])) $qpls[] = $others[4] . ' X ' . $others[1];
+
+    $trio1 = $favorites[0] . '-' . $favorites[1] . '-' . $others[0];
+    $trio2 = $others[0] . '-' . $others[1] . '-' . $favorites[0];
+
+    $outtext .= "\t\t'QQpl' => ";
+    foreach($qpls as $oneQpl){
+        $outtext .= "'" . $oneQpl . "'" . ", ";
+    }
+    $outtext .= "\n";
+    $outtext .= "\t\t'Trio' => " . "'" . $trio1 . "'" . ", ";
+    $outtext .= "'" . $trio2 . "'" . "\n";
     $outtext .= "\t],\n";
 }
 
