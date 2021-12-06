@@ -84,7 +84,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $qpls[]= $others[0] . ' X ' . $others[3];
 
     $qpls[]= $others[2] . ' X ' . $others[0];
-    $qpls[]= $others[2] . ' X ' . $favorites[1];
 
     if(isset($favorites[4])) $qpls[] = $favorites[4] . ' X ' . $favorites[0];
     if(isset($others[4])) $qpls[] = $others[4] . ' X ' . $others[1];
