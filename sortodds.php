@@ -56,9 +56,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $first4 = array_slice($runners, 0, 4);
     $sBlacks = array_values(array_intersect($runners, $blacks));
-    $outtext .= "\t\tB: '" . implode(", ", $sBlacks) . "',\n";
+    $outtext .= "\t\t'B: " . implode(", ", $sBlacks) . "',\n";
     $sReds = array_values(array_intersect($runners, $reds));
-    $outtext .= "\t\tR: '" . implode(", ", $sReds) . "',\n";
+    $outtext .= "\t\t'R: " . implode(", ", $sReds) . "',\n";
    
     $first1 = $runners[0];
     $missing = array_diff($missing,[$first1]);
