@@ -94,7 +94,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
-    $outtext .= "\t\t'Missing'" . "\t\t\t'" . implode(", ", $missing) . "'" . ",\n";
+    $outtext .= "\t\t'Missing: " . implode(", ", $missing) . "'" . ",\n";
     $outtext .= "\t],\n";
 }
 
