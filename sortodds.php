@@ -33,8 +33,7 @@ for($r=1; $r <= $totalRaces; $r++){
     $probas[$r] = $proba;
 }
 
-$timestamp = time();
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas$timestamp.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
@@ -45,24 +44,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $runners = array_keys($tmpArray);
 
     if(count($runners) <= 10) continue;
+
+    $missing = $runners;
     
     $outtext .= "\t'$raceNumber' => [\n";
     $outtext .= "\t\t/**\n";
     $outtext .= "\t\tRace $raceNumber\n";
     $outtext .= "\t\t*/\n";
 
-    $indicators = ['R (O) position' => 0, 'B (E) position' => 0];
-
     $values = array_values($tmpArray);
-    for($j = 0; $j < count($values); $j ++)
-    {
-        if(($j + 1) % 2 === 1) $indicators['R (O) position'] += $values[$j];
-        else $indicators['B (E) position'] += $values[$j];
-    }
-
-    if(abs($indicators['R (O) position'] - $indicators['B (E) position']) < 0.9) {
-        $outtext .= "\t\t'Equal positions.' \n";
-    }
 
     $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
     $first4 = array_slice($runners, 0, 4);
@@ -70,9 +60,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $sReds = array_values(array_intersect($runners, $reds));
    
     $first1 = $runners[0];
+    $missing = array_diff($missing,[$first1]);
 
     if(in_array($first1, $blacks)){
         $firstThreeReds = array_slice($sReds, 0, 3);
+        $missing = array_diff($missing, $firstThreeReds);
         $lastThreeReds = array_slice($sReds, -3);
         $lastThreeBlacks = array_slice($sBlacks, -3);
         $firstFourBlacks = array_slice($sBlacks, 0, 4);
@@ -84,6 +76,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     else{
         $firstThreeBlacks = array_slice($sBlacks, 0, 3);
+        $missing = array_diff($missing, $firstThreeBlacks);
         $lastThreeBlacks = array_slice($sBlacks, -3);
         $lastThreeReds = array_slice($sReds, -3);
         $firstFourReds = array_slice($sReds, 0, 4);
@@ -94,9 +87,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qpl10 = $first1 . " X "  . implode(", ", $lastThreeBlacks) . ", "  . implode(", ", $lastThreeReds);
     }
 
+    $missing = array_diff($missing, $lastThreeBlacks);
+    $missing = array_diff($missing, $lastThreeReds);
+    $missing = array_diff($missing, $toWin);
+
     $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
     $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
+    $outtext .= "\t\t'Missing:' ,\n" . "\t\t\t'" . implode(", ", $missing) . "'" . ",\n";
     $outtext .= "\t],\n";
 }
 
