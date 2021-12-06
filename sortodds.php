@@ -94,19 +94,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qpl10 = $first1 . " X "  . implode(", ", $lastThreeBlacks) . ", "  . implode(", ", $lastThreeReds);
     }
 
-    $setA = $toWin;
-    $setB = array_unique(array_values(array_merge([$first1], $lastThreeBlacks, $lastThreeReds, $setBmore)));
-    $difference = array_diff($setA, $setB);
     $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
     $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
-    $qin = array_diff($toWin, $difference);
-    $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $qin) . "'" . ",\n";
-    if(count($qin) >= 5){
-        $outtext .= "\t\t//Diff: " . implode(", ", $difference) ."\n";
-    }
-    else {
-        $outtext .= "\t\t'Qin($10), Qpl($30)' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
-    }
+    $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $toWin) . "'" . ",\n";
     $outtext .= "\t],\n";
 }
 
