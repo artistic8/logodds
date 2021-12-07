@@ -1,5 +1,7 @@
 <?php
 
+//TODO: Add Win/Place bets for numbers in Others that have the same parity as the favorite and those in favorites that have opposite parity of the favorite 
+
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $raceDate = trim($argv[1]);
