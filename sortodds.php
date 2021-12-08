@@ -1,6 +1,6 @@
 <?php
 
-First 3 favorites and first 2 others in qin qpl trio and f4
+First 3 favorites and first 2 others in qin trio and f4
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
