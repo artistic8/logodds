@@ -16,6 +16,9 @@ $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18,
 $blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
           22, 24, 26, 28, 29, 31, 33, 35];
 
+$evenNumbers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30];
+$oddNumbers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29];
+
 $totalRaces = count($allOdds);
 
 for($r=1; $r <= $totalRaces; $r++){
@@ -46,8 +49,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $runners = array_keys($tmpArray);
 
     if(count($runners) <= 8) continue;
-
-    $missing = $runners;
     
     $outtext .= "\t'$raceNumber' => [\n";
     $outtext .= "\t\t/**\n";
@@ -56,7 +57,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $values = array_values($tmpArray);
 
-    $first4 = array_slice($runners, 0, 4);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
        
@@ -70,12 +70,20 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
        $favorites = $sReds;
        $others =$sBlacks;
     }
+    
+    if($first1 % 2 === 1){
+        $winPlace = array_merge(array_intersect($others, $oddNumbers), array_intersect($favorites, $evenNumbers));
+    }
+    else {
+        $winPlace = array_merge(array_intersect($others, $evenNumbers), array_intersect($favorites, $oddNumbers));
+    }
+    
 
     $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
 
     $qpls = [];
-    
+        
     $qpls[]= $favorites[1] . ' X ' . $favorites[0];
     $qpls[]= $favorites[1] . ' X ' . $others[0];
     $qpls[]= $favorites[1] . ' X ' . $others[1];
@@ -90,12 +98,22 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($favorites[4])) $qpls[] = $favorites[4] . ' X ' . $favorites[0];
     if(isset($others[4])) $qpls[] = $others[4] . ' X ' . $others[1];
 
+    $toWatch = $favorites[0] . ' X ' . end($others);
+    if(!in_array($toWatch, $qpls)) $qpls[] = $toWatch;
+
     $trio1 = $favorites[0] . '-' . $favorites[1] . '-' . $others[0];
     $trio2 = $others[0] . '-' . $others[1] . '-' . $favorites[0];
 
-    $outtext .= "\t\t'QQpl' => ";
+    $outtext .= "\t\t'WP' => '" . implode(", ", $winPlace) . "',\n";
+    $outtext .= "\t\t'QQpl' => \n\t\t\t";
+    $linesCounter = 0;
     foreach($qpls as $oneQpl){
         $outtext .= "'" . $oneQpl . "'" . ", ";
+        if($linesCounter == 2){
+            $outtext .= "\n\t\t\t";
+            $linesCounter = 0;
+        }
+        else $linesCounter++;
     }
     $outtext .= "\n";
     $outtext .= "\t\t'Trio' => " . "'" . $trio1 . "'" . ", ";
