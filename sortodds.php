@@ -70,57 +70,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
        $favorites = $sReds;
        $others =$sBlacks;
     }
-    
-    if($first1 % 2 === 1){
-        $winPlace = array_merge(array_intersect($others, $oddNumbers), array_intersect($favorites, $evenNumbers));
-    }
-    else {
-        $winPlace = array_merge(array_intersect($others, $evenNumbers), array_intersect($favorites, $oddNumbers));
-    }
-    
-    if(!empty($winPlace) && count($runners) / count($winPlace) < 2) {
-        $winPlace = array_diff($runners, $winPlace);
-    }
 
+    $qin = $favorites[0] . ', ' . $favorites[1] . ' X ' . $others[2] . ", " . $others[3];
+    $qpl = $others[0] . ', ' . $others[1] . ' X ' . $favorites[2] . ", " . $favorites[3];
+    
     $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
 
-    $qpls = [];
-        
-    $qpls[]= $favorites[1] . ' X ' . $favorites[0];
-    $qpls[]= $favorites[1] . ' X ' . $others[0];
-    $qpls[]= $favorites[1] . ' X ' . $others[1];
-    $qpls[]= $favorites[1] . ' X ' . $others[2];
-    $qpls[]= $favorites[2] . ' X ' . $others[3];
-
-    $qpls[]= $others[0] . ' X ' . $favorites[0];
-    $qpls[]= $others[0] . ' X ' . $others[3];
-
-    $qpls[]= $others[2] . ' X ' . $others[0];
-
-    if(isset($favorites[4])) $qpls[] = $favorites[4] . ' X ' . $favorites[0];
-    if(isset($others[4])) $qpls[] = $others[4] . ' X ' . $others[1];
-
-    $toWatch = $favorites[0] . ' X ' . end($others);
-    if(!in_array($toWatch, $qpls)) $qpls[] = $toWatch;
-
-    $trio1 = $favorites[0] . '-' . $favorites[1] . '-' . $others[0];
-    $trio2 = $others[0] . '-' . $others[1] . '-' . $favorites[0];
-
-    $outtext .= "\t\t'WP' => '" . implode(", ", $winPlace) . "',\n";
-    $outtext .= "\t\t'QQpl' => \n\t\t\t";
-    $linesCounter = 0;
-    foreach($qpls as $oneQpl){
-        $outtext .= "'" . $oneQpl . "'" . ", ";
-        if($linesCounter == 2){
-            $outtext .= "\n\t\t\t";
-            $linesCounter = 0;
-        }
-        else $linesCounter++;
-    }
+    $outtext .= "\t\t'QQpl' => '" . $qin . "',\n";
     $outtext .= "\n";
-    $outtext .= "\t\t'Trio' => " . "'" . $trio1 . "'" . ", ";
-    $outtext .= "'" . $trio2 . "'" . "\n";
     $outtext .= "\t],\n";
 }
 
