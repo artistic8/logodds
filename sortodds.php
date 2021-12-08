@@ -78,6 +78,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $winPlace = array_merge(array_intersect($others, $evenNumbers), array_intersect($favorites, $oddNumbers));
     }
     
+    if(!empty($winPlace) && count($runners) / count($winPlace) < 2) {
+        $winPlace = array_diff($runners, $winPlace);
+    }
 
     $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
