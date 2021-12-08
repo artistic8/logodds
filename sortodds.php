@@ -1,6 +1,7 @@
 <?php
 
-//TODO: Add Win/Place bets for numbers in Others that have the same parity as the favorite and those in favorites that have opposite parity of the favorite 
+//TODO: Qin, trio, F4: first 2 blacks and first 2 reds,
+Qin, Qpl: first black and first red X last black and last red 
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
