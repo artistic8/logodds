@@ -1,8 +1,6 @@
 <?php
 
-//TODO: Qin, trio, F4: first 2 blacks and first 2 reds,
-Qin, Qpl: first black and first red X last black and last red 
-Also add? Qin blacks 3 and 4 X reds 3 and 4
+First 3 favorites and first 2 others in qin qpl trio and f4
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
