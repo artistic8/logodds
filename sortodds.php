@@ -1,7 +1,5 @@
 <?php
 
-First 3 favorites and first 2 others in qin trio and f4
-
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $raceDate = trim($argv[1]);
@@ -15,9 +13,6 @@ $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18,
 
 $blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
           22, 24, 26, 28, 29, 31, 33, 35];
-
-$evenNumbers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30];
-$oddNumbers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29];
 
 $totalRaces = count($allOdds);
 
@@ -47,8 +42,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
-
-    if(count($runners) <= 8) continue;
     
     $outtext .= "\t'$raceNumber' => [\n";
     $outtext .= "\t\t/**\n";
@@ -71,14 +64,44 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
        $others =$sBlacks;
     }
 
-    $qin = $favorites[0] . ', ' . $favorites[1] . ' X ' . $others[2] . ", " . $others[3];
-    $qpl = $others[0] . ', ' . $others[1] . ' X ' . $favorites[2] . ", " . $favorites[3];
+    $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
+    $trioExpression = implode(", ", $trio);
+
+    $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
+    $qplRightSide = [ $favorites[3], $others[3], end($favorites), end($others) ];
+    $qpls = [];
+    for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
+        for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
+            $left = $qplLeftSide[$indexL];
+            $right = $qplRightSide[$indexR];
+            if( 
+                (in_array($left, $sReds) && ($left == 1 || in_array($right, $sBlacks)))
+                || (($right == 1 || in_array($left, $sBlacks)) && in_array($right, $sReds))
+            ){
+                $qpls[] = $left ."-" .  $right;
+            }
+        }
+    }
     
     $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
-
-    $outtext .= "\t\t'QQpl' => '" . $qin . "',\n";
-    $outtext .= "\n";
+    $outtext .= "\t\t'------------------------',\n";
+    $outtext .= "\t\t'Trio' => '" . $trioExpression . "',\n";
+    $outtext .= "\t\t'F4' => '" . $trioExpression . "',\n";
+    $outtext .= "\t\t'------------------------',\n";
+    $outtext .= "\t\t'QQpl' => '";
+    $linesCounter = 0;
+    foreach($qpls as $oneQpl){
+        if($linesCounter < 2) {
+            $outtext .= "$oneQpl, ";
+            $linesCounter++;
+        }
+        else{
+            $outtext .= "$oneQpl, \n\t\t\t";
+            $linesCounter = 0;
+        }
+    }
+    $outtext .= "'\n";
     $outtext .= "\t],\n";
 }
 
