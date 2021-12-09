@@ -1,5 +1,11 @@
 <?php
 
+function numericalValue($n){
+    $tens = intdiv($n, 10);
+    $units = $n - 10 * $tens;
+    return $tens + $units;
+}
+
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $raceDate = trim($argv[1]);
@@ -68,40 +74,41 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $trioExpression = implode(", ", $trio);
 
     $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
-    $qplRightSide = [ $favorites[3], $others[3], end($favorites), end($others) ];
-    $qpls = [];
+    $qplRightSide = [ $favorites[count($others) - 3], $others[count($others) - 3], end($favorites), end($others) ];
+    $toWin = [];
     for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
         for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
             $left = $qplLeftSide[$indexL];
             $right = $qplRightSide[$indexR];
             if( 
-                (in_array($left, $sReds) && in_array($right, $sBlacks))
-                || (in_array($left, $sBlacks) && in_array($right, $sReds))
+                (abs(numericalValue($left) - numericalValue($right)) <= 2)
+                &&
+                (
+                    (in_array($left, $sReds) && in_array($right, $sBlacks))
+                    || (in_array($left, $sBlacks) && in_array($right, $sReds))
+                )
             ){
-                $qpls[] = $left ."-" .  $right;
+                if(!in_array($left, $toWin)) $toWin[] = $left;
+                if(!in_array($right, $toWin)) $toWin[] = $right;
             }
         }
     }
-    
+    $intersection = array_intersect($toWin, $trio);
+    $difference = array_diff($toWin, $trio);
     $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
     $outtext .= "\t\t'------------------------',\n";
+    if(count($toWin) < 7){
+        $outtext .= "\t\t'Win' =>  '" . implode(", ", $toWin) . "',\n";
+    }
+    else{
+        $outtext .= "\t\t'Win' =>  '" . implode(", ", $trio) . "',\n";
+    }
+    $outtext .= "\t\t'QQpl' =>  '" . implode(", ", $intersection) . "',\n";
     $outtext .= "\t\t'Trio' => '" . $trioExpression . "',\n";
     $outtext .= "\t\t'F4' => '" . $trioExpression . "',\n";
     $outtext .= "\t\t'------------------------',\n";
-    $outtext .= "\t\t'QQpl' => '";
-    $linesCounter = 0;
-    foreach($qpls as $oneQpl){
-        if($linesCounter < 2) {
-            $outtext .= "$oneQpl, ";
-            $linesCounter++;
-        }
-        else{
-            $outtext .= "$oneQpl, \n\t\t\t";
-            $linesCounter = 0;
-        }
-    }
-    $outtext .= "'\n";
+    
     $outtext .= "\t],\n";
 }
 
