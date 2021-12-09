@@ -98,12 +98,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
     $outtext .= "\t\t'------------------------',\n";
-    if(count($toWin) < 7){
-        $outtext .= "\t\t'Win' =>  '" . implode(", ", $toWin) . "',\n";
-    }
-    else{
-        $outtext .= "\t\t'Win' =>  '" . implode(", ", $trio) . "',\n";
-    }
+    $outtext .= "\t\t'Win' =>  '" . implode(", ", $toWin) . "',\n";
     $outtext .= "\t\t'QQpl' =>  '" . implode(", ", $intersection) . "',\n";
     $outtext .= "\t\t'Trio' => '" . $trioExpression . "',\n";
     $outtext .= "\t\t'F4' => '" . $trioExpression . "',\n";
