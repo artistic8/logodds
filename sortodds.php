@@ -75,8 +75,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $left = $qplLeftSide[$indexL];
             $right = $qplRightSide[$indexR];
             if( 
-                (in_array($left, $sReds) && ($left == 1 || in_array($right, $sBlacks)))
-                || (($right == 1 || in_array($left, $sBlacks)) && in_array($right, $sReds))
+                (in_array($left, $sReds) && in_array($right, $sBlacks))
+                || (in_array($left, $sBlacks) && in_array($right, $sReds))
             ){
                 $qpls[] = $left ."-" .  $right;
             }
