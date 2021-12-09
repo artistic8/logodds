@@ -95,12 +95,21 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $difference1 = array_diff($toWin, $trio);
     $difference2 = array_diff($trio, $toWin);
     $intersection = array_intersect($toWin, $trio);
+
+    $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
+    $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
+    $outtext .= "\t\t'------------------------',\n";
+
+    if(count($difference1) == 2) $outtext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $difference1) . "',\n";
+    if(count($difference2) == 2) $outtext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $difference2) . "',\n";
+    if(count($intersection) == 2) $outtext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $intersection) . "',\n";
+
     $toStudy = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
     if(!empty($difference2)) 
     {
         $toStudy .= ' X ' . implode(", ", $difference2);
         $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
-        $qin2 = implode(", ", $intersection) . ', ' . implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
+        $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
     }
     else{
         $toStudy = implode(", ", $intersection);
@@ -108,9 +117,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
     }   
     
-    $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
-    $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
-    $outtext .= "\t\t'------------------------',\n";
     $outtext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
     $outtext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
     $outtext .= "\t\t'Trio' =>  '" .  $toStudy . "',\n";
