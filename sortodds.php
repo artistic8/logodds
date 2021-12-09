@@ -111,12 +111,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
     $outtext .= "\t\t'------------------------',\n";
-    $outtext .= "\t\t'Trio' =>  '" .  $toStudy . "',\n";
-    $outtext .= "\t\t'Win' =>  '" . implode(", ", $toWin) . "',\n";
     $outtext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
     $outtext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
-    $outtext .= "\t\t'------------------------',\n";
-    
+    $outtext .= "\t\t'Trio' =>  '" .  $toStudy . "',\n";
+    $outtext .= "\t\t'Win' =>  '" . implode(", ", $toWin) . "',\n";
+        
     $outtext .= "\t],\n";
 }
 
