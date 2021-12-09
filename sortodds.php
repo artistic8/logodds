@@ -74,7 +74,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $trioExpression = implode(", ", $trio);
 
     $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
-    $qplRightSide = [ $favorites[count($others) - 3], $others[count($others) - 3], end($favorites), end($others) ];
+    $qplRightSide = [ $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
     $toWin = [];
     for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
         for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
