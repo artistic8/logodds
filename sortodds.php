@@ -40,19 +40,24 @@ for($r=1; $r <= $totalRaces; $r++){
 }
 
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
+
+
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
 
+    $racetext = "";
+    $showRace = false;
+
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
     
-    $outtext .= "\t'$raceNumber' => [\n";
-    $outtext .= "\t\t/**\n";
-    $outtext .= "\t\tRace $raceNumber\n";
-    $outtext .= "\t\t*/\n";
+    $racetext .= "\t'$raceNumber' => [\n";
+    $racetext .= "\t\t/**\n";
+    $racetext .= "\t\tRace $raceNumber\n";
+    $racetext .= "\t\t*/\n";
 
     $values = array_values($tmpArray);
 
@@ -96,13 +101,22 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $difference2 = array_diff($trio, $toWin);
     $intersection = array_intersect($toWin, $trio);
 
-    $outtext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
-    $outtext .= "\t\t'O: " . implode(", ", $others) . "',\n";
-    $outtext .= "\t\t'------------------------',\n";
+    $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
+    $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
+    $racetext .= "\t\t'------------------------',\n";
 
-    if(count($difference1) == 2) $outtext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $difference1) . "',\n";
-    if(count($difference2) == 2) $outtext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $difference2) . "',\n";
-    if(count($intersection) == 2) $outtext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $intersection) . "',\n";
+    if(count($difference1) == 2) {
+        $showRace = true;
+        $racetext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $difference1) . "',\n";
+    }
+    if(count($difference2) == 2) {
+        $showRace = true;
+        $racetext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $difference2) . "',\n";
+    }
+    if(count($intersection) == 2) {
+        $showRace = true;
+        $racetext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $intersection) . "',\n";
+    }
 
     $toStudy = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
     if(!empty($difference2)) 
@@ -117,11 +131,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
     }   
     
-    $outtext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
-    $outtext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
-    $outtext .= "\t\t'Trio' =>  '" .  $toStudy . "',\n";
-        
-    $outtext .= "\t],\n";
+    $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
+    $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
+    $racetext .= "\t\t'Trio' =>  '" .  $toStudy . "',\n";
+    $racetext .= "\t],\n";
+
+    if($showRace) $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
