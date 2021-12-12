@@ -109,15 +109,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     if(count($difference1) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $difference1) . "',\n";
+        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
     }
     if(count($difference2) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $difference2) . "',\n";
+        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
     }
     if(count($intersection) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win/Pla/Qpl' =>  '" . implode(", ", $intersection) . "',\n";
+        $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
     }
 
     $toStudy = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
