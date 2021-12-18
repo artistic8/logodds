@@ -122,15 +122,20 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!empty($difference2)) 
     {
         $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
-        $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
+        if(count($difference1) > 1 && count($difference2) > 1) $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
     }
     else{
         $qin1 = implode(", ", $intersection);
         $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
     }   
     
-    $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
-    $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
+    if(!isset($qin2)){
+        $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
+    }
+    else{
+        $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
+        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
+    }
     $racetext .= "\t],\n";
 
     if($showRace) $outtext .= $racetext;
