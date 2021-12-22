@@ -46,6 +46,7 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
+    if($raceNumber == 4) continue;
     if(!isset($probas[$raceNumber])) continue;
 
     $racetext = "";
