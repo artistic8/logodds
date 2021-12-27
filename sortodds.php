@@ -103,20 +103,39 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $difference2 = array_diff($trio, $toWin);
     $intersection = array_intersect($toWin, $trio);
 
-    // $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
-    // $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
-
+    $chooseQQPL = true;
     if(count($difference1) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
+        if($chooseQQPL) {
+            $racetext .= "\t\t'Win($50)' =>  '" . implode(", ", $difference1) . "',\n";
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ", $difference1) . "',\n";
+            $chooseQQPL = false;
+        }
+        else{
+            $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
+        }
     }
     if(count($difference2) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
+        if($chooseQQPL) {
+            $racetext .= "\t\t'Win($50)' =>  '" . implode(", ", $difference2) . "',\n";
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";
+            $chooseQQPL = false;
+        }
+        else{
+            $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
+        }
     }
     if(count($intersection) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
+        if($chooseQQPL) {
+            $racetext .= "\t\t'Win($50)' =>  '" . implode(", ", $intersection) . "',\n";
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";
+            $chooseQQPL = false;
+        }
+        else{
+            $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
+        }
     }
 
     if(!empty($difference2)) 
