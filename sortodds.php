@@ -1,5 +1,11 @@
 <?php
 
+function numericalValue($n){
+    $tens = intdiv($n, 10);
+    $units = $n - 10 * $tens;
+    return $tens + $units;
+}
+
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $raceDate = trim($argv[1]);
@@ -34,79 +40,105 @@ for($r=1; $r <= $totalRaces; $r++){
 }
 
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
+
+
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
 
+    $racetext = "";
+    $showRace = false;
+
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
 
-    if(count($runners) <= 10) continue;
+    if(count($runners) < 11) continue;
     
-    $outtext .= "\t'$raceNumber' => [\n";
-    $outtext .= "\t\t/**\n";
-    $outtext .= "\t\tRace $raceNumber\n";
-    $outtext .= "\t\t*/\n";
-
-    $indicators = ['R (O) position' => 0, 'B (E) position' => 0];
+    $racetext .= "\t'$raceNumber' => [\n";
+    $racetext .= "\t\t/**\n";
+    $racetext .= "\t\tRace $raceNumber\n";
+    $racetext .= "\t\t*/\n";
 
     $values = array_values($tmpArray);
-    for($j = 0; $j < count($values); $j ++)
-    {
-        if(($j + 1) % 2 === 1) $indicators['R (O) position'] += $values[$j];
-        else $indicators['B (E) position'] += $values[$j];
-    }
 
-    if(abs($indicators['R (O) position'] - $indicators['B (E) position']) < 0.9) {
-        $outtext .= "\t\t'Equal positions.' \n";
-    }
-
-    $outtext .= "\t\t'" . implode(", ", $runners) . "',\n";
-    $first4 = array_slice($runners, 0, 4);
     $sBlacks = array_values(array_intersect($runners, $blacks));
     $sReds = array_values(array_intersect($runners, $reds));
-   
+       
     $first1 = $runners[0];
 
     if(in_array($first1, $blacks)){
-        $firstThreeReds = array_slice($sReds, 0, 3);
-        $lastThreeReds = array_slice($sReds, -3);
-        $lastThreeBlacks = array_slice($sBlacks, -3);
-        $firstFourBlacks = array_slice($sBlacks, 0, 4);
-        $toWin = array_unique(array_values(array_merge($first4, $firstFourBlacks)));
-        asort($toWin);
-        $qpl30 = $first1 . " X "  . implode(", ", $firstThreeReds);
-        $setBmore = $firstThreeReds;
-        $qpl10 = $first1 . " X "  . implode(", ", $lastThreeReds) . ", "  . implode(", ", $lastThreeBlacks);
+       $favorites = $sBlacks;
+       $others = $sReds;
     }
     else{
-        $firstThreeBlacks = array_slice($sBlacks, 0, 3);
-        $lastThreeBlacks = array_slice($sBlacks, -3);
-        $lastThreeReds = array_slice($sReds, -3);
-        $firstFourReds = array_slice($sReds, 0, 4);
-        $toWin = array_unique(array_values(array_merge($first4, $firstFourReds)));
-        asort($toWin);
-        $qpl30 = $first1 . " X "  . implode(", ", $firstThreeBlacks);
-        $setBmore = $firstThreeBlacks;
-        $qpl10 = $first1 . " X "  . implode(", ", $lastThreeBlacks) . ", "  . implode(", ", $lastThreeReds);
+       $favorites = $sReds;
+       $others =$sBlacks;
     }
 
-    $setA = $toWin;
-    $setB = array_unique(array_values(array_merge([$first1], $lastThreeBlacks, $lastThreeReds, $setBmore)));
-    $difference = array_diff($setA, $setB);
-    $outtext .= "\t\t'Qpl($10)' ,\n" . "\t\t\t'" . $qpl10 . "'" . ",\n";
-    $outtext .= "\t\t'Qin($20)' ,\n" . "\t\t\t'" . $qpl30 . "'" . ",\n";
-    $qin = array_diff($toWin, $difference);
-    $outtext .= "\t\t'Qin($10)' ,\n" . "\t\t\t'" . implode(", ", $qin) . "'" . ",\n";
-    if(count($qin) >= 5){
-        $outtext .= "\t\t//Diff: " . implode(", ", $difference) ."\n";
+    $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
+
+    $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
+    $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
+    $toWin = [];
+    for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
+        for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
+            $left = $qplLeftSide[$indexL];
+            $right = $qplRightSide[$indexR];
+            if( 
+                (abs(numericalValue($left) - numericalValue($right)) <= 2)
+                &&
+                (
+                    (in_array($left, $sReds) && in_array($right, $sBlacks))
+                    || (in_array($left, $sBlacks) && in_array($right, $sReds))
+                )
+            ){
+                if(!in_array($left, $toWin)) $toWin[] = $left;
+                if(!in_array($right, $toWin)) $toWin[] = $right;
+            }
+        }
     }
-    else {
-        $outtext .= "\t\t'Qin($10), Qpl($30)' ,\n" . "\t\t\t'" . implode(", ", $difference) . "'" . ",\n";
+    $difference1 = array_diff($toWin, $trio);
+    $difference2 = array_diff($trio, $toWin);
+    $intersection = array_intersect($toWin, $trio);
+
+    // $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
+    // $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
+
+    if(count($difference1) == 2) {
+        $showRace = true;
+        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
     }
-    $outtext .= "\t],\n";
+    if(count($difference2) == 2) {
+        $showRace = true;
+        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
+    }
+    if(count($intersection) == 2) {
+        $showRace = true;
+        $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
+    }
+
+    if(!empty($difference2)) 
+    {
+        $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
+        if(count($difference1) > 1 && count($difference2) > 1) $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
+    }
+    else{
+        $qin1 = implode(", ", $intersection);
+        $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
+    }   
+    
+    if(!isset($qin2)){
+        $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
+    }
+    else{
+        $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
+        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
+    }
+    $racetext .= "\t],\n";
+
+    if($showRace) $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
