@@ -107,34 +107,34 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(count($difference1) == 2) {
         $showRace = true;
         if($chooseQQPL) {
-            $racetext .= "\t\t'Win($50)' =>  '" . implode(", ", $difference1) . "',\n";
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ", $difference1) . "',\n";
+            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference1) . "',\n";
+            $leftQ = $difference1;
             $chooseQQPL = false;
         }
         else{
-            $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X '. implode(", ", $difference1) . "',\n";
         }
     }
     if(count($difference2) == 2) {
         $showRace = true;
         if($chooseQQPL) {
-            $racetext .= "\t\t'Win($50)' =>  '" . implode(", ", $difference2) . "',\n";
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";
+            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";
+            $leftQ = $difference2;
             $chooseQQPL = false;
         }
         else{
-            $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X ' . implode(", ", $difference2) . "',\n";
         }
     }
     if(count($intersection) == 2) {
         $showRace = true;
         if($chooseQQPL) {
-            $racetext .= "\t\t'Win($50)' =>  '" . implode(", ", $intersection) . "',\n";
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";
+            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";
+            $leftQ = $intersection;
             $chooseQQPL = false;
         }
         else{
-            $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X ' . implode(", ", $intersection) . "',\n";
         }
     }
 
