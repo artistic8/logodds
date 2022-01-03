@@ -45,6 +45,8 @@ $outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
+$shwonRaces = 0;
+
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
 
@@ -157,7 +159,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $racetext .= "\t],\n";
 
-    if($showRace) $outtext .= $racetext;
+    if($showRace && $shwonRaces < 4) {
+        $outtext .= $racetext;
+        $shwonRaces++;
+    }
 }
 
 $outtext .= "];\n";
