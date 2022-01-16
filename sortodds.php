@@ -52,6 +52,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext = "";
     $showRace = false;
+$showRace = true;
 
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
@@ -159,7 +160,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $racetext .= "\t],\n";
 
-    if($showRace && $shwonRaces < 4) {
+    if($showRace && $shwonRaces < 40) {
         $outtext .= $racetext;
         $shwonRaces++;
     }
