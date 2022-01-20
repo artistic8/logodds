@@ -159,7 +159,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $racetext .= "\t],\n";
 
-    if($showRace && $shwonRaces < 4) {
+    if($showRace && $shwonRaces < 40) {
         $outtext .= $racetext;
         $shwonRaces++;
     }
