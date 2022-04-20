@@ -51,7 +51,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
 
     $racetext = "";
-    $showRace = false;
+    $showRace = true;
 
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
