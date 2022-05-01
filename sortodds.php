@@ -140,6 +140,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
 
+    $qin1 = "";
+    $qin2 = "";
+
     if(!empty($difference2)) 
     {
         $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
