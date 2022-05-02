@@ -104,7 +104,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $difference1 = array_diff($toWin, $trio);
     $difference2 = array_diff($trio, $toWin);
     $intersection = array_intersect($toWin, $trio);
-
+    $leftQ = [];
     $chooseQQPL = true;
     if(count($difference1) == 2) {
         $showRace = true;
