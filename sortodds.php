@@ -164,7 +164,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $missing = array_diff($runners, $selected);
     
     if(count($intersection) == 4){ 
-       $racetext .= "\t\t'Missing' =>  '" . implode(",", $missing) . "',\n";
+       $racetext .= "\t\t'Qin/Fct' =>  '" . implode(", ", $missing) . " X " . implode (", ", $intersection) . "',\n";
     }
 
     $racetext .= "\t],\n";
