@@ -161,6 +161,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
        $showQin1 = false;
        $racetext .= "\t\t'Qin/Fct' =>  '" . implode(", ", $missing) . " X " . implode (", ", $intersection) . "',\n";
     }
+    elseif(count($intersection) == 5){ 
+       $racetext .= "\t\t'Win' =>  '" . implode (", ", $intersection) . "',\n";
+       $racetext .= "\t\t //Also qin and trio ?????? \n";
+    }
     
     if($showQin1) $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
     
