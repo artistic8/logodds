@@ -159,6 +159,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($qin2) && !empty($qin2)){
         $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
     }
+    
+    $selected = array_values(array_unique(array_merge($intersection, $difference1, $difference2)));
+    $missing = array_diff($runners, $selected);
+    
+    if(count($intersection) == 4){ 
+       $racetext .= "\t\t'Missing' =>  '" . implode(",", $missing) . "',\n";
+    }
+
     $racetext .= "\t],\n";
 
     if($showRace && $shwonRaces < 40) {
