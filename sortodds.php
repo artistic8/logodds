@@ -142,6 +142,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $qin1 = "";
     $qin2 = "";
+    $showQin1 = true;
 
     if(!empty($difference2)) 
     {
@@ -153,18 +154,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
     }   
     
-    
-    $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
-    
-    if(isset($qin2) && !empty($qin2)){
-        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
-    }
-    
     $selected = array_values(array_unique(array_merge($intersection, $difference1, $difference2)));
     $missing = array_diff($runners, $selected);
     
     if(count($intersection) == 4){ 
+       $showQin1 = false;
        $racetext .= "\t\t'Qin/Fct' =>  '" . implode(", ", $missing) . " X " . implode (", ", $intersection) . "',\n";
+    }
+    
+    if($showQin1) $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
+    
+    if(isset($qin2) && !empty($qin2)){
+        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
     }
 
     $racetext .= "\t],\n";
