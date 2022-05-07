@@ -45,13 +45,10 @@ $outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
-$shwonRaces = 0;
-
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
 
     $racetext = "";
-    $showRace = true;
 
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
@@ -104,80 +101,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $difference1 = array_diff($toWin, $trio);
     $difference2 = array_diff($trio, $toWin);
     $intersection = array_intersect($toWin, $trio);
-    $leftQ = [];
-    $chooseQQPL = true;
-    if(count($difference1) == 2) {
-        $showRace = true;
-        if($chooseQQPL) {
-            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference1) . "',\n";
-            $leftQ = $difference1;
-            $chooseQQPL = false;
-        }
-        else{
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X '. implode(", ", $difference1) . "',\n";
-        }
-    }
-    if(count($difference2) == 2) {
-        $showRace = true;
-        if($chooseQQPL) {
-            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";
-            $leftQ = $difference2;
-            $chooseQQPL = false;
-        }
-        else{
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X ' . implode(", ", $difference2) . "',\n";
-        }
-    }
-    if(count($intersection) == 2) {
-        $showRace = true;
-        if($chooseQQPL) {
-            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";
-            $leftQ = $intersection;
-            $chooseQQPL = false;
-        }
-        else{
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X ' . implode(", ", $intersection) . "',\n";
-        }
-    }
-
-    $qin1 = "";
-    $qin2 = "";
-    $showQin1 = true;
-
-    if(!empty($difference2)) 
-    {
-        $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
-        if(count($difference1) > 1 && count($difference2) > 1) $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
-    }
-    else{
-        $qin1 = implode(", ", $intersection);
-        $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
-    }   
     
     $selected = array_values(array_unique(array_merge($intersection, $difference1, $difference2)));
     $missing = array_diff($runners, $selected);
     
-    if(count($intersection) == 4){ 
-       $showQin1 = false;
-       $racetext .= "\t\t'Qin/Fct' =>  '" . implode(", ", $missing) . " X " . implode (", ", $intersection) . "',\n";
-    }
-    //elseif(count($intersection) == 5) $showRace = false;
 
-    if($showQin1) $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
-    
-    if(isset($qin2) && !empty($qin2)){
-        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
-    }
-
+    $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $difference1) . "',\n";
+    $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $difference2) . "',\n";
+    $racetext .= "\t\t'Intersection' =>  '" . implode(", ", $intersection) . "',\n";
     $racetext .= "\t\t'Missing' =>  '" . implode(", ", $missing) . "',\n";
-
 
     $racetext .= "\t],\n";
 
-    if($showRace && $shwonRaces < 40) {
-        $outtext .= $racetext;
-        $shwonRaces++;
-    }
 }
 
 $outtext .= "];\n";
