@@ -169,6 +169,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
     }
 
+    $racetext .= "\t\t'Missing' =>  '" . implode(", ", $missing) . "',\n";
+
+
     $racetext .= "\t],\n";
 
     if($showRace && $shwonRaces < 40) {
