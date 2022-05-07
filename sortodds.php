@@ -113,6 +113,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t],\n";
 
+    $outtext .= $racetext;
+
 }
 
 $outtext .= "];\n";
