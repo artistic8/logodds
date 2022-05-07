@@ -1,15 +1,6 @@
 <?php
 
 return [
-	'1' => [
-		/**
-		Race 1
-		*/
-		'Diff1' =>  '6',
-		'Diff2' =>  '1',
-		'Intersection' =>  '3, 4, 5, 2',
-		'Missing' =>  '8, 7',
-	],
 	'2' => [
 		/**
 		Race 2
@@ -18,15 +9,6 @@ return [
 		'Diff2' =>  '',
 		'Intersection' =>  '5, 1, 7, 2, 4',
 		'Missing' =>  '10, 3, 9, 13',
-	],
-	'3' => [
-		/**
-		Race 3
-		*/
-		'Diff1' =>  '4, 7',
-		'Diff2' =>  '',
-		'Intersection' =>  '3, 5, 6, 2, 1',
-		'Missing' =>  '8',
 	],
 	'4' => [
 		/**
@@ -54,24 +36,6 @@ return [
 		'Diff2' =>  '8, 9',
 		'Intersection' =>  '4, 10, 1',
 		'Missing' =>  '7, 3, 6',
-	],
-	'7' => [
-		/**
-		Race 7
-		*/
-		'Diff1' =>  '1, 5, 8',
-		'Diff2' =>  '3',
-		'Intersection' =>  '2, 10, 6, 7',
-		'Missing' =>  '9, 4',
-	],
-	'8' => [
-		/**
-		Race 8
-		*/
-		'Diff1' =>  '5, 7, 9, 10',
-		'Diff2' =>  '2',
-		'Intersection' =>  '4, 8, 1, 3',
-		'Missing' =>  '6',
 	],
 	'9' => [
 		/**
