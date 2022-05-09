@@ -76,6 +76,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
        $others =$sBlacks;
     }
 
+    $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
+    $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
+   
     $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
 
     $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
