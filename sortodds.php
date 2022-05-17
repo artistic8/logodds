@@ -106,10 +106,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $intersection = array_intersect($toWin, $trio);
     
     if(count($difference2) == 2) {
+        $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $difference1) . "',\n";
         $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";          
     }
 
     if(count($intersection) == 2) {
+        $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $difference2) . "',\n";
         $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";          
     }
 
