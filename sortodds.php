@@ -81,8 +81,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
    
     $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
 
-    $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
-    $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
+    $qplLeftSide = [$favorites[0], $favorites[1], $others[1], $others[2]];
+    $qplRightSide = [ $favorites[0], $favorites[2],$favorites[4], $favorites[5], $others[4] ];
+    if(isset($others[6]) $qplRightSide[] = $others[6];
     $toWin = [];
     for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
         for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
@@ -106,11 +107,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $intersection = array_intersect($toWin, $trio);
     
     if(count($difference2) == 2) {
-        $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";          
+        $racetext .= "\t\tDiff2'WP($50), QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";          
     }
 
     if(count($intersection) == 2) {
-        $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";          
+        $racetext .= "\t\tInter'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";          
     }
 
     $racetext .= "\t],\n";
