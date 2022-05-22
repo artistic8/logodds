@@ -109,6 +109,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(count($intersection) == 2) {
         $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";          
     }
+    $win = [$favorites[0], $favorites[1], $others[1], $others[2]];
+    $racetext .= "\t\t'win' =>  '" . implode(", ", $win) . "',\n";          
+
     $racetext .= "\t\t'qin' =>  '" . implode(", ", $qplLeftSide) . "' X '" . implode(", ", $qplRightSide)  . "',\n";          
 
     $racetext .= "\t],\n";
