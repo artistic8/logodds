@@ -83,7 +83,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $qplLeftSide = [$favorites[0], $favorites[1], $others[1], $others[2]];
     $qplRightSide = [ $favorites[0], $favorites[2],$favorites[4], $favorites[5], $others[4] ];
-    if(isset($others[6]) $qplRightSide[] = $others[6];
+    if(isset($others[6])) $qplRightSide[] = $others[6];
     $toWin = [];
     for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
         for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
