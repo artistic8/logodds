@@ -81,9 +81,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
    
     $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
 
-    $qplLeftSide = [$favorites[0], $favorites[1], $others[1], $others[2]];
-    $qplRightSide = [ $favorites[0], $favorites[2],$favorites[4], $favorites[5], $others[4] ];
-    if(isset($others[6])) $qplRightSide[] = $others[6];
+    $qplLeftSide = [$favorites[0], $favorites[1], $others[1]];
+    $qplRightSide = [ $favorites[2], end($favorites), $others[1], $others[2], $others[4], end($others) ];
+  
     $toWin = [];
     for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
         for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
