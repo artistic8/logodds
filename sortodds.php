@@ -78,41 +78,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
     $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
-   
-    $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
 
-    $qplLeftSide = [$favorites[0], $favorites[1], $others[1]];
-    $qplRightSide = [ $favorites[2], end($favorites), $others[1], $others[2], $others[4], end($others) ];
-  
-    $toWin = [];
-    for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
-        for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
-            $left = $qplLeftSide[$indexL];
-            $right = $qplRightSide[$indexR];
-            if( 
-                (abs(numericalValue($left) - numericalValue($right)) <= 2)
-                &&
-                (
-                    (in_array($left, $sReds) && in_array($right, $sBlacks))
-                    || (in_array($left, $sBlacks) && in_array($right, $sReds))
-                )
-            ){
-                if(!in_array($left, $toWin)) $toWin[] = $left;
-                if(!in_array($right, $toWin)) $toWin[] = $right;
-            }
-        }
-    }
-    $difference1 = array_diff($toWin, $trio);
-    $difference2 = array_diff($trio, $toWin);
-    $intersection = array_intersect($toWin, $trio);
-
-    if(count($intersection) == 2) {
-        $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";          
-    }
     $win = [$favorites[0], $favorites[1], $others[1], $others[2]];
+    $qin = array_values(array_unique(array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 3))));
     $racetext .= "\t\t'win' =>  '" . implode(", ", $win) . "',\n";          
-
-    $racetext .= "\t\t'qin' =>  '" . implode(", ", $qplLeftSide) . "' X '" . implode(", ", $qplRightSide)  . "',\n";          
+    $racetext .= "\t\t'qin' =>  '" . implode(", ", $qin) . "',\n";          
 
     $racetext .= "\t],\n";
 
