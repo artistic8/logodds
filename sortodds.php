@@ -53,7 +53,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
 
-    if(count($runners) < 11) continue;
+    if(count($runners) <= 11) continue;
     
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
@@ -81,8 +81,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $win = [$favorites[0], $favorites[1], $others[1], $others[2]];
     $qin = array_values(array_unique(array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 3))));
-    $racetext .= "\t\t'win' =>  '" . implode(", ", $win) . "',\n";          
-    $racetext .= "\t\t'qin' =>  '" . implode(", ", $qin) . "',\n";          
+    $evenLeftSide = [$favorites[4], $others[4]];
+    if(isset($favorites[6])) $evenLeftSide[] = $favorites[6];
+    if(isset($others[6])) $evenLeftSide[] = $others[6];
+
+    $oddLeftSide = [$favorites[5], $others[5]];
+
+    $racetext .= "\t\t'win($100)' =>  '" . implode(", ", $win) . "',\n";          
+    $racetext .= "\t\t'qin($30)' =>  '" . implode(", ", $qin) . "',\n";          
+    $racetext .= "\t\t'qqpl($10)' =>  '" . $favorites[0] . ", " . $others[2] . " X " . implode (", ", $evenLeftSide) . "',\n";          
+    $racetext .= "\t\t'qqpl($10)' =>  '" . $favorites[1] . ", " . $others[1] . " X " . implode (", ", $oddLeftSide) . "',\n";          
 
     $racetext .= "\t],\n";
 
