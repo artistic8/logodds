@@ -81,9 +81,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $win = [$favorites[0], $favorites[1], $others[1], $others[2]];
     $qin = array_values(array_unique(array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 3))));
-    $evenLeftSide = [$favorites[4], $others[4]];
-    if(isset($favorites[6])) $evenLeftSide[] = $favorites[6];
-    if(isset($others[6])) $evenLeftSide[] = $others[6];
+    $evenLeftSide = [$favorites[4], $others[4], end($favorites), end($others)];
 
     $oddLeftSide = [$favorites[5], $others[5]];
 
