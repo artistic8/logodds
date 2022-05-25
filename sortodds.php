@@ -87,7 +87,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t\t'win($100)' =>  '" . implode(", ", $win) . "',\n";          
     //$racetext .= "\t\t'qin($30)' =>  '" . implode(", ", $qin) . "',\n";          
-    $racetext .= "\t\t'qqpl($10)' =>  '" . $favorites[0]  ", " . $others[0] . ", " . $others[2] . " X " . implode (", ", $evenLeftSide) . "',\n";          
+    $racetext .= "\t\t'qqpl($10)' =>  '" . $favorites[0] . ", " . $others[0] . ", " . $others[2] . " X " . implode (", ", $evenLeftSide) . "',\n";          
     $racetext .= "\t\t'qqpl($10)' =>  '" . $favorites[1] . ", " . $others[1] . " X " . implode (", ", $oddLeftSide) . "',\n";          
 
     $racetext .= "\t],\n";
