@@ -80,7 +80,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
 
     $win = [$favorites[0], $favorites[1], $others[1], $others[2], $others[3]];
-    $qin = array_values(array_unique(array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 3))));
+    $qin = array_values(array_unique(array_merge(array_slice($favorites, 0, 3), array_slice($others, 1, 3))));
     $evenLeftSide = [$favorites[4], $others[4], end($favorites), end($others)];
 
     $oddLeftSide = [$favorites[5], $others[5]];
