@@ -79,16 +79,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
     $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
 
-    $win = [$favorites[0], $favorites[1], $others[1], $others[2], $others[3]];
-    $qin = array_values(array_unique(array_merge(array_slice($favorites, 0, 3), array_slice($others, 1, 3))));
-    $evenLeftSide = [$favorites[4], $others[4], end($favorites), end($others)];
-
-    $oddLeftSide = [$favorites[5], $others[5]];
-
-    $racetext .= "\t\t'win($100)' =>  '" . implode(", ", $win) . "',\n";          
-    $racetext .= "\t\t'qin($30)' =>  '" . implode(", ", $qin) . "',\n";          
-    $racetext .= "\t\t'qin($10)' =>  '" . $favorites[0] . ", " . $others[2] . ", " . $others[3] . " X " . implode (", ", $evenLeftSide) . "',\n";          
-    $racetext .= "\t\t'qqpl($10)' =>  '" . $favorites[1] . ", " . $others[1] . " X " . implode (", ", $oddLeftSide) . "',\n";          
+    $win = [$favorites[0], $favorites[1]];
+    $place = [$others[0], $others[1], $others[2], $others[3]];
+    $tce = array_merge($win, $place);
+    
+    $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";          
 
     $racetext .= "\t],\n";
 
