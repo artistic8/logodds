@@ -82,7 +82,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $win = [$favorites[0], $favorites[1]];
     $place = [$others[0], $others[1], $others[2], $others[3]];
     $tce = array_merge($win, $place);
-    
+    sort($tce);
+
     $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";          
 
     $racetext .= "\t],\n";
