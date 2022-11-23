@@ -88,6 +88,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";          
     $racetext .= "\t\t'Trio' =>  '" . implode(", ", $trio) . "',\n";          
+    $racetext .= "\t\t'Qin' =>  '" . implode(", ", $trio) . "',\n";          
 
     $racetext .= "\t],\n";
 
