@@ -81,10 +81,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $win = [$favorites[0], $favorites[1]];
     $place = [$others[0], $others[1], $others[2], $others[3]];
+    $trio = array_slice($favorites, 0, 5);
     $tce = array_merge($win, $place);
+    sort($trio);
     sort($tce);
 
     $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";          
+    $racetext .= "\t\t'Trio' =>  '" . implode(", ", $trio) . "',\n";          
 
     $racetext .= "\t],\n";
 
