@@ -86,11 +86,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     for($k=0; $k < count($favorites) - 2; $k++){
       if(isset($others[$k])) {
          $qpl[] = $affiche . $favorites[$k] . "-" . $others[$k];
-         $afficheur ++;
+         $afficheur ++; $affiche = "";
       }
       if(isset($favorites[$k + 2])) {
         $qpl[] = $affiche.  $favorites[$k] . "-" . $favorites[$k + 2];
-        $afficheur ++;
+        $afficheur ++; $affiche = "";
       }
       if($afficheur == 4) {
          $affiche = "\n\t\t\t";
