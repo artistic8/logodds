@@ -88,6 +88,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";          
     $racetext .= "\t\t'Qin' =>  '" . implode(", ", $qin) . "',\n";          
+    $racetext .= "\t\t'qin/qpl/fct' =>  '" . $favorites[0] . ", " . $favorites[1] . "',\n";          
+    $racetext .= "\t\t'qin/qpl/fct' =>  '" . $favorites[0] . ", " . $others[0] . "',\n";          
 
     $racetext .= "\t],\n";
 
