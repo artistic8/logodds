@@ -53,7 +53,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
 
-    if(count($runners) <= 11) continue;
+    //if(count($runners) <= 11) continue;
     
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
@@ -79,11 +79,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
     $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
 
-    $qpl1 = [ $favorites[0], $others[0], $favorites[2], $others[2], $favorites[4], $others[4] ];
-    $qpl2 = [ $favorites[1], $others[1], $favorites[3], $others[3] ];
+    $qpl = [];
+
+    for($k=0; $k < count($favorites) - 2; $k++){
+      if(isset($others[$k])) $qpl[] = $favorites[$k] . "-" . $others[$k];
+      if(isset($favorites[$k + 2])) $qpl[] = $favorites[$k] . "-" . $favorites[$k + 2];
+    }
+
+    for($k=0; $k < count($others) - 2; $k++){
+      if(isset($others[$k + 2])) $qpl[] = $others[$k] . "-" . $others[$k + 2];
+    }
     
-    $racetext .= "\t\t'qpl' =>  '" .  implode(", ", $qpl1) . "',\n";    
-    $racetext .= "\t\t'qpl' =>  '" .  implode(", ", $qpl2) . "',\n";    
+    $racetext .= "\t\t'qpl' =>  '" .  implode(", ", $qpl) . "',\n";    
 
     $racetext .= "\t],\n";
 
