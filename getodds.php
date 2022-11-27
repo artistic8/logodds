@@ -49,7 +49,7 @@ for($r = 1; $r <= $totalRaces; $r++){
         $lineParts = explode("=", $odds[$k]);
         $runner = $lineParts[0];
         $currentOdds = $lineParts[1];
-        if($currentOdds !== "SCR"){
+        if($currentOdds != "SCR" && $currentOdds != "Scratched" && !empty($currentOdds) ){
             $outtext .= "\t\t$runner => $currentOdds,\n";
         }
     }
