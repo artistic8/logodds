@@ -88,7 +88,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t\t'qpl' =>  '" . $favorites[0] . " X " . $others[0] . ", " . $favorites[2] . ", " . $others[2]. ", " . $favorites[4] . ", " . $others[4] . "',\n";    
     $racetext .= "\t\t'qpl' =>  '" . $others[0] . " X " . $favorites[2]. ", " . $others[2]. ", " . $favorites[4] . ", " . $others[4]. "',\n";          
-    $racetext .= "\t\t'qpl' =>  '" . $favorites[1] . " X " . $others[1] . ", " . $favorites[3] . ", " . $others[3]. ", " . $favorites[5] . ", " . $others[4] . "',\n";    
+    $racetext .= "\t\t'qpl' =>  '" . $favorites[1] . " X " . $others[1] . ", " . $favorites[3] . ", " . $others[3]. ", " . $favorites[5] . ", " . $others[5] . "',\n";    
     $racetext .= "\t\t'qpl' =>  '" . $others[1] . " X " . $favorites[3]. ", " . $others[3]. ", " . $favorites[5] . ", " . $others[5]. "',\n";          
 
 
