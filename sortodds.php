@@ -79,18 +79,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
     $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
 
-    $win = [$favorites[0], $favorites[1]];
-    $place = [$others[0], $others[1], $others[2], $others[3]];
-    $qin = array_slice($favorites, 0, 5);
-    $tce = array_merge($win, $place);
-    sort($qin);
-    sort($tce);
-
-    $racetext .= "\t\t'qpl' =>  '" . $favorites[0] . " X " . $others[0] . ", " . $favorites[2] . ", " . $others[2]. ", " . $favorites[4] . ", " . $others[4] . "',\n";    
-    $racetext .= "\t\t'qpl' =>  '" . $others[0] . " X " . $favorites[2]. ", " . $others[2]. ", " . $favorites[4] . ", " . $others[4]. "',\n";          
-    $racetext .= "\t\t'qpl' =>  '" . $favorites[1] . " X " . $others[1] . ", " . $favorites[3] . ", " . $others[3]. ", " . $favorites[5] . ", " . $others[5] . "',\n";    
-    $racetext .= "\t\t'qpl' =>  '" . $others[1] . " X " . $favorites[3]. ", " . $others[3]. ", " . $favorites[5] . ", " . $others[5]. "',\n";          
-
+    $qpl1 = [ $favorites[0], $others[0], $favorites[2], $others[2], $favorites[4], $others[4] ];
+    $qpl2 = [ $favorites[1], $others[1], $favorites[3], $others[3] ];
+    
+    $racetext .= "\t\t'qpl' =>  '" .  implode(", ", $qpl1) . "',\n";    
+    $racetext .= "\t\t'qpl' =>  '" .  implode(", ", $qpl2) . "',\n";    
 
     $racetext .= "\t],\n";
 
