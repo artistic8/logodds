@@ -84,6 +84,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $affiche = "";
 
     for($k=0; $k < 4; $k++){
+      if($afficheur >= 4) {
+         $affiche = "\n\t\t\t";
+         $afficheur = 0;
+      }
       if(isset($others[$k])) {
          $qpl[] = $affiche . $favorites[$k] . "-" . $others[$k];
          $afficheur ++; 
@@ -100,7 +104,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
          $affiche = "\n\t\t\t";
          $afficheur = 0;
       }
-      else $affiche = "";
+      $affiche = "";
     }
     
     $racetext .= "\t\t'qpl' =>  '" .  implode(", ", $qpl) . "',\n";    
