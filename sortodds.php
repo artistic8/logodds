@@ -53,7 +53,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
 
-    //if(count($runners) <= 11) continue;
+    if(count($runners) <= 11) continue;
     
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
@@ -100,10 +100,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
          $qpl[] = $affiche. $others[$k] . "-" . $others[$k + 2];
          $afficheur ++;
       }
-      if($afficheur == 4) {
-         $affiche = "\n\t\t\t";
-         $afficheur = 0;
-      }
+
       $affiche = "";
     }
     
