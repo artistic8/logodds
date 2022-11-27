@@ -80,14 +80,31 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
 
     $qpl = [];
+    $afficheur = 0;
 
     for($k=0; $k < count($favorites) - 2; $k++){
-      if(isset($others[$k])) $qpl[] = $favorites[$k] . "-" . $others[$k];
-      if(isset($favorites[$k + 2])) $qpl[] = $favorites[$k] . "-" . $favorites[$k + 2];
+      if($afficheur < 4) {
+         $affiche = "";
+         $afficheur ++;
+      }
+      else{
+         $affiche = "\n\t\t\t";
+         $afficheur = 0;
+      }
+      if(isset($others[$k])) $qpl[] = $affiche . $favorites[$k] . "-" . $others[$k];
+      if(isset($favorites[$k + 2])) $qpl[] = $affiche.  $favorites[$k] . "-" . $favorites[$k + 2];
     }
 
     for($k=0; $k < count($others) - 2; $k++){
-      if(isset($others[$k + 2])) $qpl[] = $others[$k] . "-" . $others[$k + 2];
+      if($afficheur < 4) {
+         $affiche = "";
+         $afficheur ++;
+      }
+      else{
+         $affiche = "\n\t\t\t";
+         $afficheur = 0;
+      }    
+      if(isset($others[$k + 2])) $qpl[] = $affiche. $others[$k] . "-" . $others[$k + 2];
     }
     
     $racetext .= "\t\t'qpl' =>  '" .  implode(", ", $qpl) . "',\n";    
