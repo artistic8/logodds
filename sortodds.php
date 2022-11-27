@@ -86,9 +86,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     sort($trio);
     sort($tce);
 
+    $quartet = array_merge(array_slice($favorites, 0, 4), array_slice($others, 0, 3));
+    sort($quartet);
+
     $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";          
     $racetext .= "\t\t'Qin' =>  '" . implode(", ", $trio) . "',\n";          
     //$racetext .= "\t\t//'Trio' =>  '" . implode(", ", $trio) . "',\n";          
+    $racetext .= "\t\t'Quartet' =>  '" . implode(", ", $quartet) . "',\n";          
 
     $racetext .= "\t],\n";
 
