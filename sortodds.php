@@ -53,7 +53,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
 
-    if(count($runners) <= 11) continue;
+    //if(count($runners) <= 11) continue;
     
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
@@ -78,9 +78,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
     $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
-
     
-    $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
+    $trio = array_merge(array_slice($favorites, 0, 4), array_slice($others, 0, 4));
 
     $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
     $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
@@ -102,71 +101,31 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             }
         }
     }
-    $difference1 = array_diff($toWin, $trio);
-    $difference2 = array_diff($trio, $toWin);
-    $intersection = array_intersect($toWin, $trio);
-    $qin1 = [];
-    $qin2 = [];
-
-    $chooseQQPL = true;
-    if(count($difference1) == 2) {
-        $showRace = true;
-        if($chooseQQPL) {
-            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference1) . "',\n";
-            $leftQ = $difference1;
-            $chooseQQPL = false;
-        }
-        else{
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X '. implode(", ", $difference1) . "',\n";
-        }
-    }
-    if(count($difference2) == 2) {
-        $showRace = true;
-        if($chooseQQPL) {
-            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";
-            $leftQ = $difference2;
-            $chooseQQPL = false;
-        }
-        else{
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X ' . implode(", ", $difference2) . "',\n";
-        }
-    }
-    if(count($intersection) == 2) {
-        $showRace = true;
-        if($chooseQQPL) {
-            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";
-            $leftQ = $intersection;
-            $chooseQQPL = false;
-        }
-        else{
-            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X ' . implode(", ", $intersection) . "',\n";
-        }
-    }
-
-    if(!empty($difference2)) 
-    {
-        $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
-        if(count($difference1) > 1 && count($difference2) > 1) $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
-    }
-    else{
-        $qin1 = implode(", ", $intersection);
-        $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
-    }   
     
-    if(empty($qin2)){
-        $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
+    $S1 = array_intersect($toWin, $trio);
+    $S2 = array_diff($trio, $toWin);
+
+    // $racetext .= "\t\t'S1' =>  '" . implode(", ", $S1) . "',\n"; 
+    // $racetext .= "\t\t'S2' =>  '" . implode(", ", $S2) . "',\n";
+
+    $subsets1 = array_chunk($S1, 2);
+    $subsets2 = array_chunk($S2, 2);
+
+    $subsets = array_merge($subsets1, $subsets2);
+
+    foreach($subsets as $skey => $subset){
+        if(count($subset) == 2){
+            $racetext .= "\t\t'Subset$skey' =>  '" . implode(", ", $subset) . "',\n"; 
+        }
     }
-    else{
-        $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
-        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
-    }
+
     $racetext .= "\t],\n";
 
-    if($showRace && $shwonRaces < 4) {
+    $showRace = count($S2) >= 2;
+     
+    if($showRace){
         $outtext .= $racetext;
-        $shwonRaces++;
-    }
-
+    }    
 }
 
 $outtext .= "];\n";
