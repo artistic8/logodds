@@ -120,12 +120,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     $racetext .= "\t],\n";
-
-    $showRace = count($S2) >= 2;
-     
-    if($showRace){
-        $outtext .= $racetext;
-    }    
+    $outtext .= $racetext;  
+    
 }
 
 $outtext .= "];\n";
