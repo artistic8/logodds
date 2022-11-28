@@ -93,15 +93,90 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
       }
     }
 
-    $qin = array_slice($qpls, 0, 6);
-    $qpl = array_slice($qpls, -6);
+    $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
 
-    $racetext .= "\t\t'qin' =>  '" .  implode(", ", $qin) . "',\n";    
-    $racetext .= "\t\t'qpl' =>  '" .  implode(", ", $qpl) . "',\n";    
+    $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
+    $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
+    $toWin = [];
+    for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
+        for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
+            $left = $qplLeftSide[$indexL];
+            $right = $qplRightSide[$indexR];
+            if( 
+                (abs(numericalValue($left) - numericalValue($right)) <= 2)
+                &&
+                (
+                    (in_array($left, $sReds) && in_array($right, $sBlacks))
+                    || (in_array($left, $sBlacks) && in_array($right, $sReds))
+                )
+            ){
+                if(!in_array($left, $toWin)) $toWin[] = $left;
+                if(!in_array($right, $toWin)) $toWin[] = $right;
+            }
+        }
+    }
+    $difference1 = array_diff($toWin, $trio);
+    $difference2 = array_diff($trio, $toWin);
+    $intersection = array_intersect($toWin, $trio);
 
+    $chooseQQPL = true;
+    if(count($difference1) == 2) {
+        $showRace = true;
+        if($chooseQQPL) {
+            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference1) . "',\n";
+            $leftQ = $difference1;
+            $chooseQQPL = false;
+        }
+        else{
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X '. implode(", ", $difference1) . "',\n";
+        }
+    }
+    if(count($difference2) == 2) {
+        $showRace = true;
+        if($chooseQQPL) {
+            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $difference2) . "',\n";
+            $leftQ = $difference2;
+            $chooseQQPL = false;
+        }
+        else{
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X ' . implode(", ", $difference2) . "',\n";
+        }
+    }
+    if(count($intersection) == 2) {
+        $showRace = true;
+        if($chooseQQPL) {
+            $racetext .= "\t\t'WP($50), QQP($10)' =>  '" . implode(", ", $intersection) . "',\n";
+            $leftQ = $intersection;
+            $chooseQQPL = false;
+        }
+        else{
+            $racetext .= "\t\t'QQP($10)' =>  '" . implode(", ",$leftQ) . ' X ' . implode(", ", $intersection) . "',\n";
+        }
+    }
+
+    if(!empty($difference2)) 
+    {
+        $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
+        if(count($difference1) > 1 && count($difference2) > 1) $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
+    }
+    else{
+        $qin1 = implode(", ", $intersection);
+        $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
+    }   
+    
+    if(!isset($qin2)){
+        $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
+    }
+    else{
+        $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
+        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
+    }
     $racetext .= "\t],\n";
 
-    $outtext .= $racetext;
+    if($showRace && $shwonRaces < 4) {
+        $outtext .= $racetext;
+        $shwonRaces++;
+    }
 
 }
 
