@@ -79,20 +79,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
     $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
 
-    $qpls = [];
-
-    for($k=0; $k < 4; $k++){
-      if(isset($others[$k])) {
-         $qpls[] = $affiche . $favorites[$k] . "-" . $others[$k];
-      }
-      if(isset($favorites[$k + 2])) {
-        $qpls[] = $affiche.  $favorites[$k] . "-" . $favorites[$k + 2];
-      }
-      if(isset($others[$k + 2])){
-         $qpls[] = $affiche. $others[$k] . "-" . $others[$k + 2];
-      }
-    }
-
+    
     $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
 
     $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
@@ -118,6 +105,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $difference1 = array_diff($toWin, $trio);
     $difference2 = array_diff($trio, $toWin);
     $intersection = array_intersect($toWin, $trio);
+    $qin1 = [];
+    $qin2 = [];
 
     $chooseQQPL = true;
     if(count($difference1) == 2) {
