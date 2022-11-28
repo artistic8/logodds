@@ -153,7 +153,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
     }   
     
-    if(!isset($qin2)){
+    if(empty($qin2)){
         $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
     }
     else{
