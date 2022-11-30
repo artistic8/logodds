@@ -13,10 +13,10 @@ return [
 		/**
 		Race 2
 		*/
-		'Subset0' =>  '2, 3',
-		'Subset1' =>  '11, 7',
-		'Subset2' =>  '8, 9',
-		'Subset3' =>  '6, 1',
+		'Subset0' =>  '6, 7',
+		'Subset1' =>  '8, 3',
+		'Subset2' =>  '11, 1',
+		'Subset3' =>  '2, 9',
 	],
 	'3' => [
 		/**
@@ -31,10 +31,9 @@ return [
 		/**
 		Race 4
 		*/
-		'Subset0' =>  '1, 7',
-		'Subset1' =>  '6, 5',
-		'Subset2' =>  '2, 12',
-		'Subset3' =>  '8, 10',
+		'Subset0' =>  '1, 5',
+		'Subset1' =>  '4, 2',
+		'Subset3' =>  '7, 8',
 	],
 	'5' => [
 		/**
@@ -42,8 +41,8 @@ return [
 		*/
 		'Subset0' =>  '1, 2',
 		'Subset1' =>  '5, 6',
-		'Subset2' =>  '7, 10',
-		'Subset3' =>  '9, 8',
+		'Subset2' =>  '7, 8',
+		'Subset3' =>  '9, 10',
 	],
 	'6' => [
 		/**
@@ -65,8 +64,8 @@ return [
 		/**
 		Race 8
 		*/
-		'Subset0' =>  '8, 7',
-		'Subset1' =>  '5, 1',
-		'Subset3' =>  '2, 10',
+		'Subset1' =>  '2, 10',
+		'Subset2' =>  '11, 8',
+		'Subset3' =>  '1, 12',
 	],
 ];
