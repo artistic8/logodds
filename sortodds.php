@@ -76,8 +76,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
        $others =$sBlacks;
     }
 
-    $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
-    $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
+    // $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
+    // $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
     
     $trio = array_merge(array_slice($favorites, 0, 4), array_slice($others, 0, 4));
 
