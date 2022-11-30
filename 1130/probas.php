@@ -57,8 +57,8 @@ return [
 		/**
 		Race 7
 		*/
-		'Subset0' =>  '3, 12',
-		'Subset1' =>  '10, 1',
+		'Subset0' =>  '3, 1',
+		'Subset1' =>  '10, 12',
 		'Subset3' =>  '9, 4',
 	],
 	'8' => [
