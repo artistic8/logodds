@@ -113,11 +113,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $subsets = array_merge($subsets1, $subsets2);
 
-    foreach($subsets as $skey => $subset){
-        if(count($subset) == 2){
-            $racetext .= "\t\t'Subset$skey' =>  '" . implode(", ", $subset) . "',\n"; 
-        }
-    }
+    $racetext .= "\t\t'Place' =>  '" . $subsets[0][0] . "',\n"; 
+     
 
     $racetext .= "\t],\n";
     $outtext .= $racetext;  
