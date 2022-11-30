@@ -14,8 +14,9 @@ return [
 		Race 2
 		*/
 		'Subset0' =>  '2, 3',
-		'Subset1' =>  '6, 11',
-		'Subset2' =>  '7, 8',
+		'Subset1' =>  '11, 7',
+		'Subset2' =>  '8, 9',
+		'Subset3' =>  '6, 1',
 	],
 	'3' => [
 		/**
@@ -30,10 +31,10 @@ return [
 		/**
 		Race 4
 		*/
-		'Subset0' =>  '1, 10',
-		'Subset1' =>  '2, 12',
-		'Subset2' =>  '7, 5',
-		'Subset3' =>  '8, 6',
+		'Subset0' =>  '1, 7',
+		'Subset1' =>  '6, 5',
+		'Subset2' =>  '2, 12',
+		'Subset3' =>  '8, 10',
 	],
 	'5' => [
 		/**
