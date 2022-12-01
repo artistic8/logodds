@@ -103,17 +103,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     
     $S1 = array_intersect($toWin, $trio);
-    $S2 = array_diff($trio, $toWin);
 
     // $racetext .= "\t\t'S1' =>  '" . implode(", ", $S1) . "',\n"; 
-    // $racetext .= "\t\t'S2' =>  '" . implode(", ", $S2) . "',\n";
 
-    $subsets1 = array_chunk($S1, 2);
-    $subsets2 = array_chunk($S2, 2);
-
-    $subsets = array_merge($subsets1, $subsets2);
-
-    $racetext .= "\t\t'Place' =>  '" . $subsets[0][0] . "',\n"; 
+    $racetext .= "\t\t'Place' =>  '" . $S1[0] . "',\n"; 
      
 
     $racetext .= "\t],\n";
