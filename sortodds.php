@@ -79,8 +79,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     // $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
     // $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
     
-    $trio = array_merge(array_slice($favorites, 0, 4), array_slice($others, 0, 4));
-
     $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
     $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
     $toWin = [];
@@ -102,7 +100,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     
-    $S1 = array_intersect($toWin, $trio);
+    $S1 = array_intersect($toWin, $runners);
 
     // $racetext .= "\t\t'S1' =>  '" . implode(", ", $S1) . "',\n"; 
 
