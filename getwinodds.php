@@ -23,7 +23,7 @@ if (!file_exists($outDir)) {
     mkdir($outDir, 0777, true);
 }
 
-$outFile =$outDir . DIRECTORY_SEPARATOR . "getodds.php";
+$outFile =$outDir . DIRECTORY_SEPARATOR . "winodds.php";
 
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";

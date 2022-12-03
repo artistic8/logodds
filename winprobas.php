@@ -48,7 +48,7 @@ if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
-$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
+$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "winodds.php");
 $probas = [];
 
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
@@ -76,7 +76,7 @@ for($r=1; $r <= $totalRaces; $r++){
     $probas[$r] = $proba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "win.php";
 
 
 $outtext = "<?php\n\n";
@@ -96,10 +96,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $Place = determinePlace($tmpArray, $blacks, $reds);
     $racetext .= "\t\t'Place 1' =>  '" . $Place . "',\n"; 
-
-    unset($tmpArray[$Place]);
-    $Place = determinePlace($tmpArray, $blacks, $reds);
-    $racetext .= "\t\t'Place 2' =>  '" . $Place . "',\n";
 
     $racetext .= "\t],\n";
     $outtext .= $racetext;  
