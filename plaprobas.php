@@ -65,7 +65,7 @@ for($r=1; $r <= $totalRaces; $r++){
     $proba = [];
     $sum = 0;
     foreach($odds as $i => $oddsI){
-            $proba[$i] = (100 / $oddsI) / exp(1);
+            $proba[$i] = 100 / $oddsI;
             $sum += $proba[$i];
             }
     foreach($odds as  $i => $oddsI){
