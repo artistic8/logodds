@@ -40,7 +40,7 @@ function determinePlace($tmpArray, $blacks, $reds){
         }
     }
     $S1 = array_intersect($toWin, $runners);
-    return $S1[0];   
+    if(!empty ($S1)) return $S1[0];   
 }
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
@@ -65,7 +65,7 @@ for($r=1; $r <= $totalRaces; $r++){
     $proba = [];
     $sum = 0;
     foreach($odds as $i => $oddsI){
-            $proba[$i] = 100 * (log($oddsI) / $oddsI) / exp(1);
+            $proba[$i] = (100 / $oddsI) / exp(1);
             $sum += $proba[$i];
             }
     foreach($odds as  $i => $oddsI){
