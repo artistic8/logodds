@@ -5,9 +5,9 @@ return [
 		/**
 		Race 1
 		*/
-		'Place 1' =>  '8',
-		'Place 2' =>  '6',
-		'Place 3' =>  '3',
+		'Place 1' =>  '4',
+		'Place 2' =>  '8',
+		'Place 3' =>  '6',
 	],
 	'2' => [
 		/**
@@ -29,25 +29,25 @@ return [
 		/**
 		Race 4
 		*/
-		'Place 1' =>  '12',
+		'Place 1' =>  '1',
 		'Place 2' =>  '6',
-		'Place 3' =>  '1',
+		'Place 3' =>  '4',
 	],
 	'5' => [
 		/**
 		Race 5
 		*/
-		'Place 1' =>  '6',
-		'Place 2' =>  '1',
-		'Place 3' =>  '4',
+		'Place 1' =>  '1',
+		'Place 2' =>  '6',
+		'Place 3' =>  '11',
 	],
 	'6' => [
 		/**
 		Race 6
 		*/
 		'Place 1' =>  '1',
-		'Place 2' =>  '13',
-		'Place 3' =>  '3',
+		'Place 2' =>  '9',
+		'Place 3' =>  '13',
 	],
 	'7' => [
 		/**
@@ -69,9 +69,9 @@ return [
 		/**
 		Race 9
 		*/
-		'Place 1' =>  '10',
-		'Place 2' =>  '4',
-		'Place 3' =>  '11',
+		'Place 1' =>  '3',
+		'Place 2' =>  '8',
+		'Place 3' =>  '10',
 	],
 	'10' => [
 		/**

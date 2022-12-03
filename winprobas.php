@@ -95,7 +95,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t*/\n";
 
     $Place = determinePlace($tmpArray, $blacks, $reds);
-    $racetext .= "\t\t'Place 1' =>  '" . $Place . "',\n"; 
+    $racetext .= "\t\t'Win' =>  '" . $Place . "',\n"; 
 
     $racetext .= "\t],\n";
     $outtext .= $racetext;  
