@@ -6,6 +6,43 @@ function numericalValue($n){
     return $tens + $units;
 }
 
+function determinePlace($tmpArray, $blacks, $reds){
+    $runners = array_keys($tmpArray);
+    $sBlacks = array_values(array_intersect($runners, $blacks));
+    $sReds = array_values(array_intersect($runners, $reds));
+    $first1 = $runners[0];
+    if(in_array($first1, $blacks)){
+       $favorites = $sBlacks;
+       $others = $sReds;
+    }
+    else{
+       $favorites = $sReds;
+       $others =$sBlacks;
+    }
+    $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
+    $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
+    $toWin = [];
+    for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
+        for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
+            $left = $qplLeftSide[$indexL];
+            $right = $qplRightSide[$indexR];
+            if( 
+                (abs(numericalValue($left) - numericalValue($right)) <= 2)
+                &&
+                (
+                    (in_array($left, $sReds) && in_array($right, $sBlacks))
+                    || (in_array($left, $sBlacks) && in_array($right, $sReds))
+                )
+            ){
+                if(!in_array($left, $toWin)) $toWin[] = $left;
+                if(!in_array($right, $toWin)) $toWin[] = $right;
+            }
+        }
+    }
+    $S1 = array_intersect($toWin, $runners);
+    return $S1[0];   
+}
+
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $raceDate = trim($argv[1]);
@@ -51,61 +88,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext = "";
 
     $tmpArray = $probas[$raceNumber];
-    $runners = array_keys($tmpArray);
 
-    //if(count($runners) <= 11) continue;
-    
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
 
-    $values = array_values($tmpArray);
-
-    $sBlacks = array_values(array_intersect($runners, $blacks));
-    $sReds = array_values(array_intersect($runners, $reds));
-       
-    $first1 = $runners[0];
-
-    if(in_array($first1, $blacks)){
-       $favorites = $sBlacks;
-       $others = $sReds;
-    }
-    else{
-       $favorites = $sReds;
-       $others =$sBlacks;
-    }
-
-    // $racetext .= "\t\t'Fav' =>  '" . implode(", ", $favorites) . "',\n";  
-    // $racetext .= "\t\t'Oth' =>  '" . implode(", ", $others) . "',\n";
-    
-    $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
-    $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
-    $toWin = [];
-    for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
-        for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
-            $left = $qplLeftSide[$indexL];
-            $right = $qplRightSide[$indexR];
-            if( 
-                (abs(numericalValue($left) - numericalValue($right)) <= 2)
-                &&
-                (
-                    (in_array($left, $sReds) && in_array($right, $sBlacks))
-                    || (in_array($left, $sBlacks) && in_array($right, $sReds))
-                )
-            ){
-                if(!in_array($left, $toWin)) $toWin[] = $left;
-                if(!in_array($right, $toWin)) $toWin[] = $right;
-            }
-        }
-    }
-    
-    $S1 = array_intersect($toWin, $runners);
-
-    // $racetext .= "\t\t'S1' =>  '" . implode(", ", $S1) . "',\n"; 
-
-    $racetext .= "\t\t'Place' =>  '" . $S1[0] . "',\n"; 
-     
+    $Place = determinePlace($tmpArray, $blacks, $reds);
+    $racetext .= "\t\t'Place 1' =>  '" . $Place . "',\n"; 
 
     $racetext .= "\t],\n";
     $outtext .= $racetext;  
