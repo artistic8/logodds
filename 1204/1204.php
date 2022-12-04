@@ -15,27 +15,27 @@ return [
 		Race 2
 		*/
 		'Win' =>  '2',
-		'Place 1' =>  '8',
-		'Place 2' =>  '5',
-		'Place 3' =>  '2',
+		'Place 1' =>  '2',
+		'Place 2' =>  '8',
+		'Place 3' =>  '5',
 	],
 	'3' => [
 		/**
 		Race 3
 		*/
 		'Win' =>  '3',
-		'Place 1' =>  '3',
+		'Place 1' =>  '12',
 		'Place 2' =>  '1',
-		'Place 3' =>  '12',
+		'Place 3' =>  '3',
 	],
 	'4' => [
 		/**
 		Race 4
 		*/
 		'Win' =>  '4',
-		'Place 1' =>  '1',
-		'Place 2' =>  '4',
-		'Place 3' =>  '8',
+		'Place 1' =>  '4',
+		'Place 2' =>  '8',
+		'Place 3' =>  '6',
 	],
 	'5' => [
 		/**
@@ -60,8 +60,8 @@ return [
 		Race 7
 		*/
 		'Win' =>  '5',
-		'Place 1' =>  '14',
-		'Place 2' =>  '5',
+		'Place 1' =>  '5',
+		'Place 2' =>  '14',
 		'Place 3' =>  '3',
 	],
 	'8' => [
