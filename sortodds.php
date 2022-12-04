@@ -48,8 +48,9 @@ if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
-$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "winodds.php");
-$probas = [];
+$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
+$winProbas = [];
+$placeProbas = [];
 
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
          19, 21, 23, 25, 27, 30, 32, 34, 36];
@@ -61,41 +62,63 @@ $totalRaces = count($allOdds);
 
 for($r=1; $r <= $totalRaces; $r++){
     if(!isset($allOdds[$r])) continue;
-    $odds = $allOdds[$r];
-    $proba = [];
-    $sum = 0;
-    foreach($odds as $i => $oddsI){
-            $proba[$i] = 100 * (log($oddsI) / $oddsI) / exp(1);
-            $sum += $proba[$i];
-            }
-    foreach($odds as  $i => $oddsI){
-        //adjust to 100 percentage
-        $proba[$i] = round( $proba[$i] * 100 / $sum, 2);
+    $tmpOdds = $allOdds[$r];
+    $winProba = [];
+    $plaProba = [];
+    $winSum = 0;
+    $plaSum = 0;
+    foreach($tmpOdds as $i => $oddsTmp){
+            $oddsW = $oddsTmp['WIN'];
+            $oddsP = $oddsTmp['PLA'];
+            $winProba[$i] = 100 * (log($oddsW) / $oddsW) / exp(1);
+            $winSum += $winProba[$i];
+            $plaProba[$i] = 100 / $oddsP;
+            $plaSum += $plaProba[$i];
+        }
+    foreach($tmpOdds as  $i => $oddsTmp){
+        $oddsW = $oddsTmp['WIN'];
+        $oddsP = $oddsTmp['PLA'];
+        $winProba[$i] = round( $winProba[$i] * 100 / $winSum, 2);
+        $plaProba[$i] = round( $plaProba[$i] * 100 / $plaSum, 2);
     }
-    arsort($proba);
-    $probas[$r] = $proba;
+    arsort($winProba);
+    $winProbas[$r] = $winProba;
+    arsort($plaProba);
+    $placeProbas[$r] = $plaProba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "win.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "$raceDate.php";
 
 
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
-    if(!isset($probas[$raceNumber])) continue;
+    if(!isset($winProbas[$raceNumber])) continue;
 
     $racetext = "";
 
-    $tmpArray = $probas[$raceNumber];
+    $winArray = $winProbas[$raceNumber];
+    $plaArray = $placeProbas[$raceNumber];
 
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
 
-    $Place = determinePlace($tmpArray, $blacks, $reds);
-    $racetext .= "\t\t'Win' =>  '" . $Place . "',\n"; 
+    $win = determinePlace($winArray, $blacks, $reds);
+    $racetext .= "\t\t'Win' =>  '" . $win . "',\n"; 
+
+    $Place = determinePlace($plaArray, $blacks, $reds);
+    $racetext .= "\t\t'Place 1' =>  '" . $Place . "',\n"; 
+
+    unset($plaArray[$Place]);
+    $Place = determinePlace($plaArray, $blacks, $reds);
+    $racetext .= "\t\t'Place 2' =>  '" . $Place . "',\n";
+
+    unset($plaArray[$Place]);
+    $Place = determinePlace($plaArray, $blacks, $reds);
+    $racetext .= "\t\t'Place 3' =>  '" . $Place . "',\n";
 
     $racetext .= "\t],\n";
     $outtext .= $racetext;  

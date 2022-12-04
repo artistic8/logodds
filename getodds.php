@@ -70,7 +70,7 @@ for($r = 1; $r <= $totalRaces; $r++){
     foreach($outOdds as $runner => $oddie) {
         $outtext .= "\t\t$runner => [\n\t\t\t\t'WIN' => " . $oddie['win'] . ",\n";
         $outtext .= "\t\t\t\t'PLA' => " . $oddie['place'] . "\n";
-        $outtext .= "\t\t\t]\n";
+        $outtext .= "\t\t\t],\n";
     }
 
     $outtext .= "\t],\n";
