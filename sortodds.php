@@ -1,5 +1,18 @@
 <?php
 
+function highestOccurence($myArray){
+    $occurences = [];
+    foreach($myArray as $myValue){
+        if(!isset($occurences[$myValue])) $occurences[$myValue] = 1;
+        else $occurences[$myValue] += 1;
+    }
+    arsort($occurences);
+    $targetKeys = array_keys($occurences);
+    $occurenceText = "<?php\n\n/**\t Most Common Occurence \t*/\n";
+    $occurenceText .= "/**\t\tNumber " . $targetKeys[0] . " shows " . $occurences[$targetKeys[0]] . " Times\t*/\n\n";
+    return $occurenceText;
+}
+
 function numericalValue($n){
     $tens = intdiv($n, 10);
     $units = $n - 10 * $tens;
@@ -52,6 +65,8 @@ $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
 $winProbas = [];
 $placeProbas = [];
 
+$winners = [];
+
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
          19, 21, 23, 25, 27, 30, 32, 34, 36];
 
@@ -90,8 +105,7 @@ for($r=1; $r <= $totalRaces; $r++){
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "$raceDate.php";
 
 
-$outtext = "<?php\n\n";
-$outtext .= "return [\n";
+$outtext = "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($winProbas[$raceNumber])) continue;
@@ -109,6 +123,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $win = determinePlace($winArray, $blacks, $reds);
     $racetext .= "\t\t'Win' =>  '" . $win . "',\n"; 
 
+    $winners[] = $win;
+
     $Place = determinePlace($plaArray, $blacks, $reds);
     $racetext .= "\t\t'Place 1' =>  '" . $Place . "',\n"; 
 
@@ -124,6 +140,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= $racetext;  
     
 }
+
+$occurenceText = highestOccurence($winners);
+
+$outtext = $occurenceText . $outtext;
 
 $outtext .= "];\n";
 

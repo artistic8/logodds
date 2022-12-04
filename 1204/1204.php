@@ -1,5 +1,8 @@
 <?php
 
+/**	 Most Common Occurence 	*/
+/**		Number 2 shows 3 Times	*/
+
 return [
 	'1' => [
 		/**
@@ -43,8 +46,8 @@ return [
 		*/
 		'Win' =>  '9',
 		'Place 1' =>  '9',
-		'Place 2' =>  '6',
-		'Place 3' =>  '10',
+		'Place 2' =>  '10',
+		'Place 3' =>  '6',
 	],
 	'6' => [
 		/**
@@ -53,7 +56,7 @@ return [
 		'Win' =>  '5',
 		'Place 1' =>  '5',
 		'Place 2' =>  '1',
-		'Place 3' =>  '3',
+		'Place 3' =>  '2',
 	],
 	'7' => [
 		/**
@@ -70,8 +73,8 @@ return [
 		*/
 		'Win' =>  '1',
 		'Place 1' =>  '1',
-		'Place 2' =>  '2',
-		'Place 3' =>  '13',
+		'Place 2' =>  '13',
+		'Place 3' =>  '2',
 	],
 	'9' => [
 		/**
