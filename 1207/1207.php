@@ -3,12 +3,12 @@
 /**	Most Common Occurence */	
 /**	Number 3 shows 3 Times */
 /**	To bet PLACE in races where */
-/** it's suggested as WIN or PLACE */
+/**	it's suggested as WIN or PLACE */
 
 /**	Second Most Common Occurence */
 /**	Number 7 shows 2 Times */
 /**	To bet WIN in races where */
-/** Most Common Occurence is suggested as WIN */
+/**	Most Common Occurence is suggested as WIN */
 
 return [
 	'1' => [
