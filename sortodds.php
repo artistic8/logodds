@@ -38,12 +38,8 @@ function determinePlace($tmpArray, $blacks, $reds){
        $others =$sBlacks;
     }
     $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
-    if(isset($others[3])) {
-        $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
-    }
-    else {
-        $qplRightSide = [ $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
-    }
+    $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
+    
     $toWin = [];
     for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
         for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
@@ -119,7 +115,7 @@ $outtext = "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($winProbas[$raceNumber])) continue;
-
+    if( count($winProbas[$raceNumber]) < 11 ) continue;
     $racetext = "";
 
     $winArray = $winProbas[$raceNumber];

@@ -1,7 +1,7 @@
 <?php
 
 /**	Most Common Occurence */	
-/**	Number 3 shows 3 Times */
+/**	Number 8 shows 2 Times */
 /**	To bet PLACE in races where */
 /**	it's suggested as WIN or PLACE */
 
@@ -17,35 +17,26 @@ return [
 		*/
 		'Win' =>  '9',
 		'Place 1' =>  '9',
-		'Place 2' =>  '4',
-		'Place 3' =>  '1',
+		'Place 2' =>  '1',
+		'Place 3' =>  '4',
 	],
 	'2' => [
 		/**
 		Race 2
 		*/
-		'Win' =>  '2',
-		'Place 1' =>  '2',
-		'Place 2' =>  '8',
-		'Place 3' =>  '12',
+		'Win' =>  '8',
+		'Place 1' =>  '8',
+		'Place 2' =>  '13',
+		'Place 3' =>  '6',
 	],
 	'3' => [
 		/**
 		Race 3
 		*/
 		'Win' =>  '4',
-		'Place 1' =>  '9',
-		'Place 2' =>  '7',
-		'Place 3' =>  '3',
-	],
-	'4' => [
-		/**
-		Race 4
-		*/
-		'Win' =>  '3',
-		'Place 1' =>  '3',
-		'Place 2' =>  '10',
-		'Place 3' =>  '6',
+		'Place 1' =>  '4',
+		'Place 2' =>  '9',
+		'Place 3' =>  '14',
 	],
 	'5' => [
 		/**
@@ -53,8 +44,8 @@ return [
 		*/
 		'Win' =>  '4',
 		'Place 1' =>  '4',
-		'Place 2' =>  '5',
-		'Place 3' =>  '9',
+		'Place 2' =>  '1',
+		'Place 3' =>  '14',
 	],
 	'6' => [
 		/**
@@ -62,26 +53,17 @@ return [
 		*/
 		'Win' =>  '3',
 		'Place 1' =>  '3',
-		'Place 2' =>  '9',
-		'Place 3' =>  '4',
-	],
-	'7' => [
-		/**
-		Race 7
-		*/
-		'Win' =>  '1',
-		'Place 1' =>  '9',
-		'Place 2' =>  '2',
-		'Place 3' =>  '5',
+		'Place 2' =>  '4',
+		'Place 3' =>  '6',
 	],
 	'8' => [
 		/**
 		Race 8
 		*/
 		'Win' =>  '6',
-		'Place 1' =>  '1',
-		'Place 2' =>  '8',
-		'Place 3' =>  '12',
+		'Place 1' =>  '3',
+		'Place 2' =>  '12',
+		'Place 3' =>  '7',
 	],
 	'9' => [
 		/**
@@ -89,17 +71,17 @@ return [
 		*/
 		'Win' =>  '10',
 		'Place 1' =>  '10',
-		'Place 2' =>  '6',
-		'Place 3' =>  '12',
+		'Place 2' =>  '4',
+		'Place 3' =>  '8',
 	],
 	'10' => [
 		/**
 		Race 10
 		*/
-		'Win' =>  '3',
-		'Place 1' =>  '12',
-		'Place 2' =>  '3',
-		'Place 3' =>  '4',
+		'Win' =>  '8',
+		'Place 1' =>  '4',
+		'Place 2' =>  '8',
+		'Place 3' =>  '6',
 	],
 ];
 
