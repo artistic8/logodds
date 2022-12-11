@@ -1,12 +1,12 @@
 <?php
 
 /**	Most Common Occurence */	
-/**	Number 8 shows 2 Times */
+/**	Number 4 shows 2 Times */
 /**	To bet PLACE in races where */
 /**	it's suggested as WIN or PLACE */
 
 /**	Second Most Common Occurence */
-/**	Number 4 shows 2 Times */
+/**	Number 9 shows 1 Times */
 /**	To bet WIN in races where */
 /**	Most Common Occurence is suggested as WIN */
 
@@ -35,14 +35,14 @@ return [
 		*/
 		'Win' =>  '4',
 		'Place 1' =>  '4',
-		'Place 2' =>  '14',
-		'Place 3' =>  '9',
+		'Place 2' =>  '9',
+		'Place 3' =>  '14',
 	],
 	'5' => [
 		/**
 		Race 5
 		*/
-		'Win' =>  '4',
+		'Win' =>  '1',
 		'Place 1' =>  '4',
 		'Place 2' =>  '1',
 		'Place 3' =>  '14',
@@ -61,9 +61,9 @@ return [
 		Race 8
 		*/
 		'Win' =>  '6',
-		'Place 1' =>  '2',
-		'Place 2' =>  '3',
-		'Place 3' =>  '12',
+		'Place 1' =>  '3',
+		'Place 2' =>  '12',
+		'Place 3' =>  '5',
 	],
 	'9' => [
 		/**
@@ -78,10 +78,10 @@ return [
 		/**
 		Race 10
 		*/
-		'Win' =>  '8',
+		'Win' =>  '4',
 		'Place 1' =>  '4',
 		'Place 2' =>  '8',
-		'Place 3' =>  '3',
+		'Place 3' =>  '10',
 	],
 ];
 
