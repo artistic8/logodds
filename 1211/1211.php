@@ -4,6 +4,7 @@
 /**	Number 9 shows 1 Times */
 /**	To bet PLACE in races where */
 /**	it's suggested as WIN or PLACE */
+/**	And Place payout > 1.5 */
 
 /**	Second Most Common Occurence */
 /**	Number 8 shows 1 Times */
@@ -70,9 +71,9 @@ return [
 		Race 9
 		*/
 		'Win' =>  '10',
-		'Place 1' =>  '10',
-		'Place 2' =>  '4',
-		'Place 3' =>  '8',
+		'Place 1' =>  '6',
+		'Place 2' =>  '10',
+		'Place 3' =>  '12',
 	],
 	'10' => [
 		/**
