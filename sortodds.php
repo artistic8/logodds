@@ -11,11 +11,10 @@ function highestOccurence($myArray){
     $occurenceText = "<?php\n\n";
     $occurenceText .= "/**\tMost Common Occurence */\t\n";
     $occurenceText .= "/**\tNumber " . $targetKeys[0] . " shows " . $occurences[$targetKeys[0]] . " Times */\n";
-    $occurenceText .= "/**\tTo bet PLACE in races where */\n/**\tit's suggested as WIN or PLACE */\n";
-    $occurenceText .= "/**\tAnd Place payout > 1.5 */\n";
+    $occurenceText .= "/**\tTo bet PLACE and QPL in races where */\n/**\tit's suggested as WIN or PLACE */\n";
     $occurenceText .= "\n/**\tSecond Most Common Occurence */\n";
-    $occurenceText .= "/**\tNumber " . $targetKeys[1] . " shows " . $occurences[$targetKeys[1]] . " Times */\n";
-    $occurenceText .= "/**\tTo bet WIN in races where */\n/**\tMost Common Occurence is suggested as WIN */\n\n";
+    $occurenceText .= "/**\tNumber " . $targetKeys[1] . " shows " . $occurences[$targetKeys[1]] . " Times */\n\n";
+    // $occurenceText .= "/**\tTo bet WIN in races where */\n/**\tMost Common Occurence is suggested as WIN */\n\n";
     return $occurenceText;
 }
 
