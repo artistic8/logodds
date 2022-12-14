@@ -9,12 +9,17 @@ function highestOccurence($myArray){
     arsort($occurences);
     $targetKeys = array_keys($occurences);
     $occurenceText = "<?php\n\n";
-    $occurenceText .= "/**\tMost Common Occurence */\t\n";
-    $occurenceText .= "/**\tNumber " . $targetKeys[0] . " shows " . $occurences[$targetKeys[0]] . " Times */\n";
-    $occurenceText .= "/**\tTo bet PLACE and QPL in races where */\n/**\tit's suggested as WIN or PLACE */\n";
-    $occurenceText .= "\n/**\tSecond Most Common Occurence */\n";
-    $occurenceText .= "/**\tNumber " . $targetKeys[1] . " shows " . $occurences[$targetKeys[1]] . " Times */\n\n";
-    // $occurenceText .= "/**\tTo bet WIN in races where */\n/**\tMost Common Occurence is suggested as WIN */\n\n";
+    if( $occurences[$targetKeys[0]] >= 2){
+        $occurenceText .= "/**\tMost Common Occurence */\t\n";
+        $occurenceText .= "/**\tNumber " . $targetKeys[0] . " shows " . $occurences[$targetKeys[0]] . " Times */\n";
+        $occurenceText .= "/**\tTo bet PLACE and QPL in races where */\n/**\tit's suggested as WIN or PLACE */\n";
+        $occurenceText .= "\n/**\tSecond Most Common Occurence */\n";
+        $occurenceText .= "/**\tNumber " . $targetKeys[1] . " shows " . $occurences[$targetKeys[1]] . " Times */\n\n";
+        // $occurenceText .= "/**\tTo bet WIN in races where */\n/**\tMost Common Occurence is suggested as WIN */\n\n";
+    }
+    else {
+        $occurenceText .= "/**\tNO BETS !! */\t\n\n";
+    }
     return $occurenceText;
 }
 
