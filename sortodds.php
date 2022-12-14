@@ -9,7 +9,7 @@ function highestOccurence($myArray){
     arsort($occurences);
     $targetKeys = array_keys($occurences);
     $occurenceText = "<?php\n\n";
-    if( $occurences[$targetKeys[0]] >= 2){
+    if( $occurences[$targetKeys[0]] >= 2 ){
         $occurenceText .= "/**\tMost Common Occurence */\t\n";
         $occurenceText .= "/**\tNumber " . $targetKeys[0] . " shows " . $occurences[$targetKeys[0]] . " Times */\n";
         $occurenceText .= "/**\tTo bet PLACE and QPL in races where */\n/**\tit's suggested as WIN or PLACE */\n";
