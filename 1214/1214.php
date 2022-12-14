@@ -6,7 +6,7 @@
 /**	it's suggested as WIN or PLACE */
 
 /**	Second Most Common Occurence */
-/**	Number 7 shows 1 Times */
+/**	Number 3 shows 2 Times */
 
 return [
 	'1' => [
@@ -33,8 +33,8 @@ return [
 		*/
 		'Win' =>  '1',
 		'Place 1' =>  '1',
-		'Place 2' =>  '3',
-		'Place 3' =>  '12',
+		'Place 2' =>  '2',
+		'Place 3' =>  '5',
 	],
 	'4' => [
 		/**
@@ -67,7 +67,7 @@ return [
 		/**
 		Race 7
 		*/
-		'Win' =>  '4',
+		'Win' =>  '3',
 		'Place 1' =>  '2',
 		'Place 2' =>  '10',
 		'Place 3' =>  '11',
