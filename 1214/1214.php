@@ -2,7 +2,7 @@
 
 /**	Most Common Occurence */	
 /**	Number 1 shows 3 Times */
-/**	To bet PLACE and QPL in races where */
+/**	To bet QPL in races where */
 /**	it's suggested as WIN or PLACE */
 
 /**	Second Most Common Occurence */
@@ -41,9 +41,9 @@ return [
 		Race 4
 		*/
 		'Win' =>  '12',
-		'Place 1' =>  '1',
-		'Place 2' =>  '12',
-		'Place 3' =>  '6',
+		'Place 1' =>  '12',
+		'Place 2' =>  '1',
+		'Place 3' =>  '11',
 	],
 	'5' => [
 		/**
@@ -51,8 +51,8 @@ return [
 		*/
 		'Win' =>  '1',
 		'Place 1' =>  '1',
-		'Place 2' =>  '8',
-		'Place 3' =>  '4',
+		'Place 2' =>  '4',
+		'Place 3' =>  '2',
 	],
 	'6' => [
 		/**
@@ -87,8 +87,8 @@ return [
 		*/
 		'Win' =>  '6',
 		'Place 1' =>  '6',
-		'Place 2' =>  '4',
-		'Place 3' =>  '12',
+		'Place 2' =>  '12',
+		'Place 3' =>  '4',
 	],
 ];
 
