@@ -6,7 +6,7 @@
 /**	it's suggested as WIN or PLACE */
 
 /**	Second Most Common Occurence */
-/**	Number 3 shows 3 Times */
+/**	Number 3 shows 2 Times */
 
 return [
 	'1' => [
@@ -16,16 +16,16 @@ return [
 		'Win' =>  '2',
 		'Place 1' =>  '2',
 		'Place 2' =>  '7',
-		'Place 3' =>  '14',
+		'Place 3' =>  '5',
 	],
 	'2' => [
 		/**
 		Race 2
 		*/
 		'Win' =>  '2',
-		'Place 1' =>  '1',
-		'Place 2' =>  '2',
-		'Place 3' =>  '6',
+		'Place 1' =>  '12',
+		'Place 2' =>  '9',
+		'Place 3' =>  '5',
 	],
 	'3' => [
 		/**
@@ -58,7 +58,7 @@ return [
 		/**
 		Race 6
 		*/
-		'Win' =>  '3',
+		'Win' =>  '1',
 		'Place 1' =>  '1',
 		'Place 2' =>  '3',
 		'Place 3' =>  '5',
@@ -96,8 +96,8 @@ return [
 		*/
 		'Win' =>  '12',
 		'Place 1' =>  '12',
-		'Place 2' =>  '7',
-		'Place 3' =>  '8',
+		'Place 2' =>  '14',
+		'Place 3' =>  '5',
 	],
 ];
 
