@@ -50,9 +50,9 @@ return [
 		Race 5
 		*/
 		'Win' =>  '2',
-		'Place 1' =>  '2',
+		'Place 1' =>  '8',
 		'Place 2' =>  '6',
-		'Place 3' =>  '8',
+		'Place 3' =>  '4',
 	],
 	'6' => [
 		/**
