@@ -32,18 +32,18 @@ return [
 		Race 3
 		*/
 		'Win' =>  '7',
-		'Place 1' =>  '2',
-		'Place 2' =>  '1',
-		'Place 3' =>  '3',
+		'Place 1' =>  '7',
+		'Place 2' =>  '9',
+		'Place 3' =>  '2',
 	],
 	'4' => [
 		/**
 		Race 4
 		*/
 		'Win' =>  '3',
-		'Place 1' =>  '5',
-		'Place 2' =>  '3',
-		'Place 3' =>  '1',
+		'Place 1' =>  '3',
+		'Place 2' =>  '5',
+		'Place 3' =>  '7',
 	],
 	'5' => [
 		/**
