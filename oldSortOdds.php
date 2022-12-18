@@ -1,6 +1,6 @@
 <?php
 
-function highestOccurence($myArray, $second = false){
+function highestOccurence($myArray){
     $occurences = [];
     foreach($myArray as $myValue){
         if(!isset($occurences[$myValue])) $occurences[$myValue] = 1;
@@ -8,11 +8,17 @@ function highestOccurence($myArray, $second = false){
     }
     arsort($occurences);
     $targetKeys = array_keys($occurences);
-    if( $occurences[$targetKeys[0]] >= 2 ) {
-        if(!$second) return [ $targetKeys[0], $occurences[$targetKeys[0]]] ;
-        else return [ $targetKeys[1], $occurences[$targetKeys[1]]] ;
+    $occurenceText = "<?php\n\n";
+    if( $occurences[$targetKeys[0]] >= 2 ){
+        $occurenceText .= "/**\tMost Common Occurence */\t\n";
+        $occurenceText .= "/**\tNumber " . $targetKeys[0] . " shows " . $occurences[$targetKeys[0]] . " Times */\n";
+        $occurenceText .= "/**\tSecond Most Common Occurence */\n";
+        $occurenceText .= "/**\tNumber " . $targetKeys[1] . " shows " . $occurences[$targetKeys[1]] . " Times */\n\n";
     }
-    else return [0,0];
+    else {
+        $occurenceText .= "/**\tNO BETS !! */\t\n\n";
+    }
+    return $occurenceText;
 }
 
 function numericalValue($n){
@@ -69,7 +75,6 @@ $winProbas = [];
 $placeProbas = [];
 
 $winners = [];
-$selected = [];
 
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
          19, 21, 23, 25, 27, 30, 32, 34, 36];
@@ -106,75 +111,48 @@ for($r=1; $r <= $totalRaces; $r++){
     $placeProbas[$r] = $plaProba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "$raceDate.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "old.php";
+
 
 $outtext = "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($winProbas[$raceNumber])) continue;
-    if( count($winProbas[$raceNumber]) < 12 ) continue;
-
-    $selected[$raceNumber] = [];
+    if( count($winProbas[$raceNumber]) < 11 ) continue;
+    $racetext = "";
 
     $winArray = $winProbas[$raceNumber];
     $plaArray = $placeProbas[$raceNumber];
+
+    $racetext .= "\t'$raceNumber' => [\n";
+    $racetext .= "\t\t/**\n";
+    $racetext .= "\t\tRace $raceNumber\n";
+    $racetext .= "\t\t*/\n";
 
     $win = determinePlace($winArray, $blacks, $reds);
+    $racetext .= "\t\t'Win' =>  '" . $win . "',\n"; 
+
     $winners[] = $win;
-    $selected[$raceNumber][] = $win;
 
     $Place = determinePlace($plaArray, $blacks, $reds);
-    $selected[$raceNumber][] = $Place;
+    $racetext .= "\t\t'Place 1' =>  '" . $Place . "',\n"; 
 
     unset($plaArray[$Place]);
     $Place = determinePlace($plaArray, $blacks, $reds);
-    $selected[$raceNumber][] = $Place;
+    $racetext .= "\t\t'Place 2' =>  '" . $Place . "',\n";
 
     unset($plaArray[$Place]);
     $Place = determinePlace($plaArray, $blacks, $reds);
-    $selected[$raceNumber][] = $Place;  
+    $racetext .= "\t\t'Place 3' =>  '" . $Place . "',\n";
+
+    $racetext .= "\t],\n";
+    $outtext .= $racetext;  
     
 }
 
-$mostCommonWinnerInfo = highestOccurence($winners);
-$mostCommonWinner = $mostCommonWinnerInfo[0];
-$mostCommonWinnerTimes = $mostCommonWinnerInfo[1];
-$secondMostCommonWinnerInfo = highestOccurence($winners, true);
-$secondMostCommonWinner = $secondMostCommonWinnerInfo[0];
-$secondMostCommonWinnerTimes = $secondMostCommonWinnerInfo[1];
+$occurenceText = highestOccurence($winners);
 
-$mostCommonWinners = [ $mostCommonWinner ];
-if($secondMostCommonWinnerTimes == $mostCommonWinnerTimes) $mostCommonWinners[] = $secondMostCommonWinner;
-$outtext = "<?php\n\n";
-
-$outtext .= "/**\tMost Common Occurence */\t\n";
-$outtext .= "/**\tNumber " . $mostCommonWinner . " shows " . $mostCommonWinnerTimes . " Times */\n";
-$outtext .= "/**\tSecond Most Common Occurence */\t\n";
-$outtext .= "/**\tNumber " . $secondMostCommonWinner . " shows " . $secondMostCommonWinnerTimes . " Times */\n\n";
-
-$outtext .= "return [\n";
-
-for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
-    if(!isset($winProbas[$raceNumber])) continue;
-    if( count($winProbas[$raceNumber]) < 12 ) continue;
-    $selectedValues = array_unique(array_values($selected[$raceNumber])); 
-    foreach($mostCommonWinners as $mostCommonWinnerNumber){
-        if(in_array($mostCommonWinnerNumber, $selectedValues)){
-            if(count($selectedValues) == 3) {
-                $outtext .= "\t'Race $raceNumber' => \n\t[\n\t\t'QPL' => [" . implode(", ", $selectedValues) . "]\n";
-                $outtext .= "\t],\n";
-            }
-            elseif(count($selectedValues) == 4 && $selected[$raceNumber][0] == $mostCommonWinnerNumber){
-                $outtext .= "\t'Race $raceNumber' => \n\t[\n\t\t'Win, Qin' => [" . implode(", ", $selectedValues) . "]\n";
-                $outtext .= "\t],\n";
-            }
-        }
-    }
-    $winArray = $winProbas[$raceNumber];
-    $plaArray = $placeProbas[$raceNumber];
-
-    
-}
+$outtext = $occurenceText . $outtext;
 
 $outtext .= "];\n\n";
 
