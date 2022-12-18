@@ -23,8 +23,8 @@ return [
 		Race 2
 		*/
 		'Win' =>  '2',
-		'Place 1' =>  '12',
-		'Place 2' =>  '9',
+		'Place 1' =>  '9',
+		'Place 2' =>  '12',
 		'Place 3' =>  '5',
 	],
 	'3' => [
@@ -32,8 +32,8 @@ return [
 		Race 3
 		*/
 		'Win' =>  '7',
-		'Place 1' =>  '7',
-		'Place 2' =>  '2',
+		'Place 1' =>  '2',
+		'Place 2' =>  '7',
 		'Place 3' =>  '9',
 	],
 	'4' => [
@@ -52,7 +52,7 @@ return [
 		'Win' =>  '2',
 		'Place 1' =>  '2',
 		'Place 2' =>  '8',
-		'Place 3' =>  '6',
+		'Place 3' =>  '5',
 	],
 	'6' => [
 		/**
@@ -86,8 +86,8 @@ return [
 		Race 9
 		*/
 		'Win' =>  '3',
-		'Place 1' =>  '3',
-		'Place 2' =>  '12',
+		'Place 1' =>  '12',
+		'Place 2' =>  '3',
 		'Place 3' =>  '1',
 	],
 	'10' => [
