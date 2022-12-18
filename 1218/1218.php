@@ -23,8 +23,8 @@ return [
 		Race 2
 		*/
 		'Win' =>  '2',
-		'Place 1' =>  '2',
-		'Place 2' =>  '1',
+		'Place 1' =>  '1',
+		'Place 2' =>  '2',
 		'Place 3' =>  '6',
 	],
 	'3' => [
