@@ -64,7 +64,7 @@ function determinePlace($tmpArray, $blacks, $reds){
         }
     }
     $S1 = array_intersect($toWin, $runners);
-    return $S1[0];   
+    return reset($S1);   
 }
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
