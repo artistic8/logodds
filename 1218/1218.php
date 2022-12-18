@@ -1,12 +1,12 @@
 <?php
 
 /**	Most Common Occurence */	
-/**	Number 2 shows 4 Times */
+/**	Number 2 shows 3 Times */
 /**	To bet QPL in races where */
 /**	it's suggested as WIN or PLACE */
 
 /**	Second Most Common Occurence */
-/**	Number 3 shows 2 Times */
+/**	Number 1 shows 2 Times */
 
 return [
 	'1' => [
@@ -22,10 +22,10 @@ return [
 		/**
 		Race 2
 		*/
-		'Win' =>  '2',
+		'Win' =>  '1',
 		'Place 1' =>  '1',
 		'Place 2' =>  '2',
-		'Place 3' =>  '6',
+		'Place 3' =>  '4',
 	],
 	'3' => [
 		/**
@@ -41,8 +41,8 @@ return [
 		Race 4
 		*/
 		'Win' =>  '3',
-		'Place 1' =>  '3',
-		'Place 2' =>  '5',
+		'Place 1' =>  '5',
+		'Place 2' =>  '3',
 		'Place 3' =>  '1',
 	],
 	'5' => [
@@ -52,7 +52,7 @@ return [
 		'Win' =>  '2',
 		'Place 1' =>  '2',
 		'Place 2' =>  '6',
-		'Place 3' =>  '5',
+		'Place 3' =>  '8',
 	],
 	'6' => [
 		/**
