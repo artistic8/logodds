@@ -6,13 +6,9 @@
 /**	Number 1 shows 1 Times */
 
 return [
-	'Race 5' => 
-	[
-		'QPL' => [3, 7, 1]
-	],
 	'Race 6' => 
 	[
-		'QPL' => [7, 3, 4]
+		'QPL' => [3, 7, 4]
 	],
 	'Race 8' => 
 	[
