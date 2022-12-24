@@ -54,7 +54,8 @@ for($r = 1; $r <= $totalRaces; $r++){
         $runner = $lineParts[0];
         $currentOdds = $lineParts[1];
         if($currentOdds != "SCR" && $currentOdds != "Scratched" && !empty($currentOdds) ){
-            $outOdds[$runner]['win'] = $currentOdds;
+            if(is_numeric($currentOdds)) $outOdds[$runner]['win'] = $currentOdds;
+            else $outOdds[$runner]['win'] = 1.0001;
         }
     }
 
@@ -63,7 +64,8 @@ for($r = 1; $r <= $totalRaces; $r++){
         $runner = $lineParts[0];
         $currentOdds = $lineParts[1];
         if(isset($outOdds[$runner]['win']) ){
-            $outOdds[$runner]['place'] = $currentOdds;
+            if(is_numeric($currentOdds)) $outOdds[$runner]['place'] = $currentOdds;
+            else $outOdds[$runner]['place'] = 1.0001;
         }
     }
 
