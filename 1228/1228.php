@@ -6,17 +6,13 @@
 /**	Number 2 shows 2 Times */
 
 return [
-	'Race 1' => 
-	[
-		'QPL' => [2, 10, 3]
-	],
 	'Race 3' => 
 	[
-		'QPL' => [3, 1, 10]
+		'QPL' => [3, 1, 12]
 	],
 	'Race 5' => 
 	[
-		'QPL' => [3, 5, 12]
+		'QPL' => [3, 5, 8]
 	],
 	'Race 6' => 
 	[
