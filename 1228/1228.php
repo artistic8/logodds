@@ -1,7 +1,7 @@
 <?php
 
 /**	Most Common Occurence */	
-/**	Number 3 shows 2 Times */
+/**	Number 3 shows 3 Times */
 /**	Second Most Common Occurence */	
 /**	Number 1 shows 1 Times */
 
@@ -16,7 +16,7 @@ return [
 	],
 	'Race 6' => 
 	[
-		'QPL' => [8, 12, 3]
+		'QPL' => [3, 12, 8]
 	],
 	'Race 7' => 
 	[
