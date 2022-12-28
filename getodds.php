@@ -1,6 +1,6 @@
 <?php
 
-$currentYear = "2022";
+$currentYear = "2023";
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 else {
