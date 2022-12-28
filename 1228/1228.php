@@ -1,22 +1,22 @@
 <?php
 
 /**	Most Common Occurence */	
-/**	Number 2 shows 2 Times */
+/**	Number 3 shows 2 Times */
 /**	Second Most Common Occurence */	
 /**	Number 10 shows 1 Times */
 
 return [
 	'Race 1' => 
 	[
-		'Win, Qin' => [2, 3, 1, 12]
+		'QPL' => [3, 1, 12]
 	],
-	'Race 3' => 
+	'Race 6' => 
 	[
-		'QPL' => [10, 11, 2]
+		'QPL' => [8, 3, 12]
 	],
-	'Race 9' => 
+	'Race 7' => 
 	[
-		'QPL' => [2, 10, 4]
+		'QPL' => [3, 12, 7]
 	],
 ];
 
