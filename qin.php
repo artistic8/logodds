@@ -122,7 +122,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $selected = array_unique(array_values($SELECTED[$raceNumber]));
         $toQin = array_values(array_unique(array_merge($selected, $WIN)));
         sort($toQin);
-        $racetext .= "\t\t'QIN' =>  '" . implode(", ", $toQin) . "',\n";
+        $racetext .= "\t\t'WIN/QIN' =>  '" . implode(", ", $toQin) . "',\n";
     }
 
     if(!empty($difference2)) 
