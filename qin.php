@@ -118,7 +118,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     if(isset($WIN)){
-        $racetext .= "\t\t'WP' =>  '" . implode(", ", $WIN) . "',\n";
+        $racetext .= "\t\t'W/Place' =>  '" . implode(", ", $WIN) . "',\n";
         $selected = array_unique(array_values($SELECTED[$raceNumber]));
         $toQin = array_values(array_unique(array_merge($selected, $WIN)));
         sort($toQin);
