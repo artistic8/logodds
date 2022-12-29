@@ -12,6 +12,8 @@ $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
+$SELECTED = include($currentDir . DIRECTORY_SEPARATOR . "selected.php");
+
 $probas = [];
 
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
@@ -40,7 +42,7 @@ for($r=1; $r <= $totalRaces; $r++){
     $probas[$r] = $proba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "fct.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . $raceDate . "-QIN.php";
 
 
 $outtext = "<?php\n\n";
@@ -102,20 +104,25 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $difference2 = array_diff($trio, $toWin);
     $intersection = array_intersect($toWin, $trio);
 
-    // $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
-    // $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
-
     if(count($difference1) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
+        $WIN = $difference1;
     }
     if(count($difference2) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
+        $WIN = $difference2;
     }
     if(count($intersection) == 2) {
         $showRace = true;
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
+        $WIN = $intersection;
+    }
+
+    if(isset($WIN)){
+        $racetext .= "\t\t'WP' =>  '" . implode(", ", $WIN) . "',\n";
+        $selected = array_unique(array_values($SELECTED[$raceNumber]));
+        $toQin = array_values(array_unique(array_merge($selected, $WIN)));
+        sort($toQin);
+        $racetext .= "\t\t'QIN' =>  '" . implode(", ", $toQin) . "',\n";
     }
 
     if(!empty($difference2)) 

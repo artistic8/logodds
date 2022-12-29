@@ -106,7 +106,7 @@ for($r=1; $r <= $totalRaces; $r++){
     $placeProbas[$r] = $plaProba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "$raceDate.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . $raceDate . "-QPL.php";
 
 $outtext = "return [\n";
 

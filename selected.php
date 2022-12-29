@@ -111,7 +111,7 @@ for($r=1; $r <= $totalRaces; $r++){
     $placeProbas[$r] = $plaProba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "old.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "selected.php";
 
 
 $outtext = "return [\n";
@@ -124,28 +124,24 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $winArray = $winProbas[$raceNumber];
     $plaArray = $placeProbas[$raceNumber];
 
-    $racetext .= "\t'$raceNumber' => [\n";
-    $racetext .= "\t\t/**\n";
-    $racetext .= "\t\tRace $raceNumber\n";
-    $racetext .= "\t\t*/\n";
+    $racetext .= "\t'$raceNumber' => [ ";
 
     $win = determinePlace($winArray, $blacks, $reds);
-    $racetext .= "\t\t'Win' =>  '" . $win . "',\n"; 
+    $racetext .= $win . ", "; 
 
     $winners[] = $win;
 
     $Place = determinePlace($plaArray, $blacks, $reds);
-    $racetext .= "\t\t'Place 1' =>  '" . $Place . "',\n"; 
+    $racetext .= $Place . ", "; 
 
     unset($plaArray[$Place]);
     $Place = determinePlace($plaArray, $blacks, $reds);
-    $racetext .= "\t\t'Place 2' =>  '" . $Place . "',\n";
+    $racetext .= $Place . ", ";
 
     unset($plaArray[$Place]);
     $Place = determinePlace($plaArray, $blacks, $reds);
-    $racetext .= "\t\t'Place 3' =>  '" . $Place . "',\n";
+    $racetext .= $Place . "],\n";
 
-    $racetext .= "\t],\n";
     $outtext .= $racetext;  
     
 }
