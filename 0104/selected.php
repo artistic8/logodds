@@ -1,12 +1,12 @@
 <?php
 
 /**	Most Common Occurence */	
-/**	Number 9 shows 2 Times */
+/**	Number 3 shows 3 Times */
 /**	Second Most Common Occurence */
-/**	Number 3 shows 2 Times */
+/**	Number 9 shows 2 Times */
 
 return [
-	'1' => [ 2, 2, 5, 3],
+	'1' => [ 3, 2, 5, 3],
 	'2' => [ 9, 2, 11, 10],
 	'3' => [ 7, 7, 10, 4],
 	'4' => [ 1, 12, 1, 3],
