@@ -12,7 +12,7 @@ $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
-$SELECTED = include($currentDir . DIRECTORY_SEPARATOR . "selected.php");
+$SETS = include($currentDir . DIRECTORY_SEPARATOR . "sets.php");
 
 $probas = [];
 
@@ -52,99 +52,20 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
 
     $racetext = "";
-    $showRace = false;
 
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
-
     if(count($runners) < 11) continue;
-    
     $racetext .= "\t'$raceNumber' => [\n";
-    $racetext .= "\t\t/**\n";
-    $racetext .= "\t\tRace $raceNumber\n";
-    $racetext .= "\t\t*/\n";
+    $sets = $SETS[$raceNumber];
 
-    $sBlacks = array_values(array_intersect($runners, $blacks));
-    $sReds = array_values(array_intersect($runners, $reds));
-       
-    $first1 = $runners[0];
-
-    if(in_array($first1, $blacks)){
-       $favorites = $sBlacks;
-       $others = $sReds;
-    }
-    else{
-       $favorites = $sReds;
-       $others =$sBlacks;
-    }
-
-    $trio = array_merge(array_slice($favorites, 0, 3), array_slice($others, 0, 2));
-
-    $qplLeftSide = [$favorites[0], $favorites[1], $favorites[2], $others[0], $others[1]];
-    $qplRightSide = [ $others[3], $favorites[count($favorites) - 3], $others[count($others) - 3], end($favorites), end($others) ];
-    $toWin = [];
-    for($indexL = 0; $indexL < count($qplLeftSide); $indexL++) {
-        for($indexR = 0; $indexR < count($qplRightSide); $indexR++) {
-            $left = $qplLeftSide[$indexL];
-            $right = $qplRightSide[$indexR];
-            if( 
-                (abs(numericalValue($left) - numericalValue($right)) <= 2)
-                &&
-                (
-                    (in_array($left, $sReds) && in_array($right, $sBlacks))
-                    || (in_array($left, $sBlacks) && in_array($right, $sReds))
-                )
-            ){
-                if(!in_array($left, $toWin)) $toWin[] = $left;
-                if(!in_array($right, $toWin)) $toWin[] = $right;
-            }
-        }
-    }
-    $difference1 = array_diff($toWin, $trio);
-    $difference2 = array_diff($trio, $toWin);
-    $intersection = array_intersect($toWin, $trio);
-
-    if(count($difference1) == 2) {
-        $showRace = true;
-        $WIN = $difference1;
-    }
-    if(count($difference2) == 2) {
-        $showRace = true;
-        $WIN = $difference2;
-    }
-    if(count($intersection) == 2) {
-        $showRace = true;
-        $WIN = $intersection;
-    }
-
-    if(isset($WIN)){
-        $racetext .= "\t\t'Place' =>  '" . implode(", ", $WIN) . "',\n";
-        $selected = array_unique(array_values($SELECTED[$raceNumber]));
-        $toQin = array_values(array_unique(array_merge($selected, $WIN)));
-        sort($toQin);
-        $racetext .= "\t\t'WIN/QIN' =>  '" . implode(", ", $toQin) . "',\n";
-    }
-
-    if(!empty($difference2)) 
-    {
-        $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
-        if(count($difference1) > 1 && count($difference2) > 1) $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
-    }
-    else{
-        $qin1 = implode(", ", $intersection);
-        $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
-    }   
+    $setsValues = array_values(array_unique(array_merge($sets['Set A'], $sets['Set B'], $sets['Set C'])));
+    $qin = array_slice($setsValues, 0, 3);
+    sort($qin);
     
-    if(!isset($qin2)){
-        $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
-    }
-    else{
-        $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
-        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
-    }
+    $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $qin) . "',\n";
     $racetext .= "\t],\n";
-
-    if($showRace) $outtext .= $racetext;
+    $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
