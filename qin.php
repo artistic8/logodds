@@ -58,11 +58,26 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(count($runners) < 11) continue;
     $racetext .= "\t'$raceNumber' => [\n";
     $sets = $SETS[$raceNumber];
+    $places = [];
+
+    foreach($sets as $setK){
+        if(count($setK) == 2){
+            $racetext .= "\t\t'PLA' =>  '" . implode(", ", $setK) . "',\n";
+            $places = array_merge($places, $setK);
+        }
+    }
 
     $setsValues = array_values(array_unique(array_merge($sets['Set A'], $sets['Set B'], $sets['Set C'])));
     $qin = array_slice($setsValues, 0, 3);
     sort($qin);
-    
+
+    if(!empty($places)){
+        $sureWin = array_diff($qin, $places);
+        if(!empty($sureWin)){
+            $racetext .= "\t\t'Sure Win' =>  '" . implode(", ", $sureWin) . "',\n";
+        }
+    }
+
     $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $qin) . "',\n";
     $racetext .= "\t],\n";
     $outtext .= $racetext;
