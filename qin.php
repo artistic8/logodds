@@ -85,7 +85,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     $racetext .= "\t],\n";
-    if(!empty($places)) {
+
+    $showRace = !empty($places) || (count($selected) === 4);
+    if($showRace) {
         $outtext .= $racetext;
     }
 }
