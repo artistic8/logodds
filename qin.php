@@ -77,20 +77,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $sureWin = array_diff($qin, $places);
         if(count($sureWin) === 1){
             $racetext .= "\t\t'Sure Win' =>  '" . implode(", ", $sureWin) . "',\n";
-            $racetext .= "\t\t'Qin' =>  '" . implode(", ", $qin) . "',\n";
         }
     }
 
     if(count($selected) == 4){
         $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $selected) . "',\n";
     }
+    else{
+        $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $qin) . "',\n";
+    }
 
     $racetext .= "\t],\n";
-
-    $showRace = !empty($places) || (count($selected) === 4);
-    if($showRace) {
-        $outtext .= $racetext;
-    }
+    $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
