@@ -86,11 +86,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $selected) . "',\n";
         }
         else{
-            $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $selected) . "',\n";
+            $racetext .= "\t\t'Win' =>  '" . implode(", ", $selected) . "',\n";
             $tmpValues = array_unique(array_values(array_merge($places, $selected)));
             if(count($tmpValues) === 5){
                 sort($tmpValues);
-                $racetext .= "\t\t'Win' =>  '" . implode(", ", $selected) . "',\n";
                 $racetext .= "\t\t'Qin/Trio/F4' =>  '" . implode(", ", $tmpValues) . "',\n";
             }
         }
