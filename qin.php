@@ -77,6 +77,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $sureWin = array_diff($qin, $places);
         if(count($sureWin) === 1){
             $racetext .= "\t\t'Sure Win' =>  '" . implode(", ", $sureWin) . "',\n";
+            $racetext .= "\t\t'Qin' =>  '" . implode(", ", $qin) . "',\n";
         }
     }
 
