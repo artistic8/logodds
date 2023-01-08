@@ -13,6 +13,7 @@ $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
 $SETS = include($currentDir . DIRECTORY_SEPARATOR . "sets.php");
+$SELECTED = include($currentDir . DIRECTORY_SEPARATOR . "selected.php");
 
 $probas = [];
 
@@ -58,6 +59,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(count($runners) < 11) continue;
     $racetext .= "\t'$raceNumber' => [\n";
     $sets = $SETS[$raceNumber];
+    $selected = array_values(array_unique($SELECTED[$raceNumber]));
     $places = [];
 
     foreach($sets as $setK){
@@ -78,7 +80,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
 
-    $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $qin) . "',\n";
+    if(count($selected) == 4){
+        $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $selected) . "',\n";
+    }
+    else{
+        $racetext .= "\t\t'Win/Qin' =>  '" . implode(", ", $qin) . "',\n";
+    }
+
     $racetext .= "\t],\n";
     $outtext .= $racetext;
 }
