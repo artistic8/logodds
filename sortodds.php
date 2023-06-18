@@ -12,7 +12,11 @@ function in_my_array($needle, $haystack){
     foreach($haystack as $comparedTo){
         $shit1 = array_values($needle);
         $shit2 = array_values($comparedTo);
-        if($shit1[0] == $shit2[0] && $shit1[1] == $shit2[1]) return true;
+        if(
+            ($shit1[0] == $shit2[0] && $shit1[1] == $shit2[1]) 
+        ||  ($shit1[0] == $shit2[1] && $shit1[1] == $shit2[0])    
+        )    
+        return true;
     }
     return false;
 }
