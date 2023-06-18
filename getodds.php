@@ -1,6 +1,6 @@
 <?php
 
-$currentYear = "2021";
+$currentYear = "2023";
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 else {
@@ -38,6 +38,7 @@ for($r = 1; $r <= $totalRaces; $r++){
     $oddsJSON = file_get_contents("https://bet.hkjc.com/racing/getJSON.aspx?type=winplaodds&date=$raceDateFormat&venue=$venue&start=$r&end=$r");
 
     $odds = json_decode($oddsJSON, true);
+    if($odds == NULL) exit("ERROR!!!\n");
     $odds = $odds["OUT"];
 
     $pos = strpos($odds, "#PLA");

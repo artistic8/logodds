@@ -12,6 +12,11 @@ $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
+
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
+if(file_exists($outFile)){
+    $oldData = include($outFile);
+}
 $probas = [];
 
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
@@ -39,18 +44,21 @@ for($r=1; $r <= $totalRaces; $r++){
     $probas[$r] = $proba;
 }
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
-
 
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
-    //if($raceNumber == 4) continue;
     if(!isset($probas[$raceNumber])) continue;
 
+    if(isset($oldData)){
+        if(isset($oldData[$r])){
+            $oldRaceData = $oldData[$r];
+            if(isset($oldRaceData['fqqpl'])) $oldFQQPL = $oldRaceData['fqqpl'];
+        }
+    }
+
     $racetext = "";
-    $showRace = false;
 
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
@@ -107,17 +115,40 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     // $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     // $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
 
+    if(isset($oldFQQPL)) $fQQPL = $oldFQQPL;
+    else $fQQPL = [];
+    if(isset(array_values($intersection)[0]) && isset(array_values($difference1)[0])){
+        $firstValue = array_values($intersection)[0];
+        $secondValue = array_values($difference1)[0];
+        if(!empty($firstValue) && !empty($secondValue)){
+            $toAddToQQPL = "'" . $firstValue . "-" . $secondValue . "'";
+            if(!in_array($toAddToQQPL, $fQQPL)) $fQQPL[] = $toAddToQQPL;
+        }
+    }
+
+    if(isset(array_values($difference1)[0]) && isset(array_values($difference2)[0])){
+        $firstValue = array_values($difference1)[0];
+        $secondValue = array_values($difference2)[0];
+        if(!empty($firstValue) && !empty($secondValue)){
+            $toAddToQQPL = "'" . $firstValue . "-" . $secondValue . "'";
+            if(!in_array($toAddToQQPL, $fQQPL)) $fQQPL[] = $toAddToQQPL;
+        }
+    }
+
     if(count($difference1) == 2) {
-        $showRace = true;
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
+        $newQPLValue = implode("-", $difference1);
+        if(!in_array($newQPLValue, $fQQPL)) $fQQPL[] = "'" . $newQPLValue . "'";
     }
     if(count($difference2) == 2) {
-        $showRace = true;
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
+        $newQPLValue = implode("-", $difference2);
+        if(!in_array($newQPLValue, $fQQPL)) $fQQPL[] = "'" . $newQPLValue . "'";
     }
     if(count($intersection) == 2) {
-        $showRace = true;
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
+        $newQPLValue = implode("-", $intersection);
+        if(!in_array($newQPLValue, $fQQPL)) $fQQPL[] = "'" . $newQPLValue . "'";
     }
 
     if(!empty($difference2)) 
@@ -128,7 +159,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     else{
         $qin1 = implode(", ", $intersection);
         $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
-    }   
+    }  
+
+    $racetext .= "\t\t'fqqpl' =>  [" . implode(", ", $fQQPL) . "],\n";
     
     if(!isset($qin2)){
         $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
@@ -138,8 +171,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
     }
     $racetext .= "\t],\n";
+    unset($qin1);
+    unset($qin2);
 
-    if($showRace) $outtext .= $racetext;
+    $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
