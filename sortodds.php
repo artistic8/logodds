@@ -178,7 +178,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($fQQPL as $fQQPLItem){
         $fQQPLText .= "[" . implode(", ", $fQQPLItem) . "]";
         $someCounter ++;
-        if($someCounter < $someLength) $fQQPLText .= ",";
+        if($someCounter < $someLength) $fQQPLText .= ", ";
     }
    
     $fQQPLText .= "]";
