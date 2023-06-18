@@ -70,6 +70,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['fqqpl'])) $oldFQQPL = $oldRaceData['fqqpl'];
+            if(isset($oldRaceData['wins'])) $oldWINS = $oldRaceData['wins'];
         }
     }
 
@@ -132,6 +133,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     if(isset($oldFQQPL)) $fQQPL = $oldFQQPL;
     else $fQQPL = [];
+    if(isset($oldWINS)) $wins = $oldWINS;
+    else $wins = [];
     if(isset(array_values($intersection)[0]) && isset(array_values($difference1)[0])){
         $firstValue = array_values($intersection)[0];
         $secondValue = array_values($difference1)[0];
@@ -152,15 +155,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     if(count($difference1) == 2) {
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
-        if(!in_my_array($difference1, $fQQPL)) $fQQPL[] = $difference1;
+        if(!in_my_array($difference1, $wins)) $wins[] = $difference1;
     }
     if(count($difference2) == 2) {
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
-        if(!in_my_array($difference2, $fQQPL)) $fQQPL[] = $difference2;
+        if(!in_my_array($difference2, $wins)) $wins[] = $difference2;
     }
     if(count($intersection) == 2) {
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
-        if(!in_my_array($intersection, $fQQPL)) $fQQPL[] = $intersection;
+        if(!in_my_array($intersection, $wins)) $wins[] = $intersection;
     }
 
     if(!empty($difference2)) 
@@ -183,6 +186,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
    
     $fQQPLText .= "]";
     $racetext .= "\t\t'fqqpl' =>  $fQQPLText ,\n";
+
+    $WINSText = "[";
+    $someCounter = 0;
+    $someLength = count($wins);
+    foreach($wins as $winsItem){
+        $WINSText .= "[" . implode(", ", $winsItem) . "]";
+        $someCounter ++;
+        if($someCounter < $someLength) $WINSText .= ", ";
+    }
+   
+    $WINSText .= "]";
+    $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     
     if(!isset($qin2)){
         $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
