@@ -5,6 +5,17 @@ function numericalValue($n){
     $units = $n - 10 * $tens;
     return $tens + $units;
 }
+/**
+ * Returns true if two dimentional array $needle is already contained in $haystack 
+ */
+function in_my_array($needle, $haystack){
+    foreach($haystack as $comparedTo){
+        $shit1 = array_values($needle);
+        $shit2 = array_values($comparedTo);
+        if($shit1[0] == $shit2[0] && $shit1[1] == $shit2[1]) return true;
+    }
+    return false;
+}
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
@@ -52,8 +63,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
 
     if(isset($oldData)){
-        if(isset($oldData[$r])){
-            $oldRaceData = $oldData[$r];
+        if(isset($oldData[$raceNumber])){
+            $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['fqqpl'])) $oldFQQPL = $oldRaceData['fqqpl'];
         }
     }
@@ -121,8 +132,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $firstValue = array_values($intersection)[0];
         $secondValue = array_values($difference1)[0];
         if(!empty($firstValue) && !empty($secondValue)){
-            $toAddToQQPL = "'" . $firstValue . "-" . $secondValue . "'";
-            if(!in_array($toAddToQQPL, $fQQPL)) $fQQPL[] = $toAddToQQPL;
+            $toAddToQQPL = [$firstValue, $secondValue];
+            if(!in_my_array($toAddToQQPL, $fQQPL)) $fQQPL[] = $toAddToQQPL;
         }
     }
 
@@ -130,25 +141,22 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $firstValue = array_values($difference1)[0];
         $secondValue = array_values($difference2)[0];
         if(!empty($firstValue) && !empty($secondValue)){
-            $toAddToQQPL = "'" . $firstValue . "-" . $secondValue . "'";
-            if(!in_array($toAddToQQPL, $fQQPL)) $fQQPL[] = $toAddToQQPL;
+            $toAddToQQPL = [$firstValue, $secondValue];
+            if(!in_my_array($toAddToQQPL, $fQQPL)) $fQQPL[] = $toAddToQQPL;
         }
     }
 
     if(count($difference1) == 2) {
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
-        $newQPLValue = implode("-", $difference1);
-        if(!in_array($newQPLValue, $fQQPL)) $fQQPL[] = "'" . $newQPLValue . "'";
+        if(!in_my_array($difference1, $fQQPL)) $fQQPL[] = $difference1;
     }
     if(count($difference2) == 2) {
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
-        $newQPLValue = implode("-", $difference2);
-        if(!in_array($newQPLValue, $fQQPL)) $fQQPL[] = "'" . $newQPLValue . "'";
+        if(!in_my_array($difference2, $fQQPL)) $fQQPL[] = $difference2;
     }
     if(count($intersection) == 2) {
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
-        $newQPLValue = implode("-", $intersection);
-        if(!in_array($newQPLValue, $fQQPL)) $fQQPL[] = "'" . $newQPLValue . "'";
+        if(!in_my_array($intersection, $fQQPL)) $fQQPL[] = $intersection;
     }
 
     if(!empty($difference2)) 
@@ -160,8 +168,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qin1 = implode(", ", $intersection);
         $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
     }  
-
-    $racetext .= "\t\t'fqqpl' =>  [" . implode(", ", $fQQPL) . "],\n";
+    $fQQPLText = "[";
+    $someCounter = 0;
+    $someLength = count($fQQPL);
+    foreach($fQQPL as $fQQPLItem){
+        $fQQPLText .= "[" . implode(", ", $fQQPLItem) . "]";
+        $someCounter ++;
+        if($someCounter < $someLength) $fQQPLText .= ",";
+    }
+   
+    $fQQPLText .= "]";
+    $racetext .= "\t\t'fqqpl' =>  $fQQPLText ,\n";
     
     if(!isset($qin2)){
         $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
