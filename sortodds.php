@@ -6,7 +6,7 @@ function numericalValue($n){
     return $tens + $units;
 }
 /**
- * Returns true if two dimentional array $needle is already contained in $haystack 
+ * Returns true if one or two dimentional array $needle is already contained in $haystack 
  */
 function in_my_array($needle, $haystack){
     foreach($haystack as $comparedTo){
@@ -77,7 +77,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             if(isset($oldRaceData['wins'])) $oldWINS = $oldRaceData['wins'];
         }
     }
-
     $racetext = "";
 
     $tmpArray = $probas[$raceNumber];
@@ -165,7 +164,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Qin' =>  '" . $qin . "',\n";
     $racetext .= "\t],\n";
     unset($qin);
-
+    unset($oldWINS);
     $outtext .= $racetext;
 }
 
