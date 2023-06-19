@@ -12,11 +12,16 @@ function in_my_array($needle, $haystack){
     foreach($haystack as $comparedTo){
         $shit1 = array_values($needle);
         $shit2 = array_values($comparedTo);
-        if(
-            ($shit1[0] == $shit2[0] && $shit1[1] == $shit2[1]) 
-        ||  ($shit1[0] == $shit2[1] && $shit1[1] == $shit2[0])    
-        )    
-        return true;
+        if(count($shit1) == 1 && count($shit2) == 1) {
+            if($shit1[0] == $shit2[0]) return true;
+        }
+        elseif(count($shit1) == 2 && count($shit2) == 2){
+            if(
+                ($shit1[0] == $shit2[0] && $shit1[1] == $shit2[1]) 
+            ||  ($shit1[0] == $shit2[1] && $shit1[1] == $shit2[0])    
+            )    
+            return true;
+            }
     }
     return false;
 }
@@ -69,7 +74,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($oldData)){
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
-            if(isset($oldRaceData['fqqpl'])) $oldFQQPL = $oldRaceData['fqqpl'];
             if(isset($oldRaceData['wins'])) $oldWINS = $oldRaceData['wins'];
         }
     }
@@ -124,68 +128,28 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             }
         }
     }
-    $difference1 = array_diff($toWin, $trio);
-    $difference2 = array_diff($trio, $toWin);
+    $difference = array_diff($trio, $toWin);
     $intersection = array_intersect($toWin, $trio);
 
     // $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     // $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
 
-    if(isset($oldFQQPL)) $fQQPL = $oldFQQPL;
-    else $fQQPL = [];
+    
     if(isset($oldWINS)) $wins = $oldWINS;
     else $wins = [];
-    if(isset(array_values($intersection)[0]) && isset(array_values($difference1)[0])){
-        $firstValue = array_values($intersection)[0];
-        $secondValue = array_values($difference1)[0];
-        if(!empty($firstValue) && !empty($secondValue)){
-            $toAddToQQPL = [$firstValue, $secondValue];
-            if(!in_my_array($toAddToQQPL, $fQQPL)) $fQQPL[] = $toAddToQQPL;
-        }
+    
+    if(count($difference) == 1 || count($difference) == 2) {
+        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference) . "',\n";
+        if(!in_my_array($difference, $wins)) $wins[] = $difference;
     }
-
-    if(isset(array_values($difference1)[0]) && isset(array_values($difference2)[0])){
-        $firstValue = array_values($difference1)[0];
-        $secondValue = array_values($difference2)[0];
-        if(!empty($firstValue) && !empty($secondValue)){
-            $toAddToQQPL = [$firstValue, $secondValue];
-            if(!in_my_array($toAddToQQPL, $fQQPL)) $fQQPL[] = $toAddToQQPL;
-        }
-    }
-
-    if(count($difference1) == 2) {
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference1) . "',\n";
-        if(!in_my_array($difference1, $wins)) $wins[] = $difference1;
-    }
-    if(count($difference2) == 2) {
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference2) . "',\n";
-        if(!in_my_array($difference2, $wins)) $wins[] = $difference2;
-    }
-    if(count($intersection) == 2) {
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $intersection) . "',\n";
-        if(!in_my_array($intersection, $wins)) $wins[] = $intersection;
-    }
-
-    if(!empty($difference2)) 
+    
+    if(!empty($difference)) 
     {
-        $qin1 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1) . ', ' . implode(", ", $difference2);
-        if(count($difference1) > 1 && count($difference2) > 1) $qin2 = implode(", ", $difference1) . ' X ' . implode(", ", $difference2);
+        $qin = implode(", ", $intersection) . ' X ' . implode(", ", $difference);
     }
     else{
-        $qin1 = implode(", ", $intersection);
-        $qin2 = implode(", ", $intersection) . ' X ' . implode(", ", $difference1);
+        $qin = implode(", ", $intersection);
     }  
-    $fQQPLText = "[";
-    $someCounter = 0;
-    $someLength = count($fQQPL);
-    foreach($fQQPL as $fQQPLItem){
-        $fQQPLText .= "[" . implode(", ", $fQQPLItem) . "]";
-        $someCounter ++;
-        if($someCounter < $someLength) $fQQPLText .= ", ";
-    }
-   
-    $fQQPLText .= "]";
-    $racetext .= "\t\t'fqqpl' =>  $fQQPLText ,\n";
 
     $WINSText = "[";
     $someCounter = 0;
@@ -198,17 +162,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
    
     $WINSText .= "]";
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
-    
-    if(!isset($qin2)){
-        $racetext .= "\t\t'Qin' =>  '" . $qin1 . "',\n";
-    }
-    else{
-        $racetext .= "\t\t'Qin1' =>  '" . $qin1 . "',\n";
-        $racetext .= "\t\t'Qin2' =>  '" . $qin2 . "',\n";
-    }
+    $racetext .= "\t\t'Qin' =>  '" . $qin . "',\n";
     $racetext .= "\t],\n";
-    unset($qin1);
-    unset($qin2);
+    unset($qin);
 
     $outtext .= $racetext;
 }
