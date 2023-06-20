@@ -157,8 +157,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $bSelected = array_intersect($selected, $blacks);
     $rSelected = array_intersect($selected, $reds);
     sort($bSelected); sort($rSelected);
-    if(count($bSelected) == 3) unset($bSelected[1]);
-    if(count($rSelected) == 3) unset($rSelected[1]);
+    // if(count($bSelected) == 3) unset($bSelected[1]);
+    // if(count($rSelected) == 3) unset($rSelected[1]);
     $qplTrio = array_values(array_unique(array_merge($bSelected, $rSelected)));
     sort($qplTrio);
     if(!in_my_array($qplTrio, $qplTrios)) $qplTrios[] = $qplTrio;
