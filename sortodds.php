@@ -6,22 +6,21 @@ function numericalValue($n){
     return $tens + $units;
 }
 /**
- * Returns true if one or two dimentional array $needle is already contained in $haystack 
+ * Returns true if array $needle is contained in array of arrays $haystack 
  */
 function in_my_array($needle, $haystack){
     foreach($haystack as $comparedTo){
         $shit1 = array_values($needle);
         $shit2 = array_values($comparedTo);
-        if(count($shit1) == 1 && count($shit2) == 1) {
-            if($shit1[0] == $shit2[0]) return true;
-        }
-        elseif(count($shit1) == 2 && count($shit2) == 2){
-            if(
-                ($shit1[0] == $shit2[0] && $shit1[1] == $shit2[1]) 
-            ||  ($shit1[0] == $shit2[1] && $shit1[1] == $shit2[0])    
-            )    
-            return true;
+        $count1 = count($shit1);
+        $count2 = count($shit2);
+        if($count1 == $count2){
+            $coincidences = 0;
+            for($compt = 0; $compt < $count1; $compt++) {
+                if($shit1[$compt] == $shit2[$compt]) $coincidences++;
             }
+            if($coincidences == $count1) return true;
+        }
     }
     return false;
 }
@@ -75,6 +74,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['wins'])) $oldWINS = $oldRaceData['wins'];
+            if(isset($oldRaceData['qpl/trio'])) $oldQPLTrio = $oldRaceData['qpl/trio'];
         }
     }
     $racetext = "";
@@ -136,6 +136,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     
     if(isset($oldWINS)) $wins = $oldWINS;
     else $wins = [];
+
+    if(isset($oldQPLTrio)) $qplTrios = $oldQPLTrio;
+    else $qplTrios = [];
     
     if(count($difference) == 1 || count($difference) == 2) {
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference) . "',\n";
@@ -148,7 +151,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     else{
         $qin = implode(", ", $intersection);
-    }  
+    } 
+
+    $selected = array_values(array_unique(array_merge($intersection, $difference)));
+    $bSelected = array_intersect($selected, $blacks);
+    $rSelected = array_intersect($selected, $reds);
+    sort($bSelected); sort($rSelected);
+    if(count($bSelected) == 3) unset($bSelected[1]);
+    if(count($rSelected) == 3) unset($rSelected[1]);
+    $qplTrio = array_values(array_unique(array_merge($bSelected, $rSelected)));
+    sort($qplTrio);
+    if(!in_my_array($qplTrio, $qplTrios)) $qplTrios[] = $qplTrio;
 
     $WINSText = "[";
     $someCounter = 0;
@@ -158,13 +171,24 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $someCounter ++;
         if($someCounter < $someLength) $WINSText .= ", ";
     }
-   
     $WINSText .= "]";
+
+    $QPLText = "[";
+    $someCounter = 0;
+    $someLength = count($qplTrios);
+    foreach($qplTrios as $qplItem){
+        $QPLText .= "[" . implode(", ", $qplItem) . "]";
+        $someCounter ++;
+        if($someCounter < $someLength) $QPLText .= ", ";
+    }
+    $QPLText .= "]";
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'Qin' =>  '" . $qin . "',\n";
+    $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($oldWINS);
+    unset($oldQPLTrio);
     $outtext .= $racetext;
 }
 
