@@ -162,6 +162,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $qplTrio = array_values(array_unique(array_merge($rSelected, $bSelected)));
     if(!in_my_array($qplTrio, $qplTrios)) $qplTrios[] = $qplTrio;
 
+    $allSelected = [];
+    foreach($wins as $winsItem){
+        $allSelected = array_values(array_unique(array_merge($allSelected, $winsItem)));
+    }
+    foreach($qplTrios as $qplItem){
+        $allSelected = array_values(array_unique(array_merge($allSelected, $qplItem)));
+    }
+    sort($allSelected);
+    
     $WINSText = "[";
     $someCounter = 0;
     $someLength = count($wins);
@@ -184,6 +193,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'Qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
+    $racetext .= "\t\t'all' =>  '" . implode(", ", $allSelected). "',\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($oldWINS);
