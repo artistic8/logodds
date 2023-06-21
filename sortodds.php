@@ -159,8 +159,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     sort($bSelected); sort($rSelected);
     // if(count($bSelected) == 3) unset($bSelected[1]);
     // if(count($rSelected) == 3) unset($rSelected[1]);
-    $qplTrio = array_values(array_unique(array_merge($bSelected, $rSelected)));
-    sort($qplTrio);
+    $qplTrio = array_values(array_unique(array_merge($rSelected, $bSelected)));
     if(!in_my_array($qplTrio, $qplTrios)) $qplTrios[] = $qplTrio;
 
     $WINSText = "[";
