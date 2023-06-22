@@ -156,6 +156,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     // if(count($bSelected) == 3) unset($bSelected[1]);
     // if(count($rSelected) == 3) unset($rSelected[1]);
     $qplTrio = array_values(array_unique(array_merge($rSelected, $bSelected)));
+    $lastQplTrio = end($qplTrios);
+    if(!empty($lastQplTrio)){
+        $differences = array_diff($qplTrio, $lastQplTrio);
+    }
+    else $differences = [];
     if(!in_my_array($qplTrio, $qplTrios)) $qplTrios[] = $qplTrio;
 
     $allSelected = [];
@@ -167,7 +172,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     sort($allSelected);
 
-    $differences = [];
     for($i = 1; $i < count($qplTrios); $i++){
         $differences = array_values(array_unique(array_merge($differences, array_diff($qplTrios[$i], $qplTrios[$i - 1]))));
     }
