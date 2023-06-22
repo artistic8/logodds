@@ -140,13 +140,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($oldQPLTrio)) $qplTrios = $oldQPLTrio;
     else $qplTrios = [];
     
-    if(count($difference) == 1 || count($difference) == 2) {
+    if(!empty($difference)) {
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $difference) . "',\n";
         if(!in_my_array($difference, $wins)) $wins[] = $difference;
-    }
-    
-    if(!empty($difference)) 
-    {
         $qin = implode(", ", $intersection) . ' X ' . implode(", ", $difference);
     }
     else{
@@ -170,6 +166,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $allSelected = array_values(array_unique(array_merge($allSelected, $qplItem)));
     }
     sort($allSelected);
+
+    $differences = [];
+    for($i = 1; $i < count($qplTrios); $i++){
+        $differences = array_values(array_unique(array_merge($differences, array_diff($qplTrios[$i], $qplTrios[$i - 1]))));
+    }
     
     $WINSText = "[";
     $someCounter = 0;
@@ -194,6 +195,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'all' =>  '" . implode(", ", $allSelected). "',\n";
+    $racetext .= "\t\t'diff' =>  '" . implode(", ", $differences). "',\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($oldWINS);
