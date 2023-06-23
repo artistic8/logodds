@@ -74,6 +74,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['wins'])) $oldWINS = $oldRaceData['wins'];
+            if(isset($oldRaceData['inters'])) $oldINTERS = $oldRaceData['inters'];
             if(isset($oldRaceData['qpl/trio'])) $oldQPLTrio = $oldRaceData['qpl/trio'];
         }
     }
@@ -137,6 +138,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($oldWINS)) $wins = $oldWINS;
     else $wins = [];
 
+    if(isset($oldINTERS)) $inters = $oldINTERS;
+    else $inters = [];
+
     if(isset($oldQPLTrio)) $qplTrios = $oldQPLTrio;
     else $qplTrios = [];
     
@@ -149,12 +153,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qin = implode(", ", $intersection);
     } 
 
+    if(!in_my_array($intersection, $inters)) $inters[] = $intersection;
+
+    $dInter = [];
+    foreach($wins as $winsItem){
+        foreach($inters as $intersItem){
+            $dInter = array_values(array_unique(array_merge($dInter, array_intersect($winsItem, $intersItem))));
+        }
+    }
+
     $selected = array_values(array_unique(array_merge($intersection, $difference)));
     $bSelected = array_intersect($selected, $blacks);
     $rSelected = array_intersect($selected, $reds);
     sort($bSelected); sort($rSelected);
-    // if(count($bSelected) == 3) unset($bSelected[1]);
-    // if(count($rSelected) == 3) unset($rSelected[1]);
     $qplTrio = array_values(array_unique(array_merge($rSelected, $bSelected)));
     $lastQplTrio = end($qplTrios);
     if(!empty($lastQplTrio)){
@@ -186,6 +197,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $WINSText .= "]";
 
+    $INTERSText = "[";
+    $someCounter = 0;
+    $someLength = count($inters);
+    foreach($inters as $intersItem){
+        $INTERSText .= "[" . implode(", ", $intersItem) . "]";
+        $someCounter ++;
+        if($someCounter < $someLength) $INTERSText .= ", ";
+    }
+    $INTERSText .= "]";
+
     $QPLText = "[";
     $someCounter = 0;
     $someLength = count($qplTrios);
@@ -196,7 +217,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $QPLText .= "]";
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
-    $racetext .= "\t\t'Qin' =>  '" . $qin . "',\n";
+    $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
+    $racetext .= "\t\t'dInter' =>  '" . implode(", ", $dInter). "',\n";
+    $racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'all' =>  '" . implode(", ", $allSelected). "',\n";
     $racetext .= "\t\t'diff' =>  '" . implode(", ", $differences). "',\n";
