@@ -128,8 +128,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             }
         }
     }
-    $difference = array_diff($trio, $toWin);
-    $intersection = array_intersect($toWin, $trio);
+    $difference = array_values(array_unique(array_diff($trio, $toWin)));
+    $intersection = array_Values(array_unique(array_intersect($toWin, $trio)));
 
     // $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     // $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
