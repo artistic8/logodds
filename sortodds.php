@@ -162,6 +162,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
 
+    $iInter = [];
+    for($i = 0; $i < count($inters); $i ++){
+        for($j = $i + 1; $j < count($inters); $j ++){
+            $iInter = array_values(array_unique(array_merge($iInter, array_intersect($inters[$i], $inters[$j]))));
+        }
+    }
+
     $selected = array_values(array_unique(array_merge($intersection, $difference)));
     $bSelected = array_intersect($selected, $blacks);
     $rSelected = array_intersect($selected, $reds);
@@ -219,6 +226,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'dInter' =>  '" . implode(", ", $dInter). "',\n";
+    $racetext .= "\t\t'iInter' =>  '" . implode(", ", $iInter). "',\n";
     $racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'all' =>  '" . implode(", ", $allSelected). "',\n";
