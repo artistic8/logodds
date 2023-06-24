@@ -129,7 +129,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     $difference = array_values(array_unique(array_diff($trio, $toWin)));
+    sort($difference);
     $intersection = array_Values(array_unique(array_intersect($toWin, $trio)));
+    sort($intersection);
 
     // $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     // $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
