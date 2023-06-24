@@ -93,15 +93,14 @@ return [
 		/**
 		Race 10
 		*/
-		'Win' =>  '6, 7, 9',
 		'wins' =>  [[6, 7, 9]] ,
-		'inters' =>  [[3, 4]] ,
-		'dInter' =>  '',
-		'dInter-diff' =>  '',
-		'iInter' =>  '',
-		'iInter-diff' =>  '',
-		'qin' =>  '3, 4 X 6, 7, 9',
-		'qpl/trio' =>  [[3, 7, 9, 4, 6]] ,
-		'diff' =>  '',
+		'inters' =>  [[3, 4], [3, 4, 6, 7, 12]] ,
+		'dInter' =>  '6, 7',
+		'dInter-diff' =>  '6, 7',
+		'iInter' =>  '3, 4',
+		'iInter-diff' =>  '3, 4',
+		'qin' =>  '3, 4, 6, 7, 12',
+		'qpl/trio' =>  [[3, 7, 9, 4, 6], [3, 7, 12, 4, 6]] ,
+		'diff' =>  '12',
 	],
 ];
