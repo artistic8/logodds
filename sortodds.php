@@ -181,18 +181,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     else $differences = [];
     if(!in_my_array($qplTrio, $qplTrios)) $qplTrios[] = $qplTrio;
 
-    $allSelected = [];
-    foreach($wins as $winsItem){
-        $allSelected = array_values(array_unique(array_merge($allSelected, $winsItem)));
-    }
-    foreach($qplTrios as $qplItem){
-        $allSelected = array_values(array_unique(array_merge($allSelected, $qplItem)));
-    }
-    sort($allSelected);
-
     for($i = 1; $i < count($qplTrios); $i++){
         $differences = array_values(array_unique(array_merge($differences, array_diff($qplTrios[$i], $qplTrios[$i - 1]))));
     }
+
+    $dInter2 = array_diff($dInter, $differences);
+    $iInter2 = array_diff($iInter, $differences);
     
     $WINSText = "[";
     $someCounter = 0;
@@ -226,10 +220,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'dInter' =>  '" . implode(", ", $dInter). "',\n";
+    $racetext .= "\t\t'dInter-diff' =>  '" . implode(", ", $dInter2). "',\n";
     $racetext .= "\t\t'iInter' =>  '" . implode(", ", $iInter). "',\n";
+    $racetext .= "\t\t'iInter-diff' =>  '" . implode(", ", $iInter2). "',\n";
     $racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
-    $racetext .= "\t\t'all' =>  '" . implode(", ", $allSelected). "',\n";
     $racetext .= "\t\t'diff' =>  '" . implode(", ", $differences). "',\n";
     $racetext .= "\t],\n";
     unset($qin);
