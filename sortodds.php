@@ -187,6 +187,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $differences = array_values(array_unique(array_merge($differences, array_diff($qplTrios[$i], $qplTrios[$i - 1]))));
     }
 
+    sort($differences);
+
     $dInter2 = array_diff($dInter, $differences);
     $iInter2 = array_diff($iInter, $differences);
     
