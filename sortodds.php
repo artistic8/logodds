@@ -191,6 +191,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $dInter2 = array_diff($dInter, $differences);
     $iInter2 = array_diff($iInter, $differences);
+    $_WIN = $iInter2;
+    foreach($wins as $winsItem){
+        $_WIN = array_values(array_unique(array_merge($_WIN, $winsItem)));
+    }
+    sort($_WIN);
     
     $WINSText = "[";
     $someCounter = 0;
@@ -227,6 +232,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'dInter-diff' =>  '" . implode(", ", $dInter2). "',\n";
     $racetext .= "\t\t'iInter' =>  '" . implode(", ", $iInter). "',\n";
     $racetext .= "\t\t'iInter-diff' =>  '" . implode(", ", $iInter2). "',\n";
+    $racetext .= "\t\t'WIN' =>  '" . implode(", ", $_WIN). "',\n";
     $racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'diff' =>  '" . implode(", ", $differences). "',\n";
