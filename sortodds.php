@@ -74,6 +74,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['wins'])) $oldWINS = $oldRaceData['wins'];
+            if(isset($oldRaceData['SS'])) $oldSS = $oldRaceData['SS'];
             if(isset($oldRaceData['inters'])) $oldINTERS = $oldRaceData['inters'];
             if(isset($oldRaceData['qpl/trio'])) $oldQPLTrio = $oldRaceData['qpl/trio'];
         }
@@ -140,6 +141,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($oldWINS)) $wins = $oldWINS;
     else $wins = [];
 
+    if(isset($oldSS)) $SS_ = $oldSS;
+    else $SS_ = [];
+
     if(isset($oldINTERS)) $inters = $oldINTERS;
     else $inters = [];
 
@@ -189,6 +193,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $_WIN = array_values(array_unique(array_merge($_WIN, $winsItem)));
     }
     sort($_WIN);
+
+    $SS = array_intersect($_WIN, $qinValues);
+    sort($SS);
+    if(!in_my_array($SS, $SS_)) $SS_[] = $SS;
+
+    $iSS = [];
+    for($i = 0; $i < count($SS_); $i ++){
+        for($j = $i + 1; $j < count($SS_); $j ++){
+            $iSS = array_values(array_unique(array_merge($iSS, array_intersect($SS_[$i], $SS_[$j]))));
+        }
+    }
     
     $WINSText = "[";
     $someCounter = 0;
@@ -199,6 +214,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($someCounter < $someLength) $WINSText .= ", ";
     }
     $WINSText .= "]";
+
+    $SSText = "[";
+    $someCounter = 0;
+    $someLength = count($SS_);
+    foreach($SS_ as $SSItem){
+        $SSText .= "[" . implode(", ", $SSItem) . "]";
+        $someCounter ++;
+        if($someCounter < $someLength) $SSText .= ", ";
+    }
+    $SSText .= "]";
 
     $INTERSText = "[";
     $someCounter = 0;
@@ -224,8 +249,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'WIN' =>  '" . implode(", ", $_WIN). "',\n";
     $racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
-    $SS = array_intersect($_WIN, $qinValues);
     $racetext .= "\t\t'S' =>  '" . implode(", ", $SS). "',\n";
+    $racetext .= "\t\t'SS' =>  $SSText ,\n";
+    if(!empty($iSS)) $racetext .= "\t\t'I' =>  '" . implode(", ", $iSS). "',\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($qinValues);
