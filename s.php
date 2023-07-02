@@ -30,12 +30,30 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     $S3 = explode(", ", $S3);
     $S = array_intersect($S1, $S2, $S3);
 
+    $I1 = $raceProbas1['I'];
+    $I1 = explode(", ", $I1);
+    $I2 = $probas2[$raceNumber]['I'];
+    $I2 = explode(", ", $I2);
+    $I3 = $probas3[$raceNumber]['I'];
+    $I3 = explode(", ", $I3);
+    $I = array_intersect($I1, $I2, $I3);
+
+    $X1 = $raceProbas1['X'];
+    $X1 = explode(", ", $X1);
+    $X2 = $probas2[$raceNumber]['X'];
+    $X2 = explode(", ", $X2);
+    $X3 = $probas3[$raceNumber]['X'];
+    $X3 = explode(", ", $X3);
+    $X = array_intersect($X1, $X2, $X3);
+
     $racetext = "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
     $racetext .= "\t\t'WIN' =>  '" . implode(", ", $winners). "',\n";
     $racetext .= "\t\t'S' =>  '" . implode(", ", $S). "',\n";
+    $racetext .= "\t\t'I' =>  '" . implode(", ", $I). "',\n";
+    $racetext .= "\t\t'X' =>  '" . implode(", ", $X). "',\n";
     $racetext .= "\t],\n";
 
     $outtext .= $racetext;
