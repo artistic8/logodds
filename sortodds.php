@@ -183,8 +183,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     sort($_WIN);
 
-    $SS = array_intersect($_WIN, $qinValues);
-    sort($SS);
+    $SA = array_intersect($_WIN, $qinValues);
+    sort($SA);
+
+    $SB = array_intersect($iInter, $qinValues);
+    sort($SB);
     
     $WINSText = "[";
     $someCounter = 0;
@@ -215,6 +218,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($someCounter < $someLength) $QPLText .= ", ";
     }
     $QPLText .= "]";
+
+    $X1 = array_intersect($_WIN, $iInter, $SA);
+    $X2 = array_intersect($_WIN, $iInter, $SB);
+    $X = array_values(array_unique(array_merge($X1, $X2)));
+
+    $_WIN = array_diff($_WIN, $X);
+    $iInter = array_diff($iInter, $X);
+    $SA = array_diff($SA, $X);
+    $SB = array_diff($SB, $X);
+    $SS = array_values(array_unique(array_merge($SA, $SB)));
+    sort($SS);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
@@ -222,8 +237,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
     //$racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'S' =>  '" . implode(", ", $SS). "',\n";
-    $X = array_intersect($_WIN, $iInter, $SS);
-    $racetext .= "\t\t'X' =>  '" . implode(", ", $X). "',//TO AVOID?\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($qinValues);

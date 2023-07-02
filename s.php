@@ -38,14 +38,6 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     $I3 = explode(", ", $I3);
     $I = array_intersect($I1, $I2, $I3);
 
-    $X1 = $raceProbas1['X'];
-    $X1 = explode(", ", $X1);
-    $X2 = $probas2[$raceNumber]['X'];
-    $X2 = explode(", ", $X2);
-    $X3 = $probas3[$raceNumber]['X'];
-    $X3 = explode(", ", $X3);
-    $X = array_intersect($X1, $X2, $X3);
-
     $racetext = "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
