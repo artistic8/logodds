@@ -168,6 +168,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
 
+    sort($iInter);
+
     $selected = array_values(array_unique(array_merge($intersection, $difference)));
     $bSelected = array_intersect($selected, $blacks);
     $rSelected = array_intersect($selected, $reds);
