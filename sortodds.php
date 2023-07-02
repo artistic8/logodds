@@ -173,21 +173,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $rSelected = array_intersect($selected, $reds);
     sort($bSelected); sort($rSelected);
     $qplTrio = array_values(array_unique(array_merge($rSelected, $bSelected)));
-    $lastQplTrio = end($qplTrios);
-    if(!empty($lastQplTrio)){
-        $differences = array_diff($qplTrio, $lastQplTrio);
-    }
-    else $differences = [];
     if(!in_my_array($qplTrio, $qplTrios)) $qplTrios[] = $qplTrio;
 
-    for($i = 1; $i < count($qplTrios); $i++){
-        $differences = array_values(array_unique(array_merge($differences, array_diff($qplTrios[$i], $qplTrios[$i - 1]))));
-    }
-
-    sort($differences);
-
-    $iInter2 = array_diff($iInter, $differences);
-    $_WIN = $iInter2;
+    $_WIN = $iInter;
     foreach($wins as $winsItem){
         $_WIN = array_values(array_unique(array_merge($_WIN, $winsItem)));
     }
