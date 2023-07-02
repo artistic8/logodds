@@ -221,7 +221,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     //$racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'S' =>  '" . implode(", ", $SS). "',\n";
     $X = array_intersect($_WIN, $iInter, $SS);
-    $racetext .= "\t\t'X' =>  '" . implode(", ", $X). "',\n";
+    $racetext .= "\t\t'X' =>  '" . implode(", ", $X). "',//TO AVOID?\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($qinValues);
