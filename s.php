@@ -4,21 +4,46 @@ if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "probas.php";
 
 $probas1 = include($currentDir . DIRECTORY_SEPARATOR . "1.php");
 $probas2 = include($currentDir . DIRECTORY_SEPARATOR . "2.php");
 $probas3 = include($currentDir . DIRECTORY_SEPARATOR . "3.php");
 
-$totalRaces = count($probas1);
+$outtext = "<?php\n\n";
+$outtext .= "return [\n";
 
 foreach($probas1 as $raceNumber => $raceProbas1){
-    var_dump($raceNumber); 
     $winners1 = $raceProbas1['WIN'];
+    $winners1 = explode(", ", $winners1);
+    $winners2 = $probas2[$raceNumber]['WIN'];
+    $winners2 = explode(", ", $winners2);
+    $winners3 = $probas3[$raceNumber]['WIN'];
+    $winners3 = explode(", ", $winners3);
+    $winners = array_intersect($winners1, $winners2, $winners3);
+    
     $S1 = $raceProbas1['S'];
+    $S1 = explode(", ", $S1);
+    $S2 = $probas2[$raceNumber]['S'];
+    $S2 = explode(", ", $S2);
+    $S3 = $probas3[$raceNumber]['S'];
+    $S3 = explode(", ", $S3);
+    $S = array_intersect($S1, $S2, $S3);
 
-    var_dump($winners1); 
-    var_dump($S1); 
-    die();
+    $racetext = "\t'$raceNumber' => [\n";
+    $racetext .= "\t\t/**\n";
+    $racetext .= "\t\tRace $raceNumber\n";
+    $racetext .= "\t\t*/\n";
+    $racetext .= "\t\t'WIN' =>  '" . implode(", ", $winners). "',\n";
+    $racetext .= "\t\t'S' =>  '" . implode(", ", $S). "',\n";
+    $racetext .= "\t],\n";
+
+    $outtext .= $racetext;
+    
 }
+
+$outtext .= "];\n";
+
+file_put_contents($outFile, $outtext);
 
 ?>
