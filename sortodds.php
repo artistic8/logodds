@@ -230,6 +230,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $SS = array_values(array_unique(array_merge($SA, $SB)));
     sort($SS);
 
+    $all = array_values(array_unique(array_merge($_WIN, $iInter, $SS)));
+    sort($all);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
@@ -237,6 +240,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
     //$racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
     $racetext .= "\t\t'S' =>  '" . implode(", ", $SS). "',\n";
+    $racetext .= "\t\t'all' =>  '" . implode(", ", $all). "',\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($qinValues);
