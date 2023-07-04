@@ -236,11 +236,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
-    $racetext .= "\t\t'WIN' =>  '" . implode(", ", $_WIN). "',\n";
+    $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
-    //$racetext .= "\t\t'qin' =>  '" . $qin . "',\n";
-    $racetext .= "\t\t'S' =>  '" . implode(", ", $SS). "',\n";
-    $racetext .= "\t\t'all' =>  '" . implode(", ", $all). "',\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($qinValues);
