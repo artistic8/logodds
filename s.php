@@ -27,7 +27,7 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     sort($IIntersection);
     sort($IUnion);
 
-    if(!empty($IIntersection)) $qplRightSide = array_diff($IIntersection, [$favorite]);
+    if(!empty($IIntersection)) $qplRightSide = $IIntersection;
     else $qplRightSide = array_diff($IUnion, [$favorite]);
 
     $qpl = "'" . $favorite . " X " . implode(", ", $qplRightSide) . "'\n";
