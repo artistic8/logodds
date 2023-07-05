@@ -233,6 +233,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $all = array_values(array_unique(array_merge($_WIN, $iInter, $SS)));
     sort($all);
 
+    $iInter = array_diff($iInter, [$first1]);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
