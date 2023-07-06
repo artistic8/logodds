@@ -30,7 +30,7 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     if(!empty($IIntersection)) $qplRightSide = $IIntersection;
     else $qplRightSide = array_diff($IUnion, [$favorite]);
 
-    $qpl = "'" . $favorite . " X " . implode(", ", $qplRightSide) . "'\n";
+    $qpl = "'" . $favorite . " X " . implode(", ", $qplRightSide) . "'";
 
     $racetext = "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
@@ -38,6 +38,7 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     $racetext .= "\t\t*/\n";
     
     $racetext .= "\t\t'qpl' => $qpl,\n";
+    $racetext .= "\t\t'U' => '" . implode(", ", $IUnion) . "',\n";
     
     $racetext .= "\t],\n";
 
