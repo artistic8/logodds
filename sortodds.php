@@ -12,6 +12,8 @@ function in_my_array($needle, $haystack){
     foreach($haystack as $comparedTo){
         $shit1 = array_values($needle);
         $shit2 = array_values($comparedTo);
+        sort($shit1); 
+        sort($shit2);
         $count1 = count($shit1);
         $count2 = count($shit2);
         if($count1 == $count2){
@@ -132,13 +134,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     $difference = array_values(array_unique(array_diff($trio, $toWin)));
-    sort($difference);
     $intersection = array_Values(array_unique(array_intersect($toWin, $trio)));
-    sort($intersection);
 
     // $racetext .= "\t\t'F: " . implode(", ", $favorites) . "',\n";
     // $racetext .= "\t\t'O: " . implode(", ", $others) . "',\n";
-
     
     if(isset($oldWINS)) $wins = $oldWINS;
     else $wins = [];
@@ -181,13 +180,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($wins as $winsItem){
         $_WIN = array_values(array_unique(array_merge($_WIN, $winsItem)));
     }
-    sort($_WIN);
 
     $SA = array_intersect($_WIN, $qinValues);
-    sort($SA);
-
     $SB = array_intersect($iInter, $qinValues);
-    sort($SB);
     
     $WINSText = "[";
     $someCounter = 0;
@@ -223,15 +218,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $X2 = array_intersect($_WIN, $iInter, $SB);
     $X = array_values(array_unique(array_merge($X1, $X2)));
 
-    $_WIN = array_diff($_WIN, $X);
     $iInter = array_diff($iInter, $X);
     $SA = array_diff($SA, $X);
     $SB = array_diff($SB, $X);
     $SS = array_values(array_unique(array_merge($SA, $SB)));
-    sort($SS);
-
-    $all = array_values(array_unique(array_merge($_WIN, $iInter, $SS)));
-    sort($all);
 
     $iInter = array_diff($iInter, [$first1]);
 
@@ -240,6 +230,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
+    $racetext .= "\t\t'S' =>  '" . implode(", ", $SS). "',\n";
     $racetext .= "\t],\n";
     unset($qin);
     unset($qinValues);
