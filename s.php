@@ -18,6 +18,7 @@ foreach($probas1 as $raceNumber => $raceProbas1){
 
     $I1 = $raceProbas1['I'];
     $I1 = explode(", ", $I1);
+    $PLACE = $raceProbas1['PLACE'];
     $I2 = $probas2[$raceNumber]['I'];
     $I2 = explode(", ", $I2);
     $I3 = $probas3[$raceNumber]['I'];
@@ -38,7 +39,7 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     if(count($qplRightSide) <= 1) {
         $racetext .= "\t\t'Win' => '$favorite',\n";
     }
-    
+    $racetext .= "\t\t'PLACE' => '$PLACE',\n";
     $racetext .= "\t],\n";
 
     $outtext .= $racetext;
