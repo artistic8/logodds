@@ -19,6 +19,9 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     $I1 = $raceProbas1['I'];
     $I1 = explode(", ", $I1);
     $PLACE = $raceProbas1['PLACE'];
+    if($PLACE == "NO") $qplMin = 100;
+    else $qplMin = 50;
+    $qplMsg = "//If qpl payout > $qplMin HKD.";
     $I2 = $probas2[$raceNumber]['I'];
     $I2 = explode(", ", $I2);
     $I3 = $probas3[$raceNumber]['I'];
@@ -36,10 +39,7 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     $racetext .= "\t\t*/\n";
     
     $racetext .= "\t\t'qpl' => $qpl,\n";
-    if(count($qplRightSide) <= 1) {
-        $racetext .= "\t\t'Win' => '$favorite',\n";
-    }
-    $racetext .= "\t\t'PLACE' => '$PLACE',\n";
+    $racetext .= "\t\t" . $qplMsg . "\n";
     $racetext .= "\t],\n";
 
     $outtext .= $racetext;
