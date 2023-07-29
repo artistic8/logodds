@@ -5,7 +5,7 @@ return [
 		/**
 		Race 1
 		*/
-		'qpl' => '7 X 1, 2, 3',
+		'qpl' => '7 X 1, 3, 11',
 		//If qpl payout > 100 HKD.
 	],
 	'2' => [
@@ -19,8 +19,8 @@ return [
 		/**
 		Race 4
 		*/
-		'qpl' => '3 X 6, 10, 13, 17',
-		//If qpl payout > 50 HKD.
+		'qpl' => '10 X 3, 6, 13, 17',
+		//If qpl payout > 100 HKD.
 	],
 	'5' => [
 		/**
