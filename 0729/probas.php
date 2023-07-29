@@ -33,7 +33,7 @@ return [
 		/**
 		Race 6
 		*/
-		'qpl' => '3 X 2, 4, 6, 7, 8',
+		'qpl' => '3 X 1, 2, 4, 6, 7, 8',
 		//If qpl payout > 50 HKD.
 	],
 	'7' => [
