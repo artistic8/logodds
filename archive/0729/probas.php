@@ -7,6 +7,7 @@ return [
 		*/
 		'qpl' => '7 X 1, 2, 11',
 		//If qpl payout > 100 HKD.
+		'Bet' =>  '6',
 	],
 	'2' => [
 		/**
@@ -14,6 +15,7 @@ return [
 		*/
 		'qpl' => '6 X 2, 3, 10',
 		//If qpl payout > 50 HKD.
+		'Bet' =>  '8, 9, 7',
 	],
 	'4' => [
 		/**
@@ -21,6 +23,7 @@ return [
 		*/
 		'qpl' => '3 X 5, 6, 10, 13, 14',
 		//If qpl payout > 50 HKD.
+		'Bet' =>  '27, 5',
 	],
 	'5' => [
 		/**
@@ -28,6 +31,7 @@ return [
 		*/
 		'qpl' => '10 X 6, 7, 9, 11',
 		//If qpl payout > 50 HKD.
+		'Bet' =>  ', 5',
 	],
 	'6' => [
 		/**
@@ -35,6 +39,7 @@ return [
 		*/
 		'qpl' => '3 X 1, 2, 4, 6, 7, 8',
 		//If qpl payout > 50 HKD.
+		'Bet' =>  ', 10',
 	],
 	'7' => [
 		/**
@@ -42,6 +47,7 @@ return [
 		*/
 		'qpl' => '6 X 1, 2, 5, 10',
 		//If qpl payout > 100 HKD.
+		'Bet' =>  ', 7',
 	],
 	'8' => [
 		/**
@@ -49,5 +55,6 @@ return [
 		*/
 		'qpl' => '8 X 1, 2, 3, 4, 6, 10',
 		//If qpl payout > 100 HKD.
+		'Bet' =>  '9',
 	],
 ];

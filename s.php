@@ -16,6 +16,15 @@ $outtext .= "return [\n";
 foreach($probas1 as $raceNumber => $raceProbas1){
     $favorite = $raceProbas1['Favorite'];
 
+    $Bet1 = $raceProbas1['Bet'];
+    $Bet1 = explode(", ", $Bet1);
+    $Bet2 = $probas2[$raceNumber]['Bet'];
+    $Bet2 = explode(", ", $Bet2);
+    $Bet3 = $probas3[$raceNumber]['Bet'];
+    $Bet3 = explode(", ", $Bet3);
+
+    $betValues = array_values(array_unique(array_merge($Bet1, $Bet2, $Bet3)));
+
     $I1 = $raceProbas1['I'];
     $I1 = explode(", ", $I1);
     $PLACE = $raceProbas1['PLACE'];
@@ -40,6 +49,7 @@ foreach($probas1 as $raceNumber => $raceProbas1){
     
     $racetext .= "\t\t'qpl' => $qpl,\n";
     $racetext .= "\t\t" . $qplMsg . "\n";
+    $racetext .= "\t\t'Bet' =>  '" . implode(", ", $betValues). "',\n";
     $racetext .= "\t],\n";
 
     $outtext .= $racetext;
