@@ -184,10 +184,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $SA = array_intersect($_WIN, $qinValues);
     $SB = array_intersect($iInter, $qinValues);
     
+    $allWinsValues = [];
     $WINSText = "[";
     $someCounter = 0;
     $someLength = count($wins);
     foreach($wins as $winsItem){
+        $allWinsValues = array_values(array_unique(array_merge($allWinsValues, $winsItem)));
         if(in_array($first1, $winsItem)) $NOPLACE = true;
         $WINSText .= "[" . implode(", ", $winsItem) . "]";
         $someCounter ++;
@@ -195,15 +197,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $WINSText .= "]";
 
+    $allIntersValues = [];
     $INTERSText = "[";
     $someCounter = 0;
     $someLength = count($inters);
     foreach($inters as $intersItem){
+        $allIntersValues = array_values(array_unique(array_merge($allIntersValues, $intersItem)));
         $INTERSText .= "[" . implode(", ", $intersItem) . "]";
         $someCounter ++;
         if($someCounter < $someLength) $INTERSText .= ", ";
     }
     $INTERSText .= "]";
+
+    $betValues = array_diff($allWinsValues, $allIntersValues);
 
     $QPLText = "[";
     $someCounter = 0;
@@ -227,6 +233,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
+    $racetext .= "\t\t'Bet' =>  '" . implode(", ", $betValues). "',\n";
     if(isset($NOPLACE)) $racetext .= "\t\t'PLACE' =>  'NO',\n";
     else $racetext .= "\t\t'PLACE' =>  '" . $first1. "',\n";
     $racetext .= "\t],\n";
