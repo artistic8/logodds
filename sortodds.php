@@ -263,19 +263,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     asort($sOdds);
     $allShit = array_keys($sOdds);
 
-    $last = array_diff($part2, $candidate1);
-    $what = array_merge($part1, $part2, $S3);
-    $something = array_diff($iInter, $what);
-
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Fct' =>  $fct,\n";
     $racetext .= "\t\t'X' =>  '" . implode(", ", $S3). "',\n";
-    $racetext .= "\t\t'This???' =>  '" . implode(", ", $something). "',\n";
-    $racetext .= "\t\t'Candidate1' =>  '" . implode(", ", $candidate1). "',\n";
-    $racetext .= "\t\t'Candidate2' =>  '" . implode(", ", $candidate2). "',\n";
     $racetext .= "\t\t'All' =>  '" . implode(", ", $allShit). "',\n";
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
     $racetext .= "\t\t'Bet' =>  '" . implode(", ", $betValues). "',\n";
