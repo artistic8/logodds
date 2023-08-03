@@ -265,12 +265,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     asort($sOdds);
     $allShit = array_keys($sOdds);
 
+    $qqpl = "'" . implode(", ", $S3) . " X " . implode(", ", $candidate1) . "'";
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Fct' =>  $fct,\n";
     $racetext .= "\t\t'X' =>  '" . implode(", ", $S3). "',\n";
+    $racetext .= "\t\t'qqpl' =>  $first1 ,\n";
     $racetext .= "\t\t'Candidate1' =>  '" . implode(", ", $candidate1). "',\n";
     $racetext .= "\t\t'Candidate2' =>  '" . implode(", ", $candidate2). "',\n";
     $racetext .= "\t\t'All' =>  '" . implode(", ", $allShit). "',\n";
