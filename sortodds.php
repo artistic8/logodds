@@ -247,8 +247,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $candidate1 = array_intersect($allWinsValues, $favorites);
     $candidate2 = array_intersect($allIntersValues, $favorites);
 
-    $allShit = array_values(array_unique(array_merge($part1, $part2, $candidate1, $candidate2, $iInter)));
+    $allShit = array_values(array_unique(array_merge($part1, $part2, $candidate1, $candidate2)));
     sort($allShit);
+
+    $sOdds = [];
+    foreach($allShit as $sIndex){
+        if(isset($allOdds[$raceNumber][$sIndex])) $sOdds[$sIndex] = $allOdds[$raceNumber][$sIndex];
+    }
+    asort($sOdds);
+    $allShit = array_keys($sOdds);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
