@@ -244,10 +244,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $fct = "'" . implode(", ", $part1) . " X " . implode(", ", $part2) . "'";
 
+    $SET1 = $allWinsValues;
+    $SET2 = $allIntersValues;
+    $SET3 = $iInter;
+
+    $S1 = array_diff($SET2, $SET1);
+    $S2 = array_diff($SET2, $SET3);
+    $S3 = array_intersect($S1, $S2);
+
     $candidate1 = array_intersect($allWinsValues, $favorites);
     $candidate2 = array_intersect($allIntersValues, $favorites);
 
-    $allShit = array_values(array_unique(array_merge($part1, $part2, $candidate1, $candidate2)));
+    $allShit = array_values(array_unique(array_merge($part1, $part2, $candidate1, $candidate2, $S3)));
     sort($allShit);
 
     $sOdds = [];
@@ -262,6 +270,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Fct' =>  $fct,\n";
+    $racetext .= "\t\t'X' =>  '" . implode(", ", $S3). "',\n";
     $racetext .= "\t\t'Candidate1' =>  '" . implode(", ", $candidate1). "',\n";
     $racetext .= "\t\t'Candidate2' =>  '" . implode(", ", $candidate2). "',\n";
     $racetext .= "\t\t'All' =>  '" . implode(", ", $allShit). "',\n";
