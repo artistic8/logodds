@@ -256,8 +256,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $candidate2 = array_intersect($allIntersValues, $favorites);
 
     $allShit = array_values(array_unique(array_merge($part1, $part2, $candidate1, $candidate2, $S3, $iInter)));
-    sort($allShit);
-
     $sOdds = [];
     foreach($allShit as $sIndex){
         if(isset($allOdds[$raceNumber][$sIndex])) $sOdds[$sIndex] = $allOdds[$raceNumber][$sIndex];
@@ -266,10 +264,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $allShit = array_keys($sOdds);
 
     $last = array_diff($part2, $candidate1);
-
-    $qqpl = "'" . implode(", ", $S3) . " X " . implode(", ", $candidate1) . " X " . implode(", ", $last) . "'";
-    $whatever = array_values(array_unique(array_merge($S3, $candidate1, $last)));
-    $something = array_intersect($whatever, $candidate2);
+    $what = array_merge($part1, $part2, $S3);
+    $something = array_diff($iInter, $what);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
@@ -278,7 +274,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Fct' =>  $fct,\n";
     $racetext .= "\t\t'X' =>  '" . implode(", ", $S3). "',\n";
     $racetext .= "\t\t'This???' =>  '" . implode(", ", $something). "',\n";
-    $racetext .= "\t\t'qqpl' =>  $qqpl ,\n";
     $racetext .= "\t\t'Candidate1' =>  '" . implode(", ", $candidate1). "',\n";
     $racetext .= "\t\t'Candidate2' =>  '" . implode(", ", $candidate2). "',\n";
     $racetext .= "\t\t'All' =>  '" . implode(", ", $allShit). "',\n";
