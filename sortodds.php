@@ -255,7 +255,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $candidate1 = array_intersect($allWinsValues, $favorites);
     $candidate2 = array_intersect($allIntersValues, $favorites);
 
-    $allShit = array_values(array_unique(array_merge($part1, $part2, $candidate1, $candidate2, $S3)));
+    $allShit = array_values(array_unique(array_merge($part1, $part2, $candidate1, $candidate2, $S3, $iInter)));
     sort($allShit);
 
     $sOdds = [];
