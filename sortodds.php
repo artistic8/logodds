@@ -273,7 +273,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Fct' =>  $fct,\n";
     $racetext .= "\t\t'X' =>  '" . implode(", ", $S3). "',\n";
-    $racetext .= "\t\t'qqpl' =>  $first1 ,\n";
+    $racetext .= "\t\t'qqpl' =>  $qqpl ,\n";
     $racetext .= "\t\t'Candidate1' =>  '" . implode(", ", $candidate1). "',\n";
     $racetext .= "\t\t'Candidate2' =>  '" . implode(", ", $candidate2). "',\n";
     $racetext .= "\t\t'All' =>  '" . implode(", ", $allShit). "',\n";
