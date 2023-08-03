@@ -71,6 +71,8 @@ for($r=1; $r <= $totalRaces; $r++){
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
+$candidateToOdds = [];
+
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
 
@@ -237,14 +239,21 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $side1 = array_intersect($allWinsValues, $allIntersValues);
     $side2 = array_diff($allQplValues, $side1);
 
-    $fct = "'" . implode(", ", $side2) . " X " . implode(", ", $side1) . "'";
+    $part1 = array_intersect($side2, $iInter);
+    $part2 = array_diff($side1, $iInter);
+
+    $fct = "'" . implode(", ", $part1) . " X " . implode(", ", $part2) . "'";
+
+    $candidate1 = array_intersect($allWinsValues, $favorites);
+    $candidate2 = array_intersect($allIntersValues, $favorites);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Fct' =>  $fct,\n";
-    $racetext .= "\t\t'TRIO' =>  '" . implode(", ", $allQplValues). "',\n";
+    $racetext .= "\t\t'Candidate1' =>  '" . implode(", ", $candidate1). "',\n";
+    $racetext .= "\t\t'Candidate2' =>  '" . implode(", ", $candidate2). "',\n";
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
     $racetext .= "\t\t'Bet' =>  '" . implode(", ", $betValues). "',\n";
     if(isset($NOPLACE)) $racetext .= "\t\t'PLACE' =>  'NO',\n";
