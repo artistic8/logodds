@@ -265,7 +265,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     asort($sOdds);
     $allShit = array_keys($sOdds);
 
-    $qqpl = "'" . implode(", ", $S3) . " X " . implode(", ", $candidate1) . "'";
+    $last = array_diff($part2, $candidate1);
+
+    $qqpl = "'" . implode(", ", $S3) . " X " . implode(", ", $candidate1) . " X " . implode(", ", $last) . "'";
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
