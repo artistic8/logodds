@@ -268,6 +268,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $last = array_diff($part2, $candidate1);
 
     $qqpl = "'" . implode(", ", $S3) . " X " . implode(", ", $candidate1) . " X " . implode(", ", $last) . "'";
+    $whatever = array_values(array_unique(array_merge($S3, $candidate1, $last)));
+    $something = array_intersect($whatever, $candidate2);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
@@ -275,6 +277,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Fct' =>  $fct,\n";
     $racetext .= "\t\t'X' =>  '" . implode(", ", $S3). "',\n";
+    $racetext .= "\t\t'This???' =>  '" . implode(", ", $something). "',\n";
     $racetext .= "\t\t'qqpl' =>  $qqpl ,\n";
     $racetext .= "\t\t'Candidate1' =>  '" . implode(", ", $candidate1). "',\n";
     $racetext .= "\t\t'Candidate2' =>  '" . implode(", ", $candidate2). "',\n";
