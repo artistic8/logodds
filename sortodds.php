@@ -236,7 +236,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $iInter = array_diff($iInter, $X);
     $iInter = array_diff($iInter, [$first1]);
 
-    
     $qplsOdds = [];
     foreach($allQplValues as $iIndex){
         if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
@@ -244,6 +243,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
     $allQplValues = array_slice($allQplValues, 0, 8);
+
+    $qpl1 = array_slice($allQplValues, 0, 3);
+    $qpl2 = array_slice($allQplValues, -3);
+    $tce = array_merge($qpl1, $qpl2);
+    sort($tce);
 
     $side1 = array_intersect($allWinsValues, $allIntersValues);
     $side2 = array_diff($allQplValues, $side1);
@@ -264,7 +268,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($p2Odds);
     $part2 = array_keys($p2Odds);
-    $fct = "'" . implode(", ", $part1) . " X " . implode(", ", $part2) . "'";
+    $fct = "'" . implode(", ", $qpl1) . " X " . implode(", ", $qpl2) . "'";
 
     $SET1 = $allWinsValues;
     $SET2 = $allIntersValues;
@@ -296,7 +300,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Fct' =>  $fct,\n";
-    $racetext .= "\t\t'Qin'   =>  '" . implode(", ", $allQplValues). "',\n";
+    $racetext .= "\t\t'Qin/Tce'   =>  '" . implode(", ", $tce). "',\n";
     $racetext .= "\t\t'Inter Inters' =>  '" . implode(", ", $interInters). "',\n";
     $racetext .= "\t\t'Side' =>  '" . implode(", ", $candidate). "',\n";
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
