@@ -243,7 +243,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
-    $allQplValues = array_slice($allQplValues, 0, 8);
+    // $allQplValues = array_slice($allQplValues, 0, 8);
 
     $side1 = array_intersect($allWinsValues, $allIntersValues);
     $side2 = array_diff($allQplValues, $side1);
