@@ -297,6 +297,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($iOdds);
     $iInter = array_keys($iOdds);
+
+    $placeValues = array_diff($allQplValues, $allWinsValues);
     
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
@@ -304,6 +306,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     
     $racetext .= "\t\t'All Wins values'    =>  '" . implode(", ", $allWinsValues). "',\n";
+    $racetext .= "\t\t'Place values'    =>  '" . implode(", ", $placeValues). "',\n";
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "',\n";
     $racetext .= "\t\t'Details' =>  '" . $detailedOccurencesText. "',\n";
     $racetext .= "\t\t'Inter Inters' =>  '" . implode(", ", $interInters). "',\n";
