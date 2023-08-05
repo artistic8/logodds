@@ -255,10 +255,33 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($qplValuesOccurences as $runner => $occurence){
         if(!isset($detailedOccurences[$occurence])) $detailedOccurences[$occurence] = [$runner];
         else $detailedOccurences[$occurence][] = $runner;
-    }    
-    var_dump($detailedOccurences); die();
+    }   
+    $detailedOccurencesValues = array_values($detailedOccurences) ;
     $qins = [];
-    // $qins[] = implode($detailedOccurences)
+    if(count($detailedOccurencesValues[0]) >= 2) $qins[] = implode(", ", $detailedOccurencesValues[0]);
+    if(isset($detailedOccurencesValues[1])) {
+        if(count($detailedOccurencesValues[1]) >= 2) $qins[] = implode(", ", $detailedOccurencesValues[1]);
+        $qins[] = implode(", ", $detailedOccurencesValues[0]) . " X " . implode(", ", $detailedOccurencesValues[1]);
+        if(isset($detailedOccurencesValues[2])) {
+            $qins[] = implode(", ", $detailedOccurencesValues[1]) . " X " . implode(", ", $detailedOccurencesValues[2]);
+        }
+    }
+    if(isset($detailedOccurencesValues[2])) {
+        $qins[] = implode(", ", $detailedOccurencesValues[0]) . " X " . implode(", ", $detailedOccurencesValues[2]);
+        if(isset($detailedOccurencesValues[4])) {
+            $qins[] = implode(", ", $detailedOccurencesValues[2]) . " X " . implode(", ", $detailedOccurencesValues[4]);
+        }
+    }
+    if(isset($detailedOccurencesValues[3])) {
+        $qins[] = implode(", ", $detailedOccurencesValues[0]) . " X " . implode(", ", $detailedOccurencesValues[3]);
+        if(isset($detailedOccurencesValues[4])) {
+            $qins[] = implode(", ", $detailedOccurencesValues[3]) . " X " . implode(", ", $detailedOccurencesValues[4]);
+        }
+    }
+    if(isset($detailedOccurencesValues[4])) {
+        $qins[] = implode(", ", $detailedOccurencesValues[0]) . " X " . implode(", ", $detailedOccurencesValues[4]);
+    }
+    
     $detailedOccurencesText = "[";
     foreach($detailedOccurences as $occurence => $numbers) {
         $detailedOccurencesText .= "[$occurence] => [";
@@ -280,6 +303,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
+    foreach($qins as $qinKey => $oneQin){
+        $qinIndex = $qinKey + 1;
+        $racetext .= "\t\t'qin $qinIndex' =>  '" . $oneQin . "' ,\n";
+    }
     
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "',\n";
     $racetext .= "\t\t'Details' =>  '" . $detailedOccurencesText. "',\n";
