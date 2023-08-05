@@ -301,6 +301,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $placeValues = array_diff($allQplValues, $allWinsValues);
 
     $candidate = array_intersect($allWinsValues, $iInter);
+    $candidateOdds = [];
+    foreach($candidate as $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $candidateOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+    }
+    asort($candidateOdds);
+    $candidate = array_keys($candidateOdds);
     
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
