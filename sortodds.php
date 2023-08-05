@@ -255,13 +255,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($qplValuesOccurences as $runner => $occurence){
         if(!isset($detailedOccurences[$occurence])) $detailedOccurences[$occurence] = [$runner];
         else $detailedOccurences[$occurence][] = $runner;
-    }
-    $winnerValuesOccurences = array_slice($detailedOccurences, 0, 2);
-    $winnerValues = [];
-    foreach($winnerValuesOccurences as $winnerValuesOccurence){
-        $winnerValues = array_merge($winnerValues, $winnerValuesOccurence);
-    }
-    
+    }    
+    var_dump($detailedOccurences); die();
+    $qins = [];
+    // $qins[] = implode($detailedOccurences)
     $detailedOccurencesText = "[";
     foreach($detailedOccurences as $occurence => $numbers) {
         $detailedOccurencesText .= "[$occurence] => [";
@@ -284,7 +281,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     
-    $racetext .= "\t\t'Winner'    =>  '" . implode(", ", $winnerValues). "',\n";
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "',\n";
     $racetext .= "\t\t'Details' =>  '" . $detailedOccurencesText. "',\n";
     $racetext .= "\t\t'Inter Inters' =>  '" . implode(", ", $interInters). "',\n";
