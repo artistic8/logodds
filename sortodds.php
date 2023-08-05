@@ -197,6 +197,28 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $WINSText .= "]";
 
+    //1. Sort allWinsValues by odds
+    $winssOdds = [];
+    foreach($allWinsValues as $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $winssOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+    }
+    asort($winssOdds);
+    $allWinsValues = array_keys($winssOdds);
+    //2. Sort allWinsValues by occurence
+    $winsValuesOccurences = [];
+    foreach($allWinsValues as $winsValue) {
+        $winsValuesOccurences[$winsValue] = 0;
+    }
+    foreach($wins as $winsItem){
+        foreach($allWinsValues as $winsValue) {
+            if(in_array($winsValue, $winsItem)){
+                $winsValuesOccurences[$winsValue] ++;
+            }
+        }
+    }
+    arsort($winsValuesOccurences);
+    $allWinsValues = array_keys($winsValuesOccurences);
+
     $allIntersValues = [];
     $INTERSText = "[";
     $someCounter = 0;
@@ -257,30 +279,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         else $detailedOccurences[$occurence][] = $runner;
     }   
     $detailedOccurencesValues = array_values($detailedOccurences) ;
-    $qins = [];
-    if(count($detailedOccurencesValues[0]) >= 2) $qins[] = implode(", ", $detailedOccurencesValues[0]);
-    if(isset($detailedOccurencesValues[1])) {
-        if(count($detailedOccurencesValues[1]) >= 2) $qins[] = implode(", ", $detailedOccurencesValues[1]);
-        $qins[] = implode(", ", $detailedOccurencesValues[0]) . " X " . implode(", ", $detailedOccurencesValues[1]);
-        if(isset($detailedOccurencesValues[2])) {
-            $qins[] = implode(", ", $detailedOccurencesValues[1]) . " X " . implode(", ", $detailedOccurencesValues[2]);
-        }
-    }
-    if(isset($detailedOccurencesValues[2])) {
-        $qins[] = implode(", ", $detailedOccurencesValues[0]) . " X " . implode(", ", $detailedOccurencesValues[2]);
-        if(isset($detailedOccurencesValues[4])) {
-            $qins[] = implode(", ", $detailedOccurencesValues[2]) . " X " . implode(", ", $detailedOccurencesValues[4]);
-        }
-    }
-    if(isset($detailedOccurencesValues[3])) {
-        $qins[] = implode(", ", $detailedOccurencesValues[0]) . " X " . implode(", ", $detailedOccurencesValues[3]);
-        if(isset($detailedOccurencesValues[4])) {
-            $qins[] = implode(", ", $detailedOccurencesValues[3]) . " X " . implode(", ", $detailedOccurencesValues[4]);
-        }
-    }
-    if(isset($detailedOccurencesValues[4])) {
-        $qins[] = implode(", ", $detailedOccurencesValues[0]) . " X " . implode(", ", $detailedOccurencesValues[4]);
-    }
+    
     
     $detailedOccurencesText = "[";
     foreach($detailedOccurences as $occurence => $numbers) {
@@ -303,11 +302,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
-    foreach($qins as $qinKey => $oneQin){
-        $qinIndex = $qinKey + 1;
-        $racetext .= "\t\t'qin $qinIndex' =>  '" . $oneQin . "' ,\n";
-    }
     
+    $racetext .= "\t\t'All Wins values'    =>  '" . implode(", ", $allWinsValues). "',\n";
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "',\n";
     $racetext .= "\t\t'Details' =>  '" . $detailedOccurencesText. "',\n";
     $racetext .= "\t\t'Inter Inters' =>  '" . implode(", ", $interInters). "',\n";
