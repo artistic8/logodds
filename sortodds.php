@@ -229,28 +229,48 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $QPLText .= "]";
 
-    $X1 = array_intersect($_WIN, $iInter, $SA);
-    $X2 = array_intersect($_WIN, $iInter, $SB);
-    $X = array_values(array_unique(array_merge($X1, $X2)));
-
-    $iInter = array_diff($iInter, $X);
-    $iInter = array_diff($iInter, [$first1]);
-
+    //1. Sort qplValues by odds
     $qplsOdds = [];
     foreach($allQplValues as $iIndex){
         if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
     }
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
-    $allQplValues = array_slice($allQplValues, 0, 8);
-
-    $qplLeft = array_slice($allQplValues, 0, 3);
-    $qplRight = array_slice($allQplValues, -3);
-    $tce = array_merge($qplLeft, $qplRight);
-    sort($tce);
-
-    $qpl1 = array_intersect($tce, $reds);
-    $qpl2 = array_intersect($tce, $blacks);
+    //2. Sort qplValues by occurence
+    $qplValuesOccurences = [];
+    foreach($allQplValues as $qplValue) {
+        $qplValuesOccurences[$qplValue] = 0;
+    }
+    foreach($qplTrios as $qplItem){
+        foreach($allQplValues as $qplValue) {
+            if(in_array($qplValue, $qplItem)){
+                $qplValuesOccurences[$qplValue] ++;
+            }
+        }
+    }
+    arsort($qplValuesOccurences);
+    $allQplValues = array_keys($qplValuesOccurences);
+    // $allQplValues = array_slice($allQplValues, 0, 6);
+    $detailedOccurences = [];
+    foreach($qplValuesOccurences as $runner => $occurence){
+        if(!isset($detailedOccurences[$occurence])) $detailedOccurences[$occurence] = [$runner];
+        else $detailedOccurences[$occurence][] = $runner;
+    }
+    $winnerValuesOccurences = array_slice($detailedOccurences, 0, 2);
+    $winnerValues = [];
+    foreach($winnerValuesOccurences as $winnerValuesOccurence){
+        $winnerValues = array_merge($winnerValues, $winnerValuesOccurence);
+    }
+    
+    $detailedOccurencesText = "[";
+    foreach($detailedOccurences as $occurence => $numbers) {
+        $detailedOccurencesText .= "[$occurence] => [";
+        for($number =0; $number < count($numbers)-1; $number++){
+            $detailedOccurencesText .= $detailedOccurences[$occurence][$number] . ", ";
+        }
+        $detailedOccurencesText .= $numbers[count($numbers) - 1] . "], ";
+    }
+    $detailedOccurencesText .= "]";
 
     $iOdds = [];
     foreach($iInter as $iIndex){
@@ -263,9 +283,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
-    $racetext .= "\t\t'Qpl1' =>  '" . implode(", ", $qpl1) . "',\n";
-    $racetext .= "\t\t'Qpl2' =>  '" . implode(", ", $qpl2) . "',\n";
-    $racetext .= "\t\t'Qin/Tce'   =>  '" . implode(", ", $tce). "',\n";
+    
+    $racetext .= "\t\t'Winner'    =>  '" . implode(", ", $winnerValues). "',\n";
+    $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "',\n";
+    $racetext .= "\t\t'Details' =>  '" . $detailedOccurencesText. "',\n";
     $racetext .= "\t\t'Inter Inters' =>  '" . implode(", ", $interInters). "',\n";
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
