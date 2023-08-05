@@ -299,12 +299,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $iInter = array_keys($iOdds);
 
     $placeValues = array_diff($allQplValues, $allWinsValues);
+
+    $candidate = array_intersect($allWinsValues, $iInter);
     
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     
+    $racetext .= "\t\t'Candidate'    =>  '" . implode(", ", $candidate). "',\n";
     $racetext .= "\t\t'All Wins values'    =>  '" . implode(", ", $allWinsValues). "',\n";
     $racetext .= "\t\t'Place values'    =>  '" . implode(", ", $placeValues). "',\n";
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "',\n";
