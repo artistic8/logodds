@@ -307,7 +307,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $placeValues = array_diff($allQplValues, $allWinsValues);
 
-    $candidate = array_merge(array_slice($blackQplValues, 0, 3), array_slice($redQplValues, 0, 2));
+    $candidate = array_intersect($placeValues, $blackQplValues);
+    
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'qins' =>  $INTERSText ,\n";
