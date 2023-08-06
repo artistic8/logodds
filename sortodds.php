@@ -297,6 +297,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     arsort($qplValuesOccurences);
     $blackQplValues = array_keys($qplValuesOccurences);
+
+    sort($redQplValues);
+    sort($blackQplValues);
     
     $iOdds = [];
     foreach($iInter as $iIndex){
@@ -307,27 +310,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $placeValues = array_diff($allQplValues, $allWinsValues);
 
-    $qins = [];
-    for($i = 0; $i < count($redQplValues); $i++){
-        if(isset($redQplValues[$i+1])) $qins[] = $redQplValues[$i] . "-" . $redQplValues[$i+1];
-        if(isset($blackQplValues[$i+1])) $qins[] = $redQplValues[$i] . "-" . $blackQplValues[$i+1];
-        if(isset($redQplValues[$i+3])) $qins[] = $redQplValues[$i] . "-" . $redQplValues[$i+3];
-        if(isset($blackQplValues[$i+3])) $qins[] = $redQplValues[$i] . "-" . $blackQplValues[$i+3];
-    }
-    for($i = 0; $i < count($blackQplValues); $i++){
-        if(isset($redQplValues[$i+1])) $qins[] = $blackQplValues[$i] . "-" . $redQplValues[$i+1];
-        if(isset($blackQplValues[$i+1])) $qins[] = $blackQplValues[$i] . "-" . $blackQplValues[$i+1];
-        if(isset($redQplValues[$i+3])) $qins[] = $blackQplValues[$i] . "-" . $redQplValues[$i+3];
-        if(isset($blackQplValues[$i+3])) $qins[] = $blackQplValues[$i] . "-" . $blackQplValues[$i+3];
-    }
-    
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'qins' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
-    foreach($qins as $index => $oneQin){
-        $racetext .= "\t\t'qin$index' =>  '" . $oneQin . "',\n";
-    }
+    
     $racetext .= "\t\t'All Wins values'    =>  '" . implode(", ", $allWinsValues). "',\n";
     $racetext .= "\t\t'Place values'    =>  '" . implode(", ", $placeValues). "',\n";
     $racetext .= "\t\t'Red QPL values'      =>  '" . implode(", ", $redQplValues). "',\n";
