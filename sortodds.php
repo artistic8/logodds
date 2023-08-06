@@ -307,14 +307,24 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $placeValues = array_diff($allQplValues, $allWinsValues);
 
-    $candidate = array_intersect($placeValues, $blackQplValues);
+    $candidate1 = array_intersect($placeValues, $blackQplValues);
+    sort($candidate1);
+
+    $blackQplValues = array_slice($blackQplValues, 0, 3);
+    $redQplValues = array_slice($redQplValues, 0, 3);
+    $tceValues = array_merge($redQplValues, $blackQplValues);
+    sort($tceValues);
+
+    $candidate2 = array_diff($tceValues, $candidate1);
+
+    $qpl = implode(", ", $candidate1) . " X " . implode(", ", $candidate2);
     
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'qins' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
+    $racetext .= "\t\t'Qpl' =>  '" . $qpl. "',\n";
     
-    $racetext .= "\t\t'Winners'    =>  '" . implode(", ", $candidate). "',\n";
     $racetext .= "\t\t'All Wins values'    =>  '" . implode(", ", $allWinsValues). "',\n";
     $racetext .= "\t\t'Place values'    =>  '" . implode(", ", $placeValues). "',\n";
     $racetext .= "\t\t'Red QPL values'      =>  '" . implode(", ", $redQplValues). "',\n";
