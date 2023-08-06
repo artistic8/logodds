@@ -310,8 +310,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $placeValues = array_diff($allQplValues, $allWinsValues);
 
+    $oneQpl = $blackQplValues[0] . "-" . $blackQplValues[1] . " X " . $redQplValues[0] . "-" . $redQplValues[1];
+    if(isset($redQplValues[2])) $oneQpl .= "-" . $redQplValues[2];
+    if(isset($redQplValues[3])) $oneQpl .= "-" . $redQplValues[3];
+    if(isset($redQplValues[4])) $oneQpl .= "-" . $redQplValues[4];
+    $twoQpl = $blackQplValues[0] . "-" . $blackQplValues[1];
+    if(isset($blackQplValues[2])) $twoQpl .= "-" . $blackQplValues[2];
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
+    $racetext .= "\t\t'qpl 1' => '" . $oneQpl . "',\n";
+    $racetext .= "\t\t'qpl 2' => '" . $twoQpl . "',\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'qins' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
