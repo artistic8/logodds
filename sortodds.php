@@ -307,14 +307,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $placeValues = array_diff($allQplValues, $allWinsValues);
 
-    $candidate = array_intersect($placeValues, $blackQplValues);
-    sort($candidate);
+    $surePlace = array_intersect($placeValues, $blackQplValues, $interQPL);
 
-    $surePlace = array_intersect($candidate, $interQPL);
+    //$surePlace must be of the same color of the favorite but mnust be different than the favorite
+
+    foreach($surePlace as $key => $candidate){
+        if($candidate == $first1) unset($surePlace[$key]);
+        if(in_array($candidate, $blacks) && in_array($first1, $reds)) unset($surePlace[$key]);
+        if(in_array($candidate, $reds) && in_array($first1, $blacks)) unset($surePlace[$key]);
+    }
     
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
-    $racetext .= "\t\t'qins' =>  $INTERSText ,\n";
+    $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Sure Place'    =>  '" . implode(", ", $surePlace). "',\n";
     $racetext .= "\t\t'All Wins values'    =>  '" . implode(", ", $allWinsValues). "',\n";
