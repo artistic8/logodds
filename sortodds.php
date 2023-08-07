@@ -181,9 +181,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $_WIN = array_values(array_unique(array_merge($_WIN, $winsItem)));
     }
 
-    $SA = array_intersect($_WIN, $qinValues);
-    $SB = array_intersect($iInter, $qinValues);
-    
+        
     $allWinsValues = [];
     $WINSText = "[";
     $someCounter = 0;
