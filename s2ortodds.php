@@ -161,19 +161,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     sort($iInter);
-
-    $_WIN = [];
-    foreach($wins as $winsItem){
-        $_WIN = array_values(array_unique(array_merge($_WIN, $winsItem)));
-    }
-        
+     
     $allWinsValues = [];
     $WINSText = "[";
     $someCounter = 0;
     $someLength = count($wins);
     foreach($wins as $winsItem){
         $allWinsValues = array_values(array_unique(array_merge($allWinsValues, $winsItem)));
-        if(in_array($first1, $winsItem)) $NOPLACE = true;
         $WINSText .= "[" . implode(", ", $winsItem) . "]";
         $someCounter ++;
         if($someCounter < $someLength) $WINSText .= ", ";
@@ -319,8 +313,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
     $racetext .= "\t\t'I' =>  '" . implode(", ", $iInter). "',\n";
     $racetext .= "\t\t'Bet' =>  '" . implode(", ", $betValues). "',\n";
-    if(isset($NOPLACE)) $racetext .= "\t\t'PLACE' =>  'NO',\n";
-    else $racetext .= "\t\t'PLACE' =>  '" . $first1. "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
