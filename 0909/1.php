@@ -29,13 +29,13 @@ return [
 		/**
 		Race 5
 		*/
-		'wins' =>  [[7]] ,
-		'qpl/trio' =>  [[11, 10, 8, 1, 7]] ,
-		'inters' =>  [[11, 10, 8, 1]] ,
-		'Favorite' =>  '11',
-		'Red QPL values'      =>  '1, 7',
+		'wins' =>  [[7], [7, 9]] ,
+		'qpl/trio' =>  [[11, 10, 8, 1, 7], [1, 11, 10, 7, 9]] ,
+		'inters' =>  [[11, 10, 8, 1], [1, 11, 10]] ,
+		'Favorite' =>  '1',
+		'Red QPL values'      =>  '1, 7, 9',
 		'Black QPL values'    =>  '11, 10, 8',
-		'Inter QPL' =>  '11, 10, 8, 1, 7',
+		'Inter QPL' =>  '11, 10, 1, 7',
 	],
 	'7' => [
 		/**
