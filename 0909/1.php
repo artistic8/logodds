@@ -9,8 +9,8 @@ return [
 		'qpl/trio' =>  [[2, 6, 10, 1, 5], [2, 6, 4, 5, 1]] ,
 		'inters' =>  [[2, 6, 10, 1], [2, 6, 4, 5]] ,
 		'Favorite' =>  '2',
-		'Red QPL values'      =>  '1, 5',
-		'Black QPL values'    =>  '2, 6, 4, 10',
+		'Red QPL values'      =>  '5, 1',
+		'Black QPL values'    =>  '2, 6, 10, 4',
 		'Inter QPL' =>  '2, 6, 1, 5',
 	],
 	'3' => [
@@ -41,9 +41,9 @@ return [
 		/**
 		Race 7
 		*/
-		'wins' =>  [[8]] ,
+		'wins' =>  [[8], [1]] ,
 		'qpl/trio' =>  [[16, 1, 7, 4, 8], [16, 1, 5, 4, 8]] ,
-		'inters' =>  [[16, 1, 7, 4], [16, 1, 5, 4]] ,
+		'inters' =>  [[16, 1, 7, 4], [16, 1, 5, 4], [16, 5, 8, 4]] ,
 		'Favorite' =>  '1',
 		'Red QPL values'      =>  '1, 16, 5, 7',
 		'Black QPL values'    =>  '8, 4',

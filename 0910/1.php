@@ -5,9 +5,9 @@ return [
 		/**
 		Race 1
 		*/
-		'wins' =>  [[10, 2]] ,
+		'wins' =>  [[10, 2], [10, 2, 1]] ,
 		'qpl/trio' =>  [[8, 3, 1, 10, 2]] ,
-		'inters' =>  [[8, 3, 1]] ,
+		'inters' =>  [[8, 3, 1], [8, 3]] ,
 		'Favorite' =>  '8',
 		'Red QPL values'      =>  '3, 1',
 		'Black QPL values'    =>  '8, 10, 2',
@@ -22,7 +22,7 @@ return [
 		'inters' =>  [[7, 3, 4, 11]] ,
 		'Favorite' =>  '7',
 		'Red QPL values'      =>  '7, 3, 14',
-		'Black QPL values'    =>  '4, 11',
+		'Black QPL values'    =>  '11, 4',
 		'Inter QPL' =>  '7, 3, 4, 11, 14',
 	],
 	'6' => [
@@ -30,12 +30,12 @@ return [
 		Race 6
 		*/
 		'wins' =>  [[4]] ,
-		'qpl/trio' =>  [[3, 7, 1, 10, 4]] ,
-		'inters' =>  [[3, 7, 1, 10]] ,
-		'Favorite' =>  '3',
-		'Red QPL values'      =>  '3, 7, 1',
-		'Black QPL values'    =>  '4, 10',
-		'Inter QPL' =>  '3, 7, 1, 10, 4',
+		'qpl/trio' =>  [[3, 7, 1, 10, 4], [8, 4, 10, 7, 3]] ,
+		'inters' =>  [[3, 7, 1, 10], [8, 4, 10, 7, 3]] ,
+		'Favorite' =>  '8',
+		'Red QPL values'      =>  '7, 3, 1',
+		'Black QPL values'    =>  '4, 10, 8',
+		'Inter QPL' =>  '3, 7, 10, 4',
 	],
 	'7' => [
 		/**
@@ -54,23 +54,23 @@ return [
 		Race 8
 		*/
 		'wins' =>  [] ,
-		'qpl/trio' =>  [[10, 8, 4, 5, 1]] ,
-		'inters' =>  [[10, 8, 4, 5, 1]] ,
+		'qpl/trio' =>  [[10, 8, 4, 5, 1], [10, 8, 4, 5, 3]] ,
+		'inters' =>  [[10, 8, 4, 5, 1], [10, 8, 4, 5, 3]] ,
 		'Favorite' =>  '10',
-		'Red QPL values'      =>  '5, 1',
+		'Red QPL values'      =>  '5, 3, 1',
 		'Black QPL values'    =>  '10, 8, 4',
-		'Inter QPL' =>  '10, 8, 4, 5, 1',
+		'Inter QPL' =>  '10, 8, 4, 5',
 	],
 	'10' => [
 		/**
 		Race 10
 		*/
 		'wins' =>  [[1]] ,
-		'qpl/trio' =>  [[6, 10, 4, 7, 1]] ,
-		'inters' =>  [[6, 10, 4, 7]] ,
+		'qpl/trio' =>  [[6, 10, 4, 7, 1], [6, 10, 2, 7, 1]] ,
+		'inters' =>  [[6, 10, 4, 7], [6, 10, 2, 7, 1]] ,
 		'Favorite' =>  '6',
 		'Red QPL values'      =>  '7, 1',
-		'Black QPL values'    =>  '6, 10, 4',
-		'Inter QPL' =>  '6, 10, 4, 7, 1',
+		'Black QPL values'    =>  '6, 10, 2, 4',
+		'Inter QPL' =>  '6, 10, 7, 1',
 	],
 ];
