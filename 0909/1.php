@@ -42,12 +42,12 @@ return [
 		Race 7
 		*/
 		'wins' =>  [[8]] ,
-		'qpl/trio' =>  [[16, 1, 7, 4, 8]] ,
-		'inters' =>  [[16, 1, 7, 4]] ,
+		'qpl/trio' =>  [[16, 1, 7, 4, 8], [16, 1, 5, 4, 8]] ,
+		'inters' =>  [[16, 1, 7, 4], [16, 1, 5, 4]] ,
 		'Favorite' =>  '16',
-		'Red QPL values'      =>  '16, 1, 7',
+		'Red QPL values'      =>  '16, 1, 7, 5',
 		'Black QPL values'    =>  '8, 4',
-		'Inter QPL' =>  '16, 1, 7, 4, 8',
+		'Inter QPL' =>  '16, 1, 4, 8',
 	],
 	'8' => [
 		/**
