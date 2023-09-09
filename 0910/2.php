@@ -44,7 +44,7 @@ return [
 		'wins' =>  [[4, 10]] ,
 		'qpl/trio' =>  [[1, 3, 7, 4, 10]] ,
 		'inters' =>  [[1, 3, 7]] ,
-		'Favorite' =>  '1',
+		'Favorite' =>  '4',
 		'Sure Place'    =>  '',
 		'All Wins values'    =>  '4, 10',
 		'Place values'    =>  '1, 3, 7',
