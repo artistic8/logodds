@@ -24,17 +24,17 @@ return [
 		Race 5
 		*/
 		'wins' =>  [[7, 6], [14, 6], [7, 11]] ,
-		'qpl/trio' =>  [[3, 14, 11, 7, 6]] ,
-		'inters' =>  [[3, 14, 11], [7, 3, 11], [3, 14, 6]] ,
+		'qpl/trio' =>  [[3, 14, 11, 7, 6], [3, 1, 6, 7, 11]] ,
+		'inters' =>  [[3, 14, 11], [7, 3, 11], [3, 14, 6], [3, 1, 6]] ,
 		'Favorite' =>  '7',
 		'Sure Place'    =>  '',
 		'All Wins values'    =>  '7, 6, 11, 14',
-		'Place values'    =>  '3',
-		'Red QPL values'      =>  '7, 3, 14',
+		'Place values'    =>  '3, 1',
+		'Red QPL values'      =>  '7, 3, 1, 14',
 		'Black QPL values'    =>  '11, 6',
 		'Inter Inters' =>  '3',
-		'Inter QPL' =>  '3, 14, 11, 7, 6',
-		'I' =>  '11, 3, 14',
+		'Inter QPL' =>  '3, 11, 7, 6',
+		'I' =>  '11, 3, 6, 14',
 		'Bet' =>  '',
 	],
 	'6' => [
