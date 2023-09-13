@@ -66,11 +66,11 @@ return [
 		Race 8
 		*/
 		'wins' =>  [] ,
-		'qpl/trio' =>  [[10, 11, 4, 7, 1]] ,
-		'inters' =>  [[10, 11, 4, 7, 1]] ,
+		'qpl/trio' =>  [[10, 11, 4, 7, 1], [10, 11, 4, 7, 5]] ,
+		'inters' =>  [[10, 11, 4, 7, 1], [10, 11, 4, 7, 5]] ,
 		'Favorite' =>  '10',
-		'Red QPL values'      =>  '7, 1',
+		'Red QPL values'      =>  '7, 5, 1',
 		'Black QPL values'    =>  '10, 11, 4',
-		'Inter QPL' =>  '10, 11, 4, 7, 1',
+		'Inter QPL' =>  '10, 11, 4, 7',
 	],
 ];
