@@ -59,19 +59,19 @@ return [
 		/**
 		Race 6
 		*/
-		'wins' =>  [] ,
-		'qpl/trio' =>  [] ,
-		'inters' =>  [] ,
+		'wins' =>  [[6, 7]] ,
+		'qpl/trio' =>  [[2, 8, 1, 6, 7]] ,
+		'inters' =>  [[2, 8, 1]] ,
 		'Favorite' =>  '2',
-		'Sure Place'    =>  '',
-		'All Wins values'    =>  '',
-		'Place values'    =>  '',
-		'Red QPL values'      =>  '',
-		'Black QPL values'    =>  '',
-		'Inter Inters' =>  '',
-		'Inter QPL' =>  '',
+		'Sure Place'    =>  '8',
+		'All Wins values'    =>  '6, 7',
+		'Place values'    =>  '2, 8, 1',
+		'Red QPL values'      =>  '1, 7',
+		'Black QPL values'    =>  '2, 6, 8',
+		'Inter Inters' =>  '2, 8, 1',
+		'Inter QPL' =>  '2, 8, 1, 6, 7',
 		'I' =>  '',
-		'Bet' =>  '',
+		'Bet' =>  '6, 7',
 	],
 	'7' => [
 		/**
