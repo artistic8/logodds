@@ -23,19 +23,19 @@ return [
 		/**
 		Race 4
 		*/
-		'wins' =>  [] ,
-		'qpl/trio' =>  [] ,
-		'inters' =>  [] ,
+		'wins' =>  [[5, 6]] ,
+		'qpl/trio' =>  [[1, 3, 4, 5, 6]] ,
+		'inters' =>  [[1, 3, 4]] ,
 		'Favorite' =>  '1',
 		'Sure Place'    =>  '',
-		'All Wins values'    =>  '',
-		'Place values'    =>  '',
-		'Red QPL values'      =>  '',
-		'Black QPL values'    =>  '',
-		'Inter Inters' =>  '',
-		'Inter QPL' =>  '',
+		'All Wins values'    =>  '6, 5',
+		'Place values'    =>  '1, 3, 4',
+		'Red QPL values'      =>  '1, 5, 3',
+		'Black QPL values'    =>  '6, 4',
+		'Inter Inters' =>  '1, 3, 4',
+		'Inter QPL' =>  '1, 3, 4, 5, 6',
 		'I' =>  '',
-		'Bet' =>  '',
+		'Bet' =>  '6, 5',
 	],
 	'5' => [
 		/**
