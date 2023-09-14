@@ -1,5 +1,7 @@
 <?php
 
+// ODDS TAKEN THE SAME DAY
+
 return [
 	'2' => [
 		/**
@@ -27,6 +29,8 @@ return [
 		'qpl/trio' =>  [[1, 3, 4, 5, 6]] ,
 		'inters' =>  [[1, 3, 4]] ,
 		'Favorite' =>  '6',
+		// ODDS TAKEN THE SAME DAY
+		// RESULT: 4-7-6
 		'Sure Place'    =>  '4',
 		'All Wins values'    =>  '6, 5',
 		'Place values'    =>  '1, 3, 4',

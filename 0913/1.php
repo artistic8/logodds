@@ -1,5 +1,7 @@
 <?php
 
+// ODDS TAKEN THE SAME DAY
+
 return [
 	'2' => [
 		/**
