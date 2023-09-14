@@ -67,6 +67,8 @@ return [
 		'qpl/trio' =>  [[2, 8, 1, 6, 7]] ,
 		'inters' =>  [[2, 8, 1]] ,
 		'Favorite' =>  '2',
+		// ODDS TAKEN THE SAME DAY
+		// RESULT: 10-9-3
 		'Sure Place'    =>  '8',
 		'All Wins values'    =>  '6, 7',
 		'Place values'    =>  '2, 8, 1',
