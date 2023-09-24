@@ -118,7 +118,7 @@ return [
 		'inters' =>  [[1, 5, 11], [1, 5, 8], [1, 5, 2]] ,
 		'Favorite' =>  '1',
 		'Sure Place'    =>  '',
-		'All Wins values'    =>  '7, 11, 8',
+		'All Wins values'    =>  '7, 8, 11',
 		'Place values'    =>  '1, 5, 2',
 		'Red QPL values'      =>  '1, 7, 5',
 		'Black QPL values'    =>  '8, 2, 11',
