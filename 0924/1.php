@@ -22,7 +22,7 @@ return [
 		'inters' =>  [[3, 1, 6, 5, 4], [3, 1, 6, 5, 8], [1, 3, 5, 6]] ,
 		'Favorite' =>  '1',
 		'Red QPL values'      =>  '1, 3, 5',
-		'Black QPL values'    =>  '6, 4, 8, 10',
+		'Black QPL values'    =>  '6, 8, 4, 10',
 		'Inter QPL' =>  '3, 1, 6, 5',
 	],
 	'4' => [
