@@ -88,7 +88,7 @@ return [
 		'Black QPL values'    =>  '8, 4, 2, 13',
 		'Inter Inters' =>  '12',
 		'Inter QPL' =>  '8, 12',
-		'I' =>  '12, 1, 7, 4',
+		'I' =>  '1, 12, 7, 4',
 		'Bet' =>  '2, 9',
 	],
 	'7' => [
