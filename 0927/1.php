@@ -50,7 +50,7 @@ return [
 		'inters' =>  [[5, 1, 9, 6]] ,
 		'Favorite' =>  '5',
 		'Red QPL values'      =>  '5, 1, 9',
-		'Black QPL values'    =>  '10, 6',
+		'Black QPL values'    =>  '6, 10',
 		'Inter QPL' =>  '5, 1, 9, 6, 10',
 	],
 	'9' => [
