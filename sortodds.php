@@ -283,7 +283,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(in_array($candidate, $reds) && in_array($first1, $blacks)) unset($place[$key]);
     }
 
-    $surePlace = array_intersect($interQPL, $blacks, $allWinsValues);
+    $surePlace = array_intersect($interQPL, $blacks);
+    $surePlace = array_diff($surePlace, $allWinsValues);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
