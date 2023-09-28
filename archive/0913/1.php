@@ -1,7 +1,5 @@
 <?php
 
-// ODDS TAKEN THE SAME DAY
-
 return [
 	'2' => [
 		/**
@@ -11,6 +9,7 @@ return [
 		'qpl/trio' =>  [[2, 8, 4, 3, 9], [2, 8, 6, 3, 9]] ,
 		'inters' =>  [[2, 8, 4, 3], [2, 8, 6, 3]] ,
 		'Favorite' =>  '2',
+		'Sure Place'    =>  '2',
 		'Red QPL values'      =>  '9, 3',
 		'Black QPL values'    =>  '2, 8, 6, 4',
 		'Inter QPL' =>  '2, 8, 3, 9',
@@ -35,6 +34,7 @@ return [
 		'qpl/trio' =>  [[4, 2, 6, 1, 9]] ,
 		'inters' =>  [[4, 2, 6, 1], [4, 2, 6, 9]] ,
 		'Favorite' =>  '4',
+		'Sure Place'    =>  '4',
 		'Red QPL values'      =>  '1, 9',
 		'Black QPL values'    =>  '4, 2, 6',
 		'Inter QPL' =>  '4, 2, 6, 1, 9',
@@ -47,6 +47,7 @@ return [
 		'qpl/trio' =>  [[2, 8, 1, 5, 6], [2, 8, 1, 6, 7]] ,
 		'inters' =>  [[2, 8, 1, 5], [2, 8, 1]] ,
 		'Favorite' =>  '2',
+		'Sure Place'    =>  '2',
 		'Place'    =>  '8',
 		'QQPL'      =>  '6, 7',
 		'places'    =>  [8],
@@ -62,6 +63,7 @@ return [
 		'qpl/trio' =>  [[3, 9, 6, 5, 2], [6, 2, 3, 4, 5]] ,
 		'inters' =>  [[3, 9, 6], [6, 2, 3]] ,
 		'Favorite' =>  '6',
+		'Sure Place'    =>  '6',
 		'Red QPL values'      =>  '5, 3, 9',
 		'Black QPL values'    =>  '6, 2, 4',
 		'Inter QPL' =>  '3, 6, 5, 2',
