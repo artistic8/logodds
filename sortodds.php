@@ -174,7 +174,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($someCounter < $someLength) $WINSText .= ", ";
     }
     $WINSText .= "]";
-    $NOPLACE = ( count($qqpls) !== 1 );
+    $NOPLACE = count($qqpls) == 0 || count($qqpls) > 2 ;
 
     //1. Sort allWinsValues by odds
     $winssOdds = [];
