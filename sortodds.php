@@ -174,7 +174,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($someCounter < $someLength) $WINSText .= ", ";
     }
     $WINSText .= "]";
-    $NOPLACE = ( count($qqpls) !== 1 );
+    $NOPLACE = ( count($qqpls) > 1 );
 
     //1. Sort allWinsValues by odds
     $winssOdds = [];
@@ -299,6 +299,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!$NOPLACE && !empty($place)){
         $racetext .= "\t\t'Place'    =>  '" . implode(", ", $place). "',\n";
         $racetext .= "\t\t'QQPL'      =>  '" . implode(", ", $qqpls[0]). "',\n";
+        if(isset($qqpls[1])){
+            $racetext .= "\t\t'QQPL'      =>  '" . implode(", ", $qqpls[1]). "',\n";
+        }
         foreach($place as $key => $candidate){
             if(!in_array($candidate, $places)) $places[] = $candidate;
         }
