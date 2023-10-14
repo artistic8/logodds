@@ -153,6 +153,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $WINSText .= "]";
 
+    //1. Sort allWinsValues by odds
+    $winssOdds = [];
+    foreach($allWinsValues as $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $winssOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+    }
+    asort($winssOdds);
+    $allWinsValues = array_keys($winssOdds);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'WP' => '" . implode(", ", $allWinsValues) . "',\n";
     $racetext .= "\t],\n";
