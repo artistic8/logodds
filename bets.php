@@ -22,12 +22,13 @@ $outtext .= "return [\n";
 
 foreach($oneData as $raceNumber => $oneRaceDate){
     if(isset($oneRaceDate["WP"])){
+        $wp = explode(", ", $oneRaceDate["WP"]);
         $racetext = "\t'$raceNumber' => [\n";
         $racetext .= "\t\t/**\n";
         $racetext .= "\t\tRace $raceNumber\n";
         $racetext .= "\t\t*/\n";
-        $racetext .= "\t\t'Win(10/20)' =>  '" . $oneRaceDate["WP"] . "',\n";
-        $racetext .= "\t\t'Place(50/100)' =>  '" . $oneRaceDate["WP"] . "',\n";
+        $racetext .= "\t\t'Win(10/20)' =>  '" . implode(", ", $wp) . "',\n";
+        $racetext .= "\t\t'Place(50/100)' =>  '" . implode(", ", $wp) . "',\n";
         $racetext .= "\t],\n";
         $outtext .= $racetext;
     }

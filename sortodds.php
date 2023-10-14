@@ -77,7 +77,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['wins'])) $oldWINS = $oldRaceData['wins'];
-            if(isset($oldRaceData['places'])) $historicPlaces = $oldRaceData['places'];
             if(isset($oldRaceData['inters'])) $oldINTERS = $oldRaceData['inters'];
             if(isset($oldRaceData['qpl/trio'])) $oldQPLTrio = $oldRaceData['qpl/trio'];
         }
@@ -141,9 +140,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($oldWINS)) $wins = $oldWINS;
     else $wins = [];
 
-    if(isset($historicPlaces)) $places = $historicPlaces;
-    else $places = [];
-
     if(isset($oldINTERS)) $inters = $oldINTERS;
     else $inters = [];
 
@@ -174,7 +170,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($someCounter < $someLength) $WINSText .= ", ";
     }
     $WINSText .= "]";
-    $NOPLACE = count($qqpls) == 0 || count($qqpls) > 2 ;
 
     //1. Sort allWinsValues by odds
     $winssOdds = [];
@@ -272,62 +267,27 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     arsort($qplValuesOccurences);
     $blackQplValues = array_keys($qplValuesOccurences);
 
-    $placeValues = array_diff($allQplValues, $allWinsValues);
-
-    $place = array_intersect($placeValues, $blackQplValues, $interQPL);
-
-    //$place must be of the same color of the favorite but must be different than the favorite
-    foreach($place as $key => $candidate){
-        if($candidate == $first1) unset($place[$key]);
-        if(in_array($candidate, $blacks) && in_array($first1, $reds)) unset($place[$key]);
-        if(in_array($candidate, $reds) && in_array($first1, $blacks)) unset($place[$key]);
-    }
-
-    $surePlace = array_intersect($interQPL, $blacks);
-    $surePlace = array_diff($surePlace, $allWinsValues);
-    $surePlace = array_diff($surePlace, $places);
-
     $diff1 = array_diff($allWinsValues, $interQPL);
     $diff2 = array_diff($interQPL, $allWinsValues);
+
+    $places = array_intersect($diff2, $blackQplValues);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
-    $showPlace = !empty($surePlace);
-    if($showPlace){
-        if(in_array($first1, $surePlace)) $surePlace = [$first1];
-        $racetext .= "\t\t'Sure Place'    =>  '" . implode(", ", $surePlace). "',\n";
-    }
-    if(!$NOPLACE && !empty($place)){
-        $racetext .= "\t\t'Place'    =>  '" . implode(", ", $place). "',\n";
-        $racetext .= "\t\t'QQPL'      =>  '" . implode(", ", $qqpls[0]). "',\n";
-        if(isset($qqpls[1])){
-            $racetext .= "\t\t'QQPL'      =>  '" . implode(", ", $qqpls[1]). "',\n";
-        }
-        foreach($place as $key => $candidate){
-            if(!in_array($candidate, $places)) $places[] = $candidate;
-        }
-    }
-    if(!empty($places)){
-        $racetext .= "\t\t'places'    =>  [" . implode(", ", $places). "],\n";
-    }
     $racetext .= "\t\t'Red QPL values'      =>  '" . implode(", ", $redQplValues). "',\n";
     $racetext .= "\t\t'Black QPL values'    =>  '" . implode(", ", $blackQplValues). "',\n";
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
     $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $diff1). "',\n";
     $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $diff2). "',\n";
-    if(isset($diff2[0])){
-        $racetext .= "\t\t'WP' => '" . $diff2[0] . "',\n";
+    if(!empty($places)){
+        $racetext .= "\t\t'WP' => '" . implode(", ", $places) . "',\n";
     }
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
     unset($oldINTERS);
-    unset($NOPLACE);
-    unset($historicPlaces);
-    unset($place);
-    unset($surePlace);
     $outtext .= $racetext;
 }
 
