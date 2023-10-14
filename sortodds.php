@@ -175,15 +175,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $WINSText .= "]";
     $NOPLACE = count($qqpls) == 0 || count($qqpls) > 2 ;
-   
-    if(count($qqpls) >= 2){
-        $twosIntersect = $qqpls[0];
-        foreach($qqpls as $fuck){
-            $twosIntersect = array_intersect($twosIntersect, $fuck);
-        }
-        
-    }
-    else $twosIntersect = [];
 
     //1. Sort allWinsValues by odds
     $winssOdds = [];
@@ -296,7 +287,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $surePlace = array_diff($surePlace, $allWinsValues);
     $surePlace = array_diff($surePlace, $places);
 
-    $twosIntersect = array_intersect($twosIntersect, $interQPL);
+    $diff1 = array_diff($allWinsValues, $interQPL);
+    $diff2 = array_diff($interQPL, $allWinsValues);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
@@ -306,9 +298,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if($showPlace){
         if(in_array($first1, $surePlace)) $surePlace = [$first1];
         $racetext .= "\t\t'Sure Place'    =>  '" . implode(", ", $surePlace). "',\n";
-    }
-    if(!empty($twosIntersect)){
-        $racetext .= "\t\t'Fucking Place'    =>  '" . implode(", ", $twosIntersect). "',\n";
     }
     if(!$NOPLACE && !empty($place)){
         $racetext .= "\t\t'Place'    =>  '" . implode(", ", $place). "',\n";
@@ -326,6 +315,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Red QPL values'      =>  '" . implode(", ", $redQplValues). "',\n";
     $racetext .= "\t\t'Black QPL values'    =>  '" . implode(", ", $blackQplValues). "',\n";
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
+    $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $diff1). "',\n";
+    $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $diff2). "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);

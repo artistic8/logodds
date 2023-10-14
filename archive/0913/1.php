@@ -13,6 +13,8 @@ return [
 		'Red QPL values'      =>  '9, 3',
 		'Black QPL values'    =>  '2, 8, 6, 4',
 		'Inter QPL' =>  '2, 8, 3, 9',
+		'Diff1' =>  '',
+		'Diff2' =>  '2, 8, 3',
 	],
 	'4' => [
 		/**
@@ -25,6 +27,8 @@ return [
 		'Red QPL values'      =>  '5, 1, 3',
 		'Black QPL values'    =>  '6, 2, 4',
 		'Inter QPL' =>  '1, 5, 6',
+		'Diff1' =>  '',
+		'Diff2' =>  '1',
 	],
 	'5' => [
 		/**
@@ -38,6 +42,8 @@ return [
 		'Red QPL values'      =>  '1, 9',
 		'Black QPL values'    =>  '4, 2, 6',
 		'Inter QPL' =>  '4, 2, 6, 1, 9',
+		'Diff1' =>  '',
+		'Diff2' =>  '4, 2, 6',
 	],
 	'6' => [
 		/**
@@ -54,6 +60,8 @@ return [
 		'Red QPL values'      =>  '1, 5, 7',
 		'Black QPL values'    =>  '2, 6, 8',
 		'Inter QPL' =>  '2, 8, 1, 6',
+		'Diff1' =>  '7',
+		'Diff2' =>  '2, 8, 1',
 	],
 	'7' => [
 		/**
@@ -64,10 +72,11 @@ return [
 		'inters' =>  [[3, 9, 6], [6, 2, 3]] ,
 		'Favorite' =>  '6',
 		'Sure Place'    =>  '6',
-		'Fucking Place'    =>  '5',
 		'Red QPL values'      =>  '5, 3, 9',
 		'Black QPL values'    =>  '6, 2, 4',
 		'Inter QPL' =>  '3, 6, 5, 2',
+		'Diff1' =>  '4',
+		'Diff2' =>  '3, 6',
 	],
 	'8' => [
 		/**
@@ -81,5 +90,7 @@ return [
 		'Red QPL values'      =>  '7, 5, 1',
 		'Black QPL values'    =>  '10, 11, 4',
 		'Inter QPL' =>  '10, 11, 7',
+		'Diff1' =>  '',
+		'Diff2' =>  '10, 11, 7',
 	],
 ];
