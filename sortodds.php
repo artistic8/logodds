@@ -270,8 +270,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $diff1 = array_diff($allWinsValues, $interQPL);
     $diff2 = array_diff($interQPL, $allWinsValues);
 
-    $places = array_intersect($diff2, $blackQplValues);
-
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
@@ -281,8 +279,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
     $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $diff1). "',\n";
     $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $diff2). "',\n";
-    if(!empty($places)){
-        $racetext .= "\t\t'WP' => '" . implode(", ", $places) . "',\n";
+    if(isset($diff2[0])){
+        $racetext .= "\t\t'WP' => '" . $diff2[0] . "',\n";
     }
     $racetext .= "\t],\n";
     unset($oldWINS);
