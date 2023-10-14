@@ -9,12 +9,11 @@ $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $oneFile = $currentDir . DIRECTORY_SEPARATOR . "1.php";
-$twoFile = $currentDir . DIRECTORY_SEPARATOR . "2.php";
-if(!file_exists($oneFile) || !file_exists($twoFile)){
+
+if(!file_exists($oneFile)){
     exit("No input files!");
 }
 $oneData = include($oneFile);
-$twoData = include($twoFile);
 
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "bets.php";
 
@@ -22,26 +21,13 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 foreach($oneData as $raceNumber => $oneRaceDate){
-    if(isset($oneRaceDate["Sure Place"])){
+    if(isset($oneRaceDate["WP"])){
         $racetext = "\t'$raceNumber' => [\n";
         $racetext .= "\t\t/**\n";
         $racetext .= "\t\tRace $raceNumber\n";
         $racetext .= "\t\t*/\n";
-        $racetext .= "\t\t'Place(100)' =>  '" . $oneRaceDate["Sure Place"] . "',\n";
-        $racetext .= "\t],\n";
-        $outtext .= $racetext;
-    }
-    if(isset($oneRaceDate["Place"])){
-        $twoRaceData = $twoData[$raceNumber];
-        if(!empty($twoRaceData["Sure Place"])) $placeBet = $twoRaceData["Sure Place"];
-        else $placeBet = $oneRaceDate["Place"];
-        $qplBet = $oneRaceDate["QQPL"];
-        $racetext = "\t'$raceNumber' => [\n";
-        $racetext .= "\t\t/**\n";
-        $racetext .= "\t\tRace $raceNumber\n";
-        $racetext .= "\t\t*/\n";
-        $racetext .= "\t\t'Place(100)' =>  '" . $placeBet . "',\n";
-        $racetext .= "\t\t'QQPL (10) ' =>  '" . $qplBet . "',\n";
+        $racetext .= "\t\t'Win(10/20)' =>  '" . $oneRaceDate["WP"] . "',\n";
+        $racetext .= "\t\t'Place(50/100)' =>  '" . $oneRaceDate["WP"] . "',\n";
         $racetext .= "\t],\n";
         $outtext .= $racetext;
     }

@@ -317,6 +317,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
     $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $diff1). "',\n";
     $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $diff2). "',\n";
+    if(isset($diff2[0])){
+        $racetext .= "\t\t'WP' => '" . $diff2[0] . "',\n";
+    }
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
