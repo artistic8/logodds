@@ -32,6 +32,20 @@ foreach($oneData as $raceNumber => $oneRaceDate){
         $racetext .= "\t],\n";
         $outtext .= $racetext;
     }
+    if(isset($oneRaceDate["Place"])){
+        $twoRaceData = $twoData[$raceNumber];
+        if(!empty($twoRaceData["Sure Place"])) $placeBet = $twoRaceData["Sure Place"];
+        else $placeBet = $oneRaceDate["Place"];
+        $qplBet = $oneRaceDate["QQPL"];
+        $racetext = "\t'$raceNumber' => [\n";
+        $racetext .= "\t\t/**\n";
+        $racetext .= "\t\tRace $raceNumber\n";
+        $racetext .= "\t\t*/\n";
+        $racetext .= "\t\t'Place(100)' =>  '" . $placeBet . "',\n";
+        $racetext .= "\t\t'QQPL (10) ' =>  '" . $qplBet . "',\n";
+        $racetext .= "\t],\n";
+        $outtext .= $racetext;
+    }
 }
 
 $outtext .= "];\n";
