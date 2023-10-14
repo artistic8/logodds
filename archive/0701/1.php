@@ -13,6 +13,8 @@ return [
 		'Red QPL values'      =>  '1, 3, 9',
 		'Black QPL values'    =>  '10, 4',
 		'Inter QPL' =>  '1, 3, 10, 4, 9',
+		'Diff1' =>  '',
+		'Diff2' =>  '1, 3, 10, 4',
 	],
 	'2' => [
 		/**
@@ -26,6 +28,8 @@ return [
 		'Red QPL values'      =>  '3, 7',
 		'Black QPL values'    =>  '4, 13, 2',
 		'Inter QPL' =>  '4, 13, 2, 3, 7',
+		'Diff1' =>  '',
+		'Diff2' =>  '4, 13, 2, 3, 7',
 	],
 	'3' => [
 		/**
@@ -39,6 +43,8 @@ return [
 		'Red QPL values'      =>  '7, 1, 3',
 		'Black QPL values'    =>  '13, 11',
 		'Inter QPL' =>  '7, 1, 3, 13, 11',
+		'Diff1' =>  '',
+		'Diff2' =>  '7, 1, 3, 13, 11',
 	],
 	'4' => [
 		/**
@@ -52,6 +58,8 @@ return [
 		'Red QPL values'      =>  '3, 9, 7',
 		'Black QPL values'    =>  '13, 4',
 		'Inter QPL' =>  '3, 9, 7, 13, 4',
+		'Diff1' =>  '',
+		'Diff2' =>  '3, 9, 7, 13, 4',
 	],
 	'5' => [
 		/**
@@ -65,6 +73,8 @@ return [
 		'Red QPL values'      =>  '1, 5',
 		'Black QPL values'    =>  '6, 10, 4',
 		'Inter QPL' =>  '10, 4, 1, 5, 6',
+		'Diff1' =>  '',
+		'Diff2' =>  '10, 4, 1, 5',
 	],
 	'6' => [
 		/**
@@ -78,6 +88,8 @@ return [
 		'Red QPL values'      =>  '7, 3, 1',
 		'Black QPL values'    =>  '4, 2',
 		'Inter QPL' =>  '7, 3, 1, 4, 2',
+		'Diff1' =>  '',
+		'Diff2' =>  '7, 3, 1, 4',
 	],
 	'7' => [
 		/**
@@ -91,6 +103,8 @@ return [
 		'Red QPL values'      =>  '7, 5',
 		'Black QPL values'    =>  '4, 2, 6',
 		'Inter QPL' =>  '4, 2, 6, 7, 5',
+		'Diff1' =>  '',
+		'Diff2' =>  '4, 2, 6, 7',
 	],
 	'8' => [
 		/**
@@ -104,6 +118,8 @@ return [
 		'Red QPL values'      =>  '1, 5',
 		'Black QPL values'    =>  '2, 6, 10',
 		'Inter QPL' =>  '6, 1, 5, 2, 10',
+		'Diff1' =>  '',
+		'Diff2' =>  '6, 1, 5',
 	],
 	'9' => [
 		/**
@@ -117,6 +133,8 @@ return [
 		'Red QPL values'      =>  '7, 12',
 		'Black QPL values'    =>  '2, 6, 11',
 		'Inter QPL' =>  '2, 6, 11, 12, 7',
+		'Diff1' =>  '',
+		'Diff2' =>  '2, 6, 11, 12',
 	],
 	'10' => [
 		/**
@@ -130,5 +148,7 @@ return [
 		'Red QPL values'      =>  '5, 7',
 		'Black QPL values'    =>  '8, 6, 13',
 		'Inter QPL' =>  '8, 6, 13, 5, 7',
+		'Diff1' =>  '',
+		'Diff2' =>  '8, 6, 13, 5',
 	],
 ];
