@@ -223,6 +223,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $redQplValues = array_intersect($allQplValues, $reds);
     $blackQplValues = array_intersect($allQplValues, $blacks);
 
+    $redWinValues = array_intersect($allWinsValues, $reds);
+    $blackWinValues = array_intersect($allWinsValues, $blacks);
+
     //1. Sort red qplValues by odds
     $qplsOdds = [];
     foreach($redQplValues as $iIndex){
@@ -292,6 +295,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
     $racetext .= "\t\t'Red QPL values'      =>  '" . implode(", ", $redQplValues). "',\n";
     $racetext .= "\t\t'Black QPL values'    =>  '" . implode(", ", $blackQplValues). "',\n";
+    $racetext .= "\t\t'Red Win values'      =>  '" . implode(", ", $redWinValues). "',\n";
+    $racetext .= "\t\t'Black Win values'    =>  '" . implode(", ", $blackWinValues). "',\n";
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
     $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $diff1). "',\n";
     $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $diff2). "',\n";
