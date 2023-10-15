@@ -55,7 +55,7 @@ return [
 		'inters' =>  [[13, 2, 3], [13, 11, 3], [13, 8, 2], [13, 2], [13, 11], [8, 13, 11]] ,
 		'Favorite' =>  '8',
 		'Red QPL values'      =>  '9, 1, 3',
-		'Black QPL values'    =>  '8, 13, 2, 11',
+		'Black QPL values'    =>  '8, 13, 11, 2',
 		'Inter QPL' =>  '13, 8, 9',
 		'Diff1' =>  '1',
 		'Diff2' =>  '13',
