@@ -267,6 +267,22 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     arsort($qplValuesOccurences);
     $blackQplValues = array_keys($qplValuesOccurences);
 
+    //1. Sort interQPL by odds
+    $qplsOdds = [];
+    foreach($interQPL as $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+    }
+    asort($qplsOdds);
+    $interQPL = array_keys($qplsOdds);
+
+    //1. Sort allWinsValues by odds
+    $qplsOdds = [];
+    foreach($allWinsValues as $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+    }
+    asort($qplsOdds);
+    $allWinsValues = array_keys($qplsOdds);
+
     $diff1 = array_diff($allWinsValues, $interQPL);
     $diff2 = array_diff($interQPL, $allWinsValues);
 
