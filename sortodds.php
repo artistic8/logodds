@@ -211,24 +211,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $QPLText .= "]";
 
+    //1. Sort  qplValues by odds
+    $qplsOdds = [];
+    foreach($allQplValues as $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+    }
+    asort($qplsOdds);
+    $allQplValues = array_keys($qplsOdds);
+
     $redQplValues = array_intersect($allQplValues, $reds);
     $blackQplValues = array_intersect($allQplValues, $blacks);
-
-    //1. Sort red qplValues by odds
-    $qplsOdds = [];
-    foreach($redQplValues as $iIndex){
-        if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
-    }
-    asort($qplsOdds);
-    $redQplValues = array_keys($qplsOdds);
-
-    //1. Sort black qplValues by odds
-    $qplsOdds = [];
-    foreach($blackQplValues as $iIndex){
-        if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
-    }
-    asort($qplsOdds);
-    $blackQplValues = array_keys($qplsOdds);
 
     $placeValues = array_diff($allQplValues, $allWinsValues);
 
@@ -272,6 +264,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $racetext .= "\t\t'Red QPL values'      =>  '" . implode(", ", $redQplValues). "',\n";
     $racetext .= "\t\t'Black QPL values'    =>  '" . implode(", ", $blackQplValues). "',\n";
+    $racetext .= "\t\t'All QPL values'      =>  '" . implode(", ", $allQplValues). "',\n";
+    $racetext .= "\t\t'place values'        =>  '" . implode(", ", $placeValues). "',\n";
+    $BET = array_unique(array_values(array_merge(
+        array_slice($redQplValues, 0, 2),
+        array_slice($blackQplValues, 0, 2),
+        array_slice($allQplValues, 0, 2),
+        array_slice($placeValues, 0, 2),
+    )));
+    sort($BET);
+    if(count($BET) === 5){
+        $racetext .= "\t\t'TRIO'        =>  '" . implode(", ", $BET). "',\n";
+    }
     $racetext .= "\t\t'Inter QPL' =>  '" . implode(", ", $interQPL). "',\n";
     $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $diff1). "',\n";
     $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $diff2). "',\n";
