@@ -57,7 +57,7 @@ return [
 		'Place'    =>  '8',
 		'QQPL'      =>  '6, 7',
 		'places'    =>  [8],
-		'Red QPL values'      =>  '1, 5, 7',
+		'Red QPL values'      =>  '5, 1, 7',
 		'Black QPL values'    =>  '2, 6, 8',
 		'Inter QPL' =>  '2, 8, 1, 6',
 		'Diff1' =>  '7',

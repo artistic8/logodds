@@ -183,20 +183,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($winssOdds);
     $allWinsValues = array_keys($winssOdds);
-    //2. Sort allWinsValues by occurence
-    $winsValuesOccurences = [];
-    foreach($allWinsValues as $winsValue) {
-        $winsValuesOccurences[$winsValue] = 0;
-    }
-    foreach($wins as $winsItem){
-        foreach($allWinsValues as $winsValue) {
-            if(in_array($winsValue, $winsItem)){
-                $winsValuesOccurences[$winsValue] ++;
-            }
-        }
-    }
-    arsort($winsValuesOccurences);
-    $allWinsValues = array_keys($winsValuesOccurences);
 
     $allIntersValues = [];
     $INTERSText = "[";
@@ -235,20 +221,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $redQplValues = array_keys($qplsOdds);
-    //2. Sort red qplValues by occurence
-    $qplValuesOccurences = [];
-    foreach($redQplValues as $qplValue) {
-        $qplValuesOccurences[$qplValue] = 0;
-    }
-    foreach($qplTrios as $qplItem){
-        foreach($redQplValues as $qplValue) {
-            if(in_array($qplValue, $qplItem)){
-                $qplValuesOccurences[$qplValue] ++;
-            }
-        }
-    }
-    arsort($qplValuesOccurences);
-    $redQplValues = array_keys($qplValuesOccurences);
 
     //1. Sort black qplValues by odds
     $qplsOdds = [];
@@ -257,20 +229,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $blackQplValues = array_keys($qplsOdds);
-    //2. Sort black qplValues by occurence
-    $qplValuesOccurences = [];
-    foreach($blackQplValues as $qplValue) {
-        $qplValuesOccurences[$qplValue] = 0;
-    }
-    foreach($qplTrios as $qplItem){
-        foreach($blackQplValues as $qplValue) {
-            if(in_array($qplValue, $qplItem)){
-                $qplValuesOccurences[$qplValue] ++;
-            }
-        }
-    }
-    arsort($qplValuesOccurences);
-    $blackQplValues = array_keys($qplValuesOccurences);
 
     $placeValues = array_diff($allQplValues, $allWinsValues);
 
