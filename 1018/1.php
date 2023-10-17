@@ -30,7 +30,7 @@ return [
 		'Sure Place'    =>  '2',
 		'Red QPL values'      =>  '3, 5, 1',
 		'Black QPL values'    =>  '4, 2, 6',
-		'All QPL values'      =>  '3, 4, 5, 2, 1, 6',
+		'All QPL values'      =>  '3, 4, 2, 5, 1, 6',
 		'place values'        =>  '3, 2, 1',
 		'Inter QPL' =>  '2, 3, 4, 5',
 		'Diff1' =>  '6',
@@ -153,7 +153,7 @@ return [
 		'All QPL values'      =>  '1, 5, 6, 2, 8, 9, 3',
 		'place values'        =>  '1, 2, 3',
 		'Inter QPL' =>  '1, 6, 5',
-		'Diff1' =>  '8, 9',
+		'Diff1' =>  '9, 8',
 		'Diff2' =>  '1',
 	],
 ];
