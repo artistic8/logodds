@@ -241,6 +241,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $diff2 = array_diff($interQPL, $allWinsValues);
 
     $set1 = array_intersect(array_diff($redQplValues, $allWinsValues), $interQPL);
+    $set2 = array_intersect(array_diff($allWinsValues, $redQplValues), $interQPL);
+    $set3 = array_intersect($redQplValues, $allWinsValues, $interQPL);
+    
+    $set4 = array_intersect(array_diff($blackQplValues, $allWinsValues), $interQPL);
+    $set5 = array_intersect(array_diff($allWinsValues, $blackQplValues), $interQPL);
+    $set6 = array_intersect($blackQplValues, $allWinsValues, $interQPL);
+    
+    
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
@@ -281,6 +289,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Diff1' =>  '" . implode(", ", $diff1). "',\n";
     $racetext .= "\t\t'Diff2' =>  '" . implode(", ", $diff2). "',\n";
     $racetext .= "\t\t'Set1' =>  '" . implode(", ", $set1). "',\n";
+    $racetext .= "\t\t'Set2' =>  '" . implode(", ", $set2). "',\n";
+    $racetext .= "\t\t'Set3' =>  '" . implode(", ", $set3). "',\n";
+    $racetext .= "\t\t'Set4' =>  '" . implode(", ", $set4). "',\n";
+    $racetext .= "\t\t'Set5' =>  '" . implode(", ", $set5). "',\n";
+    $racetext .= "\t\t'Set6' =>  '" . implode(", ", $set6). "',\n";
+
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
