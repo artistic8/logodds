@@ -9,12 +9,10 @@ $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $oneFile = $currentDir . DIRECTORY_SEPARATOR . "1.php";
-$twoFile = $currentDir . DIRECTORY_SEPARATOR . "2.php";
-if(!file_exists($oneFile) || !file_exists($twoFile)){
-    exit("No input files!");
+if(!file_exists($oneFile)){
+    exit("No input file!");
 }
 $oneData = include($oneFile);
-$twoData = include($twoFile);
 
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "bets.php";
 
@@ -32,9 +30,7 @@ foreach($oneData as $raceNumber => $oneRaceDate){
         $outtext .= $racetext;
     }
     if(isset($oneRaceDate["Place"])){
-        $twoRaceData = $twoData[$raceNumber];
-        if(!empty($twoRaceData["Sure Place"])) $placeBet = $twoRaceData["Sure Place"];
-        else $placeBet = $oneRaceDate["Place"];
+        $placeBet = $oneRaceDate["Place"];
         $qplBet = $oneRaceDate["QQPL"];
         $racetext = "\t'$raceNumber' => [\n";
         $racetext .= "\t\t/**\n";
