@@ -75,7 +75,6 @@ return [
 		'qpl/trio' =>  [[2, 8, 1, 5, 6], [2, 8, 1, 6, 7]] ,
 		'inters' =>  [[2, 8, 1, 5], [2, 8, 1]] ,
 		'Favorite' =>  '2',
-		'Sure Place'    =>  '2',
 		'Place'    =>  '8',
 		'QQPL'      =>  '6, 7',
 		'places'    =>  [8],

@@ -9,7 +9,6 @@ return [
 		'qpl/trio' =>  [[8, 3, 1, 10, 2], [8, 1, 3, 10, 11], [8, 2, 11, 3, 5]] ,
 		'inters' =>  [[8, 3, 1], [8, 3], [8, 2, 11, 3, 5]] ,
 		'Favorite' =>  '8',
-		'Sure Place'    =>  '8',
 		'Red QPL values'      =>  '3, 5, 1',
 		'Black QPL values'    =>  '8, 2, 11, 10',
 		'All QPL values'      =>  '8, 2, 11, 10, 3, 5, 1',
