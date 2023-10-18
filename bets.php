@@ -9,9 +9,8 @@ $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $oneFile = $currentDir . DIRECTORY_SEPARATOR . "1.php";
-
 if(!file_exists($oneFile)){
-    exit("No input files!");
+    exit("No input file!");
 }
 $oneData = include($oneFile);
 
@@ -21,14 +20,12 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 foreach($oneData as $raceNumber => $oneRaceDate){
-    if(isset($oneRaceDate["WP"])){
-        $wp = $oneRaceDate["WP"];
+    if(isset($oneRaceDate["Sure Place"])){
         $racetext = "\t'$raceNumber' => [\n";
         $racetext .= "\t\t/**\n";
         $racetext .= "\t\tRace $raceNumber\n";
         $racetext .= "\t\t*/\n";
-        $racetext .= "\t\t'Win(10/20)' =>  '" . $wp. "',\n";
-        $racetext .= "\t\t'Place(50/100)' =>  '" . $wp . "',\n";
+        $racetext .= "\t\t'Place(100)' =>  '" . $oneRaceDate["Sure Place"] . "',\n";
         $racetext .= "\t],\n";
         $outtext .= $racetext;
     }
