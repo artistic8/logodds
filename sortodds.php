@@ -253,7 +253,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'Favorite' =>  '" . $first1. "',\n";
-    $showPlace = !empty($surePlace) && (count($allWinsValues) > 1);
+    $showPlace = !empty($surePlace) && (count($allWinsValues) > 1) && !empty($set1);
     if($showPlace){
         if(in_array($first1, $surePlace)) $surePlace = [$first1];
         $racetext .= "\t\t'Sure Place'    =>  '" . implode(", ", $surePlace). "',\n";
