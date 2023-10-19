@@ -193,11 +193,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
+    $tce = array_slice($allQplValues, 0, 6);
+    sort($tce);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'All QPL values'      =>  '" . implode(", ", $allQplValues). "',\n";
+    $racetext .= "\t\t'Tce'      =>  '" . implode(", ", $tce). "',\n";
 
     $racetext .= "\t],\n";
     unset($oldWINS);
