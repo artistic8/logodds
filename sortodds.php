@@ -194,36 +194,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
 
-    $tce = array_slice($allQplValues, 0, 6);
-    $first3 = array_slice($allQplValues, 0, 3);
-    $primes = array_intersect($runners, [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
-    $diff1 = array_diff($tce, $primes);
-    $diff1 = array_intersect($diff1, $allWinsValues);
-    $diff2 = array_diff($primes, $tce);
-    $diff2 = array_intersect($diff2, $allWinsValues);
-    $inter = array_intersect($tce, $primes, $first3);
-
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'All QPL values'      =>  '" . implode(", ", $allQplValues). "',\n";
-    $racetext .= "\t\t'tce'      =>  '" . implode(", ", $tce). "',\n";
-    $racetext .= "\t\t'diff1'   =>  '" . implode(", ", $diff1). "',\n";
-    $racetext .= "\t\t'diff2'   =>  '" . implode(", ", $diff2). "',\n";
-    $racetext .= "\t\t'inter'   =>  '" . implode(", ", $inter). "',\n";
-    if(count($inter) === 2){
-        $firstPrime = array_values($inter)[0];
-        $secondPrime = array_values($inter)[1];
-        $firstTrio = array_diff($tce, [$firstPrime]);
-        $secondTrio = array_diff($tce, [$secondPrime]);
-        $tierce = array_diff($allQplValues, $inter);
-        sort($firstTrio);
-        sort($secondTrio);
-        sort($tierce);
-        $racetext .= "\t\t'Trio 1'      =>  '" . implode(", ", $firstTrio). "',\n";
-        $racetext .= "\t\t'Trio 2'      =>  '" . implode(", ", $secondTrio). "',\n";
-        $racetext .= "\t\t'Tierce'      =>  '" . implode(", ", $tierce). "',\n";
-    }
 
     $racetext .= "\t],\n";
     unset($oldWINS);
