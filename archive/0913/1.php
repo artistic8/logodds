@@ -9,7 +9,8 @@ return [
 		'qpl/trio' =>  [[2, 8, 4, 3, 9], [2, 8, 6, 3, 9]] ,
 		'All QPL values'      =>  '2, 9, 3, 8, 6, 4',
 		'new qpl/trio' =>  [] ,
-		'New QPL values'      =>  '',
+		'New QPL values' =>  '',
+		'Tce'            =>  '2, 3, 4, 6, 8, 9',
 	],
 	'4' => [
 		/**
@@ -19,7 +20,8 @@ return [
 		'qpl/trio' =>  [[1, 5, 3, 2, 6], [1, 3, 4, 5, 6], [6, 4, 2, 1, 5]] ,
 		'All QPL values'      =>  '6, 5, 1, 2, 3, 4',
 		'new qpl/trio' =>  [[1, 5, 3, 2, 6], [1, 3, 4, 5, 6], [6, 4, 2, 1, 5]] ,
-		'New QPL values'      =>  '1, 2, 3, 4, 5, 6',
+		'New QPL values' =>  '1, 2, 3, 4, 5, 6',
+		'Tce'            =>  '1, 2, 3, 4, 5, 6',
 	],
 	'5' => [
 		/**
@@ -29,7 +31,8 @@ return [
 		'qpl/trio' =>  [[4, 2, 6, 1, 9]] ,
 		'All QPL values'      =>  '4, 2, 1, 9, 6',
 		'new qpl/trio' =>  [] ,
-		'New QPL values'      =>  '',
+		'New QPL values' =>  '',
+		'Tce'            =>  '1, 2, 4, 6, 9',
 	],
 	'6' => [
 		/**
@@ -39,7 +42,8 @@ return [
 		'qpl/trio' =>  [[2, 8, 1, 5, 6], [2, 8, 1, 6, 7]] ,
 		'All QPL values'      =>  '2, 5, 1, 6, 8, 7',
 		'new qpl/trio' =>  [[2, 8, 1, 6, 7]] ,
-		'New QPL values'      =>  '1, 2, 6, 7, 8',
+		'New QPL values' =>  '1, 2, 6, 7, 8',
+		'Tce'            =>  '1, 2, 5, 6, 7, 8',
 	],
 	'7' => [
 		/**
@@ -49,7 +53,8 @@ return [
 		'qpl/trio' =>  [[3, 9, 6, 5, 2], [6, 2, 3, 4, 5]] ,
 		'All QPL values'      =>  '6, 2, 5, 4, 3, 9',
 		'new qpl/trio' =>  [[3, 9, 6, 5, 2], [6, 2, 3, 4, 5]] ,
-		'New QPL values'      =>  '2, 3, 4, 5, 6, 9',
+		'New QPL values' =>  '2, 3, 4, 5, 6, 9',
+		'Tce'            =>  '2, 3, 4, 5, 6, 9',
 	],
 	'8' => [
 		/**
@@ -59,6 +64,7 @@ return [
 		'qpl/trio' =>  [[10, 11, 4, 7, 1], [10, 11, 4, 7, 5], [7, 5, 1, 10, 11]] ,
 		'All QPL values'      =>  '10, 7, 5, 1, 11, 4',
 		'new qpl/trio' =>  [] ,
-		'New QPL values'      =>  '',
+		'New QPL values' =>  '',
+		'Tce'            =>  '1, 4, 5, 7, 10, 11',
 	],
 ];
