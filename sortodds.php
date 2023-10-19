@@ -77,7 +77,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['wins'])) $oldWINS = $oldRaceData['wins'];
-            if(isset($oldRaceData['inters'])) $oldINTERS = $oldRaceData['inters'];
             if(isset($oldRaceData['qpl/trio'])) $oldQPLTrio = $oldRaceData['qpl/trio'];
         }
     }
@@ -137,17 +136,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($oldWINS)) $wins = $oldWINS;
     else $wins = [];
 
-    if(isset($oldINTERS)) $inters = $oldINTERS;
-    else $inters = [];
-
     if(isset($oldQPLTrio)) $qplTrios = $oldQPLTrio;
     else $qplTrios = [];
     
     if(!empty($difference)) {
         if(!in_my_array($difference, $wins)) $wins[] = $difference;
     } 
-
-    if(!in_my_array($intersection, $inters)) $inters[] = $intersection;
 
     $qplTrio = array_values(array_unique(array_merge($intersection, $difference)));
     if(!in_my_array($qplTrio, $qplTrios)) $qplTrios[] = $qplTrio;
@@ -163,16 +157,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($someCounter < $someLength) $WINSText .= ", ";
     }
     $WINSText .= "]";
-
-    $INTERSText = "[";
-    $someCounter = 0;
-    $someLength = count($inters);
-    foreach($inters as $intersItem){
-        $INTERSText .= "[" . implode(", ", $intersItem) . "]";
-        $someCounter ++;
-        if($someCounter < $someLength) $INTERSText .= ", ";
-    }
-    $INTERSText .= "]";
 
     $allQplValues = [];
     $QPLText = "[";
@@ -197,17 +181,43 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     sort($tce);
     sort($allWinsValues);
 
+    //keep only the trios that contain wins containing exactly two elements
+    $newTrios = [];
+    foreach($wins as $winsItem){
+        if(count($winsItem) == 2){
+            $itemValues = array_values($winsItem);
+            foreach($qplTrios as $qplItem){
+                if(in_array($itemValues[0], $qplItem) && in_array($itemValues[1], $qplItem)){
+                    if(!in_my_array($qplItem, $newTrios)){
+                        $newTrios[] = $qplItem;
+                    }
+                }
+            }
+        }
+    }
+
+    $newQplValues = [];
+    $newQPLText = "[";
+    $someCounter = 0;
+    $someLength = count($newTrios);
+    foreach($newTrios as $qplItem){
+        $newQplValues = array_values(array_unique(array_merge($newQplValues, $qplItem)));
+        $newQPLText .= "[" . implode(", ", $qplItem) . "]";
+        $someCounter ++;
+        if($someCounter < $someLength) $newQPLText .= ", ";
+    }
+    $newQPLText .= "]";
+    $diff = array_diff($allQplValues, $newQplValues);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
-    $racetext .= "\t\t'inters' =>  $INTERSText ,\n";
     $racetext .= "\t\t'All QPL values'      =>  '" . implode(", ", $allQplValues). "',\n";
-    $racetext .= "\t\t'Tce '      =>  '" . implode(", ", $tce). "',\n";
-    $racetext .= "\t\t'Wins'      =>  '" . implode(", ", $allWinsValues). "',\n";
-
+    $racetext .= "\t\t'new qpl/trio' =>  $newQPLText ,\n";
+    sort($newQplValues);
+    $racetext .= "\t\t'New QPL values'      =>  '" . implode(", ", $newQplValues). "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
-    unset($oldINTERS);
     $outtext .= $racetext;
 }
 
