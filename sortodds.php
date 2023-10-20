@@ -207,7 +207,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($someCounter < $someLength) $newQPLText .= ", ";
     }
     $newQPLText .= "]";
-    $diff1 = array_diff($allWinsValues, $newQplValues);
+    $diff1 = array_intersect($allWinsValues, $newQplValues);
     $diff2 = array_diff($newQplValues, $allWinsValues);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
