@@ -207,8 +207,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($someCounter < $someLength) $newQPLText .= ", ";
     }
     $newQPLText .= "]";
-    $diff1 = array_intersect($allWinsValues, $newQplValues);
-    $diff2 = array_diff($newQplValues, $allWinsValues);
+    $diff1 = array_diff($newQplValues, $allWinsValues);
+    $diff2 = array_diff($allQplValues, $allWinsValues);
+
+    $inter1 = array_intersect($allWinsValues, $newQplValues);
+    $inter2 = array_intersect($allWinsValues, $allQplValues);
+    
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
@@ -219,6 +223,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Tce'            =>  '" . implode(", ", $tce). "',\n";
     $racetext .= "\t\t'diff1'            =>  '" . implode(", ", $diff1). "',\n";
     $racetext .= "\t\t'diff2'            =>  '" . implode(", ", $diff2). "',\n";
+    $racetext .= "\t\t'inter1'            =>  '" . implode(", ", $inter1). "',\n";
+    $racetext .= "\t\t'inter2'            =>  '" . implode(", ", $inter2). "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
