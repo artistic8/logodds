@@ -1,17 +1,6 @@
 <?php
 
 return [
-	'1' => [
-		/**
-		Race 1
-		*/
-		'wins' =>  [[6]] ,
-		'qpl/trio' =>  [[7, 5, 1, 2, 6], [7, 1, 5, 10, 6]] ,
-		'All QPL values'      =>  '7, 2, 6, 1, 5, 10',
-		'new qpl/trio' =>  [] ,
-		'New QPL values' =>  '',
-		'Tce'            =>  '1, 2, 5, 6, 7, 10',
-	],
 	'2' => [
 		/**
 		Race 2

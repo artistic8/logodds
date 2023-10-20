@@ -219,7 +219,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
-    $outtext .= $racetext;
+    $showRace = !empty($newQplValues);
+    if($showRace) $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
