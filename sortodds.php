@@ -187,7 +187,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(count($winsItem) == 3){
             $itemValues = array_values($winsItem);
             foreach($qplTrios as $qplItem){
-                if(in_array($itemValues[0], $qplItem) && in_array($itemValues[1], $qplItem)){
+                if(in_array($itemValues[0], $qplItem) && in_array($itemValues[1], $qplItem) && in_array($itemValues[2], $qplItem)){
                     if(!in_my_array($qplItem, $newTrios)){
                         $newTrios[] = $qplItem;
                     }
