@@ -184,7 +184,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     //keep only the trios that contain wins containing exactly two elements
     $newTrios = [];
     foreach($wins as $winsItem){
-        if(count($winsItem) == 2){
+        if(count($winsItem) == 3){
             $itemValues = array_values($winsItem);
             foreach($qplTrios as $qplItem){
                 if(in_array($itemValues[0], $qplItem) && in_array($itemValues[1], $qplItem)){
