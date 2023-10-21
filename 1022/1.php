@@ -24,7 +24,7 @@ return [
 		*/
 		'wins' =>  [[1]] ,
 		'qpl/trio' =>  [[7, 5, 2, 6, 1], [7, 5, 2, 11, 1]] ,
-		'All QPL values'      =>  '7, 1, 2, 5, 11, 6',
+		'All QPL values'      =>  '7, 1, 2, 5, 6, 11',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -40,13 +40,13 @@ return [
 		Race 3
 		*/
 		'wins' =>  [[2]] ,
-		'qpl/trio' =>  [[4, 13, 12, 1, 2]] ,
-		'All QPL values'      =>  '4, 12, 2, 1, 13',
+		'qpl/trio' =>  [[4, 13, 12, 1, 2], [4, 2, 13, 12, 5]] ,
+		'All QPL values'      =>  '4, 12, 2, 5, 1, 13',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
 		'New 3 QPL values' =>  '',
-		'Tce'            =>  '1, 2, 4, 12, 13',
+		'Tce'            =>  '1, 2, 4, 5, 12, 13',
 		'diff1'          =>  '',
 		'diff2'          =>  '',
 		'inter'          =>  '',
@@ -58,7 +58,7 @@ return [
 		*/
 		'wins' =>  [[9]] ,
 		'qpl/trio' =>  [[3, 14, 8, 10, 9], [14, 3, 8, 2, 9]] ,
-		'All QPL values'      =>  '14, 3, 9, 8, 10, 2',
+		'All QPL values'      =>  '14, 9, 3, 8, 10, 2',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -73,18 +73,18 @@ return [
 		/**
 		Race 5
 		*/
-		'wins' =>  [] ,
+		'wins' =>  [[9, 7]] ,
 		'qpl/trio' =>  [[4, 13, 2, 9, 7]] ,
-		'All QPL values'      =>  '4, 9, 7, 13, 2',
-		'new 2 qpl/trio' =>  [] ,
+		'All QPL values'      =>  '4, 9, 7, 2, 13',
+		'new 2 qpl/trio' =>  [[4, 13, 2, 9, 7]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'New 2 QPL values' =>  '',
+		'New 2 QPL values' =>  '2, 4, 7, 9, 13',
 		'New 3 QPL values' =>  '',
 		'Tce'            =>  '2, 4, 7, 9, 13',
-		'diff1'          =>  '',
+		'diff1'          =>  '2, 4, 7, 9, 13',
 		'diff2'          =>  '',
 		'inter'          =>  '',
-		'Win'          =>  '',
+		'Win'          =>  '7, 9',
 	],
 	'6' => [
 		/**
@@ -109,7 +109,7 @@ return [
 		*/
 		'wins' =>  [[9]] ,
 		'qpl/trio' =>  [[11, 2, 6, 3, 9]] ,
-		'All QPL values'      =>  '11, 9, 2, 6, 3',
+		'All QPL values'      =>  '11, 9, 6, 2, 3',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
