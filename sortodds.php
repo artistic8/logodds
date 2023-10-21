@@ -231,6 +231,22 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $new3QPLText .= "]";
 
+    //Sort  new2QplValues by odds
+    $qplsOdds = [];
+    foreach($new2QplValues as $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+    }
+    asort($qplsOdds);
+    $new2QplValues = array_keys($qplsOdds);
+
+     //Sort  new3QplValues by odds
+     $qplsOdds = [];
+     foreach($new3QplValues as $iIndex){
+         if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+     }
+     asort($qplsOdds);
+     $new3QplValues = array_keys($qplsOdds);
+
     $inter = array_intersect($new2QplValues, $new3QplValues);
     $diff1 = array_diff($new2QplValues, $new3QplValues);
     $diff2 = array_diff($new3QplValues, $new2QplValues);
