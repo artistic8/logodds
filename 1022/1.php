@@ -24,7 +24,7 @@ return [
 		*/
 		'wins' =>  [[1]] ,
 		'qpl/trio' =>  [[7, 5, 2, 6, 1], [7, 5, 2, 11, 1]] ,
-		'All QPL values'      =>  '7, 1, 2, 5, 6, 11',
+		'All QPL values'      =>  '7, 1, 2, 5, 11, 6',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -58,7 +58,7 @@ return [
 		*/
 		'wins' =>  [[9]] ,
 		'qpl/trio' =>  [[3, 14, 8, 10, 9], [14, 3, 8, 2, 9]] ,
-		'All QPL values'      =>  '14, 9, 3, 8, 10, 2',
+		'All QPL values'      =>  '14, 3, 9, 8, 10, 2',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
