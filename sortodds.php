@@ -182,47 +182,81 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     sort($allWinsValues);
 
     //keep only the trios that contain wins containing exactly two elements
-    $newTrios = [];
+    $new2Trios = [];
+    $new3Trios = [];
     foreach($wins as $winsItem){
+        if(count($winsItem) == 2){
+            $itemValues = array_values($winsItem);
+            foreach($qplTrios as $qplItem){
+                if(in_array($itemValues[0], $qplItem) && in_array($itemValues[1], $qplItem)){
+                    if(!in_my_array($qplItem, $new2Trios)){
+                        $new2Trios[] = $qplItem;
+                    }
+                }
+            }
+        }
         if(count($winsItem) == 3){
             $itemValues = array_values($winsItem);
             foreach($qplTrios as $qplItem){
                 if(in_array($itemValues[0], $qplItem) && in_array($itemValues[1], $qplItem) && in_array($itemValues[2], $qplItem)){
-                    if(!in_my_array($qplItem, $newTrios)){
-                        $newTrios[] = $qplItem;
+                    if(!in_my_array($qplItem, $new3Trios)){
+                        $new3Trios[] = $qplItem;
                     }
                 }
             }
         }
     }
 
-    $newQplValues = [];
-    $newQPLText = "[";
+    $new2QplValues = [];
+    $new2QPLText = "[";
     $someCounter = 0;
-    $someLength = count($newTrios);
-    foreach($newTrios as $qplItem){
-        $newQplValues = array_values(array_unique(array_merge($newQplValues, $qplItem)));
-        $newQPLText .= "[" . implode(", ", $qplItem) . "]";
+    $someLength = count($new2Trios);
+    foreach($new2Trios as $qplItem){
+        $new2QplValues = array_values(array_unique(array_merge($new2QplValues, $qplItem)));
+        $new2QPLText .= "[" . implode(", ", $qplItem) . "]";
         $someCounter ++;
-        if($someCounter < $someLength) $newQPLText .= ", ";
+        if($someCounter < $someLength) $new2QPLText .= ", ";
     }
-    $newQPLText .= "]";
-    $diff1 = array_diff($tce, $newQplValues);
-    $diff2 = array_diff($newQplValues, $tce);
+    $new2QPLText .= "]";
+
+    $new3QplValues = [];
+    $new3QPLText = "[";
+    $someCounter = 0;
+    $someLength = count($new3Trios);
+    foreach($new3Trios as $qplItem){
+        $new3QplValues = array_values(array_unique(array_merge($new3QplValues, $qplItem)));
+        $new3QPLText .= "[" . implode(", ", $qplItem) . "]";
+        $someCounter ++;
+        if($someCounter < $someLength) $new3QPLText .= ", ";
+    }
+    $new3QPLText .= "]";
+
+    $inter = array_intersect($new2QplValues, $new3QplValues);
+    $diff1 = array_diff($new2QplValues, $new3QplValues);
+    $diff2 = array_diff($new3QplValues, $new2QplValues);
+    sort($inter);
+    sort($diff1);
+    sort($diff2);
+    $X = array_intersect($diff1, $allWinsValues);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
     $racetext .= "\t\t'All QPL values'      =>  '" . implode(", ", $allQplValues). "',\n";
-    $racetext .= "\t\t'new qpl/trio' =>  $newQPLText ,\n";
-    sort($newQplValues);
-    $racetext .= "\t\t'New QPL values' =>  '" . implode(", ", $newQplValues). "',\n";
+    $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
+    $racetext .= "\t\t'new 3 qpl/trio' =>  $new3QPLText ,\n";
+    sort($new2QplValues);
+    sort($new3QplValues);
+    $racetext .= "\t\t'New 2 QPL values' =>  '" . implode(", ", $new2QplValues). "',\n";
+    $racetext .= "\t\t'New 3 QPL values' =>  '" . implode(", ", $new3QplValues). "',\n";
     $racetext .= "\t\t'Tce'            =>  '" . implode(", ", $tce). "',\n";
     $racetext .= "\t\t'diff1'          =>  '" . implode(", ", $diff1). "',\n";
     $racetext .= "\t\t'diff2'          =>  '" . implode(", ", $diff2). "',\n";
+    $racetext .= "\t\t'inter'          =>  '" . implode(", ", $inter). "',\n";
+    $racetext .= "\t\t'X'          =>  '" . implode(", ", $X). "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
-    $showRace = !empty($newQplValues);
+    $showRace = !empty($X);
     if($showRace) $outtext .= $racetext;
 }
 
