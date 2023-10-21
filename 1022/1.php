@@ -6,13 +6,13 @@ return [
 		Race 1
 		*/
 		'wins' =>  [[2]] ,
-		'qpl/trio' =>  [[3, 1, 5, 8, 2], [3, 1, 12, 8, 2]] ,
-		'All QPL values'      =>  '3, 2, 8, 1, 5, 12',
+		'qpl/trio' =>  [[3, 1, 5, 8, 2], [3, 1, 12, 8, 2], [3, 1, 14, 2, 8]] ,
+		'All QPL values'      =>  '3, 2, 8, 1, 14, 5, 12',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
 		'New 3 QPL values' =>  '',
-		'Tce'            =>  '1, 2, 3, 5, 8, 12',
+		'Tce'            =>  '1, 2, 3, 5, 8, 14',
 		'diff1'          =>  '',
 		'diff2'          =>  '',
 		'inter'          =>  '',
@@ -24,7 +24,7 @@ return [
 		*/
 		'wins' =>  [[1]] ,
 		'qpl/trio' =>  [[7, 5, 2, 6, 1], [7, 5, 2, 11, 1]] ,
-		'All QPL values'      =>  '7, 1, 2, 5, 6, 11',
+		'All QPL values'      =>  '7, 1, 2, 5, 11, 6',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -41,7 +41,7 @@ return [
 		*/
 		'wins' =>  [[2]] ,
 		'qpl/trio' =>  [[4, 13, 12, 1, 2], [4, 2, 13, 12, 5], [4, 2, 13, 12, 3]] ,
-		'All QPL values'      =>  '4, 12, 2, 3, 5, 1, 13',
+		'All QPL values'      =>  '4, 12, 2, 1, 3, 5, 13',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -58,7 +58,7 @@ return [
 		*/
 		'wins' =>  [[9]] ,
 		'qpl/trio' =>  [[3, 14, 8, 10, 9], [14, 3, 8, 2, 9]] ,
-		'All QPL values'      =>  '14, 9, 3, 8, 10, 2',
+		'All QPL values'      =>  '14, 3, 9, 8, 2, 10',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -74,14 +74,14 @@ return [
 		Race 5
 		*/
 		'wins' =>  [[9, 7]] ,
-		'qpl/trio' =>  [[4, 13, 2, 9, 7]] ,
-		'All QPL values'      =>  '4, 9, 7, 2, 13',
-		'new 2 qpl/trio' =>  [[4, 13, 2, 9, 7]] ,
+		'qpl/trio' =>  [[4, 13, 2, 9, 7], [9, 7, 3, 4, 2]] ,
+		'All QPL values'      =>  '9, 4, 7, 3, 2, 13',
+		'new 2 qpl/trio' =>  [[4, 13, 2, 9, 7], [9, 7, 3, 4, 2]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'New 2 QPL values' =>  '2, 4, 7, 9, 13',
+		'New 2 QPL values' =>  '2, 3, 4, 7, 9, 13',
 		'New 3 QPL values' =>  '',
-		'Tce'            =>  '2, 4, 7, 9, 13',
-		'diff1'          =>  '2, 4, 7, 9, 13',
+		'Tce'            =>  '2, 3, 4, 7, 9, 13',
+		'diff1'          =>  '2, 3, 4, 7, 9, 13',
 		'diff2'          =>  '',
 		'inter'          =>  '',
 		'Win'          =>  '7, 9',
@@ -92,7 +92,7 @@ return [
 		*/
 		'wins' =>  [[1], [7]] ,
 		'qpl/trio' =>  [[2, 13, 6, 7, 1]] ,
-		'All QPL values'      =>  '2, 1, 13, 7, 6',
+		'All QPL values'      =>  '2, 7, 1, 13, 6',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -109,7 +109,7 @@ return [
 		*/
 		'wins' =>  [[9]] ,
 		'qpl/trio' =>  [[11, 2, 6, 3, 9]] ,
-		'All QPL values'      =>  '11, 9, 6, 2, 3',
+		'All QPL values'      =>  '11, 9, 2, 6, 3',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -126,7 +126,7 @@ return [
 		*/
 		'wins' =>  [[7, 9, 8]] ,
 		'qpl/trio' =>  [[1, 6, 7, 9, 8], [1, 13, 7, 9, 8]] ,
-		'All QPL values'      =>  '7, 1, 8, 9, 6, 13',
+		'All QPL values'      =>  '7, 1, 8, 9, 13, 6',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [[1, 6, 7, 9, 8], [1, 13, 7, 9, 8]] ,
 		'New 2 QPL values' =>  '',
