@@ -22,17 +22,17 @@ return [
 		/**
 		Race 2
 		*/
-		'wins' =>  [[1], [1, 2, 11]] ,
+		'wins' =>  [[1], [1, 2, 11], [2, 11]] ,
 		'qpl/trio' =>  [[7, 5, 2, 6, 1], [7, 5, 2, 11, 1]] ,
 		'All QPL values'      =>  '1, 7, 5, 2, 11, 6',
-		'new 2 qpl/trio' =>  [] ,
+		'new 2 qpl/trio' =>  [[7, 5, 2, 11, 1]] ,
 		'new 3 qpl/trio' =>  [[7, 5, 2, 11, 1]] ,
-		'New 2 QPL values' =>  '',
+		'New 2 QPL values' =>  '1, 7, 5, 2, 11',
 		'New 3 QPL values' =>  '1, 7, 5, 2, 11',
 		'Tce'            =>  '1, 2, 5, 6, 7, 11',
 		'diff1'          =>  '',
-		'diff2'          =>  '1, 2, 5, 7, 11',
-		'inter'          =>  '',
+		'diff2'          =>  '',
+		'inter'          =>  '1, 2, 5, 7, 11',
 		'Win'          =>  '',
 	],
 	'3' => [
@@ -41,7 +41,7 @@ return [
 		*/
 		'wins' =>  [[2]] ,
 		'qpl/trio' =>  [[4, 13, 12, 1, 2], [4, 2, 13, 12, 5], [4, 2, 13, 12, 3]] ,
-		'All QPL values'      =>  '4, 12, 1, 2, 3, 5, 13',
+		'All QPL values'      =>  '4, 12, 1, 3, 2, 5, 13',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
@@ -143,10 +143,10 @@ return [
 		*/
 		'wins' =>  [[9, 8]] ,
 		'qpl/trio' =>  [[7, 14, 10, 9, 8], [10, 4, 7, 8, 9]] ,
-		'All QPL values'      =>  '7, 9, 8, 14, 10, 4',
+		'All QPL values'      =>  '7, 8, 9, 14, 10, 4',
 		'new 2 qpl/trio' =>  [[7, 14, 10, 9, 8], [10, 4, 7, 8, 9]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'New 2 QPL values' =>  '7, 9, 8, 14, 10, 4',
+		'New 2 QPL values' =>  '7, 8, 9, 14, 10, 4',
 		'New 3 QPL values' =>  '',
 		'Tce'            =>  '4, 7, 8, 9, 10, 14',
 		'diff1'          =>  '4, 7, 8, 9, 10, 14',
