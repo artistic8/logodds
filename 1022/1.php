@@ -92,7 +92,7 @@ return [
 		*/
 		'wins' =>  [[1], [7], [2]] ,
 		'qpl/trio' =>  [[2, 13, 6, 7, 1], [2, 13, 6, 3, 7], [2, 13, 6, 3, 1], [13, 6, 3, 12, 2]] ,
-		'All QPL values'      =>  '2, 7, 3, 1, 12, 13, 6',
+		'All QPL values'      =>  '2, 7, 3, 12, 1, 13, 6',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
