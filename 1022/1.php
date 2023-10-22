@@ -7,7 +7,7 @@ return [
 		*/
 		'wins' =>  [[2], [9]] ,
 		'qpl/trio' =>  [[3, 1, 5, 8, 2], [3, 1, 12, 8, 2], [3, 1, 14, 2, 8], [3, 1, 2, 8, 9]] ,
-		'All QPL values'      =>  '3, 2, 8, 1, 9, 5, 12, 14',
+		'All QPL values'      =>  '3, 2, 1, 8, 9, 5, 12, 14',
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
 		'New 2 QPL values' =>  '',
