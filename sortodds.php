@@ -259,7 +259,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
     $racetext .= "\t\t'Tce'               =>  '" . implode(", ", $tce). "',\n";
-    $racetext .= "\t\t//Diff New2QplValues - allWinValues,\n";
+    $racetext .= "\t\t//If allQplValues === 2QplValues and empty(3QplValues) then place favourite,\n";
     $racetext .= "\t\t'I' =>  '" . implode(", ", $inter). "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
