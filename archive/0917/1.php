@@ -13,6 +13,7 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 5, 6, 8, 12',
+		//Result: 5-8-2
 	],
 	'4' => [
 		/**
@@ -26,6 +27,7 @@ return [
 		'New 2 QPL values'  =>  '3, 14, 9, 2, 5, 13, 4',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 5, 9, 13, 14',
+		//Result: 5-3-7
 	],
 	'5' => [
 		/**
@@ -39,6 +41,7 @@ return [
 		'New 2 QPL values'  =>  '1, 2, 8, 5, 7, 6',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 5, 7, 8, 11',
+		//Result: 10-8-2
 	],
 	'6' => [
 		/**
@@ -52,6 +55,7 @@ return [
 		'New 2 QPL values'  =>  '7, 2, 3, 5, 11, 12',
 		'New 3 QPL values'  =>  '7, 2, 3, 5, 11, 12',
 		'Tce'               =>  '2, 3, 5, 7, 11, 12',
+		//Result: 11-7-10
 	],
 	'8' => [
 		/**
@@ -65,6 +69,7 @@ return [
 		'New 2 QPL values'  =>  '8, 13, 3, 2, 5',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 3, 6, 8, 10, 13',
+		//Result: 13-8-3
 	],
 	'9' => [
 		/**
@@ -78,6 +83,7 @@ return [
 		'New 2 QPL values'  =>  '1, 6, 5, 2, 4, 9, 8, 14',
 		'New 3 QPL values'  =>  '1, 6, 5, 2, 4, 14',
 		'Tce'               =>  '1, 2, 4, 5, 6, 9',
+		//Result: 5-4-10
 	],
 	'10' => [
 		/**
@@ -91,5 +97,6 @@ return [
 		'New 2 QPL values'  =>  '2, 9, 10, 5, 8, 3, 4, 7',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 5, 8, 9, 10, 12',
+		//Result: 2-10-3
 	],
 ];
