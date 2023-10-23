@@ -13,6 +13,8 @@ return [
 		'New 2 QPL values'  =>  '4, 5, 6, 3, 1, 2, 7, 8',
 		'New 3 QPL values'  =>  '4, 5, 6, 3, 1, 2, 7, 8',
 		'Tce'               =>  '1, 2, 3, 4, 5, 6',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '3, 1, 2, 7, 8',
 	],
 	'2' => [
 		/**
@@ -26,6 +28,8 @@ return [
 		'New 2 QPL values'  =>  '3, 6, 11, 7, 5, 2, 1',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 5, 6, 7, 11',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '3, 7, 2',
 	],
 	'3' => [
 		/**
@@ -39,6 +43,8 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 4, 5, 8, 9',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '',
 	],
 	'4' => [
 		/**
@@ -52,6 +58,8 @@ return [
 		'New 2 QPL values'  =>  '5, 6, 2, 11, 12, 9, 1',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 5, 6, 9, 11, 12',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '11, 12, 1',
 	],
 	'5' => [
 		/**
@@ -65,6 +73,8 @@ return [
 		'New 2 QPL values'  =>  '6, 11, 8, 4, 7, 5, 2, 1',
 		'New 3 QPL values'  =>  '6, 11, 8, 4, 7, 5, 2',
 		'Tce'               =>  '4, 5, 6, 7, 8, 11',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '11, 4, 2, 1',
 	],
 	'6' => [
 		/**
@@ -78,6 +88,8 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '3, 4, 6, 7, 9, 11',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '',
 	],
 	'7' => [
 		/**
@@ -91,6 +103,8 @@ return [
 		'New 2 QPL values'  =>  '1, 2, 10, 7, 12, 3, 6',
 		'New 3 QPL values'  =>  '1, 2, 10, 7, 12, 3, 6',
 		'Tce'               =>  '1, 2, 3, 7, 10, 12',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '12, 3, 6',
 	],
 	'8' => [
 		/**
@@ -104,5 +118,7 @@ return [
 		'New 2 QPL values'  =>  '7, 3, 10, 5, 8, 6',
 		'New 3 QPL values'  =>  '7, 3, 10, 5, 6',
 		'Tce'               =>  '3, 5, 6, 7, 8, 10',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '3, 10, 8',
 	],
 ];

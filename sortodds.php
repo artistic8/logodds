@@ -247,6 +247,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
      asort($qplsOdds);
      $new3QplValues = array_keys($qplsOdds);
 
+    $diff = array_diff($new2QplValues, $allWinsValues);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
@@ -255,6 +257,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
     $racetext .= "\t\t'Tce'               =>  '" . implode(", ", $tce). "',\n";
+    $racetext .= "\t\t//Diff New2QplValues - allWinValues,\n";
+    $racetext .= "\t\t'diff'               =>  '" . implode(", ", $diff). "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);

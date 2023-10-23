@@ -13,6 +13,8 @@ return [
 		'New 2 QPL values'  =>  '8, 3, 2, 4, 9',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 4, 5, 8, 11',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '3, 2, 4',
 	],
 	'6' => [
 		/**
@@ -26,6 +28,8 @@ return [
 		'New 2 QPL values'  =>  '3, 6, 10, 7, 1, 8, 9',
 		'New 3 QPL values'  =>  '3, 6, 10, 7, 9',
 		'Tce'               =>  '1, 3, 6, 7, 8, 10',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '3, 10, 1, 8',
 	],
 	'7' => [
 		/**
@@ -39,6 +43,8 @@ return [
 		'New 2 QPL values'  =>  '1, 8, 3, 10, 7, 9, 2',
 		'New 3 QPL values'  =>  '1, 8, 7, 9, 2',
 		'Tce'               =>  '1, 3, 7, 8, 9, 10',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '1, 3, 10, 2',
 	],
 	'8' => [
 		/**
@@ -52,6 +58,8 @@ return [
 		'New 2 QPL values'  =>  '5, 4, 6, 1, 3, 9',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 3, 4, 5, 6, 10',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '6, 1, 3, 9',
 	],
 	'9' => [
 		/**
@@ -65,5 +73,7 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 4, 6, 7, 10',
+		//Diff New2QplValues - allWinValues,
+		'diff'               =>  '',
 	],
 ];
