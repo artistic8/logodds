@@ -14,7 +14,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 5, 6, 7, 10',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '',
+		'I' =>  '',
 	],
 	'2' => [
 		/**
@@ -29,7 +29,7 @@ return [
 		'New 3 QPL values'  =>  '3, 2, 10, 1, 7',
 		'Tce'               =>  '1, 2, 3, 4, 6, 10',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '3, 6, 4',
+		'I' =>  '3, 6, 4',
 	],
 	'3' => [
 		/**
@@ -44,7 +44,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 5, 7, 8, 9',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '5, 1, 2, 9',
+		'I' =>  '5, 1, 2, 9',
 	],
 	'4' => [
 		/**
@@ -59,7 +59,7 @@ return [
 		'New 3 QPL values'  =>  '7, 4, 1, 12, 2',
 		'Tce'               =>  '1, 2, 4, 7, 12',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '7, 4',
+		'I' =>  '7, 4',
 	],
 	'5' => [
 		/**
@@ -74,7 +74,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 3, 6, 8, 9, 10',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '1, 6, 3, 10, 4',
+		'I' =>  '1, 6, 3',
 	],
 	'6' => [
 		/**
@@ -89,7 +89,7 @@ return [
 		'New 3 QPL values'  =>  '9, 2, 5, 14, 4',
 		'Tce'               =>  '2, 4, 5, 9, 14',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '2',
+		'I' =>  '2',
 	],
 	'7' => [
 		/**
@@ -104,7 +104,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 5, 6, 7, 8',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '1, 8, 3',
+		'I' =>  '1, 8',
 	],
 	'9' => [
 		/**
@@ -119,7 +119,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 3, 5, 6, 9',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '1, 6, 3, 2, 4',
+		'I' =>  '1, 6, 3',
 	],
 	'10' => [
 		/**
@@ -134,6 +134,6 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 4, 7, 8, 12',
 		//Diff New2QplValues - allWinValues,
-		'diff'               =>  '1, 12, 7, 5, 3',
+		'I' =>  '1, 12',
 	],
 ];
