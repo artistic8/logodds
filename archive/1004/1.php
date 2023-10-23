@@ -14,9 +14,7 @@ return [
 		'New 3 QPL values' =>  '',
 		'Tce'            =>  '1, 2, 3, 7, 8, 11',
 		//Result: 7-3-8
-		//Payout: -120 + 549 = 429
-		//Balance: 429 
-		//Monthly Balance: -120 + 429 = 309
+		//Payout: -60 + 130 = 70
 	],
 	'2' => [
 		/**
@@ -31,9 +29,8 @@ return [
 		'New 3 QPL values' =>  '',
 		'Tce'            =>  '2, 3, 5, 7, 8, 10',
 		//Result: 2-8-3
-		//Payout: -120 + 130 = 10
-		//Balance:  429 + 10 = 439
-		//Monthly Balance: 309 + 10 = 319
+		//Payout: -60 + 99 = 39
+		//Balance: 109
 	],
 	'4' => [
 		/**
@@ -48,9 +45,8 @@ return [
 		'New 3 QPL values' =>  '',
 		'Tce'            =>  '2, 3, 5, 6, 8, 11',
 		//Result: 2-8-11
-		//Payout: -120 + 89 = -31
-		//Balance:  408
-		//Monthly Balance: 288
+		//Payout: -60 + 36 = -24
+		//Balance: 85 
 	],
 	'6' => [
 		/**
@@ -65,9 +61,8 @@ return [
 		'New 3 QPL values' =>  '1, 5, 7, 10, 8',
 		'Tce'            =>  '1, 4, 5, 7, 8, 10',
 		//Result: 1-5-7
-		//Payout: -120 + 30 = -90
-		//Balance:  318
-		//Monthly Balance: 198
+		//Payout: -60 + 16 = -44
+		//Balance: 43
 	],
 	'7' => [
 		/**
@@ -82,9 +77,8 @@ return [
 		'New 3 QPL values' =>  '',
 		'Tce'            =>  '1, 2, 3, 4, 7, 11',
 		//Result: 4-11-1
-		//Payout: -120 + 50 = -70
-		//Balance:  248
-		//Monthly Balance: 128
+		//Payout: -60 + 27 = -33
+		//Balance:  10
 	],
 	'8' => [
 		/**
@@ -99,8 +93,7 @@ return [
 		'New 3 QPL values' =>  '5, 4, 1, 8, 6',
 		'Tce'            =>  '1, 4, 5, 6, 8, 12',
 		//Result: 6-5-11
-		//Payout: -120
-		//Balance:  128
-		//Monthly Balance: 8
+		//Payout: -60 + 62 = 2
+		//Balance:  12
 	],
 ];
