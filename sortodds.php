@@ -247,32 +247,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
      asort($qplsOdds);
      $new3QplValues = array_keys($qplsOdds);
 
-    $inter = array_intersect($new2QplValues, $new3QplValues);
-    $diff1 = array_diff($new2QplValues, $new3QplValues);
-    $diff2 = array_diff($new3QplValues, $new2QplValues);
-    sort($inter);
-    sort($diff1);
-    sort($diff2);
-    $X = array_intersect($diff1, $allWinsValues);
-
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
-    $racetext .= "\t\t'All QPL values'      =>  '" . implode(", ", $allQplValues). "',\n";
     $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
     $racetext .= "\t\t'new 3 qpl/trio' =>  $new3QPLText ,\n";
+    $racetext .= "\t\t'All QPL values'      =>  '" . implode(", ", $allQplValues). "',\n";
     $racetext .= "\t\t'New 2 QPL values' =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values' =>  '" . implode(", ", $new3QplValues). "',\n";
     $racetext .= "\t\t'Tce'            =>  '" . implode(", ", $tce). "',\n";
-    $racetext .= "\t\t'diff1'          =>  '" . implode(", ", $diff1). "',\n";
-    $racetext .= "\t\t'diff2'          =>  '" . implode(", ", $diff2). "',\n";
-    $racetext .= "\t\t'inter'          =>  '" . implode(", ", $inter). "',\n";
-    $racetext .= "\t\t'Win'          =>  '" . implode(", ", $X). "',\n";
-    if(count($X) >= 4) $racetext .= "\t\t'Qin'          =>  '" . implode(", ", $X). "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
-    $showRace = count($X) > 2;
-    // if($showRace) 
     $outtext .= $racetext;
 }
 
