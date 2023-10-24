@@ -9,7 +9,7 @@ return [
 		'qpl/trio'       =>  [[5, 3, 7, 11, 6]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '5, 11, 6, 3, 7',
+		'All QPL values'    =>  '5, 6, 11, 3, 7',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '3, 5, 6, 7, 11',
@@ -41,8 +41,8 @@ return [
 		'qpl/trio'       =>  [[12, 1, 6, 7, 2]] ,
 		'new 2 qpl/trio' =>  [[12, 1, 6, 7, 2]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '7, 6, 12, 1, 2',
-		'New 2 QPL values'  =>  '7, 6, 12, 1, 2',
+		'All QPL values'    =>  '7, 6, 12, 2, 1',
+		'New 2 QPL values'  =>  '7, 6, 12, 2, 1',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 6, 7, 12',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
@@ -53,7 +53,7 @@ return [
 		/**
 		Race 4
 		*/
-		'wins' =>  [] ,
+		'wins' =>  [[5]] ,
 		'qpl/trio'       =>  [[8, 4, 2, 1, 5]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
@@ -105,7 +105,7 @@ return [
 		'qpl/trio'       =>  [[5, 11, 9, 7, 8], [5, 12, 8, 11, 9]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [[5, 11, 9, 7, 8]] ,
-		'All QPL values'    =>  '9, 5, 8, 11, 12, 7',
+		'All QPL values'    =>  '9, 5, 8, 11, 7, 12',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '9, 5, 8, 11, 7',
 		'Tce'               =>  '5, 7, 8, 9, 11, 12',
@@ -121,12 +121,12 @@ return [
 		'qpl/trio'       =>  [[1, 12, 4, 6, 5]] ,
 		'new 2 qpl/trio' =>  [[1, 12, 4, 6, 5]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '5, 4, 6, 1, 12',
-		'New 2 QPL values'  =>  '5, 4, 6, 1, 12',
+		'All QPL values'    =>  '5, 4, 6, 12, 1',
+		'New 2 QPL values'  =>  '5, 4, 6, 12, 1',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 4, 5, 6, 12',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '4, 1, 12',
+		'I' =>  '4, 12, 1',
 	],
 ];
