@@ -21,17 +21,17 @@ return [
 		/**
 		Race 2
 		*/
-		'wins' =>  [[9, 8]] ,
+		'wins' =>  [[9, 8], [7, 9, 8]] ,
 		'qpl/trio'       =>  [[7, 3, 11, 9, 8]] ,
 		'new 2 qpl/trio' =>  [[7, 3, 11, 9, 8]] ,
-		'new 3 qpl/trio' =>  [] ,
+		'new 3 qpl/trio' =>  [[7, 3, 11, 9, 8]] ,
 		'All QPL values'    =>  '7, 11, 8, 9, 3',
 		'New 2 QPL values'  =>  '7, 11, 8, 9, 3',
-		'New 3 QPL values'  =>  '',
+		'New 3 QPL values'  =>  '7, 11, 8, 9, 3',
 		'Tce'               =>  '3, 7, 8, 9, 11',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '7, 11, 3',
+		'I' =>  '11, 3',
 	],
 	'3' => [
 		/**
@@ -89,7 +89,7 @@ return [
 		'qpl/trio'       =>  [[3, 1, 12, 8, 4], [3, 1, 12, 8, 11]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '3, 8, 1, 12, 11, 4',
+		'All QPL values'    =>  '3, 8, 12, 1, 11, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 3, 4, 8, 11, 12',
