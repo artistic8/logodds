@@ -37,7 +37,7 @@ return [
 		/**
 		Race 3
 		*/
-		'wins' =>  [[7, 2]] ,
+		'wins' =>  [[7, 2], [7]] ,
 		'qpl/trio'       =>  [[12, 1, 6, 7, 2]] ,
 		'new 2 qpl/trio' =>  [[12, 1, 6, 7, 2]] ,
 		'new 3 qpl/trio' =>  [] ,
