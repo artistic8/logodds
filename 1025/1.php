@@ -41,13 +41,13 @@ return [
 		'qpl/trio'       =>  [[12, 1, 6, 7, 2], [12, 5, 6, 7, 2], [6, 2, 8, 12, 7]] ,
 		'new 2 qpl/trio' =>  [[12, 1, 6, 7, 2], [12, 5, 6, 7, 2], [6, 2, 8, 12, 7]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '7, 6, 12, 2, 8, 5, 1',
-		'New 2 QPL values'  =>  '7, 6, 12, 2, 8, 5, 1',
+		'All QPL values'    =>  '7, 6, 12, 2, 5, 8, 1',
+		'New 2 QPL values'  =>  '7, 6, 12, 2, 5, 8, 1',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 5, 6, 7, 8, 12',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '6, 12, 8',
+		'I' =>  '6, 12, 5',
 	],
 	'4' => [
 		/**
@@ -89,10 +89,10 @@ return [
 		'qpl/trio'       =>  [[3, 1, 12, 8, 4], [3, 1, 12, 8, 11], [3, 12, 14, 8, 4]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '3, 8, 12, 14, 1, 4, 11',
+		'All QPL values'    =>  '3, 8, 12, 14, 4, 11, 1',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '1, 3, 4, 8, 12, 14',
+		'Tce'               =>  '3, 4, 8, 11, 12, 14',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '',
