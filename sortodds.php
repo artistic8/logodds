@@ -250,7 +250,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $diff = array_diff($new2QplValues, $allWinsValues);
     $set1 = array_slice($allQplValues, 0, 5);
     $inter = array_intersect($set1, $diff);
-    $qqpl = array_diff($tce, $inter);
+    $set2 = array_slice($tce, 0, 5);
+    $qqpl = array_diff($set2, $inter);
     $winSet = array_slice($new2QplValues, 0, 5);
     $win = array_diff($winSet, $inter);
     $X1 = array_diff($set1, $win);
