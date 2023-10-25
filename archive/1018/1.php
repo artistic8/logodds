@@ -13,7 +13,8 @@ return [
 		'New 2 QPL values'  =>  '3, 5, 9, 11, 6',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '3, 4, 5, 6, 9, 11',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '11',
 	],
 	'2' => [
@@ -28,7 +29,8 @@ return [
 		'New 2 QPL values'  =>  '3, 4, 12, 5, 2, 1, 10, 6',
 		'New 3 QPL values'  =>  '3, 4, 5, 2, 6',
 		'Tce'               =>  '1, 2, 3, 4, 5, 12',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '',
 	],
 	'3' => [
@@ -43,7 +45,8 @@ return [
 		'New 2 QPL values'  =>  '1, 8, 4, 2, 5, 9',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 4, 5, 8, 9',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '1, 4, 2',
 	],
 	'4' => [
@@ -58,7 +61,8 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 4, 6, 7, 11',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '',
 	],
 	'5' => [
@@ -73,7 +77,8 @@ return [
 		'New 2 QPL values'  =>  '8, 4, 1, 11, 9, 5, 12',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 4, 8, 9, 11',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '8, 1',
 	],
 	'6' => [
@@ -88,7 +93,8 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 5, 6, 9, 11',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '',
 	],
 	'7' => [
@@ -103,7 +109,8 @@ return [
 		'New 2 QPL values'  =>  '2, 4, 3, 12, 5, 10, 7',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 4, 5, 10, 12',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '2, 3',
 	],
 	'8' => [
@@ -118,7 +125,8 @@ return [
 		'New 2 QPL values'  =>  '3, 6, 1, 7, 11, 4',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 3, 4, 6, 7, 11',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '3, 7, 11',
 	],
 	'9' => [
@@ -133,7 +141,8 @@ return [
 		'New 2 QPL values'  =>  '1, 10, 5, 8, 6, 9, 2, 12',
 		'New 3 QPL values'  =>  '1, 5, 8, 6, 9',
 		'Tce'               =>  '1, 5, 6, 8, 9, 10',
-		//Diff New2QplValues - allWinValues,
+		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
+     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '',
 	],
 ];

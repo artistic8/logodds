@@ -117,16 +117,16 @@ return [
 		/**
 		Race 8
 		*/
-		'wins' =>  [[5], [5, 6]] ,
+		'wins' =>  [[5], [5, 6], [1, 12]] ,
 		'qpl/trio'       =>  [[1, 12, 4, 6, 5], [1, 12, 4, 11, 5]] ,
-		'new 2 qpl/trio' =>  [[1, 12, 4, 6, 5]] ,
+		'new 2 qpl/trio' =>  [[1, 12, 4, 6, 5], [1, 12, 4, 11, 5]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '5, 1, 4, 12, 6, 11',
-		'New 2 QPL values'  =>  '5, 1, 4, 12, 6',
+		'All QPL values'    =>  '5, 1, 4, 12, 11, 6',
+		'New 2 QPL values'  =>  '5, 1, 4, 12, 11, 6',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 4, 5, 6, 11, 12',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '1, 4, 12',
+		'I' =>  '4, 11',
 	],
 ];
