@@ -264,7 +264,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $whatever = array_slice($allQplValues, 0, 2);
     $place = array_intersect($shit, $whatever);
 
-    $WON = array_diff($tce, array_intersect($place, $allWinsValues));
+    $WON = array_diff($tce, $place);
+    $WON = array_diff($tce, $allWinsValues);
 
      //Sort  WON by odds
      $qplsOdds = [];
