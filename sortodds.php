@@ -251,13 +251,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $set1 = array_slice($allQplValues, 0, 5);
     $inter = array_intersect($set1, $diff);
     $set2 = array_slice($tce, 0, 5);
-    $qqpl = array_diff($set2, $inter);
+    $win = array_diff($set2, $inter);
     $winSet = array_slice($new2QplValues, 0, 5);
-    $win = array_diff($winSet, $inter);
+    $qqpl = array_diff($winSet, $inter);
     $X1 = array_diff($set1, $win);
     $X2 = array_diff($set1, $qqpl);
     $Y1 = array_diff($winSet, $win);
     $Y2 = array_diff($winSet, $qqpl);
+    $Y = array_values(array_unique(array_merge($Y1, $Y2, $X2)));
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
@@ -267,12 +268,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
     $racetext .= "\t\t'Tce'               =>  '" . implode(", ", $tce). "',\n";
-    $racetext .= "\t\t'qin' =>  '" . implode(", ", $qqpl). "',\n";
-    $racetext .= "\t\t'win' =>  '" . implode(", ", $win). "',\n";
-    $racetext .= "\t\t'X1' =>  '" . implode(", ", $X1). "',\n";
-    $racetext .= "\t\t'X2' =>  '" . implode(", ", $X2). "',\n";
-    $racetext .= "\t\t'Y1' =>  '" . implode(", ", $Y1). "',\n";
-    $racetext .= "\t\t'Y2' =>  '" . implode(", ", $Y2). "',\n";
+    if(in_array($first1, $Y)){
+        $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";
+    }
+    else{
+        $racetext .= "\t\t'Win' =>  '" . implode(", ", $win). "',\n";
+        $racetext .= "\t\t'QQPL' =>  '" . implode(", ", $qqpl). "',\n";
+        if(count($qqpl) >= 3){
+        $racetext .= "\t\t'Trio' =>  '" . implode(", ", $qqpl). "',\n";
+        }
+    }
+    
+    
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
