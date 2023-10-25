@@ -9,7 +9,7 @@ return [
 		'qpl/trio'       =>  [[5, 3, 7, 11, 6], [5, 3, 7, 2, 6]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '5, 6, 2, 3, 11, 7',
+		'All QPL values'    =>  '5, 6, 3, 2, 11, 7',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 5, 6, 7, 11',
