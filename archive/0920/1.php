@@ -12,6 +12,7 @@ return [
 		'All QPL values'    =>  '6, 4, 8, 5, 1',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '4, 6',
 	],
 	'4' => [
 		/**
@@ -28,6 +29,7 @@ return [
 		'QQPL' =>  '9, 11, 1, 7, 2',
 		'Trio' =>  '9, 11, 1, 7, 2',
 		'Tce' =>  '1, 2, 3, 7, 9, 11',
+		'Place' =>  '9, 11',
 	],
 	'5' => [
 		/**
@@ -40,6 +42,7 @@ return [
 		'All QPL values'    =>  '3, 7, 2, 5, 9, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '3, 7',
 	],
 	'6' => [
 		/**
@@ -56,6 +59,7 @@ return [
 		'QQPL' =>  '9, 2, 7',
 		'Trio' =>  '9, 2, 7',
 		'Tce' =>  '1, 2, 3, 7, 8, 9',
+		'Place' =>  '2, 9',
 	],
 	'7' => [
 		/**
@@ -68,6 +72,7 @@ return [
 		'All QPL values'    =>  '1, 7, 3, 2, 4, 6, 8, 10',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '1',
 	],
 	'8' => [
 		/**
@@ -83,5 +88,6 @@ return [
 		'Win' =>  '1, 6, 10',
 		'QQPL' =>  '6, 1',
 		'Tce' =>  '1, 4, 6, 7, 10, 11',
+		'Place' =>  '6',
 	],
 ];

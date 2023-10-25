@@ -260,6 +260,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $Y2 = array_diff($winSet, $qqpl);
     $Y = array_values(array_unique(array_merge($Y1, $Y2, $X2)));
 
+    $shit = array_values(array_unique(array_merge($win, $qqpl)));
+    $whatever = array_slice($allQplValues, 0, 2);
+    $place = array_intersect($shit, $whatever);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
@@ -277,6 +281,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce). "',\n";
     }
     
+    $racetext .= "\t\t'Place' =>  '" . implode(", ", $place). "',\n";
     
     $racetext .= "\t],\n";
     unset($oldWINS);
