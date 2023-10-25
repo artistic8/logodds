@@ -291,6 +291,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
         $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce). "',\n";
     }
+    /** 
+    1. Check from previous results that when ! empty(intersect($win, $WON) then winner is among tce
+    2. Once that's verified, come up with a strategy to cash on that shit
+    */
     
     $racetext .= "\t\t'win' =>  '" . implode(", ", $WON). "',\n";
     
