@@ -266,6 +266,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $WON = array_diff($tce, array_intersect($place, $allWinsValues));
 
+     //Sort  WON by odds
+     $qplsOdds = [];
+     foreach($WON as $iIndex){
+         if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+     }
+     asort($qplsOdds);
+     $WON = array_keys($qplsOdds);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
