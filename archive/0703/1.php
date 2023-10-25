@@ -117,6 +117,7 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '4, 5, 6, 7, 11, 13',
-		'Place' =>  '6',
+		'Win' =>  '4, 5, 6, 7, 11',
+		'QQPL' =>  '',
 	],
 ];

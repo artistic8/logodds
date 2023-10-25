@@ -268,7 +268,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
     $racetext .= "\t\t'Tce'               =>  '" . implode(", ", $tce). "',\n";
-    if(in_array($first1, $Y)){
+    if(in_array($first1, $Y)&& !empty($new2QplValues)){
         $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";
     }
     else{
