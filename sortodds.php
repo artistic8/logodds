@@ -274,7 +274,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(count($qqpl) >= 3){
             $racetext .= "\t\t'Trio' =>  '" . implode(", ", $qqpl). "',\n";
         }
-        $racetext .= "\t\t'Tce'               =>  '" . implode(", ", $tce). "',\n";
+        $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce). "',\n";
     }
     
     
