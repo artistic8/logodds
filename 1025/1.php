@@ -121,12 +121,12 @@ return [
 		'qpl/trio'       =>  [[1, 12, 4, 6, 5]] ,
 		'new 2 qpl/trio' =>  [[1, 12, 4, 6, 5]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '5, 4, 12, 1, 6',
-		'New 2 QPL values'  =>  '5, 4, 12, 1, 6',
+		'All QPL values'    =>  '5, 1, 4, 12, 6',
+		'New 2 QPL values'  =>  '5, 1, 4, 12, 6',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 4, 5, 6, 12',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '4, 12, 1',
+		'I' =>  '1, 4, 12',
 	],
 ];
