@@ -13,9 +13,8 @@ return [
 		'New 2 QPL values'  =>  '3, 5, 9, 11, 6',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '3, 4, 5, 6, 9, 11',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '11',
+		'qin' =>  '3, 4, 5, 6, 9',
+		'win' =>  '3, 5, 9, 6',
 	],
 	'2' => [
 		/**
@@ -29,9 +28,8 @@ return [
 		'New 2 QPL values'  =>  '3, 4, 12, 5, 2, 1, 10, 6',
 		'New 3 QPL values'  =>  '3, 4, 5, 2, 6',
 		'Tce'               =>  '1, 2, 3, 4, 5, 12',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '',
+		'qin' =>  '1, 2, 3, 4, 5, 12',
+		'win' =>  '3, 4, 12, 5, 2',
 	],
 	'3' => [
 		/**
@@ -45,9 +43,8 @@ return [
 		'New 2 QPL values'  =>  '1, 8, 4, 2, 5, 9',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 4, 5, 8, 9',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '1, 4, 2',
+		'qin' =>  '5, 8, 9',
+		'win' =>  '8, 5',
 	],
 	'4' => [
 		/**
@@ -61,9 +58,8 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 4, 6, 7, 11',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '',
+		'qin' =>  '2, 3, 4, 6, 7, 11',
+		'win' =>  '',
 	],
 	'5' => [
 		/**
@@ -77,9 +73,8 @@ return [
 		'New 2 QPL values'  =>  '8, 4, 1, 11, 9, 5, 12',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 2, 4, 8, 9, 11',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '8, 1',
+		'qin' =>  '2, 4, 9, 11',
+		'win' =>  '4, 11, 9',
 	],
 	'6' => [
 		/**
@@ -93,9 +88,8 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 5, 6, 9, 11',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '',
+		'qin' =>  '2, 3, 5, 6, 9, 11',
+		'win' =>  '',
 	],
 	'7' => [
 		/**
@@ -109,9 +103,8 @@ return [
 		'New 2 QPL values'  =>  '2, 4, 3, 12, 5, 10, 7',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 3, 4, 5, 10, 12',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '2, 3',
+		'qin' =>  '4, 5, 10, 12',
+		'win' =>  '4, 12, 5',
 	],
 	'8' => [
 		/**
@@ -125,9 +118,8 @@ return [
 		'New 2 QPL values'  =>  '3, 6, 1, 7, 11, 4',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '1, 3, 4, 6, 7, 11',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '3, 7, 11',
+		'qin' =>  '1, 4, 6',
+		'win' =>  '6, 1',
 	],
 	'9' => [
 		/**
@@ -141,8 +133,7 @@ return [
 		'New 2 QPL values'  =>  '1, 10, 5, 8, 6, 9, 2, 12',
 		'New 3 QPL values'  =>  '1, 5, 8, 6, 9',
 		'Tce'               =>  '1, 5, 6, 8, 9, 10',
-		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
-     Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
-		'I' =>  '',
+		'qin' =>  '1, 5, 6, 8, 9, 10',
+		'win' =>  '1, 10, 5, 8, 6',
 	],
 ];
