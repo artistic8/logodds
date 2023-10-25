@@ -268,7 +268,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
     
-    if(count($win) === 5 && !empty($new2QplValues)){
+    if(!empty($new2QplValues)){
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $win). "',\n";
         $racetext .= "\t\t'QQPL' =>  '" . implode(", ", $qqpl). "',\n";
         if(count($qqpl) >= 3){
