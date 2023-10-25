@@ -25,9 +25,9 @@ return [
 		'qpl/trio'       =>  [[7, 3, 11, 9, 8]] ,
 		'new 2 qpl/trio' =>  [[7, 3, 11, 9, 8]] ,
 		'new 3 qpl/trio' =>  [[7, 3, 11, 9, 8]] ,
-		'All QPL values'    =>  '7, 11, 8, 9, 3',
-		'New 2 QPL values'  =>  '7, 11, 8, 9, 3',
-		'New 3 QPL values'  =>  '7, 11, 8, 9, 3',
+		'All QPL values'    =>  '7, 11, 8, 3, 9',
+		'New 2 QPL values'  =>  '7, 11, 8, 3, 9',
+		'New 3 QPL values'  =>  '7, 11, 8, 3, 9',
 		'Tce'               =>  '3, 7, 8, 9, 11',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
@@ -41,8 +41,8 @@ return [
 		'qpl/trio'       =>  [[12, 1, 6, 7, 2], [12, 5, 6, 7, 2], [6, 2, 8, 12, 7]] ,
 		'new 2 qpl/trio' =>  [[12, 1, 6, 7, 2], [12, 5, 6, 7, 2], [6, 2, 8, 12, 7]] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '6, 7, 12, 2, 5, 8, 1',
-		'New 2 QPL values'  =>  '6, 7, 12, 2, 5, 8, 1',
+		'All QPL values'    =>  '7, 6, 12, 2, 5, 8, 1',
+		'New 2 QPL values'  =>  '7, 6, 12, 2, 5, 8, 1',
 		'New 3 QPL values'  =>  '',
 		'Tce'               =>  '2, 5, 6, 7, 8, 12',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
@@ -53,7 +53,7 @@ return [
 		/**
 		Race 4
 		*/
-		'wins' =>  [[5]] ,
+		'wins' =>  [[5], [8]] ,
 		'qpl/trio'       =>  [[8, 4, 2, 1, 5]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
@@ -70,13 +70,13 @@ return [
 		Race 5
 		*/
 		'wins' =>  [[9]] ,
-		'qpl/trio'       =>  [[1, 12, 6, 8, 9], [1, 3, 6, 8, 9]] ,
+		'qpl/trio'       =>  [[1, 12, 6, 8, 9], [1, 3, 6, 8, 9], [1, 3, 6, 4, 9]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '9, 6, 1, 8, 3, 12',
+		'All QPL values'    =>  '9, 6, 1, 4, 8, 3, 12',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '1, 3, 6, 8, 9, 12',
+		'Tce'               =>  '1, 3, 4, 6, 8, 9',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '',
@@ -85,14 +85,14 @@ return [
 		/**
 		Race 6
 		*/
-		'wins' =>  [[11]] ,
-		'qpl/trio'       =>  [[3, 1, 12, 8, 4], [3, 1, 12, 8, 11], [3, 12, 14, 8, 4]] ,
+		'wins' =>  [[11], [2]] ,
+		'qpl/trio'       =>  [[3, 1, 12, 8, 4], [3, 1, 12, 8, 11], [3, 12, 14, 8, 4], [3, 12, 14, 8, 2]] ,
 		'new 2 qpl/trio' =>  [] ,
 		'new 3 qpl/trio' =>  [] ,
-		'All QPL values'    =>  '3, 12, 8, 14, 4, 11, 1',
+		'All QPL values'    =>  '3, 12, 8, 14, 11, 2, 1, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '3, 4, 8, 11, 12, 14',
+		'Tce'               =>  '2, 3, 8, 11, 12, 14',
 		/**Method 1: If allQplValues === 2QplValues and empty(3QplValues) then place favourite, 
      Method 2: Remove I from first 5 elts of Tce, if favourite is one of them then place favourite*/
 		'I' =>  '',
