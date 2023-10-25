@@ -12,9 +12,6 @@ return [
 		'All QPL values'    =>  '2, 3, 8, 10, 1, 12, 14, 9',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '2, 3, 8, 10, 1',
-		'Tce'               =>  '1, 2, 3, 8, 10, 12',
-		'Win' =>  '1, 2, 3, 8, 10',
-		'QQPL' =>  '',
 	],
 	'2' => [
 		/**
@@ -27,10 +24,6 @@ return [
 		'All QPL values'    =>  '1, 5, 7, 2, 11, 6',
 		'New 2 QPL values'  =>  '1, 5, 7, 2, 11',
 		'New 3 QPL values'  =>  '1, 5, 7, 2, 11',
-		'Tce'               =>  '1, 2, 5, 6, 7, 11',
-		'Win' =>  '1, 2, 6',
-		'QQPL' =>  '1, 2, 11',
-		'Trio' =>  '1, 2, 11',
 	],
 	'3' => [
 		/**
@@ -43,9 +36,6 @@ return [
 		'All QPL values'    =>  '4, 3, 12, 1, 2, 5, 13',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '1, 2, 3, 4, 5, 12',
-		'Win' =>  '1, 2, 3, 4, 5',
-		'QQPL' =>  '',
 	],
 	'4' => [
 		/**
@@ -58,8 +48,6 @@ return [
 		'All QPL values'    =>  '14, 9, 1, 5, 8, 3, 10, 2',
 		'New 2 QPL values'  =>  '14, 9, 1, 5, 8, 3, 10, 2',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '1, 3, 5, 8, 9, 14',
-		'Place' =>  '14',
 	],
 	'5' => [
 		/**
@@ -72,8 +60,6 @@ return [
 		'All QPL values'    =>  '9, 4, 7, 5, 3, 2, 13',
 		'New 2 QPL values'  =>  '9, 4, 7, 5, 3, 2, 13',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '2, 3, 4, 5, 7, 9',
-		'Place' =>  '9',
 	],
 	'6' => [
 		/**
@@ -86,10 +72,6 @@ return [
 		'All QPL values'    =>  '2, 1, 12, 7, 3, 13, 6',
 		'New 2 QPL values'  =>  '2, 1, 12, 7, 3, 13, 6',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '1, 2, 3, 7, 12, 13',
-		'Win' =>  '1, 2, 7',
-		'QQPL' =>  '2, 1, 7',
-		'Trio' =>  '2, 1, 7',
 	],
 	'8' => [
 		/**
@@ -102,9 +84,6 @@ return [
 		'All QPL values'    =>  '11, 2, 9, 5, 3, 12, 6, 14',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '2, 3, 5, 9, 11, 12',
-		'Win' =>  '2, 3, 5, 9, 11',
-		'QQPL' =>  '',
 	],
 	'9' => [
 		/**
@@ -117,8 +96,6 @@ return [
 		'All QPL values'    =>  '1, 8, 7, 13, 9, 3, 5, 10, 6',
 		'New 2 QPL values'  =>  '1, 8, 7, 13, 9, 3, 5, 10, 6',
 		'New 3 QPL values'  =>  '1, 8, 7, 13, 9, 6',
-		'Tce'               =>  '1, 3, 7, 8, 9, 13',
-		'Place' =>  '1',
 	],
 	'10' => [
 		/**
@@ -131,7 +108,5 @@ return [
 		'All QPL values'    =>  '7, 9, 8, 14, 10, 4',
 		'New 2 QPL values'  =>  '7, 9, 8, 14, 10, 4',
 		'New 3 QPL values'  =>  '',
-		'Tce'               =>  '4, 7, 8, 9, 10, 14',
-		'Place' =>  '7',
 	],
 ];

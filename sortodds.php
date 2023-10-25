@@ -267,16 +267,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "',\n";
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
-    $racetext .= "\t\t'Tce'               =>  '" . implode(", ", $tce). "',\n";
-    if(in_array($first1, $Y)&& !empty($new2QplValues)){
-        $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";
-    }
-    else{
+    
+    if(count($win) === 5 && !empty($new2QplValues)){
         $racetext .= "\t\t'Win' =>  '" . implode(", ", $win). "',\n";
         $racetext .= "\t\t'QQPL' =>  '" . implode(", ", $qqpl). "',\n";
         if(count($qqpl) >= 3){
-        $racetext .= "\t\t'Trio' =>  '" . implode(", ", $qqpl). "',\n";
+            $racetext .= "\t\t'Trio' =>  '" . implode(", ", $qqpl). "',\n";
         }
+        $racetext .= "\t\t'Tce'               =>  '" . implode(", ", $tce). "',\n";
     }
     
     
