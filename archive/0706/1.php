@@ -90,8 +90,10 @@ return [
 		'Tce' =>  '1, 3, 5, 6, 9, 10',
 		//either
 		'tce' =>  '1, 3, 5, 6, 9, 10',
+		//Sum qpl values = 48
 		//or some weird shit
 		'win/qin/tce' =>  '7, 11, 8, 4',
+		//Sum weird values = 30
 	],
 	'7' => [
 		/**
@@ -110,8 +112,10 @@ return [
 		'Tce' =>  '1, 2, 5, 6, 7, 9',
 		//either
 		'tce' =>  '1, 2, 5, 6, 7, 9',
+		//Sum qpl values = 52
 		//or some weird shit
 		'win/qin/tce' =>  '12, 3, 11',
+		//Sum weird values = 26
 	],
 	'8' => [
 		/**

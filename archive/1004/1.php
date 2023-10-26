@@ -101,7 +101,9 @@ return [
 		'Tce' =>  '1, 4, 5, 6, 8, 12',
 		//either
 		'tce' =>  '1, 4, 5, 6, 8, 12',
+		//Sum qpl values = 36
 		//or some weird shit
 		'win/qin/tce' =>  '7, 2, 10, 3, 11',
+		//Sum weird values = 33
 	],
 ];

@@ -304,9 +304,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     else{
         $racetext .= "\t\t//either\n";
         $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
+        $sum = 0;
+        foreach($allQplValues as $value) {
+            $sum += $value;
+        }
+        $racetext .= "\t\t//Sum qpl values = $sum\n";
         $racetext .= "\t\t//or some weird shit\n";
         $weird = array_diff($runners, $allQplValues);
         $racetext .= "\t\t'win/qin/tce' =>  '" . implode(", ", $weird). "',\n";
+        $sum = 0;
+        foreach($weird as $value) {
+            $sum += $value;
+        }
+        $racetext .= "\t\t//Sum weird values = $sum\n";
     }
     
     $racetext .= "\t],\n";

@@ -60,8 +60,10 @@ return [
 		'Tce' =>  '1, 5, 8, 9, 11, 12',
 		//either
 		'tce' =>  '1, 5, 8, 9, 11, 12',
+		//Sum qpl values = 76
 		//or some weird shit
 		'win/qin/tce' =>  '2',
+		//Sum weird values = 2
 	],
 	'6' => [
 		/**
@@ -79,8 +81,10 @@ return [
 		'Tce' =>  '1, 2, 4, 8, 9, 13',
 		//either
 		'tce' =>  '1, 2, 4, 8, 9, 13',
+		//Sum qpl values = 64
 		//or some weird shit
 		'win/qin/tce' =>  '11, 6, 10, 14',
+		//Sum weird values = 41
 	],
 	'7' => [
 		/**
@@ -112,8 +116,10 @@ return [
 		'Tce' =>  '1, 2, 5, 7, 11, 12',
 		//either
 		'tce' =>  '1, 2, 5, 7, 11, 12',
+		//Sum qpl values = 46
 		//or some weird shit
 		'win/qin/tce' =>  '4, 3, 14, 9, 10, 13',
+		//Sum weird values = 53
 	],
 	'9' => [
 		/**
@@ -131,8 +137,10 @@ return [
 		'Tce' =>  '1, 5, 8, 9, 10, 11',
 		//either
 		'tce' =>  '1, 5, 8, 9, 10, 11',
+		//Sum qpl values = 51
 		//or some weird shit
 		'win/qin/tce' =>  '6, 2, 7, 12',
+		//Sum weird values = 27
 	],
 	'10' => [
 		/**
