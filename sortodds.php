@@ -251,8 +251,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $set1 = array_slice($allQplValues, 0, 5);
     $inter = array_intersect($set1, $diff);
     $set2 = array_slice($tce, 0, 5);
-    // $win = array_diff($set2, $inter);
-    $win = $set2;
+    $win = array_diff($set2, $inter);
     $winSet = array_slice($new2QplValues, 0, 5);
     $qqpl = array_diff($winSet, $inter);
     $X1 = array_diff($set1, $win);
@@ -302,9 +301,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     1. Check from previous results that when ! empty(intersect($win, $WON) then winner is among tce
     2. Once that's verified, come up with a strategy to cash on that shit
     */
-    $fuck = array_intersect($win, $WON);
-    $racetext .= "\t\t'???????' =>  '" . implode(", ", $fuck). "',\n";
-    if(!empty($fuck)){
+    $f1 = array_intersect($win, $WON);
+    $f2 = array_intersect($allWinsValues, $WON);
+    $f3 = array_intersect($qqpl, $WON);
+    $racetext .= "\t\tf1 =>  '" . implode(", ", $f1). "',\n";
+    $racetext .= "\t\tf2 =>  '" . implode(", ", $f2). "',\n";
+    $racetext .= "\t\tf3 =>  '" . implode(", ", $f3). "',\n";
+    if(!empty($f1)){
         $racetext .= "\t\t'win' =>  '" . implode(", ", $allQplValues). "',\n";
         $forReference = array_diff($allQplValues, $allWinsValues);
         $racetext .= "\t\t'For reference' =>  '" . implode(", ", $forReference). "',\n";
