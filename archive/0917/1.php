@@ -12,7 +12,7 @@ return [
 		'All QPL values'    =>  '6, 12, 5, 8, 1, 2, 14',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'win' =>  '1, 2, 5, 6, 8, 12',
+		'win' =>  '6, 12, 5, 8, 1, 2, 14',
 	],
 	'4' => [
 		/**
@@ -32,7 +32,7 @@ return [
 		//either
 		'tce' =>  '2, 3, 5, 9, 13, 14',
 		//or some weird shit
-		'win/qin/tce' =>  '4, 7, 8, 11, 6, 10, 1, 12',
+		'win/qin/tce' =>  '6, 10, 1, 12',
 	],
 	'5' => [
 		/**
@@ -51,7 +51,7 @@ return [
 		//either
 		'tce' =>  '1, 2, 5, 7, 8, 11',
 		//or some weird shit
-		'win/qin/tce' =>  '4, 3, 6, 12, 10, 9',
+		'win/qin/tce' =>  '3, 12, 10, 9',
 	],
 	'6' => [
 		/**
@@ -87,7 +87,7 @@ return [
 		'Win' =>  '1, 6, 10',
 		'QQPL' =>  '2, 5',
 		'Tce' =>  '1, 3, 6, 8, 10, 13',
-		'win' =>  '1, 3, 6, 8, 10, 13',
+		'win' =>  '8, 13, 3, 1, 10, 6, 4, 2, 5',
 	],
 	'9' => [
 		/**
@@ -106,7 +106,7 @@ return [
 		//either
 		'tce' =>  '1, 2, 4, 5, 6, 9',
 		//or some weird shit
-		'win/qin/tce' =>  '8, 10, 14, 13, 11, 3, 12, 7',
+		'win/qin/tce' =>  '10, 13, 11, 3, 12, 7',
 	],
 	'10' => [
 		/**
@@ -126,6 +126,6 @@ return [
 		//either
 		'tce' =>  '2, 5, 8, 9, 10, 12',
 		//or some weird shit
-		'win/qin/tce' =>  '3, 1, 6, 4, 7, 11',
+		'win/qin/tce' =>  '1, 6',
 	],
 ];

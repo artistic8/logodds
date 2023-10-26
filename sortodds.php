@@ -297,13 +297,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     */
     $fuck = array_intersect($win, $WON);
     if(!empty($fuck)){
-        $racetext .= "\t\t'win' =>  '" . implode(", ", $tce). "',\n";
+        $racetext .= "\t\t'win' =>  '" . implode(", ", $allQplValues). "',\n";
     }
     else{
         $racetext .= "\t\t//either\n";
         $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
         $racetext .= "\t\t//or some weird shit\n";
-        $weird = array_diff($runners, $tce);
+        $weird = array_diff($runners, $allQplValues);
         $racetext .= "\t\t'win/qin/tce' =>  '" . implode(", ", $weird). "',\n";
     }
     

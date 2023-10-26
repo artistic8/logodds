@@ -12,7 +12,7 @@ return [
 		'All QPL values'    =>  '4, 2, 1, 3, 7, 6, 10',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '4, 2, 1, 3, 6',
-		'win' =>  '1, 2, 3, 4, 6, 7',
+		'win' =>  '4, 2, 1, 3, 7, 6, 10',
 	],
 	'2' => [
 		/**
@@ -25,7 +25,7 @@ return [
 		'All QPL values'    =>  '1, 6, 3, 5, 4, 8, 10',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'win' =>  '1, 3, 4, 5, 6, 8',
+		'win' =>  '1, 6, 3, 5, 4, 8, 10',
 	],
 	'4' => [
 		/**
@@ -38,7 +38,7 @@ return [
 		'All QPL values'    =>  '1, 7, 8, 3, 6, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'win' =>  '1, 3, 4, 6, 7, 8',
+		'win' =>  '1, 7, 8, 3, 6, 4',
 	],
 	'5' => [
 		/**
@@ -58,7 +58,7 @@ return [
 		//either
 		'tce' =>  '1, 5, 8, 9, 11, 12',
 		//or some weird shit
-		'win/qin/tce' =>  '3, 2, 7, 4, 10, 6',
+		'win/qin/tce' =>  '2',
 	],
 	'6' => [
 		/**
@@ -77,7 +77,7 @@ return [
 		//either
 		'tce' =>  '1, 2, 4, 8, 9, 13',
 		//or some weird shit
-		'win/qin/tce' =>  '3, 7, 12, 11, 5, 6, 10, 14',
+		'win/qin/tce' =>  '11, 6, 10, 14',
 	],
 	'7' => [
 		/**
@@ -90,7 +90,7 @@ return [
 		'All QPL values'    =>  '3, 9, 4, 1, 10, 2',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'win' =>  '1, 2, 3, 4, 9, 10',
+		'win' =>  '3, 9, 4, 1, 10, 2',
 	],
 	'8' => [
 		/**
@@ -109,7 +109,7 @@ return [
 		//either
 		'tce' =>  '1, 2, 5, 7, 11, 12',
 		//or some weird shit
-		'win/qin/tce' =>  '8, 4, 3, 14, 9, 10, 13',
+		'win/qin/tce' =>  '4, 3, 14, 9, 10, 13',
 	],
 	'9' => [
 		/**
@@ -128,7 +128,7 @@ return [
 		//either
 		'tce' =>  '1, 5, 8, 9, 10, 11',
 		//or some weird shit
-		'win/qin/tce' =>  '4, 6, 3, 2, 7, 12',
+		'win/qin/tce' =>  '6, 2, 7, 12',
 	],
 	'10' => [
 		/**
@@ -145,6 +145,6 @@ return [
 		'QQPL' =>  '2, 4, 10',
 		'Trio' =>  '2, 4, 10',
 		'Tce' =>  '1, 2, 3, 4, 6, 10',
-		'win' =>  '1, 2, 3, 4, 6, 10',
+		'win' =>  '2, 3, 4, 6, 10, 1, 8, 9',
 	],
 ];
