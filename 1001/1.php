@@ -12,16 +12,9 @@ return [
 		'All QPL values'    =>  '7, 2, 6, 1, 5, 10',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'???????' =>  '1, 2, 5, 7',
 		'win' =>  '7, 2, 6, 1, 5, 10',
 		'For reference' =>  '7, 2, 1, 5, 10',
-		//Sum lack wins  : 6
-		//Sum red wins  : 0
-		//Sum black shish  : 12
-		//Sum red shish  : 13
-		//Sum red QPl values  : 13
-		//Sum black QPl values: 18
-		//Sum red oth values  : 12
-		//Sum black oth values: 12
 	],
 	'2' => [
 		/**
@@ -37,18 +30,11 @@ return [
 		'Win' =>  '1, 2',
 		'QQPL' =>  '2, 10',
 		'Tce' =>  '1, 2, 3, 4, 6, 10',
+		'???????' =>  '',
 		//either
 		'tce' =>  '1, 2, 3, 4, 6, 10',
 		//or some weird shit
 		'win/qin/tce' =>  '8, 13, 11, 14, 9, 12, 5',
-		//Sum lack wins  : 12
-		//Sum red wins  : 8
-		//Sum black shish  : 10
-		//Sum red shish  : 3
-		//Sum red QPl values  : 11
-		//Sum black QPl values: 22
-		//Sum red oth values  : 40
-		//Sum black oth values: 32
 	],
 	'3' => [
 		/**
@@ -64,18 +50,11 @@ return [
 		'Win' =>  '7, 8',
 		'QQPL' =>  '7',
 		'Tce' =>  '1, 2, 5, 7, 8, 9',
+		'???????' =>  '',
 		//either
 		'tce' =>  '1, 2, 5, 7, 8, 9',
 		//or some weird shit
 		'win/qin/tce' =>  '3, 4, 10',
-		//Sum lack wins  : 14
-		//Sum red wins  : 7
-		//Sum black shish  : 2
-		//Sum red shish  : 15
-		//Sum red QPl values  : 22
-		//Sum black QPl values: 16
-		//Sum red oth values  : 3
-		//Sum black oth values: 14
 	],
 	'4' => [
 		/**
@@ -92,18 +71,11 @@ return [
 		'QQPL' =>  '1, 12, 2',
 		'Trio' =>  '1, 12, 2',
 		'Tce' =>  '1, 2, 4, 7, 12',
+		'???????' =>  '',
 		//either
 		'tce' =>  '1, 2, 4, 7, 12',
 		//or some weird shit
 		'win/qin/tce' =>  '5, 11, 3, 9, 10, 6, 8',
-		//Sum lack wins  : 2
-		//Sum red wins  : 13
-		//Sum black shish  : 4
-		//Sum red shish  : 7
-		//Sum red QPl values  : 20
-		//Sum black QPl values: 6
-		//Sum red oth values  : 17
-		//Sum black oth values: 35
 	],
 	'5' => [
 		/**
@@ -119,18 +91,11 @@ return [
 		'Win' =>  '8, 9',
 		'QQPL' =>  '8, 9',
 		'Tce' =>  '1, 3, 6, 8, 9, 10',
+		'???????' =>  '',
 		//either
 		'tce' =>  '1, 3, 6, 8, 9, 10',
 		//or some weird shit
 		'win/qin/tce' =>  '2, 7, 5',
-		//Sum lack wins  : 8
-		//Sum red wins  : 9
-		//Sum black shish  : 20
-		//Sum red shish  : 4
-		//Sum red QPl values  : 13
-		//Sum black QPl values: 28
-		//Sum red oth values  : 12
-		//Sum black oth values: 2
 	],
 	'6' => [
 		/**
@@ -147,18 +112,11 @@ return [
 		'QQPL' =>  '9, 5, 14, 4',
 		'Trio' =>  '9, 5, 14, 4',
 		'Tce' =>  '2, 4, 5, 9, 14',
+		'???????' =>  '',
 		//either
 		'tce' =>  '2, 4, 5, 9, 14',
 		//or some weird shit
 		'win/qin/tce' =>  '13, 1, 10, 12, 3, 6, 8, 11, 7',
-		//Sum lack wins  : 4
-		//Sum red wins  : 28
-		//Sum black shish  : 2
-		//Sum red shish  : 0
-		//Sum red QPl values  : 28
-		//Sum black QPl values: 6
-		//Sum red oth values  : 23
-		//Sum black oth values: 48
 	],
 	'7' => [
 		/**
@@ -175,16 +133,9 @@ return [
 		'QQPL' =>  '7, 6, 3',
 		'Trio' =>  '7, 6, 3',
 		'Tce' =>  '1, 2, 5, 6, 7, 8',
+		'???????' =>  '5',
 		'win' =>  '1, 8, 7, 2, 5, 6, 3',
 		'For reference' =>  '1, 8, 5, 3',
-		//Sum lack wins  : 8
-		//Sum red wins  : 7
-		//Sum black shish  : 8
-		//Sum red shish  : 9
-		//Sum red QPl values  : 16
-		//Sum black QPl values: 16
-		//Sum red oth values  : 9
-		//Sum black oth values: 14
 	],
 	'9' => [
 		/**
@@ -200,16 +151,9 @@ return [
 		'Win' =>  '2, 5',
 		'QQPL' =>  '9, 5',
 		'Tce' =>  '1, 2, 3, 5, 6, 9',
+		'???????' =>  '2',
 		'win' =>  '1, 9, 5, 6, 3, 2, 8, 4',
 		'For reference' =>  '1, 6, 3, 2, 4',
-		//Sum lack wins  : 8
-		//Sum red wins  : 14
-		//Sum black shish  : 12
-		//Sum red shish  : 4
-		//Sum red QPl values  : 18
-		//Sum black QPl values: 20
-		//Sum red oth values  : 33
-		//Sum black oth values: 34
 	],
 	'10' => [
 		/**
@@ -226,15 +170,8 @@ return [
 		'QQPL' =>  '8, 4, 2',
 		'Trio' =>  '8, 4, 2',
 		'Tce' =>  '1, 2, 4, 7, 8, 12',
+		'???????' =>  '7',
 		'win' =>  '8, 4, 2, 1, 12, 7, 5, 3, 9',
 		'For reference' =>  '1, 12, 7, 5, 3',
-		//Sum lack wins  : 14
-		//Sum red wins  : 9
-		//Sum black shish  : 0
-		//Sum red shish  : 28
-		//Sum red QPl values  : 37
-		//Sum black QPl values: 14
-		//Sum red oth values  : 0
-		//Sum black oth values: 27
 	],
 ];

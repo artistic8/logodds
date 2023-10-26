@@ -302,6 +302,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     2. Once that's verified, come up with a strategy to cash on that shit
     */
     $fuck = array_intersect($win, $WON);
+    $racetext .= "\t\t'???????' =>  '" . implode(", ", $fuck). "',\n";
     if(!empty($fuck)){
         $racetext .= "\t\t'win' =>  '" . implode(", ", $allQplValues). "',\n";
         $forReference = array_diff($allQplValues, $allWinsValues);
@@ -314,53 +315,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $weird = array_diff($runners, $allQplValues);
         $racetext .= "\t\t'win/qin/tce' =>  '" . implode(", ", $weird). "',\n";
     }
-
-    $blackWins = array_intersect($allWinsValues, $blacks);
-    $redWins = array_intersect($allWinsValues, $reds);
-    $shishy = array_diff($allQplValues, $allWinsValues);
-    $blackShishy = array_intersect($shishy, $blacks);
-    $redShishy = array_intersect($shishy, $reds);
-    $sum = 0;
-    foreach($blackWins as $value){
-        $sum += $value;
-    }
-    $racetext .= "\t\t//Sum lack wins  : $sum\n";
-    $sum = 0;
-    foreach($redWins as $value){
-        $sum += $value;
-    }
-    $racetext .= "\t\t//Sum red wins  : $sum\n";
-    $sum = 0;
-    foreach($blackShishy as $value){
-        $sum += $value;
-    }
-    $racetext .= "\t\t//Sum black shish  : $sum\n";
-    $sum = 0;
-    foreach($redShishy as $value){
-        $sum += $value;
-    }
-    $racetext .= "\t\t//Sum red shish  : $sum\n";
-
-    $sum = 0;
-    foreach($redQplValues as $value){
-        $sum += $value;
-    }
-    $racetext .= "\t\t//Sum red QPl values  : $sum\n";
-    $sum = 0;
-    foreach($blackQplValues as $value){
-        $sum += $value;
-    }
-    $racetext .= "\t\t//Sum black QPl values: $sum\n";
-    $sum = 0;
-    foreach($redOthers as $value){
-        $sum += $value;
-    }
-    $racetext .= "\t\t//Sum red oth values  : $sum\n";
-    $sum = 0;
-    foreach($blackOthers as $value){
-        $sum += $value;
-    }
-    $racetext .= "\t\t//Sum black oth values: $sum\n";
     
     $racetext .= "\t],\n";
     unset($oldWINS);
