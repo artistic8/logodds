@@ -295,8 +295,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     1. Check from previous results that when ! empty(intersect($win, $WON) then winner is among tce
     2. Once that's verified, come up with a strategy to cash on that shit
     */
-    
-    $racetext .= "\t\t'win' =>  '" . implode(", ", $WON). "',\n";
+    $fuck = array_intersect($win, $WON);
+    if(!empty($fuck)){
+        $racetext .= "\t\t'win' =>  '" . implode(", ", $tce). "',\n";
+    }
+    else{
+        $racetext .= "\t\t//either\n";
+        $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
+        $racetext .= "\t\t//or some weird shit\n";
+        $weird = array_diff($runners, $tce);
+        $racetext .= "\t\t'win/qin/tce' =>  '" . implode(", ", $weird). "',\n";
+    }
     
     $racetext .= "\t],\n";
     unset($oldWINS);
