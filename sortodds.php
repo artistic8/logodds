@@ -275,6 +275,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
      asort($qplsOdds);
      $WON = array_keys($qplsOdds);
 
+    $redQplValues = array_intersect($allQplValues, $reds);
+    $blackQplValues = array_intersect($allQplValues, $blacks);
+    $remains = array_diff($runners, $allQplValues);
+    $redOthers = array_intersect($remains, $reds);
+    $blackOthers = array_intersect($remains, $blacks);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
@@ -304,20 +310,57 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     else{
         $racetext .= "\t\t//either\n";
         $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
-        $sum = 0;
-        foreach($allQplValues as $value) {
-            $sum += $value;
-        }
-        $racetext .= "\t\t//Sum qpl values = $sum\n";
         $racetext .= "\t\t//or some weird shit\n";
         $weird = array_diff($runners, $allQplValues);
         $racetext .= "\t\t'win/qin/tce' =>  '" . implode(", ", $weird). "',\n";
-        $sum = 0;
-        foreach($weird as $value) {
-            $sum += $value;
-        }
-        $racetext .= "\t\t//Sum weird values = $sum\n";
     }
+
+    $blackWins = array_intersect($allWinsValues, $blacks);
+    $redWins = array_intersect($allWinsValues, $reds);
+    $shishy = array_diff($allQplValues, $allWinsValues);
+    $blackShishy = array_intersect($shishy, $blacks);
+    $redShishy = array_intersect($shishy, $reds);
+    $sum = 0;
+    foreach($blackWins as $value){
+        $sum += $value;
+    }
+    $racetext .= "\t\t//Sum lack wins  : $sum\n";
+    $sum = 0;
+    foreach($redWins as $value){
+        $sum += $value;
+    }
+    $racetext .= "\t\t//Sum red wins  : $sum\n";
+    $sum = 0;
+    foreach($blackShishy as $value){
+        $sum += $value;
+    }
+    $racetext .= "\t\t//Sum black shish  : $sum\n";
+    $sum = 0;
+    foreach($redShishy as $value){
+        $sum += $value;
+    }
+    $racetext .= "\t\t//Sum red shish  : $sum\n";
+
+    $sum = 0;
+    foreach($redQplValues as $value){
+        $sum += $value;
+    }
+    $racetext .= "\t\t//Sum red QPl values  : $sum\n";
+    $sum = 0;
+    foreach($blackQplValues as $value){
+        $sum += $value;
+    }
+    $racetext .= "\t\t//Sum black QPl values: $sum\n";
+    $sum = 0;
+    foreach($redOthers as $value){
+        $sum += $value;
+    }
+    $racetext .= "\t\t//Sum red oth values  : $sum\n";
+    $sum = 0;
+    foreach($blackOthers as $value){
+        $sum += $value;
+    }
+    $racetext .= "\t\t//Sum black oth values: $sum\n";
     
     $racetext .= "\t],\n";
     unset($oldWINS);

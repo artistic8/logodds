@@ -17,6 +17,14 @@ return [
 		'Tce' =>  '2, 3, 4, 7, 11, 14',
 		'win' =>  '11, 4, 14, 2, 3, 7, 1, 13, 5',
 		'For reference' =>  '11, 4, 14, 2, 7, 13',
+		//Sum lack wins  : 0
+		//Sum red wins  : 9
+		//Sum black shish  : 30
+		//Sum red shish  : 21
+		//Sum red QPl values  : 30
+		//Sum black QPl values: 30
+		//Sum red oth values  : 21
+		//Sum black oth values: 24
 	],
 	'2' => [
 		/**
@@ -34,6 +42,14 @@ return [
 		'Tce' =>  '1, 2, 3, 4, 6, 9',
 		'win' =>  '2, 1, 4, 6, 9, 3',
 		'For reference' =>  '1, 6, 9, 3',
+		//Sum lack wins  : 6
+		//Sum red wins  : 0
+		//Sum black shish  : 6
+		//Sum red shish  : 13
+		//Sum red QPl values  : 13
+		//Sum black QPl values: 12
+		//Sum red oth values  : 24
+		//Sum black oth values: 29
 	],
 	'3' => [
 		/**
@@ -52,6 +68,14 @@ return [
 		'Tce' =>  '1, 3, 4, 7, 9, 10',
 		'win' =>  '4, 7, 3, 1, 9, 10, 6, 2, 11',
 		'For reference' =>  '4, 9, 10, 2, 11',
+		//Sum lack wins  : 6
+		//Sum red wins  : 11
+		//Sum black shish  : 27
+		//Sum red shish  : 9
+		//Sum red QPl values  : 20
+		//Sum black QPl values: 33
+		//Sum red oth values  : 17
+		//Sum black oth values: 8
 	],
 	'4' => [
 		/**
@@ -69,10 +93,16 @@ return [
 		'Tce' =>  '1, 2, 3, 6, 9, 11',
 		//either
 		'tce' =>  '1, 2, 3, 6, 9, 11',
-		//Sum qpl values = 41
 		//or some weird shit
 		'win/qin/tce' =>  '8, 12, 7, 10',
-		//Sum weird values = 37
+		//Sum lack wins  : 17
+		//Sum red wins  : 14
+		//Sum black shish  : 6
+		//Sum red shish  : 4
+		//Sum red QPl values  : 18
+		//Sum black QPl values: 23
+		//Sum red oth values  : 19
+		//Sum black oth values: 18
 	],
 	'5' => [
 		/**
@@ -91,10 +121,16 @@ return [
 		'Tce' =>  '1, 3, 4, 6, 11, 12',
 		//either
 		'tce' =>  '1, 3, 4, 6, 11, 12',
-		//Sum qpl values = 37
 		//or some weird shit
 		'win/qin/tce' =>  '9, 2, 7, 13, 10, 5, 8',
-		//Sum weird values = 54
+		//Sum lack wins  : 21
+		//Sum red wins  : 0
+		//Sum black shish  : 0
+		//Sum red shish  : 16
+		//Sum red QPl values  : 16
+		//Sum black QPl values: 21
+		//Sum red oth values  : 21
+		//Sum black oth values: 33
 	],
 	'6' => [
 		/**
@@ -113,10 +149,16 @@ return [
 		'Tce' =>  '3, 4, 5, 6, 11, 12',
 		//either
 		'tce' =>  '3, 4, 5, 6, 11, 12',
-		//Sum qpl values = 49
 		//or some weird shit
 		'win/qin/tce' =>  '8, 2, 9, 10',
-		//Sum weird values = 29
+		//Sum lack wins  : 21
+		//Sum red wins  : 5
+		//Sum black shish  : 0
+		//Sum red shish  : 23
+		//Sum red QPl values  : 28
+		//Sum black QPl values: 21
+		//Sum red oth values  : 9
+		//Sum black oth values: 20
 	],
 	'7' => [
 		/**
@@ -135,6 +177,14 @@ return [
 		'Tce' =>  '1, 2, 3, 5, 7, 10',
 		'win' =>  '3, 5, 2, 10, 7, 1, 4',
 		'For reference' =>  '7, 1, 4',
+		//Sum lack wins  : 12
+		//Sum red wins  : 8
+		//Sum black shish  : 4
+		//Sum red shish  : 8
+		//Sum red QPl values  : 16
+		//Sum black QPl values: 16
+		//Sum red oth values  : 35
+		//Sum black oth values: 38
 	],
 	'8' => [
 		/**
@@ -149,5 +199,13 @@ return [
 		'New 3 QPL values'  =>  '',
 		'win' =>  '6, 5, 11, 4, 13, 7, 3, 1',
 		'For reference' =>  '6, 4, 13, 7, 3, 1',
+		//Sum lack wins  : 11
+		//Sum red wins  : 5
+		//Sum black shish  : 23
+		//Sum red shish  : 11
+		//Sum red QPl values  : 16
+		//Sum black QPl values: 34
+		//Sum red oth values  : 35
+		//Sum black oth values: 20
 	],
 ];

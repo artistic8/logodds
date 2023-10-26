@@ -14,6 +14,10 @@ return [
 		'New 3 QPL values'  =>  '',
 		'win' =>  '5, 6, 2, 11, 7, 3',
 		'For reference' =>  '5, 2, 11, 7, 3',
+		//Sum red QPl values  : 15
+		//Sum black QPl values: 19
+		//Sum red oth values  : 22
+		//Sum black oth values: 22
 	],
 	'2' => [
 		/**
@@ -32,6 +36,10 @@ return [
 		'Tce' =>  '3, 6, 7, 8, 9, 11',
 		'win' =>  '11, 7, 8, 9, 3, 6',
 		'For reference' =>  '11, 3, 6',
+		//Sum red QPl values  : 19
+		//Sum black QPl values: 25
+		//Sum red oth values  : 18
+		//Sum black oth values: 16
 	],
 	'3' => [
 		/**
@@ -49,6 +57,10 @@ return [
 		'Tce' =>  '2, 5, 6, 7, 8, 12',
 		'win' =>  '7, 6, 12, 2, 5, 8, 1',
 		'For reference' =>  '6, 12, 5, 8, 1',
+		//Sum red QPl values  : 25
+		//Sum black QPl values: 16
+		//Sum red oth values  : 26
+		//Sum black oth values: 38
 	],
 	'4' => [
 		/**
@@ -63,6 +75,10 @@ return [
 		'New 3 QPL values'  =>  '',
 		'win' =>  '8, 4, 1, 2, 5',
 		'For reference' =>  '4, 1, 2',
+		//Sum red QPl values  : 6
+		//Sum black QPl values: 14
+		//Sum red oth values  : 31
+		//Sum black oth values: 27
 	],
 	'5' => [
 		/**
@@ -77,6 +93,10 @@ return [
 		'New 3 QPL values'  =>  '',
 		'win' =>  '9, 6, 1, 4, 8, 3, 12',
 		'For reference' =>  '6, 1, 4, 8, 3, 12',
+		//Sum red QPl values  : 25
+		//Sum black QPl values: 18
+		//Sum red oth values  : 12
+		//Sum black oth values: 23
 	],
 	'6' => [
 		/**
@@ -91,6 +111,10 @@ return [
 		'New 3 QPL values'  =>  '',
 		'win' =>  '3, 12, 8, 14, 11, 2, 1, 4',
 		'For reference' =>  '3, 12, 8, 14, 1, 4',
+		//Sum red QPl values  : 30
+		//Sum black QPl values: 25
+		//Sum red oth values  : 21
+		//Sum black oth values: 29
 	],
 	'7' => [
 		/**
@@ -105,6 +129,10 @@ return [
 		'New 3 QPL values'  =>  '9, 5, 8, 11, 7, 2',
 		'win' =>  '9, 5, 8, 11, 7, 2, 12',
 		'For reference' =>  '5, 11, 2, 12',
+		//Sum red QPl values  : 33
+		//Sum black QPl values: 21
+		//Sum red oth values  : 4
+		//Sum black oth values: 33
 	],
 	'8' => [
 		/**
@@ -123,9 +151,11 @@ return [
 		'Tce' =>  '1, 4, 5, 6, 11, 12',
 		//either
 		'tce' =>  '1, 4, 5, 6, 11, 12',
-		//Sum qpl values = 39
 		//or some weird shit
 		'win/qin/tce' =>  '9, 2, 7, 3, 8, 10',
-		//Sum weird values = 39
+		//Sum red QPl values  : 18
+		//Sum black QPl values: 21
+		//Sum red oth values  : 19
+		//Sum black oth values: 20
 	],
 ];
