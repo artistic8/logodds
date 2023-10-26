@@ -313,6 +313,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'For reference' =>  '" . implode(", ", $forReference). "',\n";
     }
     else{
+        $racetext .= "\t\t** If prime numbers are a majority in allQplValues then win weird else win,qin, tce tce set*/\n";
+        
         $racetext .= "\t\t//either\n";
         $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
         $racetext .= "\t\t//or some weird shit\n";
