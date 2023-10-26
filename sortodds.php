@@ -298,6 +298,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $fuck = array_intersect($win, $WON);
     if(!empty($fuck)){
         $racetext .= "\t\t'win' =>  '" . implode(", ", $allQplValues). "',\n";
+        $forReference = array_diff($allQplValues, $allWinsValues);
+        $racetext .= "\t\t'For reference' =>  '" . implode(", ", $forReference). "',\n";
     }
     else{
         $racetext .= "\t\t//either\n";

@@ -17,6 +17,7 @@ return [
 		'Trio' =>  '2, 11, 10',
 		'Tce' =>  '2, 3, 5, 8, 10, 11',
 		'win' =>  '8, 2, 11, 10, 3, 5, 1',
+		'For reference' =>  '8, 3, 5',
 	],
 	'5' => [
 		/**
@@ -70,6 +71,7 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'win' =>  '8, 7, 1, 4, 2, 5, 6, 3',
+		'For reference' =>  '1, 4, 6, 3',
 	],
 	'8' => [
 		/**
@@ -83,6 +85,7 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'win' =>  '8, 5, 10, 1, 11, 4, 3, 2',
+		'For reference' =>  '10, 1, 11, 4, 3, 2',
 	],
 	'10' => [
 		/**
@@ -96,5 +99,6 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'win' =>  '6, 1, 2, 10, 7, 3, 4',
+		'For reference' =>  '6, 10, 7, 3, 4',
 	],
 ];
