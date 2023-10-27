@@ -301,9 +301,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
     $forReference = array_diff($allQplValues, $allWinsValues);
-    $racetext .= "\t\t'For reference' =>  '" . implode(", ", $forReference). "',\n";
+    $racetext .= "\t\t'For reference  ' =>  '" . implode(", ", $forReference). "',\n";
+    $racetext .= "\t\t'All wins values' =>  '" . implode(", ", $allWinsValues). "',\n";
     $weird = array_diff($runners, $allQplValues);
-    $racetext .= "\t\t'win/qin/tce' =>  '" . implode(", ", $weird). "',\n";
+    $racetext .= "\t\t'Remaining' =>  '" . implode(", ", $weird). "',\n";
    
     $racetext .= "\t],\n";
     unset($oldWINS);
