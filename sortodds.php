@@ -47,6 +47,8 @@ $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18,
 $blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
           22, 24, 26, 28, 29, 31, 33, 35];
 
+$primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+
 $totalRaces = count($allOdds);
 
 for($r=1; $r <= $totalRaces; $r++){
@@ -281,6 +283,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $redOthers = array_intersect($remains, $reds);
     $blackOthers = array_intersect($remains, $blacks);
 
+    $sPrimes = array_intersect($allQplValues, $primes);
+    $primesMajority = count($allQplValues) < 2 * count($sPrimes);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
@@ -289,39 +294,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
     
-    if(!empty($new2QplValues)){
-        $racetext .= "\t\t'Win' =>  '" . implode(", ", $win). "',\n";
-        $racetext .= "\t\t'QQPL' =>  '" . implode(", ", $qqpl). "',\n";
-        if(count($qqpl) >= 3){
-            $racetext .= "\t\t'Trio' =>  '" . implode(", ", $qqpl). "',\n";
-        }
-        $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce). "',\n";
+    if($primesMajority){
+        $racetext .= "\t\t//Primes majority,\n";
+        $racetext .= "\t\t'primes' =>  '" . implode(", ", $sPrimes). "',\n";
     }
-    /** 
-    1. Check from previous results that when ! empty(intersect($win, $WON) then winner is among tce
-    2. Once that's verified, come up with a strategy to cash on that shit
-    */
-    $f1 = array_intersect($win, $WON);
-    $f2 = array_intersect($allWinsValues, $WON);
-    $f3 = array_intersect($qqpl, $WON);
-    $racetext .= "\t\tf1 =>  '" . implode(", ", $f1). "',\n";
-    $racetext .= "\t\tf2 =>  '" . implode(", ", $f2). "',\n";
-    $racetext .= "\t\tf3 =>  '" . implode(", ", $f3). "',\n";
-    if(!empty($f1)){
-        $racetext .= "\t\t'win' =>  '" . implode(", ", $allQplValues). "',\n";
-        $forReference = array_diff($allQplValues, $allWinsValues);
-        $racetext .= "\t\t'For reference' =>  '" . implode(", ", $forReference). "',\n";
-    }
-    else{
-        $racetext .= "\t\t** If prime numbers are a majority in allQplValues then win weird else win,qin, tce tce set*/\n";
-        
-        $racetext .= "\t\t//either\n";
-        $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
-        $racetext .= "\t\t//or some weird shit\n";
-        $weird = array_diff($runners, $allQplValues);
-        $racetext .= "\t\t'win/qin/tce' =>  '" . implode(", ", $weird). "',\n";
-    }
-    
+
+    $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
+    $forReference = array_diff($allQplValues, $allWinsValues);
+    $racetext .= "\t\t'For reference' =>  '" . implode(", ", $forReference). "',\n";
+    $weird = array_diff($runners, $allQplValues);
+    $racetext .= "\t\t'win/qin/tce' =>  '" . implode(", ", $weird). "',\n";
+   
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
