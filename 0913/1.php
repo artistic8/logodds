@@ -12,7 +12,6 @@ return [
 		'All QPL values'    =>  '2, 9, 3, 5, 8, 7, 6, 4',
 		'New 2 QPL values'  =>  '2, 9, 3, 5, 8, 7, 6, 4',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '2, 3, 5, 7, 8, 9',
 		'For reference  ' =>  '2, 3, 5, 7, 6, 4',//number of primes: 4
 		'All wins values' =>  '8, 9',//number of primes: 0
 		'Remaining' =>  '10, 1'//number of primes: 0,
@@ -28,10 +27,10 @@ return [
 		'All QPL values'    =>  '6, 5, 1, 2, 4, 3, 8',
 		'New 2 QPL values'  =>  '6, 5, 1, 2, 4, 3, 8',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '1, 2, 3, 4, 5, 6',
 		'For reference  ' =>  '1, 2, 3, 8',//number of primes: 2
 		'All wins values' =>  '4, 5, 6',//number of primes: 1
 		'Remaining' =>  '7, 10, 9'//number of primes: 1,
+		'tce' =>  '1, 2, 3, 4, 5, 6',
 	],
 	'5' => [
 		/**
@@ -44,7 +43,6 @@ return [
 		'All QPL values'    =>  '4, 2, 1, 9, 6, 10, 5',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '1, 2, 4, 6, 9, 10',
 		'For reference  ' =>  '4, 2, 6, 10',//number of primes: 1
 		'All wins values' =>  '1, 5, 9',//number of primes: 1
 		'Remaining' =>  '3, 8, 7'//number of primes: 2,
@@ -60,7 +58,6 @@ return [
 		'All QPL values'    =>  '2, 5, 1, 6, 8, 7',
 		'New 2 QPL values'  =>  '2, 5, 1, 6, 8, 7',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '1, 2, 5, 6, 7, 8',
 		'For reference  ' =>  '2, 5, 1, 8',//number of primes: 2
 		'All wins values' =>  '6, 7',//number of primes: 1
 		'Remaining' =>  '9, 4, 10, 12, 3, 11'//number of primes: 2,
@@ -76,10 +73,10 @@ return [
 		'All QPL values'    =>  '6, 2, 5, 4, 3, 9',
 		'New 2 QPL values'  =>  '6, 2, 5, 4, 3, 9',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '2, 3, 4, 5, 6, 9',
 		'For reference  ' =>  '6, 3, 9',//number of primes: 1
 		'All wins values' =>  '2, 4, 5',//number of primes: 2
 		'Remaining' =>  '1, 8, 7, 11, 10'//number of primes: 2,
+		'tce' =>  '2, 3, 4, 5, 6, 9',
 	],
 	'8' => [
 		/**
@@ -92,7 +89,6 @@ return [
 		'All QPL values'    =>  '10, 5, 1, 11, 4, 2',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '1, 2, 4, 5, 10, 11',
 		'For reference  ' =>  '10, 5, 11, 2',//number of primes: 3
 		'All wins values' =>  '1, 4',//number of primes: 0
 		'Remaining' =>  '8, 3, 9, 6'//number of primes: 1,

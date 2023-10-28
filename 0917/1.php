@@ -12,10 +12,10 @@ return [
 		'All QPL values'    =>  '6, 12, 5, 8, 1, 2, 14',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '1, 2, 5, 6, 8, 12',
 		'For reference  ' =>  '12, 8, 1, 14',//number of primes: 0
 		'All wins values' =>  '2, 5, 6',//number of primes: 2
 		'Remaining' =>  '4, 9, 3, 7, 13, 10'//number of primes: 3,
+		'tce' =>  '1, 2, 5, 6, 8, 12',
 	],
 	'4' => [
 		/**
@@ -30,10 +30,10 @@ return [
 		'New 3 QPL values'  =>  '',
 		//Primes majority,
 		'primes' =>  '3, 2, 5, 13, 7, 11',
-		'tce' =>  '2, 3, 5, 9, 13, 14',
 		'For reference  ' =>  '3, 2, 7, 4, 11',//number of primes: 4
 		'All wins values' =>  '5, 8, 9, 13, 14',//number of primes: 2
 		'Remaining' =>  '6, 10, 1, 12'//number of primes: 0,
+		'tce' =>  '2, 3, 5, 9, 13, 14',
 	],
 	'5' => [
 		/**
@@ -46,7 +46,6 @@ return [
 		'All QPL values'    =>  '1, 2, 11, 8, 5, 7, 4, 6',
 		'New 2 QPL values'  =>  '1, 2, 8, 5, 7, 6',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '1, 2, 5, 7, 8, 11',
 		'For reference  ' =>  '1, 2, 11, 8, 4',//number of primes: 2
 		'All wins values' =>  '5, 6, 7',//number of primes: 2
 		'Remaining' =>  '3, 12, 10, 9'//number of primes: 1,
@@ -64,10 +63,10 @@ return [
 		'New 3 QPL values'  =>  '7, 2, 3, 5, 11, 12',
 		//Primes majority,
 		'primes' =>  '7, 2, 3, 5, 11',
-		'tce' =>  '2, 3, 5, 7, 11, 12',
 		'For reference  ' =>  '5',//number of primes: 1
 		'All wins values' =>  '2, 3, 7, 11, 12',//number of primes: 4
 		'Remaining' =>  '10, 8, 1, 6, 4, 9'//number of primes: 0,
+		'tce' =>  '2, 3, 5, 7, 11, 12',
 	],
 	'8' => [
 		/**
@@ -80,7 +79,6 @@ return [
 		'All QPL values'    =>  '8, 13, 3, 1, 10, 6, 4, 2, 5',
 		'New 2 QPL values'  =>  '8, 13, 3, 2, 5',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '1, 3, 6, 8, 10, 13',
 		'For reference  ' =>  '8, 13, 3, 1, 6, 4',//number of primes: 2
 		'All wins values' =>  '2, 5, 10',//number of primes: 2
 		'Remaining' =>  '9, 11, 7, 12, 14'//number of primes: 2,
@@ -96,10 +94,10 @@ return [
 		'All QPL values'    =>  '1, 6, 5, 2, 4, 9, 8, 14',
 		'New 2 QPL values'  =>  '1, 6, 5, 2, 4, 9, 8, 14',
 		'New 3 QPL values'  =>  '1, 6, 5, 2, 4, 14',
-		'tce' =>  '1, 2, 4, 5, 6, 9',
 		'For reference  ' =>  '1, 2, 4, 8',//number of primes: 1
 		'All wins values' =>  '5, 6, 9, 14',//number of primes: 1
 		'Remaining' =>  '10, 13, 11, 3, 12, 7'//number of primes: 4,
+		'tce' =>  '1, 2, 4, 5, 6, 9',
 	],
 	'10' => [
 		/**
@@ -112,9 +110,9 @@ return [
 		'All QPL values'    =>  '2, 9, 10, 5, 12, 8, 3, 4, 7, 11',
 		'New 2 QPL values'  =>  '2, 9, 10, 5, 8, 3, 4, 7',
 		'New 3 QPL values'  =>  '',
-		'tce' =>  '2, 5, 8, 9, 10, 12',
 		'For reference  ' =>  '2, 10, 3, 7, 11',//number of primes: 4
 		'All wins values' =>  '4, 5, 8, 9, 12',//number of primes: 1
 		'Remaining' =>  '1, 6'//number of primes: 0,
+		'tce' =>  '2, 5, 8, 9, 10, 12',
 	],
 ];

@@ -299,7 +299,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'primes' =>  '" . implode(", ", $sPrimes). "',\n";
     }
 
-    $racetext .= "\t\t'tce' =>  '" . implode(", ", $tce). "',\n";
     $forReference = array_diff($allQplValues, $allWinsValues);
     $forRefPrimes = array_intersect($forReference, $primes);
     $countPrimes1 = count($forRefPrimes);
@@ -311,6 +310,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $weirdPrimes = array_intersect($weird, $primes);
     $countPrimes3 = count($weirdPrimes);
     $racetext .= "\t\t'Remaining' =>  '" . implode(", ", $weird). "'//number of primes: $countPrimes3,\n";
+    $first6 = array_slice($allQplValues, 0, 6);
+    $iiiinter = array_intersect($first6, $allWinsValues);
+    if(count( $iiiinter) >= 3){
+        sort($first6);
+        $racetext .= "\t\t'tce' =>  '" . implode(", ", $first6). "',\n";
+    }
    
     $racetext .= "\t],\n";
     unset($oldWINS);
