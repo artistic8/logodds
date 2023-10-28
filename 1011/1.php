@@ -15,7 +15,9 @@ return [
 		'For reference  ' =>  '3, 1, 2, 7, 8',//number of primes: 3
 		'All wins values' =>  '4, 5, 6',//number of primes: 1
 		'Remaining' =>  '9, 10',//number of primes: 0,
-		'tce' =>  '1, 2, 3, 4, 5, 6',
+		'diff' =>  '',
+		'WIN' =>  '4, 5, 6',
+		'tce??' =>  '1, 2, 3, 4, 5, 6',
 	],
 	'2' => [
 		/**
@@ -33,7 +35,9 @@ return [
 		'For reference  ' =>  '3, 7, 2',//number of primes: 3
 		'All wins values' =>  '1, 5, 6, 11',//number of primes: 2
 		'Remaining' =>  '10, 12, 4, 9, 8',//number of primes: 0,
-		'tce' =>  '2, 3, 5, 6, 7, 11',
+		'diff' =>  '',
+		'WIN' =>  '1, 5, 6, 11',
+		'tce??' =>  '2, 3, 5, 6, 7, 11',
 	],
 	'3' => [
 		/**
@@ -49,6 +53,7 @@ return [
 		'For reference  ' =>  '4, 1, 5, 8, 2',//number of primes: 2
 		'All wins values' =>  '9',//number of primes: 0
 		'Remaining' =>  '7, 6, 3, 10',//number of primes: 2,
+		'diff' =>  '',
 	],
 	'4' => [
 		/**
@@ -64,7 +69,9 @@ return [
 		'For reference  ' =>  '11, 12, 1',//number of primes: 1
 		'All wins values' =>  '2, 5, 6, 9',//number of primes: 2
 		'Remaining' =>  '4, 7, 10, 8, 3',//number of primes: 2,
-		'tce' =>  '2, 5, 6, 9, 11, 12',
+		'diff' =>  '',
+		'WIN' =>  '2, 5, 6, 9',
+		'tce??' =>  '2, 5, 6, 9, 11, 12',
 	],
 	'5' => [
 		/**
@@ -80,7 +87,9 @@ return [
 		'For reference  ' =>  '11, 4, 2, 1',//number of primes: 2
 		'All wins values' =>  '5, 6, 7, 8',//number of primes: 2
 		'Remaining' =>  '10, 12, 3, 9',//number of primes: 1,
-		'tce' =>  '4, 5, 6, 7, 8, 11',
+		'diff' =>  '',
+		'WIN' =>  '5, 6, 7, 8',
+		'tce??' =>  '4, 5, 6, 7, 8, 11',
 	],
 	'6' => [
 		/**
@@ -96,6 +105,7 @@ return [
 		'For reference  ' =>  '4, 11, 7, 9, 10',//number of primes: 2
 		'All wins values' =>  '3, 6',//number of primes: 1
 		'Remaining' =>  '1, 2, 5, 8, 12',//number of primes: 2,
+		'diff' =>  '',
 	],
 	'7' => [
 		/**
@@ -111,7 +121,9 @@ return [
 		'For reference  ' =>  '12, 3, 6',//number of primes: 1
 		'All wins values' =>  '1, 2, 7, 10',//number of primes: 2
 		'Remaining' =>  '9, 8, 4, 11, 5',//number of primes: 2,
-		'tce' =>  '1, 2, 3, 7, 10, 12',
+		'diff' =>  '',
+		'WIN' =>  '1, 2, 7, 10',
+		'tce??' =>  '1, 2, 3, 7, 10, 12',
 	],
 	'8' => [
 		/**
@@ -127,6 +139,6 @@ return [
 		'For reference  ' =>  '3, 10, 8',//number of primes: 1
 		'All wins values' =>  '5, 6, 7',//number of primes: 2
 		'Remaining' =>  '4, 2, 12, 1, 11, 9',//number of primes: 2,
-		'tce' =>  '3, 5, 6, 7, 8, 10',
+		'diff' =>  '',
 	],
 ];
