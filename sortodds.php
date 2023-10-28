@@ -309,7 +309,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $weird = array_diff($runners, $allQplValues);
     $weirdPrimes = array_intersect($weird, $primes);
     $countPrimes3 = count($weirdPrimes);
-    $racetext .= "\t\t'Remaining' =>  '" . implode(", ", $weird). "'//number of primes: $countPrimes3,\n";
+    $racetext .= "\t\t'Remaining' =>  '" . implode(", ", $weird). "',//number of primes: $countPrimes3,\n";
     $first6 = array_slice($allQplValues, 0, 6);
     $iiiinter = array_intersect($first6, $allWinsValues);
     if(count( $iiiinter) >= 3){
