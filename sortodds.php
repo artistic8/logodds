@@ -302,16 +302,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
 
     $forReference = array_diff($allQplValues, $allWinsValues);
-    $forRefPrimes = array_intersect($forReference, $primes);
-    $countPrimes1 = count($forRefPrimes);
-    $racetext .= "\t\t'For reference  ' =>  '" . implode(", ", $forReference). "',//number of primes: $countPrimes1\n";
-    $allWinsPrimes = array_intersect($allWinsValues, $primes);
-    $countPrimes2 = count($allWinsPrimes);
-    $racetext .= "\t\t'All wins values' =>  '" . implode(", ", $allWinsValues). "',//number of primes: $countPrimes2\n";
+    $count1 = count($forReference);
+    $racetext .= "\t\t'For reference  ' =>  '" . implode(", ", $forReference). "',//total: $count1\n";
+    $count2 = count($allWinsValues);
+    $racetext .= "\t\t'All wins values' =>  '" . implode(", ", $allWinsValues). "',//total: $count2\n";
     $weird = array_diff($runners, $allQplValues);
-    $weirdPrimes = array_intersect($weird, $primes);
-    $countPrimes3 = count($weirdPrimes);
-    $racetext .= "\t\t'Remaining' =>  '" . implode(", ", $weird). "',//number of primes: $countPrimes3,\n";
+    $count3 = count($weird);
+    $racetext .= "\t\t'Remaining' =>  '" . implode(", ", $weird). "',//total: $count3,\n";
     if(isset($oldRemaining)){
         $diffRemaining = array_diff($oldRemaining, $weird);
         if(isset($oldDiff)) {
