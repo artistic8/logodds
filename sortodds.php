@@ -307,8 +307,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $count2 = count($allWinsValues);
     $racetext .= "\t\t'All wins values' =>  '" . implode(", ", $allWinsValues). "',//total: $count2\n";
     $weird = array_diff($runners, $allQplValues);
-    $count3 = count($weird);
-    $racetext .= "\t\t'Remaining' =>  '" . implode(", ", $weird). "',//total: $count3,\n";
+    $racetext .= "\t\t'Remaining' =>  '" . implode(", ", $weird). "',\n";
     if(isset($oldRemaining)){
         $diffRemaining = array_diff($oldRemaining, $weird);
         if(isset($oldDiff)) {

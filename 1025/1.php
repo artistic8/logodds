@@ -16,7 +16,7 @@ return [
 		'primes' =>  '5, 2, 11, 7, 3',
 		'For reference  ' =>  '5, 2, 11, 7, 3',//total: 5
 		'All wins values' =>  '6',//total: 1
-		'Remaining' =>  '12, 9, 8, 10, 4, 1',//total: 6,
+		'Remaining' =>  '12, 9, 8, 10, 4, 1',
 		'diff' =>  '',
 	],
 	'2' => [
@@ -32,7 +32,7 @@ return [
 		'New 3 QPL values'  =>  '11, 7, 8, 9, 3, 6',
 		'For reference  ' =>  '11, 3, 6',//total: 3
 		'All wins values' =>  '7, 8, 9',//total: 3
-		'Remaining' =>  '12, 2, 1, 10, 5, 4',//total: 6,
+		'Remaining' =>  '12, 2, 1, 10, 5, 4',
 		'diff' =>  '',
 	],
 	'3' => [
@@ -48,7 +48,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'For reference  ' =>  '6, 12, 5, 8, 1',//total: 5
 		'All wins values' =>  '2, 7',//total: 2
-		'Remaining' =>  '10, 9, 11, 4, 3, 13, 14',//total: 7,
+		'Remaining' =>  '10, 9, 11, 4, 3, 13, 14',
 		'diff' =>  '',
 	],
 	'4' => [
@@ -64,7 +64,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'For reference  ' =>  '4, 1, 2',//total: 3
 		'All wins values' =>  '5, 8',//total: 2
-		'Remaining' =>  '9, 10, 3, 11, 7, 6, 12',//total: 7,
+		'Remaining' =>  '9, 10, 3, 11, 7, 6, 12',
 		'diff' =>  '',
 	],
 	'5' => [
@@ -80,7 +80,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'For reference  ' =>  '6, 1, 4, 8, 3, 12',//total: 6
 		'All wins values' =>  '9',//total: 1
-		'Remaining' =>  '5, 10, 2, 11, 7',//total: 5,
+		'Remaining' =>  '5, 10, 2, 11, 7',
 		'diff' =>  '',
 	],
 	'6' => [
@@ -96,7 +96,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'For reference  ' =>  '3, 12, 8, 14, 1, 4',//total: 6
 		'All wins values' =>  '2, 11',//total: 2
-		'Remaining' =>  '9, 7, 10, 5, 6, 13',//total: 6,
+		'Remaining' =>  '9, 7, 10, 5, 6, 13',
 		'diff' =>  '',
 	],
 	'7' => [
@@ -114,7 +114,7 @@ return [
 		'primes' =>  '5, 11, 7, 2',
 		'For reference  ' =>  '5, 11, 2, 12',//total: 4
 		'All wins values' =>  '7, 8, 9',//total: 3
-		'Remaining' =>  '3, 4, 13, 1, 6, 10',//total: 6,
+		'Remaining' =>  '3, 4, 13, 1, 6, 10',
 		'diff' =>  '',
 		'WIN' =>  '7, 8, 9',
 		'tce??' =>  '2, 5, 7, 8, 9, 11',
@@ -132,7 +132,7 @@ return [
 		'New 3 QPL values'  =>  '',
 		'For reference  ' =>  '4, 11',//total: 2
 		'All wins values' =>  '1, 5, 6, 12',//total: 4
-		'Remaining' =>  '9, 2, 7, 3, 8, 10',//total: 6,
+		'Remaining' =>  '9, 2, 7, 3, 8, 10',
 		'diff' =>  '',
 	],
 ];
