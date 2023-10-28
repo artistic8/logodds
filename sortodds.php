@@ -302,15 +302,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if($primesMajority){
         $racetext .= "\t\t//Primes majority,\n";
         $racetext .= "\t\t'primes' =>  '" . implode(", ", $sPrimes). "',\n";
-        $racetext .= "\t\t'Place' =>  '" . $first1 . "',\n";
-        $racetext .= "\t\t//HEDGE BETS,\n";
-        $racetext .= "\t\t'Trio/Qin' =>  '" . implode(", ", $forReference). "',\n";
-        $weird = array_values($weird);
-        if(isset($weird[0]) && isset($weird[1])){
-            $racetext .= "\t\t'Hedge Place' =>  '" . $weird[0] . ", " . $weird[1] . "',\n";
-        }
+    }
 
-
+    $racetext .= "\t\t'Place' =>  '" . $first1 . "',\n";
+    $racetext .= "\t\t//HEDGE BETS,\n";
+    $racetext .= "\t\t'Trio/Qin' =>  '" . implode(", ", $forReference). "',\n";
+    $weird = array_values($weird);
+    if(isset($weird[0]) && isset($weird[1])){
+        $racetext .= "\t\t'Hedge Place' =>  '" . $weird[0] . ", " . $weird[1] . "',\n";
     }
    
     $racetext .= "\t],\n";
