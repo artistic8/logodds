@@ -12,6 +12,10 @@ return [
 		'All QPL values'    =>  '4, 2, 1, 3, 7, 6, 10',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '4, 2, 1, 3, 6',
+		'Place' =>  '2',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '4, 7, 6, 10',
+		'Hedge Place' =>  '5, 9',
 	],
 	'2' => [
 		/**
@@ -24,6 +28,10 @@ return [
 		'All QPL values'    =>  '1, 6, 3, 5, 4, 8, 10',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '1',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '1, 6, 3, 5, 4, 8',
+		'Hedge Place' =>  '9, 2',
 	],
 	'4' => [
 		/**
@@ -36,6 +44,10 @@ return [
 		'All QPL values'    =>  '1, 7, 8, 3, 6, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '1',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '1, 8, 3, 6, 4',
+		'Hedge Place' =>  '9, 10',
 	],
 	'5' => [
 		/**
@@ -48,6 +60,9 @@ return [
 		'All QPL values'    =>  '9, 11, 8, 1, 5, 12, 3, 7, 4, 10, 6',
 		'New 2 QPL values'  =>  '9, 11, 8, 1, 5, 12, 3, 7, 4, 10, 6',
 		'New 3 QPL values'  =>  '9, 11, 8, 1, 3, 7, 10',
+		'Place' =>  '9',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '5, 12, 3, 4, 6',
 	],
 	'6' => [
 		/**
@@ -60,6 +75,10 @@ return [
 		'All QPL values'    =>  '4, 8, 1, 9, 13, 2, 3, 12, 7, 5',
 		'New 2 QPL values'  =>  '4, 8, 1, 9, 13, 2, 12, 7, 5',
 		'New 3 QPL values'  =>  '4, 8, 9, 13, 7, 12',
+		'Place' =>  '4',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '4, 1, 13, 3, 12, 5',
+		'Hedge Place' =>  '11, 6',
 	],
 	'7' => [
 		/**
@@ -72,6 +91,10 @@ return [
 		'All QPL values'    =>  '3, 9, 4, 1, 10, 2',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '9',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '3, 9, 1, 10, 2',
+		'Hedge Place' =>  '5, 7',
 	],
 	'8' => [
 		/**
@@ -102,6 +125,10 @@ return [
 		'All QPL values'    =>  '8, 10, 5, 11, 9, 1, 4, 3',
 		'New 2 QPL values'  =>  '8, 10, 5, 11, 9, 1, 4',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '8',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '10, 5, 11, 4, 3',
+		'Hedge Place' =>  '6, 2',
 	],
 	'10' => [
 		/**
@@ -114,5 +141,9 @@ return [
 		'All QPL values'    =>  '2, 3, 4, 6, 10, 1, 8, 9',
 		'New 2 QPL values'  =>  '2, 3, 4, 6, 10, 1, 8, 9',
 		'New 3 QPL values'  =>  '2, 3, 4, 10, 1',
+		'Place' =>  '2',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '3, 6, 1',
+		'Hedge Place' =>  '12, 5',
 	],
 ];

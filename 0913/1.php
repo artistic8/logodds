@@ -12,6 +12,10 @@ return [
 		'All QPL values'    =>  '2, 9, 3, 5, 8, 7, 6, 4',
 		'New 2 QPL values'  =>  '2, 9, 3, 5, 8, 7, 6, 4',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '2',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '2, 3, 5, 7, 6, 4',
+		'Hedge Place' =>  '10, 1',
 	],
 	'4' => [
 		/**
@@ -24,6 +28,10 @@ return [
 		'All QPL values'    =>  '6, 5, 1, 2, 4, 3, 8',
 		'New 2 QPL values'  =>  '6, 5, 1, 2, 4, 3, 8',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '6',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '1, 2, 3, 8',
+		'Hedge Place' =>  '7, 10',
 	],
 	'5' => [
 		/**
@@ -36,6 +44,10 @@ return [
 		'All QPL values'    =>  '4, 2, 1, 9, 6, 10, 5',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '4',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '4, 2, 6, 10',
+		'Hedge Place' =>  '3, 8',
 	],
 	'6' => [
 		/**
@@ -48,6 +60,10 @@ return [
 		'All QPL values'    =>  '2, 5, 1, 6, 8, 7',
 		'New 2 QPL values'  =>  '2, 5, 1, 6, 8, 7',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '2',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '2, 5, 1, 8',
+		'Hedge Place' =>  '9, 4',
 	],
 	'7' => [
 		/**
@@ -60,6 +76,10 @@ return [
 		'All QPL values'    =>  '6, 2, 5, 4, 3, 9',
 		'New 2 QPL values'  =>  '6, 2, 5, 4, 3, 9',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '6',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '6, 3, 9',
+		'Hedge Place' =>  '1, 8',
 	],
 	'8' => [
 		/**
@@ -72,5 +92,9 @@ return [
 		'All QPL values'    =>  '10, 5, 1, 11, 4, 2',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
+		'Place' =>  '10',
+		//HEDGE BETS,
+		'Trio/Qin' =>  '10, 5, 11, 2',
+		'Hedge Place' =>  '8, 3',
 	],
 ];
