@@ -288,6 +288,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $sPrimes = array_intersect($allQplValues, $primes);
     $primesMajority = count($allQplValues) < 2 * count($sPrimes);
 
+    $racetext .= "\t\t//Total runners: " . count($runners) .  "\n";
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
