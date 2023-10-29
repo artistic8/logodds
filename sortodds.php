@@ -179,8 +179,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
-    $tce = array_slice($allQplValues, 0, 6);
-    sort($tce);
     sort($allWinsValues);
 
     //keep only the trios that contain wins containing exactly two elements
@@ -263,10 +261,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     if(count($forReference) > 3){
         if(count($forReference) === 4 ){
-            $racetext .= "\t\t'Qin/Tce' =>  '" . implode(", ", $forReference). "',\n";
+            $racetext .= "\t\t'Qin' =>  '" . implode(", ", $forReference). "',\n";
             $first = $allQplValues[0];
             if(!in_array($first, $allWinsValues)){
                 $racetext .= "\t\t'Place' =>  '" . implode(", ", $weird) . "',\n";
+                $tce = array_values(array_unique(array_merge($forReference, $weird)));
+                $trio = array_slice($allQplValues, 0, 5);
+                $racetext .= "\t\t'Trio' =>  '" . implode(", ", $trio) . "',\n";
+                $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
             }
         }
     }

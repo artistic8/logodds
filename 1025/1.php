@@ -90,7 +90,7 @@ return [
 		'All QPL values'    =>  '9, 5, 8, 11, 7, 2, 12',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '9, 5, 8, 11, 7, 2',
-		'Qin/Tce' =>  '5, 11, 2, 12',
+		'Qin' =>  '5, 11, 2, 12',
 		'Hedge Place' =>  '3, 4',
 	],
 	'8' => [

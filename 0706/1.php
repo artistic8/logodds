@@ -38,8 +38,10 @@ return [
 		'All QPL values'    =>  '3, 7, 4, 2, 8, 5, 11',
 		'New 2 QPL values'  =>  '3, 7, 4, 2, 8, 5, 11',
 		'New 3 QPL values'  =>  '',
-		'Qin/Tce' =>  '3, 2, 5, 11',
+		'Qin' =>  '3, 2, 5, 11',
 		'Place' =>  '9, 6',
+		'Trio' =>  '3, 7, 4, 2, 8',
+		'Tce' =>  '3, 2, 5, 11, 9, 6',
 		'Hedge Place' =>  '9, 6',
 	],
 	'5' => [
@@ -66,7 +68,7 @@ return [
 		'All QPL values'    =>  '6, 9, 5, 1, 3, 10, 12, 2',
 		'New 2 QPL values'  =>  '6, 9, 5, 1, 3, 10, 12, 2',
 		'New 3 QPL values'  =>  '',
-		'Qin/Tce' =>  '3, 10, 12, 2',
+		'Qin' =>  '3, 10, 12, 2',
 		'Hedge Place' =>  '7, 11',
 	],
 	'7' => [
@@ -106,7 +108,7 @@ return [
 		'All QPL values'    =>  '6, 2, 1, 8, 5, 3, 4',
 		'New 2 QPL values'  =>  '6, 2, 1, 3, 4',
 		'New 3 QPL values'  =>  '',
-		'Qin/Tce' =>  '1, 8, 5, 3',
+		'Qin' =>  '1, 8, 5, 3',
 		'Hedge Place' =>  '7, 9',
 	],
 ];
