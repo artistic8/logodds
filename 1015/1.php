@@ -12,7 +12,6 @@ return [
 		'All QPL values'    =>  '3, 5, 4, 11, 7, 8, 2',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Place' =>  '3',
 		'Hedge Place' =>  '9, 14',
 	],
 	'3' => [
@@ -26,7 +25,8 @@ return [
 		'All QPL values'    =>  '5, 8, 2, 7, 1, 6, 9, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '2, 1, 6, 4',
+		'Qin/Tce' =>  '2, 1, 6, 4, 14, 12, 3, 11, 13, 10',
+		'Qqpl' =>  '5 X 2, 1, 6, 4, 14, 12, 3, 11, 13, 10',
 		'Hedge Place' =>  '14, 12',
 	],
 	'4' => [
@@ -40,7 +40,6 @@ return [
 		'All QPL values'    =>  '1, 9, 5, 4, 6, 3, 13, 2',
 		'New 2 QPL values'  =>  '1, 9, 5, 4, 6, 13, 2',
 		'New 3 QPL values'  =>  '',
-		'Place' =>  '1',
 		'Hedge Place' =>  '14, 10',
 	],
 	'5' => [
@@ -54,7 +53,8 @@ return [
 		'All QPL values'    =>  '13, 9, 8, 11, 2, 3, 1',
 		'New 2 QPL values'  =>  '13, 9, 8, 11, 2, 3, 1',
 		'New 3 QPL values'  =>  '13, 9, 8, 11, 2, 1',
-		'Qin/Trio' =>  '13, 11, 2, 3',
+		'Qin/Tce' =>  '13, 11, 2, 3, 10, 6, 5, 7, 14, 12',
+		'Qqpl' =>  '1 X 13, 11, 2, 3, 10, 6, 5, 7, 14, 12',
 		'Hedge Place' =>  '10, 6',
 	],
 	'6' => [
@@ -81,7 +81,6 @@ return [
 		'All QPL values'    =>  '3, 1, 8, 5, 7, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Place' =>  '3',
 		'Hedge Place' =>  '9, 2',
 	],
 	'8' => [
@@ -95,7 +94,6 @@ return [
 		'All QPL values'    =>  '2, 9, 14, 10, 8, 7, 1, 13, 11',
 		'New 2 QPL values'  =>  '2, 9, 14, 10, 8, 7, 1, 13, 11',
 		'New 3 QPL values'  =>  '2, 9, 8, 7, 13, 11',
-		'Place' =>  '2',
 		'Hedge Place' =>  '6, 12',
 	],
 	'9' => [
@@ -109,7 +107,8 @@ return [
 		'All QPL values'    =>  '6, 2, 3, 11, 12, 1',
 		'New 2 QPL values'  =>  '6, 2, 3, 11, 12, 1',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '6, 3, 12, 1',
+		'Qin/Tce' =>  '6, 3, 12, 1, 4, 8, 13, 7, 5, 14, 10, 9',
+		'Qqpl' =>  '2 X 6, 3, 12, 1, 4, 8, 13, 7, 5, 14, 10, 9',
 		'Hedge Place' =>  '4, 8',
 	],
 	'10' => [
@@ -123,7 +122,8 @@ return [
 		'All QPL values'    =>  '3, 2, 8, 12, 1, 9, 10',
 		'New 2 QPL values'  =>  '3, 2, 8, 12, 1, 9, 10',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '3, 12, 1, 9',
+		'Qin/Tce' =>  '3, 12, 1, 9, 4, 6, 14, 5, 7, 11, 13',
+		'Qqpl' =>  '2 X 3, 12, 1, 9, 4, 6, 14, 5, 7, 11, 13',
 		'Hedge Place' =>  '4, 6',
 	],
 ];

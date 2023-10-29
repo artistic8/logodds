@@ -262,10 +262,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     if(count($forReference) > 3){
         if(count($forReference) === 4 ){
-            $racetext .= "\t\t'Qin/Trio' =>  '" . implode(", ", $forReference). "',\n";
-        }
-        else{
-            $racetext .= "\t\t'Place' =>  '" . $allQplValues[0] . "',\n";
+            $qin1 = array_values(array_unique(array_merge($forReference, $weird)));
+            $racetext .= "\t\t'Qin/Tce' =>  '" . implode(", ", $qin1). "',\n";
+            $smallest = min($allWinsValues);
+            $racetext .= "\t\t'Qqpl' =>  '" . $smallest . " X " . implode(", ", $qin1). "',\n";
+
         }
     }
     
