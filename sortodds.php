@@ -298,6 +298,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
+
+    $first5 = array_slice($allQplValues, 0 , 5);
+    sort($first5);
     
     if($primesMajority){
         $racetext .= "\t\t//Primes majority,\n";
@@ -306,7 +309,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $racetext .= "\t\t'Place' =>  '" . $first1 . "',\n";
     $racetext .= "\t\t//HEDGE BETS,\n";
-    $racetext .= "\t\t'Trio/Qin' =>  '" . implode(", ", $forReference). "',\n";
+    $racetext .= "\t\t'All wins values' =>  '" . implode(", ", $allWinsValues). "',\n";
+    $racetext .= "\t\t'For reference' =>  '" . implode(", ", $forReference). "',\n";
+    $racetext .= "\t\t'First5(qin/trio)' =>  '" . implode(", ", $first5). "',\n";
     $weird = array_values($weird);
     if(isset($weird[0]) && isset($weird[1])){
         $racetext .= "\t\t'Hedge Place' =>  '" . $weird[0] . ", " . $weird[1] . "',\n";

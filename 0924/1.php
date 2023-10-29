@@ -14,7 +14,9 @@ return [
 		'New 3 QPL values'  =>  '4, 2, 1, 3, 6',
 		'Place' =>  '2',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '4, 7, 6, 10',
+		'All wins values' =>  '1, 2, 3',
+		'For reference' =>  '4, 7, 6, 10',
+		'First5(qin/trio)' =>  '1, 2, 3, 4, 7',
 		'Hedge Place' =>  '5, 9',
 	],
 	'2' => [
@@ -30,7 +32,9 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Place' =>  '1',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '1, 6, 3, 5, 4, 8',
+		'All wins values' =>  '10',
+		'For reference' =>  '1, 6, 3, 5, 4, 8',
+		'First5(qin/trio)' =>  '1, 3, 4, 5, 6',
 		'Hedge Place' =>  '9, 2',
 	],
 	'4' => [
@@ -46,7 +50,9 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Place' =>  '1',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '1, 8, 3, 6, 4',
+		'All wins values' =>  '7',
+		'For reference' =>  '1, 8, 3, 6, 4',
+		'First5(qin/trio)' =>  '1, 3, 6, 7, 8',
 		'Hedge Place' =>  '9, 10',
 	],
 	'5' => [
@@ -62,7 +68,9 @@ return [
 		'New 3 QPL values'  =>  '9, 11, 8, 1, 3, 7, 10',
 		'Place' =>  '9',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '5, 12, 3, 4, 6',
+		'All wins values' =>  '1, 7, 8, 9, 10, 11',
+		'For reference' =>  '5, 12, 3, 4, 6',
+		'First5(qin/trio)' =>  '1, 5, 8, 9, 11',
 	],
 	'6' => [
 		/**
@@ -77,7 +85,9 @@ return [
 		'New 3 QPL values'  =>  '4, 8, 9, 13, 7, 12',
 		'Place' =>  '4',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '4, 1, 13, 3, 12, 5',
+		'All wins values' =>  '2, 7, 8, 9',
+		'For reference' =>  '4, 1, 13, 3, 12, 5',
+		'First5(qin/trio)' =>  '1, 4, 8, 9, 13',
 		'Hedge Place' =>  '11, 6',
 	],
 	'7' => [
@@ -93,7 +103,9 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Place' =>  '9',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '3, 9, 1, 10, 2',
+		'All wins values' =>  '4',
+		'For reference' =>  '3, 9, 1, 10, 2',
+		'First5(qin/trio)' =>  '1, 3, 4, 9, 10',
 		'Hedge Place' =>  '5, 7',
 	],
 	'8' => [
@@ -111,7 +123,9 @@ return [
 		'primes' =>  '2, 5, 7, 11',
 		'Place' =>  '1',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '2, 5, 12',
+		'All wins values' =>  '1, 7, 8, 11',
+		'For reference' =>  '2, 5, 12',
+		'First5(qin/trio)' =>  '1, 2, 5, 7, 12',
 		'Hedge Place' =>  '4, 3',
 	],
 	'9' => [
@@ -127,7 +141,9 @@ return [
 		'New 3 QPL values'  =>  '',
 		'Place' =>  '8',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '10, 5, 11, 4, 3',
+		'All wins values' =>  '1, 8, 9',
+		'For reference' =>  '10, 5, 11, 4, 3',
+		'First5(qin/trio)' =>  '5, 8, 9, 10, 11',
 		'Hedge Place' =>  '6, 2',
 	],
 	'10' => [
@@ -143,7 +159,9 @@ return [
 		'New 3 QPL values'  =>  '2, 3, 4, 10, 1',
 		'Place' =>  '2',
 		//HEDGE BETS,
-		'Trio/Qin' =>  '3, 6, 1',
+		'All wins values' =>  '2, 4, 8, 9, 10',
+		'For reference' =>  '3, 6, 1',
+		'First5(qin/trio)' =>  '2, 3, 4, 6, 10',
 		'Hedge Place' =>  '12, 5',
 	],
 ];
