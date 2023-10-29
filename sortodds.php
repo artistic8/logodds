@@ -259,14 +259,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
+    $weird = array_slice($weird, 0, 2);
 
     if(count($forReference) > 3){
         if(count($forReference) === 4 ){
-            $qin1 = array_values(array_unique(array_merge($forReference, $weird)));
-            $racetext .= "\t\t'Qin/Tce' =>  '" . implode(", ", $qin1). "',\n";
-            $smallest = min($allWinsValues);
-            $racetext .= "\t\t'Qqpl' =>  '" . $smallest . " X " . implode(", ", $qin1). "',\n";
-
+            $racetext .= "\t\t'Qin/Tce' =>  '" . implode(", ", $forReference). "',\n";
+            $first = $allQplValues[0];
+            if(!in_array($first, $allWinsValues)){
+                $racetext .= "\t\t'Place' =>  '" . implode(", ", $weird) . "',\n";
+            }
         }
     }
     

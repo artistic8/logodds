@@ -12,8 +12,8 @@ return [
 		'All QPL values'    =>  '6, 4, 8, 5, 1',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Qin/Tce' =>  '6, 4, 8, 1, 11, 2, 3, 10, 7, 9',
-		'Qqpl' =>  '5 X 6, 4, 8, 1, 11, 2, 3, 10, 7, 9',
+		'Qin/Tce' =>  '6, 4, 8, 1',
+		'Place' =>  '11, 2',
 		'Hedge Place' =>  '11, 2',
 	],
 	'4' => [
