@@ -51,7 +51,7 @@ return [
 		'All QPL values'    =>  '2, 6, 3, 7, 11, 4, 5, 10',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '2, 7, 11, 4, 5, 10',
+		'Place' =>  '2',
 		'Hedge Place' =>  '9, 1',
 	],
 	'5' => [
@@ -79,7 +79,7 @@ return [
 		'All QPL values'    =>  '6, 3, 11, 2, 5, 9',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '6, 3, 11, 2, 5',
+		'Place' =>  '6',
 		'Hedge Place' =>  '8, 1',
 	],
 	'7' => [

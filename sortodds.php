@@ -261,7 +261,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $weird = array_diff($runners, $allQplValues);
 
     if(count($forReference) > 3){
-        $racetext .= "\t\t'Qin/Trio' =>  '" . implode(", ", $forReference). "',\n";
+        if(count($forReference) === 4 ){
+            $racetext .= "\t\t'Qin/Trio' =>  '" . implode(", ", $forReference). "',\n";
+        }
+        else{
+            $racetext .= "\t\t'Place' =>  '" . $allQplValues[0] . "',\n";
+        }
     }
     
     $weird = array_values($weird);

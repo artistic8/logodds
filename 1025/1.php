@@ -12,7 +12,7 @@ return [
 		'All QPL values'    =>  '5, 6, 2, 11, 7, 3',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '5, 2, 11, 7, 3',
+		'Place' =>  '5',
 		'Hedge Place' =>  '12, 9',
 	],
 	'2' => [
@@ -39,7 +39,7 @@ return [
 		'All QPL values'    =>  '7, 6, 12, 2, 5, 8, 1',
 		'New 2 QPL values'  =>  '7, 6, 12, 2, 5, 8, 1',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '6, 12, 5, 8, 1',
+		'Place' =>  '7',
 		'Hedge Place' =>  '10, 9',
 	],
 	'4' => [
@@ -66,7 +66,7 @@ return [
 		'All QPL values'    =>  '9, 6, 1, 4, 8, 3, 12',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '6, 1, 4, 8, 3, 12',
+		'Place' =>  '9',
 		'Hedge Place' =>  '5, 10',
 	],
 	'6' => [
@@ -80,7 +80,7 @@ return [
 		'All QPL values'    =>  '3, 12, 8, 14, 11, 2, 1, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Qin/Trio' =>  '3, 12, 8, 14, 1, 4',
+		'Place' =>  '3',
 		'Hedge Place' =>  '9, 7',
 	],
 	'7' => [
