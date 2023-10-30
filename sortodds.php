@@ -247,11 +247,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
      asort($qplsOdds);
     $new3QplValues = array_keys($qplsOdds);
 
+    //Sort  allWinsValues by odds
+    $qplsOdds = [];
+    foreach($allWinsValues as $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+    }
+    asort($qplsOdds);
+   $allWinsValues = array_keys($qplsOdds);
+
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
     $racetext .= "\t\t'new 3 qpl/trio' =>  $new3QPLText ,\n";
-    $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "',\n";
+    $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues). "//count: " . count($allQplValues) . "',\n";
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
 
@@ -259,7 +267,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
-    $weird = array_slice($weird, 0, 1);
+    
+    $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). "',\n";
+    $racetext .= "\t\t'for reference  '  =>  '" . implode(", ", $forReference). "',\n";
+    $racetext .= "\t\t'weird values   '  =>  '" . implode(", ", $weird). "',\n";
 
     if(count($forReference) > 3){
         if(count($forReference) >= 4 ){
