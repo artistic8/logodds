@@ -35,7 +35,6 @@ return [
 		'all wins values'  =>  '7, 11, 6, 14 //count: 4',
 		'for reference  '  =>  '5, 3, 12, 1, 10, 4',
 		'weird values   '  =>  '13, 8, 9, 2',
-		'Place'  =>  '5',
 		'small set  '  =>  '',
 		'medium set '  =>  '5',
 		'big set    '  =>  '12, 1, 10, 4',

@@ -80,7 +80,6 @@ return [
 		'all wins values'  =>  '5, 6, 2, 9 //count: 4',
 		'for reference  '  =>  '11, 12, 1',
 		'weird values   '  =>  '4, 7, 10, 8, 3',
-		'Place'  =>  '11',
 		'small set  '  =>  '',
 		'medium set '  =>  '11',
 		'big set    '  =>  '1',
