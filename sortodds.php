@@ -289,7 +289,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             if($allOdds[$raceNumber][$putain] > $allOdds[$raceNumber][$higherBound]) $bigSet[] = $putain;
         }
         
-        if(count($smallSet) === 1 && empty($mediumSet)){
+        if( count($allWinsValues) > 1 && count($smallSet) === 1 && empty($mediumSet)){
             $racetext .= "\t\t'Place'  =>  '" . $smallSet[0] . "',\n";
         }
         $racetext .= "\t\t'small set  '  =>  '" . implode(", ", $smallSet). "',\n";
