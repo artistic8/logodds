@@ -257,9 +257,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $weird = array_diff($runners, $allQplValues);
     $trio = array_merge($allQplValues, $weird);
-    $trio = array_slice($trio, 0, 10);
+    $trio = array_slice($trio, 0, 9);
     sort($trio);
-    $racetext .= "\t\t'Trio' =>  '" . implode(", ", $trio) . "',\n";
+    $racetext .= "\t\t'First 4' =>  '" . implode(", ", $trio) . "',\n";
     
     $racetext .= "\t],\n";
     unset($oldWINS);
