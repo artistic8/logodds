@@ -268,30 +268,32 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
 
-    if(!empty($allWinsValues)){
-        $lowerBound = min($allWinsValues);
-        $higherBound = max($allWinsValues);
-    }
-    else {
-        $lowerBound = 0;
-        $higherBound = 20;
-    }
-    $smallSet = [];
-    $mediumSet= [];
-    $bigSet = [];
-
-    foreach($allQplValues as $putain){
-        if($putain < $lowerBound) $smallSet[] = $putain;
-        if($putain > $lowerBound && $putain < $higherBound && !in_array($putain, $allWinsValues)) $mediumSet[] = $putain;
-        if($putain > $higherBound) $bigSet[] = $putain;
-    }
-    
     $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). " //count: " . count($allWinsValues) . "',\n";
     $racetext .= "\t\t'for reference  '  =>  '" . implode(", ", $forReference). "',\n";
     $racetext .= "\t\t'weird values   '  =>  '" . implode(", ", $weird). "',\n";
-    $racetext .= "\t\t'small set  '  =>  '" . implode(", ", $smallSet). "',\n";
-    $racetext .= "\t\t'medium set '  =>  '" . implode(", ", $mediumSet). "',\n";
-    $racetext .= "\t\t'big set    '  =>  '" . implode(", ", $bigSet). "',\n";
+
+    if(!empty($allWinsValues)){
+        $lowerBound = min($allWinsValues);
+        $higherBound = max($allWinsValues);
+        $smallSet = [];
+        $mediumSet= [];
+        $bigSet = [];
+
+        foreach($allQplValues as $putain){
+            if($allOdds[$raceNumber][$putain] < $allOdds[$raceNumber][$lowerBound]) $smallSet[] = $putain;
+            if($allOdds[$raceNumber][$putain] > $allOdds[$raceNumber][$lowerBound] 
+                && $allOdds[$raceNumber][$putain] < $allOdds[$raceNumber][$higherBound]
+                && !in_array($putain, $allWinsValues)) {
+                    $mediumSet[] = $putain;
+                }
+            if($allOdds[$raceNumber][$putain] > $allOdds[$raceNumber][$higherBound]) $bigSet[] = $putain;
+        }
+        $racetext .= "\t\t'small set  '  =>  '" . implode(", ", $smallSet). "',\n";
+        $racetext .= "\t\t'medium set '  =>  '" . implode(", ", $mediumSet). "',\n";
+        $racetext .= "\t\t'big set    '  =>  '" . implode(", ", $bigSet). "',\n";
+    }
+    
+   
 
     if(count($forReference) > 3){
         if(count($forReference) >= 4 ){
