@@ -277,17 +277,21 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $higherBound = 20;
     }
     $smallSet = [];
+    $mediumSet= [];
     $bigSet = [];
+
     foreach($allQplValues as $putain){
         if($putain < $lowerBound) $smallSet[] = $putain;
+        if($putain > $lowerBound && $putain < $higherBound && !in_array($putain, $allWinsValues)) $mediumSet[] = $putain;
         if($putain > $higherBound) $bigSet[] = $putain;
     }
     
     $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). " //count: " . count($allWinsValues) . "',\n";
     $racetext .= "\t\t'for reference  '  =>  '" . implode(", ", $forReference). "',\n";
     $racetext .= "\t\t'weird values   '  =>  '" . implode(", ", $weird). "',\n";
-    $racetext .= "\t\t'small set '  =>  '" . implode(", ", $smallSet). "',\n";
-    $racetext .= "\t\t'big set   '  =>  '" . implode(", ", $bigSet). "',\n";
+    $racetext .= "\t\t'small set  '  =>  '" . implode(", ", $smallSet). "',\n";
+    $racetext .= "\t\t'medium set '  =>  '" . implode(", ", $mediumSet). "',\n";
+    $racetext .= "\t\t'big set    '  =>  '" . implode(", ", $bigSet). "',\n";
 
     if(count($forReference) > 3){
         if(count($forReference) >= 4 ){
