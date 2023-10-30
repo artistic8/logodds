@@ -262,7 +262,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $weird = array_slice($weird, 0, 1);
 
     if(count($forReference) > 3){
-        if(count($forReference) === 4 ){
+        if(count($forReference) >= 4 ){
             $racetext .= "\t\t'Qin' =>  '" . implode(", ", $forReference). "',\n";
             $trio = array_slice($allQplValues, 0, 5);
             $tce = array_values(array_unique(array_merge($trio, $weird)));

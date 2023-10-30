@@ -13,6 +13,9 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'favorite' =>  5 ,
+		'Qin' =>  '5, 2, 11, 7, 3',
+		'Trio' =>  '5, 6, 2, 11, 7',
+		'Tce' =>  '5, 6, 2, 11, 7, 12',
 	],
 	'2' => [
 		/**
@@ -39,6 +42,9 @@ return [
 		'New 2 QPL values'  =>  '7, 6, 12, 2, 5, 8, 1',
 		'New 3 QPL values'  =>  '',
 		'favorite' =>  7 ,
+		'Qin' =>  '6, 12, 5, 8, 1',
+		'Trio' =>  '7, 6, 12, 2, 5',
+		'Tce' =>  '7, 6, 12, 2, 5, 10',
 	],
 	'4' => [
 		/**
@@ -65,6 +71,9 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'favorite' =>  9 ,
+		'Qin' =>  '6, 1, 4, 8, 3, 12',
+		'Trio' =>  '9, 6, 1, 4, 8',
+		'Tce' =>  '9, 6, 1, 4, 8, 5',
 	],
 	'6' => [
 		/**
@@ -78,6 +87,9 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'favorite' =>  3 ,
+		'Qin' =>  '3, 12, 8, 14, 1, 4',
+		'Trio' =>  '3, 12, 8, 14, 11',
+		'Tce' =>  '3, 12, 8, 14, 11, 9',
 	],
 	'7' => [
 		/**

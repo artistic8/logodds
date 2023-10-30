@@ -13,6 +13,9 @@ return [
 		'New 2 QPL values'  =>  '8, 3, 2, 4, 9',
 		'New 3 QPL values'  =>  '',
 		'favorite' =>  8 ,
+		'Qin' =>  '3, 2, 11, 4, 5, 7',
+		'Trio' =>  '8, 3, 2, 11, 4',
+		'Tce' =>  '8, 3, 2, 11, 4, 6',
 	],
 	'6' => [
 		/**
@@ -74,5 +77,8 @@ return [
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
 		'favorite' =>  10 ,
+		'Qin' =>  '10, 1, 2, 4, 6, 8',
+		'Trio' =>  '10, 1, 7, 2, 4',
+		'Tce' =>  '10, 1, 7, 2, 4, 3',
 	],
 ];
