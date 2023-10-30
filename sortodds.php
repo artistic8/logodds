@@ -291,14 +291,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         
         if( count($allWinsValues) > 1 && count($smallSet) === 1 && empty($mediumSet)){
             $racetext .= "\t\t'Place'  =>  '" . $smallSet[0] . "',\n";
+            $racetext .= "\t\t'Hedge Place'  =>  '" . end($allQplValues) . "',\n";
         }
         $racetext .= "\t\t'small set  '  =>  '" . implode(", ", $smallSet). "',\n";
         $racetext .= "\t\t'medium set '  =>  '" . implode(", ", $mediumSet). "',\n";
         $racetext .= "\t\t'big set    '  =>  '" . implode(", ", $bigSet). "',\n";
     }
     
-   
-
     if(count($forReference) > 3){
         if(count($forReference) >= 4 ){
             $racetext .= "\t\t'Qin' =>  '" . implode(", ", $forReference). "',\n";

@@ -162,6 +162,7 @@ return [
 		'for reference  '  =>  '6, 4, 13, 7, 3, 1',
 		'weird values   '  =>  '12, 9, 8, 10, 2, 14',
 		'Place'  =>  '6',
+		'Hedge Place'  =>  '1',
 		'small set  '  =>  '6',
 		'medium set '  =>  '',
 		'big set    '  =>  '4, 13, 7, 3, 1',

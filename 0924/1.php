@@ -17,6 +17,7 @@ return [
 		'for reference  '  =>  '4, 7, 6, 10',
 		'weird values   '  =>  '5, 9, 8',
 		'Place'  =>  '4',
+		'Hedge Place'  =>  '10',
 		'small set  '  =>  '4',
 		'medium set '  =>  '',
 		'big set    '  =>  '7, 6, 10',
