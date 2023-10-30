@@ -268,7 +268,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
     
-    $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). "',\n";
+    $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). "count: " . count($allWinsValues) . "',\n";
     $racetext .= "\t\t'for reference  '  =>  '" . implode(", ", $forReference). "',\n";
     $racetext .= "\t\t'weird values   '  =>  '" . implode(", ", $weird). "',\n";
 
