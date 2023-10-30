@@ -12,7 +12,7 @@ return [
 		'All QPL values'    =>  '5, 6, 2, 11, 7, 3',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '12, 9',
+		'favorite' =>  5 ,
 	],
 	'2' => [
 		/**
@@ -25,7 +25,7 @@ return [
 		'All QPL values'    =>  '11, 7, 8, 9, 3, 6',
 		'New 2 QPL values'  =>  '11, 7, 8, 9, 3, 6',
 		'New 3 QPL values'  =>  '11, 7, 8, 9, 3, 6',
-		'Hedge Place' =>  '12, 2',
+		'favorite' =>  11 ,
 	],
 	'3' => [
 		/**
@@ -38,7 +38,7 @@ return [
 		'All QPL values'    =>  '7, 6, 12, 2, 5, 8, 1',
 		'New 2 QPL values'  =>  '7, 6, 12, 2, 5, 8, 1',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '10, 9',
+		'favorite' =>  7 ,
 	],
 	'4' => [
 		/**
@@ -51,7 +51,7 @@ return [
 		'All QPL values'    =>  '8, 4, 1, 2, 5',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '9, 10',
+		'favorite' =>  8 ,
 	],
 	'5' => [
 		/**
@@ -64,7 +64,7 @@ return [
 		'All QPL values'    =>  '9, 6, 1, 4, 8, 3, 12',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '5, 10',
+		'favorite' =>  9 ,
 	],
 	'6' => [
 		/**
@@ -77,7 +77,7 @@ return [
 		'All QPL values'    =>  '3, 12, 8, 14, 11, 2, 1, 4',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '9, 7',
+		'favorite' =>  3 ,
 	],
 	'7' => [
 		/**
@@ -90,8 +90,10 @@ return [
 		'All QPL values'    =>  '9, 5, 8, 11, 7, 2, 12',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '9, 5, 8, 11, 7, 2',
+		'favorite' =>  9 ,
 		'Qin' =>  '5, 11, 2, 12',
-		'Hedge Place' =>  '3, 4',
+		'Trio' =>  '9, 5, 8, 11, 7',
+		'Tce' =>  '9, 5, 8, 11, 7, 3',
 	],
 	'8' => [
 		/**
@@ -104,6 +106,6 @@ return [
 		'All QPL values'    =>  '5, 4, 1, 12, 11, 6',
 		'New 2 QPL values'  =>  '5, 4, 1, 12, 11, 6',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '9, 2',
+		'favorite' =>  5 ,
 	],
 ];

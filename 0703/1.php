@@ -12,7 +12,7 @@ return [
 		'All QPL values'    =>  '11, 4, 14, 2, 3, 7, 1, 13, 5',
 		'New 2 QPL values'  =>  '11, 4, 2, 3, 1, 13',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '9, 6',
+		'favorite' =>  11 ,
 	],
 	'2' => [
 		/**
@@ -25,8 +25,10 @@ return [
 		'All QPL values'    =>  '2, 1, 4, 6, 9, 3',
 		'New 2 QPL values'  =>  '2, 1, 4, 6, 9, 3',
 		'New 3 QPL values'  =>  '',
+		'favorite' =>  2 ,
 		'Qin' =>  '1, 6, 9, 3',
-		'Hedge Place' =>  '10, 5',
+		'Trio' =>  '2, 1, 4, 6, 9',
+		'Tce' =>  '2, 1, 4, 6, 9, 10',
 	],
 	'3' => [
 		/**
@@ -39,7 +41,7 @@ return [
 		'All QPL values'    =>  '4, 7, 3, 1, 9, 10, 6, 2, 11',
 		'New 2 QPL values'  =>  '4, 7, 3, 1, 10, 6, 2',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '8, 5',
+		'favorite' =>  4 ,
 	],
 	'4' => [
 		/**
@@ -52,7 +54,7 @@ return [
 		'All QPL values'    =>  '2, 1, 6, 3, 9, 11, 4, 5',
 		'New 2 QPL values'  =>  '2, 1, 6, 3, 9, 11, 4, 5',
 		'New 3 QPL values'  =>  '2, 1, 6, 9, 11, 4, 5',
-		'Hedge Place' =>  '8, 12',
+		'favorite' =>  2 ,
 	],
 	'5' => [
 		/**
@@ -65,7 +67,7 @@ return [
 		'All QPL values'    =>  '3, 6, 4, 1, 11, 12',
 		'New 2 QPL values'  =>  '3, 6, 4, 1, 11, 12',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '9, 2',
+		'favorite' =>  3 ,
 	],
 	'6' => [
 		/**
@@ -78,8 +80,10 @@ return [
 		'All QPL values'    =>  '4, 5, 3, 11, 6, 12, 1, 7',
 		'New 2 QPL values'  =>  '4, 5, 3, 11, 6, 12, 1, 7',
 		'New 3 QPL values'  =>  '4, 5, 3, 11, 6, 12, 1, 7',
+		'favorite' =>  4 ,
 		'Qin' =>  '3, 12, 1, 7',
-		'Hedge Place' =>  '8, 2',
+		'Trio' =>  '4, 5, 3, 11, 6',
+		'Tce' =>  '4, 5, 3, 11, 6, 8',
 	],
 	'7' => [
 		/**
@@ -92,7 +96,7 @@ return [
 		'All QPL values'    =>  '3, 5, 2, 10, 7, 1, 4',
 		'New 2 QPL values'  =>  '3, 5, 2, 10, 7, 4',
 		'New 3 QPL values'  =>  '3, 5, 2, 10, 7, 4',
-		'Hedge Place' =>  '11, 6',
+		'favorite' =>  3 ,
 	],
 	'8' => [
 		/**
@@ -105,6 +109,6 @@ return [
 		'All QPL values'    =>  '6, 5, 11, 4, 13, 7, 3, 1',
 		'New 2 QPL values'  =>  '',
 		'New 3 QPL values'  =>  '',
-		'Hedge Place' =>  '12, 9',
+		'favorite' =>  6 ,
 	],
 ];

@@ -259,27 +259,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
-    $weird = array_slice($weird, 0, 2);
+    $weird = array_slice($weird, 0, 1);
 
     if(count($forReference) > 3){
         if(count($forReference) === 4 ){
             $racetext .= "\t\t'Qin' =>  '" . implode(", ", $forReference). "',\n";
-            $first = $allQplValues[0];
-            if(!in_array($first, $allWinsValues)){
-                $racetext .= "\t\t'Place' =>  '" . implode(", ", $weird) . "',\n";
-                $tce = array_values(array_unique(array_merge($forReference, $weird)));
-                $trio = array_slice($allQplValues, 0, 5);
-                $racetext .= "\t\t'Trio' =>  '" . implode(", ", $trio) . "',\n";
-                $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
-            }
+            $trio = array_slice($allQplValues, 0, 5);
+            $tce = array_values(array_unique(array_merge($trio, $weird)));
+            $racetext .= "\t\t'Trio' =>  '" . implode(", ", $trio) . "',\n";
+            $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
         }
     }
     
-    $weird = array_values($weird);
-    if(isset($weird[0]) && isset($weird[1])){
-        $racetext .= "\t\t'Hedge Place' =>  '" . $weird[0] . ", " . $weird[1] . "',\n";
-    }
-   
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
