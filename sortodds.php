@@ -271,10 +271,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). " //count: " . count($allWinsValues) . "',\n";
     $racetext .= "\t\t'for reference  '  =>  '" . implode(", ", $forReference). "',\n";
     $racetext .= "\t\t'weird values   '  =>  '" . implode(", ", $weird). "',\n";
-
+    
     if(!empty($allWinsValues)){
-        $lowerBound = min($allWinsValues);
-        $higherBound = max($allWinsValues);
+        $lowerBound = $allWinsValues[0];
+        $higherBound = $allWinsValues[count($allWinsValues) - 1];
         $smallSet = [];
         $mediumSet= [];
         $bigSet = [];
