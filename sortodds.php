@@ -255,11 +255,21 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'New 2 QPL values'  =>  '" . implode(", ", $new2QplValues). "',\n";
     $racetext .= "\t\t'New 3 QPL values'  =>  '" . implode(", ", $new3QplValues). "',\n";
 
+    $racetext .= "\t\t'favorite' =>  $first1 ,\n";
+
+    $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
-    $trio = array_merge($allQplValues, $weird);
-    $trio = array_slice($trio, 0, 9);
-    sort($trio);
-    $racetext .= "\t\t'First 4' =>  '" . implode(", ", $trio) . "',\n";
+    $weird = array_slice($weird, 0, 1);
+
+    if(count($forReference) > 3){
+        if(count($forReference) >= 4 ){
+            $racetext .= "\t\t'Qin' =>  '" . implode(", ", $forReference). "',\n";
+            $trio = array_slice($allQplValues, 0, 5);
+            $tce = array_values(array_unique(array_merge($trio, $weird)));
+            $racetext .= "\t\t'Trio' =>  '" . implode(", ", $trio) . "',\n";
+            $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
+        }
+    }
     
     $racetext .= "\t],\n";
     unset($oldWINS);
