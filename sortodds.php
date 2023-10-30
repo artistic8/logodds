@@ -288,6 +288,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                 }
             if($allOdds[$raceNumber][$putain] > $allOdds[$raceNumber][$higherBound]) $bigSet[] = $putain;
         }
+        $shishi = array_merge($smallSet, $mediumSet);
+        if(count($shishi) === 1){
+            $racetext .= "\t\t'Place'  =>  '" . implode(", ", $shishi). "',\n";
+        }
         $racetext .= "\t\t'small set  '  =>  '" . implode(", ", $smallSet). "',\n";
         $racetext .= "\t\t'medium set '  =>  '" . implode(", ", $mediumSet). "',\n";
         $racetext .= "\t\t'big set    '  =>  '" . implode(", ", $bigSet). "',\n";
