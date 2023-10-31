@@ -16,12 +16,6 @@ return [
 		'all wins values'  =>  '6 //count: 1',
 		'for reference  '  =>  '5, 2, 11, 7, 3',
 		'weird values   '  =>  '12, 9, 8, 10, 4, 1',
-		'small set  '  =>  '5',
-		'medium set '  =>  '',
-		'big set    '  =>  '2, 11, 7, 3',
-		'Qin' =>  '5, 2, 11, 7, 3',
-		'Trio' =>  '5, 6, 2, 11, 7',
-		'Tce' =>  '5, 6, 2, 11, 7, 12, 9, 8, 10, 4, 1',
 	],
 	'2' => [
 		/**
@@ -38,11 +32,6 @@ return [
 		'all wins values'  =>  '7, 8, 9 //count: 3',
 		'for reference  '  =>  '11, 3, 6',
 		'weird values   '  =>  '12, 2, 1, 10, 5, 4',
-		'Place'  =>  '11',
-		'Hedge Place'  =>  '6',
-		'small set  '  =>  '11',
-		'medium set '  =>  '',
-		'big set    '  =>  '3, 6',
 	],
 	'3' => [
 		/**
@@ -59,12 +48,8 @@ return [
 		'all wins values'  =>  '7, 2 //count: 2',
 		'for reference  '  =>  '6, 12, 5, 8, 1',
 		'weird values   '  =>  '10, 9, 11, 4, 3, 13, 14',
-		'small set  '  =>  '',
-		'medium set '  =>  '6',
-		'big set    '  =>  '5, 8, 1',
-		'Qin' =>  '6, 12, 5, 8, 1',
-		'Trio' =>  '7, 6, 12, 2, 5',
-		'Tce' =>  '7, 6, 12, 2, 5, 10, 9, 11, 4, 3, 13, 14',
+		'Qin' =>  '6, 12, 5, 8',
+		'Place(hedge bet)' =>  '7',
 	],
 	'4' => [
 		/**
@@ -81,9 +66,6 @@ return [
 		'all wins values'  =>  '8, 5 //count: 2',
 		'for reference  '  =>  '4, 1, 2',
 		'weird values   '  =>  '9, 10, 3, 11, 7, 6, 12',
-		'small set  '  =>  '',
-		'medium set '  =>  '4, 1, 2',
-		'big set    '  =>  '',
 	],
 	'5' => [
 		/**
@@ -100,12 +82,6 @@ return [
 		'all wins values'  =>  '9 //count: 1',
 		'for reference  '  =>  '6, 1, 4, 8, 3, 12',
 		'weird values   '  =>  '5, 10, 2, 11, 7',
-		'small set  '  =>  '',
-		'medium set '  =>  '',
-		'big set    '  =>  '6, 1, 4, 8, 3, 12',
-		'Qin' =>  '6, 1, 4, 8, 3, 12',
-		'Trio' =>  '9, 6, 1, 4, 8',
-		'Tce' =>  '9, 6, 1, 4, 8, 5, 10, 2, 11, 7',
 	],
 	'6' => [
 		/**
@@ -122,12 +98,6 @@ return [
 		'all wins values'  =>  '2, 11 //count: 2',
 		'for reference  '  =>  '3, 12, 8, 14, 1, 4',
 		'weird values   '  =>  '9, 7, 10, 5, 6, 13',
-		'small set  '  =>  '3, 12, 8, 14',
-		'medium set '  =>  '',
-		'big set    '  =>  '1, 4',
-		'Qin' =>  '3, 12, 8, 14, 1, 4',
-		'Trio' =>  '3, 12, 8, 14, 11',
-		'Tce' =>  '3, 12, 8, 14, 11, 9, 7, 10, 5, 6, 13',
 	],
 	'7' => [
 		/**
@@ -144,12 +114,8 @@ return [
 		'all wins values'  =>  '9, 8, 7 //count: 3',
 		'for reference  '  =>  '5, 11, 2, 12',
 		'weird values   '  =>  '3, 4, 13, 1, 6, 10',
-		'small set  '  =>  '',
-		'medium set '  =>  '5',
-		'big set    '  =>  '2, 12',
 		'Qin' =>  '5, 11, 2, 12',
-		'Trio' =>  '9, 5, 8, 11, 7',
-		'Tce' =>  '9, 5, 8, 11, 7, 3, 4, 13, 1, 6, 10',
+		'Place(hedge bet)' =>  '9',
 	],
 	'8' => [
 		/**
@@ -166,8 +132,5 @@ return [
 		'all wins values'  =>  '5, 1, 12, 6 //count: 4',
 		'for reference  '  =>  '4, 11',
 		'weird values   '  =>  '9, 2, 7, 3, 8, 10',
-		'small set  '  =>  '',
-		'medium set '  =>  '4, 11',
-		'big set    '  =>  '',
 	],
 ];

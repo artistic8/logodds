@@ -16,12 +16,6 @@ return [
 		'all wins values'  =>  '11, 2 //count: 2',
 		'for reference  '  =>  '3, 1, 7, 8, 6, 4',
 		'weird values   '  =>  '9, 5, 10',
-		'small set  '  =>  '3, 1',
-		'medium set '  =>  '7',
-		'big set    '  =>  '8, 6, 4',
-		'Qin' =>  '3, 1, 7, 8, 6, 4',
-		'Trio' =>  '3, 1, 11, 7, 2',
-		'Tce' =>  '3, 1, 11, 7, 2, 9, 5, 10',
 	],
 	'2' => [
 		/**
@@ -38,12 +32,6 @@ return [
 		'all wins values'  =>  '8, 7 //count: 2',
 		'for reference  '  =>  '3, 10, 5, 2, 1',
 		'weird values   '  =>  '9, 6, 11, 4, 12',
-		'small set  '  =>  '3',
-		'medium set '  =>  '10, 5, 2',
-		'big set    '  =>  '1',
-		'Qin' =>  '3, 10, 5, 2, 1',
-		'Trio' =>  '3, 8, 10, 5, 2',
-		'Tce' =>  '3, 8, 10, 5, 2, 9, 6, 11, 4, 12',
 	],
 	'4' => [
 		/**
@@ -60,12 +48,6 @@ return [
 		'all wins values'  =>  '5 //count: 1',
 		'for reference  '  =>  '2, 3, 6, 8, 11',
 		'weird values   '  =>  '7, 9, 1, 4, 10',
-		'small set  '  =>  '2, 3, 6, 8',
-		'medium set '  =>  '',
-		'big set    '  =>  '11',
-		'Qin' =>  '2, 3, 6, 8, 11',
-		'Trio' =>  '2, 3, 6, 8, 5',
-		'Tce' =>  '2, 3, 6, 8, 5, 7, 9, 1, 4, 10',
 	],
 	'6' => [
 		/**
@@ -82,9 +64,6 @@ return [
 		'all wins values'  =>  '1, 5, 7, 8 //count: 4',
 		'for reference  '  =>  '10, 4',
 		'weird values   '  =>  '3, 12, 2, 9, 11, 6',
-		'small set  '  =>  '',
-		'medium set '  =>  '10',
-		'big set    '  =>  '4',
 	],
 	'7' => [
 		/**
@@ -101,12 +80,6 @@ return [
 		'all wins values'  =>  '4, 11, 2 //count: 3',
 		'for reference  '  =>  '1, 3, 7, 12',
 		'weird values   '  =>  '10, 5, 9, 6, 8',
-		'small set  '  =>  '1',
-		'medium set '  =>  '3',
-		'big set    '  =>  '7, 12',
-		'Qin' =>  '1, 3, 7, 12',
-		'Trio' =>  '1, 4, 11, 3, 2',
-		'Tce' =>  '1, 4, 11, 3, 2, 10, 5, 9, 6, 8',
 	],
 	'8' => [
 		/**
@@ -123,8 +96,5 @@ return [
 		'all wins values'  =>  '5, 8, 6 //count: 3',
 		'for reference  '  =>  '12, 4, 1',
 		'weird values   '  =>  '7, 2, 10, 3, 11',
-		'small set  '  =>  '12',
-		'medium set '  =>  '4, 1',
-		'big set    '  =>  '',
 	],
 ];

@@ -288,23 +288,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                 }
             if($allOdds[$raceNumber][$putain] > $allOdds[$raceNumber][$higherBound]) $bigSet[] = $putain;
         }
-        
-        if( count($allWinsValues) > 1 && count($smallSet) === 1 && empty($mediumSet)){
-            $racetext .= "\t\t'Place'  =>  '" . $smallSet[0] . "',\n";
-            $racetext .= "\t\t'Hedge Place'  =>  '" . end($allQplValues) . "',\n";
-        }
-        $racetext .= "\t\t'small set  '  =>  '" . implode(", ", $smallSet). "',\n";
-        $racetext .= "\t\t'medium set '  =>  '" . implode(", ", $mediumSet). "',\n";
-        $racetext .= "\t\t'big set    '  =>  '" . implode(", ", $bigSet). "',\n";
-    }
-    
-    if(count($forReference) > 3){
-        if(count($forReference) >= 4 ){
-            $racetext .= "\t\t'Qin' =>  '" . implode(", ", $forReference). "',\n";
-            $trio = array_slice($allQplValues, 0, 5);
-            $tce = array_values(array_unique(array_merge($trio, $weird)));
-            $racetext .= "\t\t'Trio' =>  '" . implode(", ", $trio) . "',\n";
-            $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
+
+        $whatever = array_merge($smallSet, $mediumSet, $bigSet);
+        $shit = array_diff($forReference, $whatever);
+        if(!empty($shit)){
+            if(count($forReference) >= 4 ){
+                $qin = array_slice($forReference, 0, 4);
+                $racetext .= "\t\t'Qin' =>  '" . implode(", ", $qin). "',\n";
+                $racetext .= "\t\t'Place(hedge bet)' =>  '" . $first1 . "',\n";
+            }
         }
     }
     

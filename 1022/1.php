@@ -16,12 +16,6 @@ return [
 		'all wins values'  =>  '2, 10, 1, 9 //count: 4',
 		'for reference  '  =>  '3, 8, 12, 14',
 		'weird values   '  =>  '11, 13, 6, 7, 4',
-		'small set  '  =>  '',
-		'medium set '  =>  '3, 8, 12, 14',
-		'big set    '  =>  '',
-		'Qin' =>  '3, 8, 12, 14',
-		'Trio' =>  '2, 3, 8, 10, 1',
-		'Tce' =>  '2, 3, 8, 10, 1, 11, 13, 6, 7, 4',
 	],
 	'2' => [
 		/**
@@ -38,9 +32,6 @@ return [
 		'all wins values'  =>  '1, 2, 11 //count: 3',
 		'for reference  '  =>  '5, 7, 6',
 		'weird values   '  =>  '9, 12, 8, 14, 13, 3, 4, 10',
-		'small set  '  =>  '',
-		'medium set '  =>  '5, 7',
-		'big set    '  =>  '6',
 	],
 	'3' => [
 		/**
@@ -57,12 +48,6 @@ return [
 		'all wins values'  =>  '2 //count: 1',
 		'for reference  '  =>  '4, 3, 12, 1, 5, 13',
 		'weird values   '  =>  '8, 6, 14, 9, 10, 7, 11',
-		'small set  '  =>  '4, 3, 12, 1',
-		'medium set '  =>  '',
-		'big set    '  =>  '5, 13',
-		'Qin' =>  '4, 3, 12, 1, 5, 13',
-		'Trio' =>  '4, 3, 12, 1, 2',
-		'Tce' =>  '4, 3, 12, 1, 2, 8, 6, 14, 9, 10, 7, 11',
 	],
 	'4' => [
 		/**
@@ -79,12 +64,6 @@ return [
 		'all wins values'  =>  '9, 8 //count: 2',
 		'for reference  '  =>  '14, 1, 5, 3, 10, 2',
 		'weird values   '  =>  '7, 4, 12, 11, 6, 13',
-		'small set  '  =>  '14',
-		'medium set '  =>  '1, 5',
-		'big set    '  =>  '3, 10, 2',
-		'Qin' =>  '14, 1, 5, 3, 10, 2',
-		'Trio' =>  '14, 9, 1, 5, 8',
-		'Tce' =>  '14, 9, 1, 5, 8, 7, 4, 12, 11, 6, 13',
 	],
 	'5' => [
 		/**
@@ -101,12 +80,6 @@ return [
 		'all wins values'  =>  '9, 7 //count: 2',
 		'for reference  '  =>  '4, 5, 3, 2, 13',
 		'weird values   '  =>  '1, 8, 11, 6, 12, 10',
-		'small set  '  =>  '',
-		'medium set '  =>  '4',
-		'big set    '  =>  '5, 3, 2, 13',
-		'Qin' =>  '4, 5, 3, 2, 13',
-		'Trio' =>  '9, 4, 7, 5, 3',
-		'Tce' =>  '9, 4, 7, 5, 3, 1, 8, 11, 6, 12, 10',
 	],
 	'6' => [
 		/**
@@ -123,12 +96,6 @@ return [
 		'all wins values'  =>  '2, 1, 7 //count: 3',
 		'for reference  '  =>  '12, 3, 13, 6',
 		'weird values   '  =>  '5, 4, 10, 11, 8, 9, 14',
-		'small set  '  =>  '',
-		'medium set '  =>  '12',
-		'big set    '  =>  '3, 13, 6',
-		'Qin' =>  '12, 3, 13, 6',
-		'Trio' =>  '2, 1, 12, 7, 3',
-		'Tce' =>  '2, 1, 12, 7, 3, 5, 4, 10, 11, 8, 9, 14',
 	],
 	'8' => [
 		/**
@@ -145,12 +112,6 @@ return [
 		'all wins values'  =>  '9 //count: 1',
 		'for reference  '  =>  '11, 2, 5, 3, 12, 6, 14',
 		'weird values   '  =>  '1, 4, 13, 7, 8, 10',
-		'small set  '  =>  '11, 2',
-		'medium set '  =>  '',
-		'big set    '  =>  '5, 3, 12, 6, 14',
-		'Qin' =>  '11, 2, 5, 3, 12, 6, 14',
-		'Trio' =>  '11, 2, 9, 5, 3',
-		'Tce' =>  '11, 2, 9, 5, 3, 1, 4, 13, 7, 8, 10',
 	],
 	'9' => [
 		/**
@@ -167,12 +128,6 @@ return [
 		'all wins values'  =>  '8, 7, 9, 6 //count: 4',
 		'for reference  '  =>  '1, 13, 3, 5, 10',
 		'weird values   '  =>  '4, 12, 2, 14, 11',
-		'small set  '  =>  '1',
-		'medium set '  =>  '13, 3, 5, 10',
-		'big set    '  =>  '',
-		'Qin' =>  '1, 13, 3, 5, 10',
-		'Trio' =>  '1, 8, 7, 13, 9',
-		'Tce' =>  '1, 8, 7, 13, 9, 4, 12, 2, 14, 11',
 	],
 	'10' => [
 		/**
@@ -189,13 +144,5 @@ return [
 		'all wins values'  =>  '9, 8 //count: 2',
 		'for reference  '  =>  '7, 14, 10, 4',
 		'weird values   '  =>  '3, 12, 6, 2, 11, 1, 5, 13',
-		'Place'  =>  '7',
-		'Hedge Place'  =>  '4',
-		'small set  '  =>  '7',
-		'medium set '  =>  '',
-		'big set    '  =>  '14, 10, 4',
-		'Qin' =>  '7, 14, 10, 4',
-		'Trio' =>  '7, 9, 8, 14, 10',
-		'Tce' =>  '7, 9, 8, 14, 10, 3, 12, 6, 2, 11, 1, 5, 13',
 	],
 ];
