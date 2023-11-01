@@ -86,6 +86,21 @@ return [
 		'Qin/Trio' =>  '6, 12, 10, 2, 11',
 		'Place' =>  '6',
 	],
+	'6' => [
+		/**
+		Race 6
+		*/
+		'wins' =>  [] ,
+		'qpl/trio'       =>  [[4, 8, 12, 2, 3]] ,
+		'All QPL values'    =>  '4, 12, 8, 2, 3',
+		'favorite' =>  4 ,
+		'all wins values'  =>  ' //count: 0',
+		'for reference  '  =>  '4, 12, 8, 2, 3',
+		'weird values   '  =>  '1, 7, 6, 9, 5, 10',
+		'Qqpl' =>  '4, 12, 8, 2, 3',
+		'Qin/Trio' =>  '4, 12, 8, 2, 3',
+		'Place' =>  '4',
+	],
 	'7' => [
 		/**
 		Race 7
