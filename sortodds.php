@@ -205,13 +205,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
 
+    $showRace = true;
+
     //Sort  allWinsValues by odds
     $qplsOdds = [];
-    foreach($allWinsValues as $iIndex){
+    foreach($allWinsValues as $iKey => $iIndex){
         if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+        else $showRace = false;
     }
     asort($qplsOdds);
-   $allWinsValues = array_keys($qplsOdds);
+    $allWinsValues = array_keys($qplsOdds);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
@@ -264,7 +267,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
-    $outtext .= $racetext;
+    if($showRace) $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
