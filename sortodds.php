@@ -257,6 +257,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     if(count($forReference) >= 4 ){
         $racetext .= "\t\t'Qin/Trio' =>  '" . implode(", ", $forReference). "',\n";            
+        if(in_array($first1, $forReference) && count($smallSet) < 3){
+            $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";   
+        }
     }
     if(!empty($mediumSet)){
         $tce = array_slice($allQplValues, 0, 6);
