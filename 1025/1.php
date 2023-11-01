@@ -30,8 +30,6 @@ return [
 		'all wins values'  =>  '7, 8, 9 //count: 3',
 		'for reference  '  =>  '11, 3, 6',
 		'weird values   '  =>  '12, 2, 1, 10, 5, 4',
-		'Place'  =>  '11',
-		'Hedge Place'  =>  '6',
 		'small set  '  =>  '11',
 		'medium set '  =>  '',
 		'big set    '  =>  '3, 6',
