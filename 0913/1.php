@@ -98,7 +98,7 @@ return [
 		'wins' =>  [[1]] ,
 		'qpl/trio'       =>  [[10, 4, 11, 7, 5], [10, 4, 11, 7, 1], [10, 4, 2, 7, 1], [10, 11, 2, 7, 1], [10, 11, 2, 7, 5], [7, 5, 1, 10, 11]] ,
 		'All QPL values'    =>  '10, 7, 5, 1, 11, 4, 2',
-		'favorite' =>  7 ,
+		'favorite' =>  10 ,
 		'all wins values'  =>  '1 //count wins: 1',
 		'for reference  '  =>  '10, 7, 5, 11, 4, 2 //count ref: 6',
 		'weird values   '  =>  '8, 3, 9, 6',

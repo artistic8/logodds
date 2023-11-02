@@ -177,7 +177,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
-    sort($allWinsValues);
+    $first1 = $allQplValues[0];
 
     //keep only the trios that contain wins containing exactly two elements
     $new2Trios = [];
