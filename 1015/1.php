@@ -1,4 +1,9 @@
 <?php
+/**
+small values: 1, 2, 3, 4, 5, 6, 11, 12, 13
+medium values: 1, 2, 3, 6, 9, 10, 11, 12, 14
+inter values: 1, 2, 3, 6, 11, 12
+*/
 
 return [
 	'2' => [

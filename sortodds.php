@@ -41,6 +41,9 @@ if(file_exists($outFile)){
 }
 $probas = [];
 
+$smallValues = [];
+$midValues = [];
+
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
          19, 21, 23, 25, 27, 30, 32, 34, 36];
 
@@ -67,8 +70,8 @@ for($r=1; $r <= $totalRaces; $r++){
 }
 
 
-$outtext = "<?php\n\n";
-$outtext .= "return [\n";
+// $outtext = "<?php\n\n";
+$outtext = "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($probas[$raceNumber])) continue;
@@ -245,6 +248,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                 }
             if($allOdds[$raceNumber][$putain] > $allOdds[$raceNumber][$higherBound]) $bigSet[] = $putain;
         }
+
+        $smallValues = array_values(array_unique(array_merge($smallValues, $smallSet)));
+        $midValues = array_values(array_unique(array_merge($midValues, $mediumSet)));
         
         $racetext .= "\t\t'small set  '  =>  '" . implode(", ", $smallSet). "',\n";
         $racetext .= "\t\t'medium set '  =>  '" . implode(", ", $mediumSet). "',\n";
@@ -269,7 +275,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     unset($oldQPLTrio);
     if($showRace) $outtext .= $racetext;
 }
-
+sort($smallValues);
+sort($midValues);
+$interValues = array_intersect($smallValues, $midValues);
+sort($interValues);
+$preText = "<?php\n/**\nsmall values: " . implode(", ", $smallValues) . "\nmedium values: " . implode(", ", $midValues) .  "\ninter values: " . implode(", ", $interValues) . "\n*/\n\n";
+$outtext = $preText . $outtext;
 $outtext .= "];\n";
 
 file_put_contents($outFile, $outtext);
