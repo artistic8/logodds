@@ -262,7 +262,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     if(count($forReference) >= 4 ){
         $racetext .= "\t\t'Qin/Trio' =>  '" . implode(", ", $forReference). "',\n";            
-        if(in_array($first1, $forReference) && count($smallSet) < 3 && !empty($allWinsValues)){
+        if($first1 != 1 && in_array($first1, $forReference) && count($smallSet) < 3 && !empty($allWinsValues)){
             $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";   
         }
     }
