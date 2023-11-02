@@ -261,9 +261,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'Qqpl' =>  '" . implode(", ", $forReference). "',\n";            
     }
     if(count($forReference) >= 4 ){
-        $racetext .= "\t\t'Qin/Trio' =>  '" . implode(", ", $forReference). "',\n";            
+        $racetext .= "\t\t'For reference' =>  '" . implode(", ", $forReference). "',\n";            
         if($first1 != 1 && in_array($first1, $forReference) && count($smallSet) < 3 && !empty($allWinsValues)){
             $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";   
+            $qin = array_slice($forReference, 0, 4);
+            $qin = array_diff($qin, [$first1]);
+            $racetext .= "\t\t'Qin' =>  '" . implode(", ", $qin). "',\n";   
         }
     }
     if(!empty($mediumSet)){

@@ -21,7 +21,7 @@ return [
 		'medium set '  =>  '',
 		'big set    '  =>  '',
 		'Qqpl' =>  '11, 7, 4, 1',
-		'Qin/Trio' =>  '11, 7, 4, 1',
+		'For reference' =>  '11, 7, 4, 1',
 	],
 	'3' => [
 		/**
@@ -38,7 +38,7 @@ return [
 		'medium set '  =>  '',
 		'big set    '  =>  '12, 3, 11, 2',
 		'Qqpl' =>  '12, 3, 11, 2',
-		'Qin/Trio' =>  '12, 3, 11, 2',
+		'For reference' =>  '12, 3, 11, 2',
 	],
 	'4' => [
 		/**
@@ -52,7 +52,7 @@ return [
 		'for reference  '  =>  '7, 10, 4, 3, 1 //count ref: 5',
 		'weird values   '  =>  '5, 8, 11, 2, 9, 6, 12',
 		'Qqpl' =>  '7, 10, 4, 3, 1',
-		'Qin/Trio' =>  '7, 10, 4, 3, 1',
+		'For reference' =>  '7, 10, 4, 3, 1',
 	],
 	'5' => [
 		/**
@@ -102,7 +102,7 @@ return [
 		'medium set '  =>  '',
 		'big set    '  =>  '8, 6, 1, 12',
 		'Qqpl' =>  '8, 6, 1, 12',
-		'Qin/Trio' =>  '8, 6, 1, 12',
+		'For reference' =>  '8, 6, 1, 12',
 	],
 	'9' => [
 		/**
@@ -119,7 +119,7 @@ return [
 		'medium set '  =>  '',
 		'big set    '  =>  '10, 6, 3, 1',
 		'Qqpl' =>  '10, 6, 3, 1',
-		'Qin/Trio' =>  '10, 6, 3, 1',
+		'For reference' =>  '10, 6, 3, 1',
 	],
 	'10' => [
 		/**
@@ -136,7 +136,8 @@ return [
 		'medium set '  =>  '',
 		'big set    '  =>  '7, 12',
 		'Qqpl' =>  '4, 11, 7, 12',
-		'Qin/Trio' =>  '4, 11, 7, 12',
+		'For reference' =>  '4, 11, 7, 12',
 		'Place' =>  '4',
+		'Qin' =>  '11, 7, 12',
 	],
 ];
