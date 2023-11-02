@@ -2,7 +2,7 @@
 /**
 small values: 6, 8
 medium values: 1, 3, 4, 5, 7, 8
-inter values: 8
+inter values: 8, count(interValues) = 1
 */
 
 return [

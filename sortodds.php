@@ -279,7 +279,10 @@ sort($smallValues);
 sort($midValues);
 $interValues = array_intersect($smallValues, $midValues);
 sort($interValues);
-$preText = "<?php\n/**\nsmall values: " . implode(", ", $smallValues) . "\nmedium values: " . implode(", ", $midValues) .  "\ninter values: " . implode(", ", $interValues) . "\n*/\n\n";
+$preText = "<?php\n/**\nsmall values: " . implode(", ", $smallValues) . "\nmedium values: " 
+    . implode(", ", $midValues) .  "\ninter values: " . implode(", ", $interValues) 
+    . ", count(interValues) = " . count($interValues)
+    . "\n*/\n\n";
 $outtext = $preText . $outtext;
 $outtext .= "];\n";
 
