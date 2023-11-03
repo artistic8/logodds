@@ -237,7 +237,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                 $mySet1[] = $value;
             }
         }
-        $racetext .= "\t\t'Set 1'  =>  '" . implode(", ", $mySet1).  "',\n";
+        if(!empty($mySet1)) $racetext .= "\t\t'Set 1'  =>  '" . implode(", ", $mySet1).  "',\n";
     }
     //2. Find those in weird that have better odds than end($allQplValues)
     $mySet2 = [];
@@ -246,7 +246,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $mySet2[] = $value;
         }
     }
-    $racetext .= "\t\t'Set 1'  =>  '" . implode(", ", $mySet2).  "',\n";
+    if(!empty($mySet2)) $racetext .= "\t\t'Set 2'  =>  '" . implode(", ", $mySet2).  "',\n";
 
     $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). " //count wins: " . count($allWinsValues) . "',\n";
     $racetext .= "\t\t'for reference  '  =>  '" . implode(", ", $forReference). " //count ref: " . count($forReference) . "',\n";
