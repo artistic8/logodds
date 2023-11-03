@@ -53,6 +53,7 @@ return [
 		'All Runners   '    =>  '1, 7, 3, 2, 5, 4, 6, 8, 10, 11, 9',
 		'favorite' =>  1 ,
 		'Set 1'  =>  '4, 6, 8, 10',
+		'WP'  =>  '1',
 		'Set 2'  =>  '5',
 		'all wins values'  =>  '7, 4, 6 //count wins: 3',
 		'for reference  '  =>  '1, 3, 2, 8, 10 //count ref: 5',
