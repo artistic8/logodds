@@ -222,11 +222,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues).  "',\n";
+    $racetext .= "\t\t'All Runners   '    =>  '" . implode(", ", $runners).  "',\n";
 
     $racetext .= "\t\t'favorite' =>  $first1 ,\n";
 
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
+
+    //1. Find those in allQplValues that have lower odds than weird[0]
+
+    //2. Find those in weird that have better odds than end($allQplValues)
 
     $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). " //count wins: " . count($allWinsValues) . "',\n";
     $racetext .= "\t\t'for reference  '  =>  '" . implode(", ", $forReference). " //count ref: " . count($forReference) . "',\n";
