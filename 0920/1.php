@@ -54,6 +54,7 @@ return [
 		'favorite' =>  1 ,
 		'Set 1'  =>  '4, 6, 8, 10',
 		'WP'  =>  '1',
+		'Win/Qin/Trio'  =>  '1, 3, 2, 8, 10',
 		'Set 2'  =>  '5',
 		'all wins values'  =>  '7, 4, 6 //count wins: 3',
 		'for reference  '  =>  '1, 3, 2, 8, 10 //count ref: 5',

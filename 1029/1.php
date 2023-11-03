@@ -147,6 +147,7 @@ return [
 		'favorite' =>  4 ,
 		'Set 1'  =>  '7, 12',
 		'WP'  =>  '4',
+		'Win/Qin/Trio'  =>  '4, 11, 7, 12',
 		'Set 2'  =>  '6, 2',
 		'all wins values'  =>  '8 //count wins: 1',
 		'for reference  '  =>  '4, 11, 7, 12 //count ref: 4',

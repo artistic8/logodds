@@ -238,8 +238,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             }
         }
         if(!empty($mySet1)) $racetext .= "\t\t'Set 1'  =>  '" . implode(", ", $mySet1).  "',\n";
-        if(!empty(array_intersect($mySet1, $forReference)) && in_array($first1, $forReference)){
+        if(!empty(array_intersect($mySet1, $forReference)) && count($forReference) > 3 && in_array($first1, $forReference)){
             $racetext .= "\t\t'WP'  =>  '" . $first1 .  "',\n";
+            if(in_array($first1, $forReference)){
+                $racetext .= "\t\t'Win/Qin/Trio'  =>  '" . implode(", ", $forReference) .  "',\n";
+            }
         }
     }
     //2. Find those in weird that have better odds than end($allQplValues)
