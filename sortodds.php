@@ -228,10 +228,25 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
-
+    $weird = array_values($weird);
     //1. Find those in allQplValues that have lower odds than weird[0]
-
+    if(!empty($weird)){
+        $mySet1 = [];
+        foreach($allQplValues as $value){
+            if($allOdds[$raceNumber][$value] >= $allOdds[$raceNumber][$weird[0]]){
+                $mySet1[] = $value;
+            }
+        }
+        $racetext .= "\t\t'Set 1'  =>  '" . implode(", ", $mySet1).  "',\n";
+    }
     //2. Find those in weird that have better odds than end($allQplValues)
+    $mySet2 = [];
+    foreach($weird as $value){
+        if($allOdds[$raceNumber][$value] <= $allOdds[$raceNumber][end($allQplValues)]){
+            $mySet2[] = $value;
+        }
+    }
+    $racetext .= "\t\t'Set 1'  =>  '" . implode(", ", $mySet2).  "',\n";
 
     $racetext .= "\t\t'all wins values'  =>  '" . implode(", ", $allWinsValues). " //count wins: " . count($allWinsValues) . "',\n";
     $racetext .= "\t\t'for reference  '  =>  '" . implode(", ", $forReference). " //count ref: " . count($forReference) . "',\n";
