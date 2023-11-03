@@ -94,20 +94,6 @@ return [
 		'big set    '  =>  '3',
 		'Qqpl' =>  '12, 6, 3',
 	],
-	'7' => [
-		/**
-		Race 7
-		*/
-		'wins' =>  [] ,
-		'qpl/trio'       =>  [[1, 5, 7, 8, 4], [1, 3, 5, 4, 8]] ,
-		'All QPL values'    =>  '3, 1, 8, 5, 7, 4',
-		'favorite' =>  3 ,
-		'all wins values'  =>  ' //count wins: 0',
-		'for reference  '  =>  '3, 1, 8, 5, 7, 4 //count ref: 6',
-		'weird values   '  =>  '9, 2, 10, 6',
-		'Qqpl' =>  '3, 1, 8, 5, 7, 4',
-		'For reference' =>  '3, 1, 8, 5, 7, 4',
-	],
 	'8' => [
 		/**
 		Race 8

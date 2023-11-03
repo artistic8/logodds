@@ -1,8 +1,8 @@
 <?php
 /**
-small values: 6, 8
-medium values: 1, 3, 4, 5, 7, 8
-inter values: 8, count(interValues) = 1
+small values: 8
+medium values: 3, 5
+inter values: , count(interValues) = 0
 */
 
 return [
@@ -40,75 +40,5 @@ return [
 		'Qqpl' =>  '5, 3, 12, 1, 10, 4',
 		'For reference' =>  '5, 3, 12, 1, 10, 4',
 		'Tce' =>  '7, 11, 5, 6, 3, 14',
-	],
-	'6' => [
-		/**
-		Race 6
-		*/
-		'wins' =>  [[4], [4, 10], [10, 1, 3], [3]] ,
-		'qpl/trio'       =>  [[3, 7, 1, 10, 4], [8, 4, 10, 7, 3], [4, 8, 10, 1, 7], [1, 3, 7, 8, 4], [4, 8, 10, 1, 3]] ,
-		'All QPL values'    =>  '4, 3, 7, 10, 8, 1',
-		'favorite' =>  4 ,
-		'all wins values'  =>  '4, 3, 10, 1 //count wins: 4',
-		'for reference  '  =>  '7, 8 //count ref: 2',
-		'weird values   '  =>  '5, 2, 9, 6',
-		'small set  '  =>  '',
-		'medium set '  =>  '7, 8',
-		'big set    '  =>  '',
-		'Tce' =>  '4, 3, 7, 10, 8, 1',
-	],
-	'7' => [
-		/**
-		Race 7
-		*/
-		'wins' =>  [[5], [2], [7], [8]] ,
-		'qpl/trio'       =>  [[8, 6, 1, 2, 3], [8, 6, 2, 1, 5], [8, 2, 4, 1, 7], [7, 1, 5, 4, 8]] ,
-		'All QPL values'    =>  '8, 7, 1, 4, 2, 5, 6, 3',
-		'favorite' =>  8 ,
-		'all wins values'  =>  '8, 7, 5, 2 //count wins: 4',
-		'for reference  '  =>  '1, 4, 6, 3 //count ref: 4',
-		'weird values   '  =>  '9, 10',
-		'small set  '  =>  '',
-		'medium set '  =>  '1, 4',
-		'big set    '  =>  '6, 3',
-		'Qqpl' =>  '1, 4, 6, 3',
-		'For reference' =>  '1, 4, 6, 3',
-		'Tce' =>  '8, 7, 1, 4, 2, 5',
-	],
-	'8' => [
-		/**
-		Race 8
-		*/
-		'wins' =>  [[5], [8]] ,
-		'qpl/trio'       =>  [[10, 8, 4, 5, 1], [10, 8, 4, 5, 3], [10, 8, 2, 3, 5], [10, 8, 11, 1, 5], [5, 1, 3, 10, 8], [8, 10, 2, 1, 5]] ,
-		'All QPL values'    =>  '8, 5, 10, 1, 11, 4, 3, 2',
-		'favorite' =>  8 ,
-		'all wins values'  =>  '8, 5 //count wins: 2',
-		'for reference  '  =>  '10, 1, 11, 4, 3, 2 //count ref: 6',
-		'weird values   '  =>  '12, 9',
-		'small set  '  =>  '',
-		'medium set '  =>  '',
-		'big set    '  =>  '10, 1, 11, 4, 3, 2',
-		'Qqpl' =>  '10, 1, 11, 4, 3, 2',
-		'For reference' =>  '10, 1, 11, 4, 3, 2',
-	],
-	'10' => [
-		/**
-		Race 10
-		*/
-		'wins' =>  [[1], [2]] ,
-		'qpl/trio'       =>  [[6, 10, 4, 7, 1], [6, 10, 2, 7, 1], [6, 1, 10, 3, 2], [1, 7, 3, 6, 2]] ,
-		'All QPL values'    =>  '6, 1, 2, 10, 7, 3, 4',
-		'favorite' =>  6 ,
-		'all wins values'  =>  '1, 2 //count wins: 2',
-		'for reference  '  =>  '6, 10, 7, 3, 4 //count ref: 5',
-		'weird values   '  =>  '8, 9, 5',
-		'small set  '  =>  '6',
-		'medium set '  =>  '',
-		'big set    '  =>  '10, 7, 3, 4',
-		'Qqpl' =>  '6, 10, 7, 3, 4',
-		'For reference' =>  '6, 10, 7, 3, 4',
-		'Place' =>  '6',
-		'Qin' =>  '10, 7, 3',
 	],
 ];

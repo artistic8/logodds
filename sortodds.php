@@ -88,7 +88,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $probas[$raceNumber];
     $runners = array_keys($tmpArray);
 
-    if(count($runners) < 10) continue;
+    if(count($runners) < 11) continue;
     
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";

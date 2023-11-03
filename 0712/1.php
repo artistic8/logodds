@@ -58,22 +58,6 @@ return [
 		'Qin' =>  '11, 2, 12',
 		'Tce' =>  '5, 11, 9, 2, 12, 8',
 	],
-	'4' => [
-		/**
-		Race 4
-		*/
-		'wins' =>  [[6, 4]] ,
-		'qpl/trio'       =>  [[1, 3, 2, 4, 6]] ,
-		'All QPL values'    =>  '3, 6, 4, 1, 2',
-		'favorite' =>  3 ,
-		'all wins values'  =>  '6, 4 //count wins: 2',
-		'for reference  '  =>  '3, 1, 2 //count ref: 3',
-		'weird values   '  =>  '12, 8, 10, 11, 9',
-		'small set  '  =>  '3',
-		'medium set '  =>  '',
-		'big set    '  =>  '1, 2',
-		'Qqpl' =>  '3, 1, 2',
-	],
 	'5' => [
 		/**
 		Race 5
