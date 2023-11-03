@@ -238,7 +238,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             }
         }
         if(!empty($mySet1)) $racetext .= "\t\t'Set 1'  =>  '" . implode(", ", $mySet1).  "',\n";
-        if(!empty(array_intersect($mySet1, $forReference)) && count($forReference) > 3 && in_array($first1, $forReference) && $first1 != 1){
+        if(!empty(array_intersect($mySet1, $forReference)) 
+            && !in_array(1, $forReference)
+            && count($forReference) > 3 
+            && in_array($first1, $forReference) 
+            && $first1 != 1){
             $racetext .= "\t\t'WP'  =>  '" . $first1 .  "',\n";
             if(in_array($first1, $forReference)){
                 $racetext .= "\t\t'Win/Qin/Trio'  =>  '" . implode(", ", $forReference) .  "',\n";

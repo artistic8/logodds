@@ -75,8 +75,6 @@ return [
 		'All Runners   '    =>  '14, 9, 1, 5, 8, 3, 10, 7, 2, 4, 12, 11, 6, 13',
 		'favorite' =>  14 ,
 		'Set 1'  =>  '2',
-		'WP'  =>  '14',
-		'Win/Qin/Trio'  =>  '14, 1, 5, 3, 10, 2',
 		'Set 2'  =>  '7',
 		'all wins values'  =>  '9, 8 //count wins: 2',
 		'for reference  '  =>  '14, 1, 5, 3, 10, 2 //count ref: 6',
