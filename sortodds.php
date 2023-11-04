@@ -71,7 +71,6 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
-    if($raceNumber > 9) continue;
     if(!isset($probas[$raceNumber])) continue;
 
     if(isset($oldData)){
@@ -221,6 +220,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues).  "',\n";
     $racetext .= "\t\t'All Runners   '    =>  '" . implode(", ", $runners).  "',\n";
+
     $tce = array_slice($runners, 0, 6);
     $whatever = array_slice($allQplValues, 0, 6);
     $diff1 = array_diff($tce, $whatever);
@@ -277,22 +277,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                 $Place = $first1;
             }
         }
-    }
-    
-    if(!empty($diff1) && (isset($WP) || isset($Place))){
-        $showRace = true;
-        if(empty(array_diff($diff1, [1]))){
-            $racetext .= "\t\t'WP' =>  '1',\n";
+        if(!empty($diff1) && (isset($WP) || isset($Place))){
+            if(empty(array_diff($diff1, [1]))){
+                $racetext .= "\t\t'WP' =>  '1',\n";
+            }
+            else{
+                $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
+            }
+            $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
+            $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
+            $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
         }
-        else{
-            $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
-        }
-        $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
-        $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
-        $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
-    }
-    else{
-        $showRace = false;
     }
     $racetext .= "\t],\n";
     unset($oldWINS);
@@ -301,6 +296,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     unset($Place);
     if($showRace) $outtext .= $racetext;
 }
+
 $outtext .= "];\n";
 
 file_put_contents($outFile, $outtext);
