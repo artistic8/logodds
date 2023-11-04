@@ -244,8 +244,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             && !in_array(1, $forReference)
             && count($forReference) > 3 
             && in_array($first1, $forReference) 
-            && $first1 != 1){
-                $racetext .= "\t\t'WP'  =>  '" . $first1 .  "',\n";
+            && $first1 != 1)
+        {
                 $WP = $first1;
         }
     }
@@ -275,20 +275,23 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
 
         if(count($forReference) >= 4 ){
-            if($first1 != 1 && in_array($first1, $forReference) && count($smallSet) < 3 && !empty($allWinsValues)){
+            if($first1 != 1 && in_array($first1, $forReference) && count($smallSet) < 3 && !empty($allWinsValues))
+            {
                 $Place = $first1;
-                $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";   
             }
         }
     }
     
-    
     $showRace = false;
-    if(isset($WP) || isset($Place)){
+    if(!empty($diff1) && (isset($WP) || isset($Place))){
         $showRace = true;
+        if(in_array(1, $diff1)){
+            $racetext .= "\t\t'WP' =>  '1',\n";
+        }
+        else{
+            $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
+        }
         $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
-        if(!empty($diff1)) $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
-        if(!empty($diff2)) $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
     }
     $racetext .= "\t],\n";
     unset($oldWINS);
