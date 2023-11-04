@@ -1,8 +1,8 @@
 <?php
 /**
-small values: 3, 5, 8, 11, 12, 14
-medium values: 1, 2, 4, 5, 6, 11
-inter values: 5, 11, count(interValues) = 2
+small values: 
+medium values: 
+inter values: , count(interValues) = 0
 */
 
 return [

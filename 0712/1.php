@@ -1,8 +1,8 @@
 <?php
 /**
-small values: 2, 3, 4, 5, 6, 11, 12
-medium values: 2, 3, 5, 11, 12
-inter values: 2, 3, 5, 11, 12, count(interValues) = 5
+small values: 
+medium values: 
+inter values: , count(interValues) = 0
 */
 
 return [
@@ -28,6 +28,20 @@ return [
 		'WP'  =>  '6',
 		'Place' =>  '6',
 		'Tce' =>  '6, 12, 4, 9, 3, 7',
+		'diff1' =>  '3, 7',
+		'diff2' =>  '10, 2',
+	],
+	'7' => [
+		/**
+		Race 7
+		*/
+		'wins' =>  [[9]] ,
+		'qpl/trio'       =>  [[5, 7, 4, 11, 9]] ,
+		'All QPL values'    =>  '5, 7, 9, 4, 11',
+		'All Runners   '    =>  '5, 7, 9, 4, 11, 3, 8, 10, 12, 2, 1, 6',
+		'Place' =>  '5',
+		'Tce' =>  '5, 7, 9, 4, 11, 3',
+		'diff1' =>  '3',
 	],
 	'8' => [
 		/**
@@ -39,5 +53,7 @@ return [
 		'All Runners   '    =>  '3, 2, 11, 8, 4, 5, 9, 7, 1, 6, 10, 12',
 		'WP'  =>  '2',
 		'Tce' =>  '3, 2, 11, 8, 4, 5',
+		'diff1' =>  '4',
+		'diff2' =>  '9',
 	],
 ];

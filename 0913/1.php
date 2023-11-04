@@ -1,7 +1,7 @@
 <?php
 /**
-small values: 1, 2, 5, 6, 7, 10
-medium values: 8
+small values: 
+medium values: 
 inter values: , count(interValues) = 0
 */
 

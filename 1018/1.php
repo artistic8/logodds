@@ -1,8 +1,8 @@
 <?php
 /**
-small values: 1, 2, 3, 5, 6, 8, 11
-medium values: 1, 2, 3, 4, 11
-inter values: 1, 2, 3, 11, count(interValues) = 4
+small values: 
+medium values: 
+inter values: , count(interValues) = 0
 */
 
 return [
@@ -17,6 +17,8 @@ return [
 		'WP'  =>  '2',
 		'Place' =>  '2',
 		'Tce' =>  '2, 6, 3, 7, 11, 9',
+		'diff1' =>  '9',
+		'diff2' =>  '4',
 	],
 	'5' => [
 		/**
@@ -39,6 +41,8 @@ return [
 		'All Runners   '    =>  '2, 4, 3, 12, 5, 7, 10, 11, 9, 1, 6, 8',
 		'Place' =>  '2',
 		'Tce' =>  '2, 4, 3, 12, 5, 7',
+		'diff1' =>  '7',
+		'diff2' =>  '10',
 	],
 	'8' => [
 		/**

@@ -1,11 +1,23 @@
 <?php
 /**
-small values: 1, 3, 10
-medium values: 1, 2, 3, 4, 5, 7, 8, 10, 11
-inter values: 1, 3, 10, count(interValues) = 3
+small values: 
+medium values: 
+inter values: , count(interValues) = 0
 */
 
 return [
+	'5' => [
+		/**
+		Race 5
+		*/
+		'wins' =>  [] ,
+		'qpl/trio'       =>  [[8, 2, 11, 3, 5]] ,
+		'All QPL values'    =>  '8, 3, 2, 11, 5',
+		'All Runners   '    =>  '8, 3, 2, 11, 4, 5, 1, 7, 9, 6, 10, 12',
+		'WP'  =>  '8',
+		'Tce' =>  '8, 3, 2, 11, 4, 5',
+		'diff1' =>  '4',
+	],
 	'6' => [
 		/**
 		Race 6
@@ -16,6 +28,8 @@ return [
 		'All Runners   '    =>  '3, 6, 10, 7, 1, 4, 8, 9, 2, 5, 12, 11',
 		'Place' =>  '3',
 		'Tce' =>  '3, 6, 10, 7, 1, 4',
+		'diff1' =>  '4',
+		'diff2' =>  '8',
 	],
 	'9' => [
 		/**
@@ -27,5 +41,7 @@ return [
 		'All Runners   '    =>  '10, 1, 7, 2, 3, 9, 4, 5, 6, 8, 11',
 		'Place' =>  '10',
 		'Tce' =>  '10, 1, 7, 2, 3, 9',
+		'diff1' =>  '3, 9',
+		'diff2' =>  '4, 6',
 	],
 ];

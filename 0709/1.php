@@ -1,11 +1,23 @@
 <?php
 /**
-small values: 1, 2, 3, 4, 5, 7, 10, 11
-medium values: 2, 3, 6, 10, 11
-inter values: 2, 3, 10, 11, count(interValues) = 4
+small values: 
+medium values: 
+inter values: , count(interValues) = 0
 */
 
 return [
+	'3' => [
+		/**
+		Race 3
+		*/
+		'wins' =>  [[5]] ,
+		'qpl/trio'       =>  [[2, 10, 4, 3, 5]] ,
+		'All QPL values'    =>  '2, 10, 4, 5, 3',
+		'All Runners   '    =>  '2, 10, 4, 5, 6, 3, 11, 13, 9, 1, 12, 8, 14, 7',
+		'WP'  =>  '2',
+		'Tce' =>  '2, 10, 4, 5, 6, 3',
+		'diff1' =>  '6',
+	],
 	'4' => [
 		/**
 		Race 4
@@ -17,6 +29,8 @@ return [
 		'WP'  =>  '2',
 		'Place' =>  '2',
 		'Tce' =>  '2, 11, 8, 10, 7, 5',
+		'diff1' =>  '10',
+		'diff2' =>  '12',
 	],
 	'6' => [
 		/**
@@ -28,5 +42,17 @@ return [
 		'All Runners   '    =>  '2, 7, 6, 3, 11, 4, 9, 1, 12, 10, 5, 8',
 		'Place' =>  '2',
 		'Tce' =>  '2, 7, 6, 3, 11, 4',
+	],
+	'9' => [
+		/**
+		Race 9
+		*/
+		'wins' =>  [] ,
+		'qpl/trio'       =>  [[3, 5, 14, 11, 2]] ,
+		'All QPL values'    =>  '3, 5, 11, 2, 14',
+		'All Runners   '    =>  '3, 5, 11, 2, 6, 14, 1, 7, 10, 9, 4, 8, 13, 12',
+		'WP'  =>  '3',
+		'Tce' =>  '3, 5, 11, 2, 6, 14',
+		'diff1' =>  '6',
 	],
 ];

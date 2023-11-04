@@ -225,6 +225,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'All QPL values'    =>  '" . implode(", ", $allQplValues).  "',\n";
     $racetext .= "\t\t'All Runners   '    =>  '" . implode(", ", $runners).  "',\n";
     $tce = array_slice($runners, 0, 6);
+    $whatever = array_slice($allQplValues, 0, 6);
+    $diff1 = array_diff($tce, $whatever);
+    $diff2 = array_diff($whatever, $tce);
 
     $forReference = array_diff($allQplValues, $allWinsValues);
     $weird = array_diff($runners, $allQplValues);
@@ -271,20 +274,21 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             if($allOdds[$raceNumber][$putain] > $allOdds[$raceNumber][$higherBound]) $bigSet[] = $putain;
         }
 
-        $smallValues = array_values(array_unique(array_merge($smallValues, $smallSet)));
-        $midValues = array_values(array_unique(array_merge($midValues, $mediumSet)));
-    }
-    
-    if(count($forReference) >= 4 ){
-        if($first1 != 1 && in_array($first1, $forReference) && count($smallSet) < 3 && !empty($allWinsValues)){
-            $Place = $first1;
-            $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";   
+        if(count($forReference) >= 4 ){
+            if($first1 != 1 && in_array($first1, $forReference) && count($smallSet) < 3 && !empty($allWinsValues)){
+                $Place = $first1;
+                $racetext .= "\t\t'Place' =>  '" . $first1. "',\n";   
+            }
         }
     }
+    
+    
     $showRace = false;
     if(isset($WP) || isset($Place)){
         $showRace = true;
         $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
+        if(!empty($diff1)) $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
+        if(!empty($diff2)) $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
     }
     $racetext .= "\t],\n";
     unset($oldWINS);
