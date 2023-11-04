@@ -285,7 +285,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $showRace = false;
     if(!empty($diff1) && (isset($WP) || isset($Place))){
         $showRace = true;
-        if(in_array(1, $diff1)){
+        if(empty(array_diff($diff1, [1]))){
             $racetext .= "\t\t'WP' =>  '1',\n";
         }
         else{

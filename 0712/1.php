@@ -6,6 +6,17 @@ inter values: , count(interValues) = 0
 */
 
 return [
+	'3' => [
+		/**
+		Race 3
+		*/
+		'wins' =>  [[9]] ,
+		'qpl/trio'       =>  [[5, 12, 11, 2, 9]] ,
+		'All QPL values'    =>  '5, 11, 9, 2, 12',
+		'All Runners   '    =>  '5, 11, 9, 2, 12, 8, 4, 1, 7, 3, 6, 10',
+		'WP' =>  '5',
+		'Tce' =>  '5, 11, 9, 2, 12, 8',
+	],
 	'5' => [
 		/**
 		Race 5
