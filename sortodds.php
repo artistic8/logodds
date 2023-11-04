@@ -41,9 +41,6 @@ if(file_exists($outFile)){
 }
 $probas = [];
 
-$smallValues = [];
-$midValues = [];
-
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
          19, 21, 23, 25, 27, 30, 32, 34, 36];
 
@@ -70,8 +67,8 @@ for($r=1; $r <= $totalRaces; $r++){
 }
 
 
-// $outtext = "<?php\n\n";
-$outtext = "return [\n";
+$outtext = "<?php\n\n";
+$outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if($raceNumber > 9) continue;
@@ -282,7 +279,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     
-    $showRace = false;
     if(!empty($diff1) && (isset($WP) || isset($Place))){
         $showRace = true;
         if(empty(array_diff($diff1, [1]))){
@@ -291,7 +287,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         else{
             $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
         }
+        $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
+        $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
         $racetext .= "\t\t'Tce' =>  '" . implode(", ", $tce) . "',\n";
+    }
+    else{
+        $showRace = false;
     }
     $racetext .= "\t],\n";
     unset($oldWINS);
@@ -300,15 +301,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     unset($Place);
     if($showRace) $outtext .= $racetext;
 }
-sort($smallValues);
-sort($midValues);
-$interValues = array_intersect($smallValues, $midValues);
-sort($interValues);
-$preText = "<?php\n/**\nsmall values: " . implode(", ", $smallValues) . "\nmedium values: " 
-    . implode(", ", $midValues) .  "\ninter values: " . implode(", ", $interValues) 
-    . ", count(interValues) = " . count($interValues)
-    . "\n*/\n\n";
-$outtext = $preText . $outtext;
 $outtext .= "];\n";
 
 file_put_contents($outFile, $outtext);

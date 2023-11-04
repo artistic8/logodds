@@ -1,9 +1,4 @@
 <?php
-/**
-small values: 
-medium values: 
-inter values: , count(interValues) = 0
-*/
 
 return [
 	'4' => [
@@ -15,6 +10,8 @@ return [
 		'All QPL values'    =>  '2, 6, 3, 7, 11, 4, 5, 10',
 		'All Runners   '    =>  '2, 6, 3, 7, 11, 9, 4, 1, 5, 10, 8, 12',
 		'WP' =>  '2',
+		'diff1' =>  '9',
+		'diff2' =>  '4',
 		'Tce' =>  '2, 6, 3, 7, 11, 9',
 	],
 	'7' => [
@@ -26,6 +23,8 @@ return [
 		'All QPL values'    =>  '2, 4, 3, 12, 5, 10, 7',
 		'All Runners   '    =>  '2, 4, 3, 12, 5, 7, 10, 11, 9, 1, 6, 8',
 		'WP' =>  '2',
+		'diff1' =>  '7',
+		'diff2' =>  '10',
 		'Tce' =>  '2, 4, 3, 12, 5, 7',
 	],
 ];
