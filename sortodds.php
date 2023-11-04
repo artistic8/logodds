@@ -74,6 +74,7 @@ for($r=1; $r <= $totalRaces; $r++){
 $outtext = "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
+    if($raceNumber > 9) continue;
     if(!isset($probas[$raceNumber])) continue;
 
     if(isset($oldData)){

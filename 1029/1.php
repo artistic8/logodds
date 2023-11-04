@@ -136,28 +136,4 @@ return [
 		'Qqpl' =>  '10, 6, 3, 1',
 		'For reference' =>  '10, 6, 3, 1',
 	],
-	'10' => [
-		/**
-		Race 10
-		*/
-		'wins' =>  [[8]] ,
-		'qpl/trio'       =>  [[4, 11, 7, 12, 8]] ,
-		'All QPL values'    =>  '4, 11, 8, 7, 12',
-		'All Runners   '    =>  '4, 11, 8, 6, 7, 2, 12, 1, 3, 10, 9, 5',
-		'favorite' =>  4 ,
-		'Set 1'  =>  '7, 12',
-		'WP'  =>  '4',
-		'Win/Qin/Trio'  =>  '4, 11, 7, 12',
-		'Set 2'  =>  '6, 2',
-		'all wins values'  =>  '8 //count wins: 1',
-		'for reference  '  =>  '4, 11, 7, 12 //count ref: 4',
-		'weird values   '  =>  '6, 2, 1, 3, 10, 9, 5',
-		'small set  '  =>  '4, 11',
-		'medium set '  =>  '',
-		'big set    '  =>  '7, 12',
-		'Qqpl' =>  '4, 11, 7, 12',
-		'For reference' =>  '4, 11, 7, 12',
-		'Place' =>  '4',
-		'Qin' =>  '11, 7, 12',
-	],
 ];

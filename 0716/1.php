@@ -1,8 +1,8 @@
 <?php
 /**
 small values: 1, 2, 4, 6, 10, 14
-medium values: 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 14
-inter values: 2, 4, 6, 10, 14, count(interValues) = 5
+medium values: 2, 3, 4, 5, 6, 7, 9, 10, 11, 12
+inter values: 2, 4, 6, 10, count(interValues) = 4
 */
 
 return [
@@ -186,51 +186,5 @@ return [
 		'medium set '  =>  '12',
 		'big set    '  =>  '',
 		'Tce' =>  '1, 8, 2, 12, 9',
-	],
-	'10' => [
-		/**
-		Race 10
-		*/
-		'wins' =>  [[1], [11]] ,
-		'qpl/trio'       =>  [[1, 9, 4, 6, 10], [1, 9, 4, 6, 11], [3, 9, 4, 6, 11], [1, 3, 9, 4, 6], [5, 9, 4, 6, 11], [9, 14, 4, 6, 11]] ,
-		'All QPL values'    =>  '4, 6, 11, 9, 10, 3, 14, 5, 1',
-		'All Runners   '    =>  '4, 6, 11, 9, 10, 13, 3, 14, 5, 1, 2, 8, 7, 12',
-		'favorite' =>  4 ,
-		'Set 1'  =>  '3, 14, 5, 1',
-		'WP'  =>  '4',
-		'Win/Qin/Trio'  =>  '4, 6, 9, 10, 3, 14, 5',
-		'Set 2'  =>  '13',
-		'all wins values'  =>  '11, 1 //count wins: 2',
-		'for reference  '  =>  '4, 6, 9, 10, 3, 14, 5 //count ref: 7',
-		'weird values   '  =>  '13, 2, 8, 7, 12',
-		'small set  '  =>  '4, 6',
-		'medium set '  =>  '9, 10, 3, 14, 5',
-		'big set    '  =>  '',
-		'Qqpl' =>  '4, 6, 9, 10, 3, 14, 5',
-		'For reference' =>  '4, 6, 9, 10, 3, 14, 5',
-		'Place' =>  '4',
-		'Qin' =>  '6, 9, 10',
-		'Tce' =>  '4, 6, 11, 9, 10, 3',
-	],
-	'11' => [
-		/**
-		Race 11
-		*/
-		'wins' =>  [[5], [7], [8, 7], [8, 7, 5], [8]] ,
-		'qpl/trio'       =>  [[5, 7, 2, 4, 13], [5, 7, 2, 4, 10], [7, 9, 2, 4, 13], [5, 7, 2, 4, 8]] ,
-		'All QPL values'    =>  '2, 7, 5, 4, 8, 9, 13, 10',
-		'All Runners   '    =>  '2, 7, 5, 4, 8, 9, 10, 13, 1, 3, 6, 12, 11',
-		'favorite' =>  2 ,
-		'all wins values'  =>  '7, 5, 8 //count wins: 3',
-		'for reference  '  =>  '2, 4, 9, 13, 10 //count ref: 5',
-		'weird values   '  =>  '1, 3, 6, 12, 11',
-		'small set  '  =>  '2',
-		'medium set '  =>  '4',
-		'big set    '  =>  '9, 13, 10',
-		'Qqpl' =>  '2, 4, 9, 13, 10',
-		'For reference' =>  '2, 4, 9, 13, 10',
-		'Place' =>  '2',
-		'Qin' =>  '4, 9, 13',
-		'Tce' =>  '2, 7, 5, 4, 8, 9',
 	],
 ];

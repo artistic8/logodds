@@ -1,8 +1,8 @@
 <?php
 /**
-small values: 1, 2, 3, 4, 7, 11, 12, 14
+small values: 1, 2, 3, 4, 11, 12, 14
 medium values: 1, 3, 4, 5, 7, 8, 10, 12, 13, 14
-inter values: 1, 3, 4, 7, 12, 14, count(interValues) = 6
+inter values: 1, 3, 4, 12, 14, count(interValues) = 5
 */
 
 return [
@@ -172,25 +172,5 @@ return [
 		'Qqpl' =>  '1, 13, 3, 5, 10',
 		'For reference' =>  '1, 13, 3, 5, 10',
 		'Tce' =>  '1, 8, 7, 13, 9, 3',
-	],
-	'10' => [
-		/**
-		Race 10
-		*/
-		'wins' =>  [[9, 8]] ,
-		'qpl/trio'       =>  [[7, 14, 10, 9, 8], [10, 4, 7, 8, 9]] ,
-		'All QPL values'    =>  '7, 9, 8, 14, 10, 4',
-		'All Runners   '    =>  '7, 9, 8, 14, 10, 4, 3, 12, 6, 2, 11, 1, 5, 13',
-		'favorite' =>  7 ,
-		'all wins values'  =>  '9, 8 //count wins: 2',
-		'for reference  '  =>  '7, 14, 10, 4 //count ref: 4',
-		'weird values   '  =>  '3, 12, 6, 2, 11, 1, 5, 13',
-		'small set  '  =>  '7',
-		'medium set '  =>  '',
-		'big set    '  =>  '14, 10, 4',
-		'Qqpl' =>  '7, 14, 10, 4',
-		'For reference' =>  '7, 14, 10, 4',
-		'Place' =>  '7',
-		'Qin' =>  '14, 10, 4',
 	],
 ];
