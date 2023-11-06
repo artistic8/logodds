@@ -177,7 +177,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
-    $first1 = $allQplValues[0];
+    $first1Qpl = $allQplValues[0];
 
     $showRace = true;
 
@@ -205,6 +205,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $diff2 = array_diff($tce1, $allWinsValues);
     
     if(count($wins) > 2 && count($diff2) >= 4 && $first1 != 1 && in_array($first1, $diff2)){
+        $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
+    }
+    if(count($wins) > 2 && count($diff2) >= 4 && $first1Qpl != 1 && $first1 != $first1Qpl && in_array($first1Qpl, $diff2)){
         $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
     }
     $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";

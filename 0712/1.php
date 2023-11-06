@@ -110,7 +110,7 @@ return [
 		'All Wins'        =>  '8, 9',
 		//Count(Wins)     =  3,
 		//Count(QPL/Trio) =  4,
-		'WP' =>  '2',
+		'WP' =>  '3',
 		'diff1' =>  '',
 		'diff2' =>  '2, 3, 11, 5',
 	],

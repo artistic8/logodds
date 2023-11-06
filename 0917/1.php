@@ -40,7 +40,6 @@ return [
 		'All Wins'        =>  '5, 7, 6',
 		//Count(Wins)     =  4,
 		//Count(QPL/Trio) =  6,
-		'WP' =>  '1',
 		'diff1' =>  '6',
 		'diff2' =>  '1, 2, 11, 8',
 	],
