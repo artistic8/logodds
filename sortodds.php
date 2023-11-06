@@ -198,11 +198,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $tce1 = array_slice($allQplValues, 0, 6);
     $tce2 = array_slice($runners, 0, 6);
-    $shit1 = array_diff($tce2, $tce1);
+    $shit11 = array_diff($tce1, $tce2);
+    $shit12 = array_diff($tce2, $tce1);
 
     $tce71 = array_slice($allQplValues, 0, 7);
     $tce72 = array_slice($runners, 0, 7);
-    $shit2 = array_diff($tce72, $tce71);
+    $shit21 = array_diff($tce71, $tce72);
+    $shit22 = array_diff($tce72, $tce71);
 
     $diff1 = array_diff($allWinsValues, $tce1);
     $diff2 = array_diff($tce1, $allWinsValues);
@@ -214,7 +216,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $forReference = array_values($forReference);
 
-    if(empty($shit1) && empty($shit2) && isset($place)){
+    if(!empty($shit21) && !empty($shit22) && isset($place)){
         if($place == $forReference[0]){
             $racetext .= "\t\t'Place' =>  '" . $place . "',\n";
         }
@@ -231,8 +233,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
     $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
-    $racetext .= "\t\t'shit1' =>  '" . implode(", ", $shit1) . "',\n";
-    $racetext .= "\t\t'shit2' =>  '" . implode(", ", $shit2) . "',\n";
+    $racetext .= "\t\t'shit11' =>  '" . implode(", ", $shit11) . "',\n";
+    $racetext .= "\t\t'shit12' =>  '" . implode(", ", $shit12) . "',\n";
+    $racetext .= "\t\t'shit21' =>  '" . implode(", ", $shit21) . "',\n";
+    $racetext .= "\t\t'shit22' =>  '" . implode(", ", $shit22) . "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
