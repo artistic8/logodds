@@ -86,6 +86,7 @@ return [
 		//Count(Wins)     =  2,
 		//Count(QPL/Trio) =  4,
 		'qin/trio' =>  '6, 10, 7, 3, 4',
+		'WP' =>  '6',
 		'diff1' =>  '',
 		'diff2' =>  '6, 10, 7, 3',
 	],

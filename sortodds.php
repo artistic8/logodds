@@ -206,14 +206,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $forReference = array_diff($allQplValues, $allWinsValues);
 
-    if(count($wins) > 2 && count($diff2) >= 4 && $first1 != 1 && in_array($first1, $diff2)){
-        $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
-    }
-    if(count($wins) > 2 && count($diff2) >= 4 && $first1Qpl != 1 && $first1 != $first1Qpl && in_array($first1Qpl, $diff2)){
-        $racetext .= "\t\t'WP' =>  '" . $first1Qpl . "',\n";
-    }
     if(count($forReference) >= 4){
         $racetext .= "\t\t'qin/trio' =>  '" . implode(", ", $forReference) . "',\n";
+        if(in_array($first1, $forReference)){
+            $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
+        }
+        if($first1 != $first1Qpl && in_array($first1Qpl, $forReference)){
+            $racetext .= "\t\t'WP' =>  '" . $first1Qpl . "',\n";
+        }
     }
     $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
     $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
