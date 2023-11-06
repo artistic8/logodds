@@ -198,11 +198,27 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $tce1 = array_slice($allQplValues, 0, 6);
     $tce2 = array_slice($runners, 0, 6);
+    $shit1 = array_diff($tce2, $tce1);
+
+    $tce71 = array_slice($allQplValues, 0, 7);
+    $tce72 = array_slice($runners, 0, 7);
+    $shit2 = array_diff($tce72, $tce71);
 
     $diff1 = array_diff($allWinsValues, $tce1);
     $diff2 = array_diff($tce1, $allWinsValues);
 
     $forReference = array_diff($allQplValues, $allWinsValues);
+
+    if(count($forReference) >= 5 && $first1 == $first1Qpl){
+        $place = $first1;
+    }
+    $forReference = array_values($forReference);
+
+    if(empty($shit1) && empty($shit2) && isset($place)){
+        if($place == $forReference[0]){
+            $racetext .= "\t\t'Place' =>  '" . $place . "',\n";
+        }
+    }
 
     if(count($forReference) >= 4){
         $racetext .= "\t\t'qin/trio' =>  '" . implode(", ", $forReference) . "',//count:". count($forReference) ."\n";
@@ -215,9 +231,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
     $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
+    $racetext .= "\t\t'shit1' =>  '" . implode(", ", $shit1) . "',\n";
+    $racetext .= "\t\t'shit2' =>  '" . implode(", ", $shit2) . "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
+    unset($place);
     if($showRace) $outtext .= $racetext;
 }
 
