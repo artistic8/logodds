@@ -195,8 +195,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'All QPL values'  =>  '" . implode(", ", $allQplValues).  "',\n";
     $racetext .= "\t\t'All Wins'        =>  '" . implode(", ", $allWinsValues).  "',\n";
-    $racetext .= "\t\t//Count(Wins)     =  " . count($wins).  ",\n";
-    $racetext .= "\t\t//Count(QPL/Trio) =  " . count($qplTrios).  ",\n";
 
     $tce1 = array_slice($allQplValues, 0, 6);
     $tce2 = array_slice($runners, 0, 6);
@@ -207,7 +205,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $forReference = array_diff($allQplValues, $allWinsValues);
 
     if(count($forReference) >= 4){
-        $racetext .= "\t\t'qin/trio' =>  '" . implode(", ", $forReference) . "',\n";
+        $racetext .= "\t\t'qin/trio' =>  '" . implode(", ", $forReference) . "',//count:". count($forReference) ."\n";
         if(in_array($first1, $forReference)){
             $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
         }
