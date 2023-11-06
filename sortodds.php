@@ -208,7 +208,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
     }
     if(count($wins) > 2 && count($diff2) >= 4 && $first1Qpl != 1 && $first1 != $first1Qpl && in_array($first1Qpl, $diff2)){
-        $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
+        $racetext .= "\t\t'WP' =>  '" . $first1Qpl . "',\n";
     }
     $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
     $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
