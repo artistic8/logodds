@@ -195,52 +195,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'All QPL values'  =>  '" . implode(", ", $allQplValues).  "',\n";
     $racetext .= "\t\t'All Wins'        =>  '" . implode(", ", $allWinsValues).  "',\n";
-
-    $tce1 = array_slice($allQplValues, 0, 6);
-    $tce2 = array_slice($runners, 0, 6);
-    $shit11 = array_diff($tce1, $tce2);
-    $shit12 = array_diff($tce2, $tce1);
-
-    $tce71 = array_slice($allQplValues, 0, 7);
-    $tce72 = array_slice($runners, 0, 7);
-    $shit21 = array_diff($tce71, $tce72);
-    $shit22 = array_diff($tce72, $tce71);
-
-    $diff1 = array_diff($allWinsValues, $tce1);
-    $diff2 = array_diff($tce1, $allWinsValues);
-
-    $forReference = array_diff($allQplValues, $allWinsValues);
-
-    if(count($forReference) >= 5 && $first1 == $first1Qpl){
-        $place = $first1;
-    }
-    $forReference = array_values($forReference);
-
-    if(!empty($shit21) && !empty($shit22) && isset($place)){
-        if($place == $forReference[0]){
-            $racetext .= "\t\t'Place' =>  '" . $place . "',\n";
-        }
-    }
-
-    if(count($forReference) >= 4){
-        $racetext .= "\t\t'qin/trio' =>  '" . implode(", ", $forReference) . "',//count:". count($forReference) ."\n";
-        if(in_array($first1, $forReference)){
-            $racetext .= "\t\t'WP' =>  '" . $first1 . "',\n";
-        }
-        if($first1 != $first1Qpl && in_array($first1Qpl, $forReference)){
-            $racetext .= "\t\t'WP' =>  '" . $first1Qpl . "',\n";
-        }
-    }
-    $racetext .= "\t\t'diff1' =>  '" . implode(", ", $diff1) . "',\n";
-    $racetext .= "\t\t'diff2' =>  '" . implode(", ", $diff2) . "',\n";
-    $racetext .= "\t\t'shit11' =>  '" . implode(", ", $shit11) . "',\n";
-    $racetext .= "\t\t'shit12' =>  '" . implode(", ", $shit12) . "',\n";
-    $racetext .= "\t\t'shit21' =>  '" . implode(", ", $shit21) . "',\n";
-    $racetext .= "\t\t'shit22' =>  '" . implode(", ", $shit22) . "',\n";
+    $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
+    if($first1 != $first1Qpl) $racetext .= "\t\t'favorite' =>  '" . $first1Qpl . "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
-    unset($place);
     if($showRace) $outtext .= $racetext;
 }
 
