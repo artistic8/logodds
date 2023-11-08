@@ -19,7 +19,7 @@ return [
 		*/
 		'wins' =>  [[3], [1]] ,
 		'qpl/trio'       =>  [[2, 11, 10, 5, 3], [2, 11, 10, 5, 1]] ,
-		'All Runners   '  =>  '2, 11, 5, 1, 3, 10, 9, 7, 8, 12, 4, 6',
+		'All Runners   '  =>  '2, 11, 1, 5, 3, 10, 9, 7, 8, 12, 4, 6',
 		'All QPL values'  =>  '2, 11, 5, 1, 3, 10',
 		//All wins contains 3
 		'All Wins'        =>  '1, 3',
@@ -32,7 +32,7 @@ return [
 		*/
 		'wins' =>  [[1, 2]] ,
 		'qpl/trio'       =>  [[3, 12, 8, 1, 2]] ,
-		'All Runners   '  =>  '3, 8, 2, 1, 12, 9, 10, 6, 11, 5, 7, 4',
+		'All Runners   '  =>  '3, 8, 2, 1, 12, 9, 10, 6, 11, 7, 5, 4',
 		'All QPL values'  =>  '3, 8, 2, 1, 12',
 		'All Wins'        =>  '2, 1',
 		//Reference contains 3
@@ -44,11 +44,11 @@ return [
 		Race 4
 		*/
 		'wins' =>  [[9]] ,
-		'qpl/trio'       =>  [[1, 12, 4, 6, 9]] ,
-		'All Runners   '  =>  '1, 9, 4, 6, 11, 8, 2, 12, 3, 5, 7, 10',
-		'All QPL values'  =>  '1, 9, 4, 6, 12',
+		'qpl/trio'       =>  [[1, 12, 4, 6, 9], [1, 9, 12, 4, 11]] ,
+		'All Runners   '  =>  '1, 9, 4, 11, 6, 8, 2, 12, 3, 7, 5, 10',
+		'All QPL values'  =>  '1, 9, 4, 11, 6, 12',
 		'All Wins'        =>  '9',
-		'Reference'        =>  '1, 4, 6, 12',
+		'Reference'        =>  '1, 4, 11, 6, 12',
 		'favorite' =>  '1',
 	],
 	'5' => [
@@ -69,7 +69,7 @@ return [
 		*/
 		'wins' =>  [[1, 12]] ,
 		'qpl/trio'       =>  [[7, 4, 2, 1, 12]] ,
-		'All Runners   '  =>  '1, 12, 7, 4, 2, 9, 5, 11, 8, 3, 10, 6',
+		'All Runners   '  =>  '1, 12, 7, 4, 2, 5, 9, 11, 8, 3, 10, 6',
 		'All QPL values'  =>  '1, 12, 7, 4, 2',
 		'All Wins'        =>  '1, 12',
 		'Reference'        =>  '7, 4, 2',
@@ -81,8 +81,8 @@ return [
 		*/
 		'wins' =>  [[8, 7]] ,
 		'qpl/trio'       =>  [[4, 10, 1, 8, 7]] ,
-		'All Runners   '  =>  '4, 8, 10, 1, 7, 11, 3, 6, 5, 9, 2, 12',
-		'All QPL values'  =>  '4, 8, 10, 1, 7',
+		'All Runners   '  =>  '4, 8, 10, 7, 1, 11, 3, 6, 5, 9, 2, 12',
+		'All QPL values'  =>  '4, 8, 10, 7, 1',
 		'All Wins'        =>  '8, 7',
 		'Reference'        =>  '4, 10, 1',
 		'favorite' =>  '4',
@@ -105,7 +105,7 @@ return [
 		*/
 		'wins' =>  [[1], [3, 1]] ,
 		'qpl/trio'       =>  [[10, 11, 8, 3, 1], [11, 10, 4, 3, 1]] ,
-		'All Runners   '  =>  '11, 10, 3, 1, 8, 4, 5, 12, 2, 6, 7, 9',
+		'All Runners   '  =>  '11, 10, 3, 1, 4, 8, 5, 12, 2, 6, 7, 9',
 		'All QPL values'  =>  '11, 10, 3, 1, 8, 4',
 		//All wins contains 3
 		'All Wins'        =>  '3, 1',
