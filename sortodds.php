@@ -189,12 +189,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $allWinsValues = array_keys($qplsOdds);
+    $forReference = array_diff($allQplValues, $allWinsValues);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'All QPL values'  =>  '" . implode(", ", $allQplValues).  "',\n";
+    if(in_array(3, $allWinsValues)) $racetext .= "\t\t//All wins contains 3\n";
     $racetext .= "\t\t'All Wins'        =>  '" . implode(", ", $allWinsValues).  "',\n";
+    if(in_array(3, $forReference)) $racetext .= "\t\t//Reference contains 3\n";
+    $racetext .= "\t\t'Reference'        =>  '" . implode(", ", $forReference).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     if($first1 != $first1Qpl) $racetext .= "\t\t'favorite' =>  '" . $first1Qpl . "',\n";
     $racetext .= "\t],\n";

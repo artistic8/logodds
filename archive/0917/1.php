@@ -10,6 +10,7 @@ return [
 		'All Runners   '  =>  '6, 12, 5, 8, 1, 2, 4, 14, 9, 3, 7, 13, 10',
 		'All QPL values'  =>  '6, 12, 5, 8, 1, 2, 14',
 		'All Wins'        =>  '6, 5, 2',
+		'Reference'        =>  '12, 8, 1, 14',
 		'favorite' =>  '6',
 	],
 	'4' => [
@@ -21,6 +22,8 @@ return [
 		'All Runners   '  =>  '3, 14, 9, 2, 5, 13, 4, 7, 8, 11, 6, 10, 1, 12',
 		'All QPL values'  =>  '3, 14, 9, 2, 5, 13, 7, 4, 8, 11',
 		'All Wins'        =>  '14, 9, 5, 13, 8',
+		//Reference contains 3
+		'Reference'        =>  '3, 2, 7, 4, 11',
 		'favorite' =>  '3',
 	],
 	'5' => [
@@ -32,6 +35,7 @@ return [
 		'All Runners   '  =>  '1, 2, 11, 8, 5, 7, 4, 3, 6, 12, 10, 9',
 		'All QPL values'  =>  '1, 2, 11, 8, 5, 7, 4, 6',
 		'All Wins'        =>  '5, 7, 6',
+		'Reference'        =>  '1, 2, 11, 8, 4',
 		'favorite' =>  '1',
 	],
 	'6' => [
@@ -42,7 +46,9 @@ return [
 		'qpl/trio'       =>  [[7, 5, 2, 11, 3], [7, 3, 12, 2, 11]] ,
 		'All Runners   '  =>  '7, 2, 3, 5, 11, 12, 10, 8, 1, 6, 4, 9',
 		'All QPL values'  =>  '7, 2, 3, 5, 11, 12',
+		//All wins contains 3
 		'All Wins'        =>  '7, 2, 3, 11, 12',
+		'Reference'        =>  '5',
 		'favorite' =>  '7',
 	],
 	'8' => [
@@ -54,6 +60,8 @@ return [
 		'All Runners   '  =>  '8, 13, 3, 1, 6, 10, 4, 2, 5, 9, 11, 7, 12, 14',
 		'All QPL values'  =>  '8, 13, 3, 1, 10, 6, 4, 2, 5',
 		'All Wins'        =>  '10, 2, 5',
+		//Reference contains 3
+		'Reference'        =>  '8, 13, 3, 1, 6, 4',
 		'favorite' =>  '8',
 	],
 	'9' => [
@@ -65,6 +73,7 @@ return [
 		'All Runners   '  =>  '1, 6, 5, 2, 4, 9, 8, 10, 14, 13, 11, 3, 12, 7',
 		'All QPL values'  =>  '1, 6, 5, 2, 4, 9, 8, 14',
 		'All Wins'        =>  '6, 5, 9, 14',
+		'Reference'        =>  '1, 2, 4, 8',
 		'favorite' =>  '1',
 	],
 	'10' => [
@@ -76,6 +85,8 @@ return [
 		'All Runners   '  =>  '2, 9, 10, 5, 8, 12, 3, 1, 6, 4, 7, 11',
 		'All QPL values'  =>  '2, 9, 10, 5, 12, 8, 3, 4, 7, 11',
 		'All Wins'        =>  '9, 5, 8, 12, 4',
+		//Reference contains 3
+		'Reference'        =>  '2, 10, 3, 7, 11',
 		'favorite' =>  '2',
 	],
 ];

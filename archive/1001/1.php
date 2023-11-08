@@ -10,6 +10,7 @@ return [
 		'All Runners   '  =>  '7, 2, 6, 1, 8, 5, 4, 9, 10, 3',
 		'All QPL values'  =>  '7, 2, 6, 1, 5, 10',
 		'All Wins'        =>  '6',
+		'Reference'        =>  '7, 2, 1, 5, 10',
 		'favorite' =>  '7',
 	],
 	'2' => [
@@ -21,6 +22,8 @@ return [
 		'All Runners   '  =>  '3, 6, 4, 8, 2, 10, 1, 7, 13, 11, 14, 9, 12, 5',
 		'All QPL values'  =>  '3, 6, 4, 2, 10, 1, 7',
 		'All Wins'        =>  '2, 10, 1, 7',
+		//Reference contains 3
+		'Reference'        =>  '3, 6, 4',
 		'favorite' =>  '3',
 	],
 	'3' => [
@@ -32,6 +35,7 @@ return [
 		'All Runners   '  =>  '5, 1, 7, 2, 9, 3, 8, 6, 4, 10',
 		'All QPL values'  =>  '5, 1, 7, 2, 9, 8, 6',
 		'All Wins'        =>  '7, 8, 6',
+		'Reference'        =>  '5, 1, 2, 9',
 		'favorite' =>  '5',
 	],
 	'4' => [
@@ -43,6 +47,7 @@ return [
 		'All Runners   '  =>  '7, 4, 1, 12, 5, 2, 11, 3, 9, 10, 6, 8',
 		'All QPL values'  =>  '7, 4, 1, 12, 2',
 		'All Wins'        =>  '1, 12, 2',
+		'Reference'        =>  '7, 4',
 		'favorite' =>  '7',
 	],
 	'5' => [
@@ -54,6 +59,8 @@ return [
 		'All Runners   '  =>  '1, 8, 9, 6, 3, 10, 2, 7, 4, 5',
 		'All QPL values'  =>  '8, 1, 9, 6, 3, 10, 4',
 		'All Wins'        =>  '8, 9',
+		//Reference contains 3
+		'Reference'        =>  '1, 6, 3, 10, 4',
 		'favorite' =>  '1',
 		'favorite' =>  '8',
 	],
@@ -66,6 +73,7 @@ return [
 		'All Runners   '  =>  '9, 2, 5, 14, 4, 13, 1, 10, 12, 3, 6, 8, 11, 7',
 		'All QPL values'  =>  '9, 2, 5, 14, 4',
 		'All Wins'        =>  '9, 5, 14, 4',
+		'Reference'        =>  '2',
 		'favorite' =>  '9',
 	],
 	'7' => [
@@ -77,6 +85,8 @@ return [
 		'All Runners   '  =>  '1, 8, 7, 2, 5, 6, 3, 4, 9, 10',
 		'All QPL values'  =>  '1, 8, 7, 2, 5, 6, 3',
 		'All Wins'        =>  '7, 2, 6',
+		//Reference contains 3
+		'Reference'        =>  '1, 8, 5, 3',
 		'favorite' =>  '1',
 	],
 	'9' => [
@@ -88,6 +98,8 @@ return [
 		'All Runners   '  =>  '1, 9, 5, 6, 3, 2, 8, 12, 4, 7, 14, 10, 11, 13',
 		'All QPL values'  =>  '1, 9, 5, 6, 3, 2, 8, 4',
 		'All Wins'        =>  '9, 5, 8',
+		//Reference contains 3
+		'Reference'        =>  '1, 6, 3, 2, 4',
 		'favorite' =>  '1',
 	],
 	'10' => [
@@ -99,6 +111,8 @@ return [
 		'All Runners   '  =>  '8, 4, 2, 1, 6, 12, 7, 5, 3, 11, 9, 10',
 		'All QPL values'  =>  '8, 4, 2, 1, 12, 7, 5, 3, 9',
 		'All Wins'        =>  '8, 4, 2, 9',
+		//Reference contains 3
+		'Reference'        =>  '1, 12, 7, 5, 3',
 		'favorite' =>  '8',
 	],
 ];
