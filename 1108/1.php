@@ -103,13 +103,13 @@ return [
 		/**
 		Race 9
 		*/
-		'wins' =>  [[1]] ,
-		'qpl/trio'       =>  [[10, 11, 8, 3, 1]] ,
-		'All Runners   '  =>  '10, 11, 3, 1, 8, 4, 5, 12, 2, 6, 7, 9',
-		'All QPL values'  =>  '10, 11, 3, 1, 8',
-		'All Wins'        =>  '1',
-		//Reference contains 3
-		'Reference'        =>  '10, 11, 3, 8',
-		'favorite' =>  '10',
+		'wins' =>  [[1], [3, 1]] ,
+		'qpl/trio'       =>  [[10, 11, 8, 3, 1], [11, 10, 4, 3, 1]] ,
+		'All Runners   '  =>  '11, 10, 3, 1, 4, 8, 5, 12, 2, 6, 7, 9',
+		'All QPL values'  =>  '11, 10, 3, 1, 8, 4',
+		//All wins contains 3
+		'All Wins'        =>  '3, 1',
+		'Reference'        =>  '11, 10, 8, 4',
+		'favorite' =>  '11',
 	],
 ];
