@@ -1,14 +1,5 @@
 <?php
 
-$totalOccurences = 0;
-$occurences = [];
-$percentages = [];
-
-for($i = 1; $i < 15; $i++){
-    $occurences[$i] = 0;
-    $percentages[$i] = 0;
-}
-
 $outFile = "favwinqin.php";
 $data = include($outFile);
 
@@ -16,13 +7,18 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
 foreach($data as $favorite => $datum){
+    $totalOccurences = 0;
+    $occurences = [];
+    $percentages = [];
+
+    for($i = 1; $i < 15; $i++){
+        $occurences[$i] = 0;
+        $percentages[$i] = 0;
+    }
     $racetext = "\t" . $favorite . " => [\n";
     $qinsData = $datum['qins'];
     foreach($qinsData as $qinItem){
         $values = array_values($qinItem);
-        if(!isset($values[1])){
-            var_dump($qinItem); die();
-        }
         $occurences[$values[0]] ++;
         $occurences[$values[1]] ++;
         $totalOccurences ++;
