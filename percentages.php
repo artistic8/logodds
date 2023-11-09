@@ -17,7 +17,6 @@ $outtext .= "return [\n";
 
 foreach($data as $favorite => $datum){
     $racetext = "\t" . $favorite . " => [\n";
-    $winsData = $datum['wins'];
     $qinsData = $datum['qins'];
     foreach($qinsData as $qinItem){
         $values = array_values($qinItem);
@@ -34,15 +33,11 @@ foreach($data as $favorite => $datum){
     arsort($percentages);
     $runners = array_keys($percentages);
     $racetext .= "\t\t//Sorted by occurence:\t" . implode(", ", $runners) . ",\n";
-    $racetext .= "\t\t'wins' =>  [" . implode(", ", $winsData) . "],\n";
     $QINSText = "[";
     $first = 0;
     foreach($qinsData as $qinItem){
         if($qinItem[0] != $first) $QINSText .= "\n\t\t\t";
         $first = $qinItem[0];
-        // $second = $qinItem[1];
-        // $occurences[$first] ++;
-        // $occurences[$second] ++;
         $QINSText .= "[" . implode(", ", $qinItem) . "], ";
     }
     $QINSText .= "\n\t\t]";
