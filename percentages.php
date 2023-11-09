@@ -28,14 +28,12 @@ foreach($data as $favorite => $datum){
         $occurences[$values[1]] ++;
         $totalOccurences ++;
     }
-    $racetext .= "\t\t/** Percentages */\n";
     foreach($occurences as $runner => $occurence){
         $percentages[$runner] = ($occurence / $totalOccurences) * 100;
     }
     arsort($percentages);
-    foreach($percentages as $runner => $percentage){
-        $racetext .= "\t\t\t//\t" . $runner . " : " . floor($percentage) . "%,\n";
-    }
+    $runners = array_keys($percentages);
+    $racetext .= "\t\t//Sorted by occurence:\t" . implode(", ", $runners) . ",\n";
     $racetext .= "\t\t'wins' =>  [" . implode(", ", $winsData) . "],\n";
     $QINSText = "[";
     $first = 0;
