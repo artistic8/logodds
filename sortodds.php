@@ -244,7 +244,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($favKeys as $someKey){
         if(!isset($weights[$someKey])) continue;
         $bet = 10 * $weights[$someKey];
-        $racetext .= "\t\t'WIN". $someKey ."' =>  '" . $bet . "',\n";
+        $racetext .= "\t\t'WIN ". $someKey ."' =>  '" . $bet . "',\n";
     }
     $racetext .= "\t],\n";
     unset($oldWINS);
