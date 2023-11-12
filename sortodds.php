@@ -241,11 +241,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(in_array(3, $forReference)) $racetext .= "\t\t//Reference contains 3\n";
     $racetext .= "\t\t'Reference'        =>  '" . implode(", ", $forReference).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
+    $totalBets = 0;
     foreach($favKeys as $someKey){
         if(!isset($weights[$someKey])) continue;
         $bet = 10 * $weights[$someKey];
+        $totalBets += $bet;
         $racetext .= "\t\t'WIN ". $someKey ."' =>  '" . $bet . "',\n";
     }
+    $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
