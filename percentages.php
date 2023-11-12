@@ -31,7 +31,7 @@ foreach($data as $favorite => $datum){
     $racetext .= "\t\t//Sorted by occurence:\t" . implode(", ", $runners) . ",\n";
     $toWin = array_slice($runners, 0, 5);
     sort($toWin);
-    $racetext .= "\t\t//Win/Qin/Trio:\t" . implode(", ", $toWin) . ",\n";
+    $racetext .= "\t\t'fav' => '" . implode(", ", $toWin) . "',\n";
     $QINSText = "[";
     $first = 0;
     foreach($qinsData as $qinItem){

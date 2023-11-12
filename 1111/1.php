@@ -13,6 +13,11 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 1, 8, 4',
 		'favorite' =>  '2',
+		'WIN2' =>  '30',
+		'WIN3' =>  '20',
+		'WIN5' =>  '10',
+		'WIN6' =>  '10',
+		'WIN12' =>  '10',
 	],
 	'2' => [
 		/**
@@ -26,6 +31,11 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 12, 14',
 		'favorite' =>  '3',
+		'WIN2' =>  '10',
+		'WIN3' =>  '30',
+		'WIN6' =>  '10',
+		'WIN9' =>  '10',
+		'WIN12' =>  '10',
 	],
 	'3' => [
 		/**
@@ -38,6 +48,11 @@ return [
 		'All Wins'        =>  '10, 4',
 		'Reference'        =>  '1, 5, 9',
 		'favorite' =>  '1',
+		'WIN1' =>  '40',
+		'WIN2' =>  '10',
+		'WIN5' =>  '20',
+		'WIN6' =>  '10',
+		'WIN7' =>  '10',
 	],
 	'4' => [
 		/**
@@ -50,6 +65,10 @@ return [
 		'All Wins'        =>  '7',
 		'Reference'        =>  '4, 12, 2, 8',
 		'favorite' =>  '4',
+		'WIN2' =>  '10',
+		'WIN4' =>  '20',
+		'WIN7' =>  '10',
+		'WIN8' =>  '10',
 	],
 	'5' => [
 		/**
@@ -62,6 +81,11 @@ return [
 		'All Wins'        =>  '9, 8, 5',
 		'Reference'        =>  '2, 4',
 		'favorite' =>  '2',
+		'WIN2' =>  '20',
+		'WIN3' =>  '10',
+		'WIN5' =>  '10',
+		'WIN6' =>  '10',
+		'WIN12' =>  '10',
 	],
 	'6' => [
 		/**
@@ -74,6 +98,11 @@ return [
 		'All Wins'        =>  '8, 9',
 		'Reference'        =>  '1, 4, 13',
 		'favorite' =>  '8',
+		'WIN1' =>  '20',
+		'WIN2' =>  '10',
+		'WIN6' =>  '10',
+		'WIN8' =>  '40',
+		'WIN9' =>  '10',
 	],
 	'8' => [
 		/**
@@ -86,6 +115,11 @@ return [
 		'All Wins'        =>  '10, 7',
 		'Reference'        =>  '8, 6, 1',
 		'favorite' =>  '8',
+		'WIN1' =>  '10',
+		'WIN2' =>  '10',
+		'WIN6' =>  '10',
+		'WIN8' =>  '20',
+		'WIN9' =>  '10',
 	],
 	'9' => [
 		/**
@@ -98,6 +132,11 @@ return [
 		'All Wins'        =>  '6',
 		'Reference'        =>  '4, 12, 7, 2',
 		'favorite' =>  '4',
+		'WIN2' =>  '10',
+		'WIN4' =>  '30',
+		'WIN6' =>  '10',
+		'WIN7' =>  '10',
+		'WIN8' =>  '10',
 	],
 	'10' => [
 		/**
@@ -111,5 +150,10 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 14, 6, 11, 1',
 		'favorite' =>  '3',
+		'WIN2' =>  '10',
+		'WIN3' =>  '40',
+		'WIN6' =>  '10',
+		'WIN9' =>  '10',
+		'WIN12' =>  '10',
 	],
 ];
