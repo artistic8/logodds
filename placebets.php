@@ -71,7 +71,7 @@ foreach($allOdds as $raceNumber => $probas) {
         $totalBets += $bet;
         $racetext .= "\t\t'PLACE ". $runner ."' =>  '" . $bet . "',\n";
     }
-    if(30 * $weights[$first1] > $totalBets) $showRace = false;
+    if(30 * $weights[$first1] >= $totalBets) $showRace = false;
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t],\n";
     if($showRace) $outtext .= $racetext;
