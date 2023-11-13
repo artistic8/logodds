@@ -30,8 +30,11 @@ foreach($data as $favorite => $datum){
     $runners = array_keys($percentages);
     $racetext .= "\t\t//Sorted by occurence:\t" . implode(", ", $runners) . ",\n";
     $toWin = array_slice($runners, 0, 8);
+    $placers = array_slice($runners, 0, 4);
     sort($toWin);
+    sort($placers);
     $racetext .= "\t\t'fav' => '" . implode(", ", $toWin) . "',\n";
+    $racetext .= "\t\t'place' => '" . implode(", ", $placers) . "',\n";
     $QINSText = "[";
     $first = 0;
     foreach($qinsData as $qinItem){
