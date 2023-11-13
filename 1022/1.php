@@ -31,6 +31,7 @@ return [
 		'Reference'        =>  '5, 7, 6',
 		'favorite' =>  '1',
 		'WIN 1' =>  '140',
+		'sure place' =>  '1',
 		'WIN 2' =>  '30',
 		'WIN 5' =>  '70',
 		'WIN 6' =>  '20',

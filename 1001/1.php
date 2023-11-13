@@ -17,6 +17,7 @@ return [
 		'WIN 4' =>  '20',
 		'WIN 5' =>  '20',
 		'WIN 7' =>  '110',
+		'sure place' =>  '7',
 		//Total bets:200',
 	],
 	'2' => [
@@ -120,6 +121,7 @@ return [
 		'Reference'        =>  '1, 8, 5, 3',
 		'favorite' =>  '1',
 		'WIN 1' =>  '170',
+		'sure place' =>  '1',
 		'WIN 2' =>  '40',
 		'WIN 5' =>  '40',
 		'WIN 6' =>  '40',

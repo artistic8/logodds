@@ -68,6 +68,7 @@ return [
 		'Reference'        =>  '10, 4',
 		'favorite' =>  '1',
 		'WIN 1' =>  '140',
+		'sure place' =>  '1',
 		'WIN 2' =>  '10',
 		'WIN 5' =>  '40',
 		'WIN 6' =>  '10',

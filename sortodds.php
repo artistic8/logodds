@@ -254,6 +254,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $bet = 10 * $weights[$someKey];
         $totalBets += $bet;
         $racetext .= "\t\t'WIN ". $someKey ."' =>  '" . $bet . "',\n";
+        if($bet >= 100) {
+            $racetext .= "\t\t'sure place' =>  '" . $someKey . "',\n";
+        }
     }
     
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
