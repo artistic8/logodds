@@ -31,7 +31,6 @@ foreach($data as $favorite => $datum){
     $racetext .= "\t\t//Sorted by occurence:\t" . implode(", ", $runners) . ",\n";
     $toWin = array_slice($runners, 0, 12);
     $placers = array_slice($runners, 0, 4);
-    sort($toWin);
     sort($placers);
     $racetext .= "\t\t'fav' => '" . implode(", ", $toWin) . "',\n";
     $racetext .= "\t\t'place' => '" . implode(", ", $placers) . "',\n";
