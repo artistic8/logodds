@@ -13,28 +13,6 @@ return [
 		'PLACE 8' =>  '20',
 		//Total bets:220',
 	],
-	'4' => [
-		/**
-		Race 4
-		*/
-		'PLACE 1' =>  '100',
-		'PLACE 9' =>  '60',
-		'PLACE 5' =>  '50',
-		'PLACE 4' =>  '50',
-		'PLACE 6' =>  '40',
-		//Total bets:300',
-	],
-	'5' => [
-		/**
-		Race 5
-		*/
-		'PLACE 13' =>  '100',
-		'PLACE 9' =>  '80',
-		'PLACE 8' =>  '50',
-		'PLACE 11' =>  '40',
-		'PLACE 2' =>  '30',
-		//Total bets:300',
-	],
 	'6' => [
 		/**
 		Race 6

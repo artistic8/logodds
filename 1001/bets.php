@@ -1,17 +1,6 @@
 <?php
 
 return [
-	'4' => [
-		/**
-		Race 4
-		*/
-		'PLACE 7' =>  '70',
-		'PLACE 4' =>  '40',
-		'PLACE 1' =>  '40',
-		'PLACE 12' =>  '30',
-		'PLACE 5' =>  '30',
-		//Total bets:210',
-	],
 	'9' => [
 		/**
 		Race 9
