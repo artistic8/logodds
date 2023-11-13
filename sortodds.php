@@ -236,6 +236,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $favOdds = array_slice($favOdds, 0, -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
+    $favOdds = array_unique(array_merge($favOdds, $allQplValues));
+    $weights = getWeights($favOdds, 2, 10);
+    while(in_array(-1, $weights)){
+        $favOdds = array_slice($favOdds, 0, -1, true);
+        $weights = getWeights($favOdds, 2, 10);
+    }
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
