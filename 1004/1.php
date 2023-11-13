@@ -19,6 +19,7 @@ return [
 		'WIN 11' =>  '30',
 		'WIN 7' =>  '20',
 		//Total bets:240',
+		//count:4',
 	],
 	'2' => [
 		/**
@@ -37,6 +38,7 @@ return [
 		'WIN 10' =>  '30',
 		'WIN 5' =>  '20',
 		//Total bets:130',
+		//count:4',
 	],
 	'4' => [
 		/**
@@ -55,6 +57,7 @@ return [
 		'WIN 6' =>  '20',
 		'WIN 8' =>  '20',
 		//Total bets:100',
+		//count:4',
 	],
 	'6' => [
 		/**
@@ -71,6 +74,7 @@ return [
 		'WIN 5' =>  '20',
 		'WIN 7' =>  '20',
 		//Total bets:90',
+		//count:3',
 	],
 	'7' => [
 		/**
@@ -90,6 +94,7 @@ return [
 		'WIN 3' =>  '40',
 		'WIN 2' =>  '40',
 		//Total bets:280',
+		//count:5',
 	],
 	'8' => [
 		/**
@@ -109,5 +114,6 @@ return [
 		'WIN 7' =>  '50',
 		'WIN 8' =>  '50',
 		//Total bets:400',
+		//count:6',
 	],
 ];

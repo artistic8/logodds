@@ -259,6 +259,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+    $racetext .= "\t\t//count:" . count($weights) . "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
