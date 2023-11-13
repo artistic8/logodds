@@ -224,7 +224,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     //determine odds weights
     //1. gets first five candidates depening on favorite
     $favKeys = explode(", ", $favData[$first1]['fav']);
-    // $favKeys = array_values(array_unique(array_merge($favKeys, $allQplValues)));
+    $favKeys = array_values(array_unique(array_merge($favKeys, $allQplValues)));
     $favOdds = [];
     foreach($favKeys as $someKey){
         if(isset($allOdds[$raceNumber][$someKey])){
