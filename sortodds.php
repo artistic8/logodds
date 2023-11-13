@@ -255,7 +255,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $totalBets += $bet;
         $racetext .= "\t\t'WIN ". $someKey ."' =>  '" . $bet . "',\n";
     }
-    $racetext .= "\t\t'PLACE' =>  '" . $sortedRunners[0] . "',\n";
+    
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);

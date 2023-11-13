@@ -13,9 +13,11 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 1, 7, 8, 6, 4',
 		'favorite' =>  '3',
-		'NO BETS!!',
-		'PLACE' =>  '0',
-		//Total bets:0',
+		'WIN 2' =>  '10',
+		'WIN 3' =>  '50',
+		'WIN 6' =>  '10',
+		'WIN 9' =>  '10',
+		//Total bets:80',
 	],
 	'2' => [
 		/**
@@ -29,16 +31,12 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 10, 5, 2, 1',
 		'favorite' =>  '3',
-		'WIN 1' =>  '10',
 		'WIN 2' =>  '20',
-		'WIN 3' =>  '50',
-		'WIN 4' =>  '10',
+		'WIN 3' =>  '40',
 		'WIN 6' =>  '10',
 		'WIN 9' =>  '10',
-		'WIN 11' =>  '10',
 		'WIN 12' =>  '10',
-		'PLACE' =>  '3',
-		//Total bets:130',
+		//Total bets:90',
 	],
 	'4' => [
 		/**
@@ -52,9 +50,11 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '2, 3, 6, 8, 11',
 		'favorite' =>  '2',
-		'NO BETS!!',
-		'PLACE' =>  '0',
-		//Total bets:0',
+		'WIN 2' =>  '70',
+		'WIN 3' =>  '60',
+		'WIN 5' =>  '20',
+		'WIN 6' =>  '30',
+		//Total bets:180',
 	],
 	'6' => [
 		/**
@@ -67,9 +67,12 @@ return [
 		'All Wins'        =>  '1, 7, 5, 8',
 		'Reference'        =>  '10, 4',
 		'favorite' =>  '1',
-		'NO BETS!!',
-		'PLACE' =>  '0',
-		//Total bets:0',
+		'WIN 1' =>  '140',
+		'WIN 2' =>  '10',
+		'WIN 5' =>  '40',
+		'WIN 6' =>  '10',
+		'WIN 7' =>  '40',
+		//Total bets:240',
 	],
 	'7' => [
 		/**
@@ -83,9 +86,12 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '1, 3, 7, 12',
 		'favorite' =>  '1',
-		'NO BETS!!',
-		'PLACE' =>  '0',
-		//Total bets:0',
+		'WIN 1' =>  '30',
+		'WIN 2' =>  '20',
+		'WIN 5' =>  '10',
+		'WIN 6' =>  '10',
+		'WIN 7' =>  '10',
+		//Total bets:80',
 	],
 	'8' => [
 		/**
@@ -98,15 +104,11 @@ return [
 		'All Wins'        =>  '5, 8',
 		'Reference'        =>  '12, 4, 1',
 		'favorite' =>  '12',
-		'WIN 1' =>  '40',
-		'WIN 2' =>  '20',
-		'WIN 3' =>  '10',
-		'WIN 4' =>  '50',
-		'WIN 5' =>  '50',
-		'WIN 6' =>  '30',
-		'WIN 10' =>  '20',
+		'WIN 1' =>  '20',
+		'WIN 5' =>  '20',
+		'WIN 6' =>  '10',
+		'WIN 10' =>  '10',
 		'WIN 11' =>  '10',
-		'PLACE' =>  '4',
-		//Total bets:230',
+		//Total bets:70',
 	],
 ];
