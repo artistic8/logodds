@@ -41,8 +41,8 @@ function getWeights($odds, $profit = 0, $precision = 10){
     }
     return $weights;
 }
-arsort($odds);
-$odds = array_slice($odds, 0, -1, true);
+asort($odds);
+$odds = array_slice($odds, 0, -8, true);
 $weights = getWeights($odds, 0, 10);
 var_dump($weights);
 die();
