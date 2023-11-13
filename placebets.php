@@ -43,6 +43,7 @@ $outtext .= "return [\n";
 
 foreach($allOdds as $raceNumber => $probas) {
     $racetext = "";
+    $showRace = true;
     asort($probas);
     $runners = array_keys($probas);
     $racetext .= "\t'$raceNumber' => [\n";
@@ -63,16 +64,17 @@ foreach($allOdds as $raceNumber => $probas) {
         $favOdds = array_slice($favOdds, 0, -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
-
+    
     $totalBets = 0;
     foreach($weights as $runner => $value){
         $bet = 10 * $weights[$runner];
         $totalBets += $bet;
         $racetext .= "\t\t'PLACE ". $runner ."' =>  '" . $bet . "',\n";
     }
+    if(30 * $weights[$first1] > $totalBets) $showRace = false;
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t],\n";
-    $outtext .= $racetext;
+    if($showRace) $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
