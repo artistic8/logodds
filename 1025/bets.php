@@ -1,17 +1,6 @@
 <?php
 
 return [
-	'1' => [
-		/**
-		Race 1
-		*/
-		'PLACE 5' =>  '100',
-		'PLACE 6' =>  '50',
-		'PLACE 2' =>  '40',
-		'PLACE 11' =>  '40',
-		'PLACE 7' =>  '40',
-		//Total bets:270',
-	],
 	'2' => [
 		/**
 		Race 2
@@ -36,17 +25,6 @@ return [
 		'PLACE 8' =>  '40',
 		//Total bets:390',
 	],
-	'4' => [
-		/**
-		Race 4
-		*/
-		'PLACE 8' =>  '100',
-		'PLACE 4' =>  '70',
-		'PLACE 1' =>  '40',
-		'PLACE 2' =>  '30',
-		'PLACE 5' =>  '30',
-		//Total bets:270',
-	],
 	'5' => [
 		/**
 		Race 5
@@ -59,17 +37,6 @@ return [
 		'PLACE 3' =>  '30',
 		//Total bets:270',
 	],
-	'6' => [
-		/**
-		Race 6
-		*/
-		'PLACE 3' =>  '80',
-		'PLACE 12' =>  '30',
-		'PLACE 8' =>  '20',
-		'PLACE 14' =>  '20',
-		'PLACE 2' =>  '20',
-		//Total bets:170',
-	],
 	'7' => [
 		/**
 		Race 7
@@ -80,16 +47,5 @@ return [
 		'PLACE 7' =>  '20',
 		'PLACE 11' =>  '20',
 		//Total bets:120',
-	],
-	'8' => [
-		/**
-		Race 8
-		*/
-		'PLACE 5' =>  '60',
-		'PLACE 4' =>  '30',
-		'PLACE 1' =>  '30',
-		'PLACE 12' =>  '30',
-		'PLACE 11' =>  '20',
-		//Total bets:170',
 	],
 ];
