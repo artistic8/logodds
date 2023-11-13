@@ -12,6 +12,8 @@ return [
 		'All Wins'        =>  '6',
 		'Reference'        =>  '7, 2, 1, 5, 10',
 		'favorite' =>  '7',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 	'2' => [
 		/**
@@ -25,6 +27,8 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 6, 4',
 		'favorite' =>  '3',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 	'3' => [
 		/**
@@ -37,6 +41,8 @@ return [
 		'All Wins'        =>  '7, 8, 6',
 		'Reference'        =>  '5, 1, 2, 9',
 		'favorite' =>  '5',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 	'4' => [
 		/**
@@ -49,6 +55,8 @@ return [
 		'All Wins'        =>  '1, 12, 2',
 		'Reference'        =>  '7, 4',
 		'favorite' =>  '7',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 	'5' => [
 		/**
@@ -61,8 +69,9 @@ return [
 		'All Wins'        =>  '8, 9',
 		//Reference contains 3
 		'Reference'        =>  '1, 6, 3, 10, 4',
-		'favorite' =>  '1',
 		'favorite' =>  '8',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 	'6' => [
 		/**
@@ -75,6 +84,8 @@ return [
 		'All Wins'        =>  '9, 5, 14, 4',
 		'Reference'        =>  '2',
 		'favorite' =>  '9',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 	'7' => [
 		/**
@@ -88,6 +99,8 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '1, 8, 5, 3',
 		'favorite' =>  '1',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 	'9' => [
 		/**
@@ -101,6 +114,8 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '1, 6, 3, 2, 4',
 		'favorite' =>  '1',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 	'10' => [
 		/**
@@ -114,5 +129,7 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '1, 12, 7, 5, 3',
 		'favorite' =>  '8',
+		'NO BETS!!',
+		//Total bets:0',
 	],
 ];
