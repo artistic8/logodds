@@ -73,6 +73,7 @@ return [
 		'WIN 3' =>  '40',
 		'WIN 4' =>  '10',
 		'WIN 6' =>  '100',
+		'sure place' =>  '6',
 		'WIN 8' =>  '30',
 		//Total bets:190',
 	],
