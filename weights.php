@@ -1,10 +1,9 @@
 <?php
 $odds = [
-    2 => 10,
-	3 => 2.9,
-    6 => 19,
-    9 => 24,
-    12 => 13
+    2 => 2.6,
+	4 => 5.4,
+    6 => 12,
+    9 => 2.3
 ];
 function getWeights($odds, $profit = 0, $precision = 10){
     $weights = [];
@@ -32,7 +31,7 @@ function getWeights($odds, $profit = 0, $precision = 10){
     }
     return $weights;
 }
-$weights = getWeights($odds, 2, 10);
+$weights = getWeights($odds, 0, 1000);
 var_dump($weights);
 die();
 ?>

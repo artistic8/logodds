@@ -35,7 +35,7 @@ $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 $favFile = __DIR__ . DIRECTORY_SEPARATOR . "favwinqin.php";
 $favData = include($favFile);
 
-$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
+$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "placeodds.php");
 
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "place.php";
 
@@ -61,7 +61,7 @@ foreach($allOdds as $raceNumber => $probas) {
             $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
         }
     }
-    $weights = getWeights($favOdds);
+    $weights = getWeights($favOdds, 0, 300);
 
     $totalBets = 0;
     foreach($weights as $runner => $value){
