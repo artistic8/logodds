@@ -27,7 +27,7 @@ function in_my_array($needle, $haystack){
     return false;
 }
 
-function getWeights($odds){
+function getWeights($odds, $profit = 0, $precision = 10){
     $weights = [];
     $totalWeights = 0;
     foreach($odds as $key => $value){
@@ -36,20 +36,20 @@ function getWeights($odds){
     }
     $criterion = true;
     foreach($odds as $key => $value){
-        $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights);
+        $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
     }
     $iterations = 0;
     while($criterion === false){
         $criterion = true;
         foreach($odds as $key => $value){
-            if($weights[$key] * $odds[$key] < $totalWeights){
+            if($weights[$key] * $odds[$key] < $totalWeights + $profit){
                 $weights[$key] +=1;
                 $totalWeights += 1;
             }
-            $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights);
+            $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
         }
         $iterations ++;
-        if($iterations == 10) return array_fill(0, count($odds), -1);
+        if($iterations == $precision) return array_fill(0, count($odds), -1);
     }
     return $weights;
 }
