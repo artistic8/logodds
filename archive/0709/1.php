@@ -14,6 +14,7 @@ return [
 		'Reference'        =>  '3, 10, 2, 1, 9',
 		'favorite' =>  '3',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'3' => [
@@ -29,6 +30,7 @@ return [
 		'Reference'        =>  '10, 6, 3, 1',
 		'favorite' =>  '2',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'4' => [
@@ -44,6 +46,7 @@ return [
 		'Reference'        =>  '2, 11, 7, 5, 12, 3',
 		'favorite' =>  '2',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'5' => [
@@ -59,6 +62,7 @@ return [
 		'Reference'        =>  '3, 11, 1',
 		'favorite' =>  '7',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'6' => [
@@ -74,6 +78,7 @@ return [
 		'Reference'        =>  '2, 7, 3, 11',
 		'favorite' =>  '2',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'7' => [
@@ -88,6 +93,7 @@ return [
 		'Reference'        =>  '4, 2',
 		'favorite' =>  '4',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'8' => [
@@ -102,6 +108,7 @@ return [
 		'Reference'        =>  '10, 11',
 		'favorite' =>  '10',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'9' => [
@@ -116,8 +123,16 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 5, 11, 2, 14, 1, 8',
 		'favorite' =>  '3',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '20',
+		'WIN 2' =>  '40',
+		'WIN 3' =>  '100',
+		'WIN 4' =>  '10',
+		'WIN 6' =>  '30',
+		'WIN 9' =>  '20',
+		'WIN 11' =>  '40',
+		'WIN 12' =>  '10',
+		'PLACE' =>  '3',
+		//Total bets:270',
 	],
 	'10' => [
 		/**
@@ -132,6 +147,7 @@ return [
 		'Reference'        =>  '1, 3, 12, 8, 6',
 		'favorite' =>  '1',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'11' => [
@@ -146,7 +162,15 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '13, 3, 4, 11, 1',
 		'favorite' =>  '14',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '10',
+		'WIN 2' =>  '10',
+		'WIN 3' =>  '20',
+		'WIN 5' =>  '10',
+		'WIN 6' =>  '20',
+		'WIN 7' =>  '10',
+		'WIN 8' =>  '30',
+		'WIN 14' =>  '40',
+		'PLACE' =>  '14',
+		//Total bets:150',
 	],
 ];

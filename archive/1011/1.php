@@ -13,8 +13,16 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 1, 2, 7, 8',
 		'favorite' =>  '4',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '40',
+		'WIN 2' =>  '30',
+		'WIN 4' =>  '120',
+		'WIN 6' =>  '40',
+		'WIN 7' =>  '30',
+		'WIN 8' =>  '20',
+		'WIN 9' =>  '20',
+		'WIN 10' =>  '10',
+		'PLACE' =>  '4',
+		//Total bets:310',
 	],
 	'2' => [
 		/**
@@ -28,8 +36,16 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 7, 2',
 		'favorite' =>  '3',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '20',
+		'WIN 2' =>  '50',
+		'WIN 3' =>  '130',
+		'WIN 4' =>  '20',
+		'WIN 6' =>  '120',
+		'WIN 9' =>  '20',
+		'WIN 11' =>  '70',
+		'WIN 12' =>  '40',
+		'PLACE' =>  '3',
+		//Total bets:470',
 	],
 	'3' => [
 		/**
@@ -43,6 +59,7 @@ return [
 		'Reference'        =>  '4, 1, 5, 8, 2',
 		'favorite' =>  '4',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'4' => [
@@ -57,6 +74,7 @@ return [
 		'Reference'        =>  '11, 12, 1',
 		'favorite' =>  '5',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'5' => [
@@ -70,8 +88,16 @@ return [
 		'All Wins'        =>  '6, 8, 7, 5',
 		'Reference'        =>  '11, 4, 2, 1',
 		'favorite' =>  '6',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '50',
+		'WIN 2' =>  '90',
+		'WIN 3' =>  '40',
+		'WIN 4' =>  '120',
+		'WIN 6' =>  '160',
+		'WIN 7' =>  '120',
+		'WIN 8' =>  '130',
+		'WIN 11' =>  '160',
+		'PLACE' =>  '6',
+		//Total bets:870',
 	],
 	'6' => [
 		/**
@@ -85,8 +111,16 @@ return [
 		'All Wins'        =>  '3, 6',
 		'Reference'        =>  '4, 11, 7, 9, 10',
 		'favorite' =>  '4',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '40',
+		'WIN 2' =>  '30',
+		'WIN 4' =>  '140',
+		'WIN 6' =>  '50',
+		'WIN 7' =>  '50',
+		'WIN 8' =>  '20',
+		'WIN 9' =>  '30',
+		'WIN 10' =>  '30',
+		'PLACE' =>  '4',
+		//Total bets:390',
 	],
 	'7' => [
 		/**
@@ -101,6 +135,7 @@ return [
 		'Reference'        =>  '12, 3, 6',
 		'favorite' =>  '1',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'8' => [
@@ -115,7 +150,15 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 10, 8',
 		'favorite' =>  '7',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 2' =>  '20',
+		'WIN 3' =>  '80',
+		'WIN 4' =>  '30',
+		'WIN 5' =>  '50',
+		'WIN 7' =>  '90',
+		'WIN 8' =>  '50',
+		'WIN 9' =>  '10',
+		'WIN 11' =>  '10',
+		'PLACE' =>  '7',
+		//Total bets:340',
 	],
 ];

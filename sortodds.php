@@ -224,7 +224,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     //determine odds weights
     //1. gets first five candidates depening on favorite
     $favKeys = explode(", ", $favData[$first1]['fav']);
-    $favKeys = array_values(array_unique(array_merge($favKeys, $allQplValues)));
+    // $favKeys = array_values(array_unique(array_merge($favKeys, $allQplValues)));
     $favOdds = [];
     foreach($favKeys as $someKey){
         if(isset($allOdds[$raceNumber][$someKey])){
@@ -232,6 +232,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     $weights = getWeights($favOdds, 3, 20);
+    arsort($weights);
+    $sortedRunners = array_keys($weights);
 
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
@@ -254,6 +256,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $totalBets += $bet;
         $racetext .= "\t\t'WIN ". $someKey ."' =>  '" . $bet . "',\n";
     }
+    $racetext .= "\t\t'PLACE' =>  '" . $sortedRunners[0] . "',\n";
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);

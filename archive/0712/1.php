@@ -14,6 +14,7 @@ return [
 		'Reference'        =>  '5, 3, 11',
 		'favorite' =>  '2',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'2' => [
@@ -28,6 +29,7 @@ return [
 		'Reference'        =>  '4, 2',
 		'favorite' =>  '4',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'3' => [
@@ -41,8 +43,16 @@ return [
 		'All Wins'        =>  '9, 8',
 		'Reference'        =>  '5, 11, 2, 12',
 		'favorite' =>  '5',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 2' =>  '40',
+		'WIN 3' =>  '20',
+		'WIN 5' =>  '100',
+		'WIN 6' =>  '10',
+		'WIN 7' =>  '20',
+		'WIN 8' =>  '30',
+		'WIN 9' =>  '60',
+		'WIN 10' =>  '10',
+		'PLACE' =>  '5',
+		//Total bets:290',
 	],
 	'4' => [
 		/**
@@ -57,6 +67,7 @@ return [
 		'Reference'        =>  '3, 1, 2',
 		'favorite' =>  '3',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'5' => [
@@ -70,8 +81,16 @@ return [
 		'All Wins'        =>  '4, 9',
 		'Reference'        =>  '6, 12, 10, 2, 11',
 		'favorite' =>  '6',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '10',
+		'WIN 2' =>  '20',
+		'WIN 3' =>  '30',
+		'WIN 4' =>  '50',
+		'WIN 6' =>  '110',
+		'WIN 7' =>  '20',
+		'WIN 8' =>  '20',
+		'WIN 11' =>  '10',
+		'PLACE' =>  '6',
+		//Total bets:270',
 	],
 	'6' => [
 		/**
@@ -85,8 +104,16 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '4, 12, 8, 2, 3',
 		'favorite' =>  '4',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '40',
+		'WIN 2' =>  '50',
+		'WIN 4' =>  '90',
+		'WIN 6' =>  '30',
+		'WIN 7' =>  '30',
+		'WIN 8' =>  '70',
+		'WIN 9' =>  '20',
+		'WIN 10' =>  '10',
+		'PLACE' =>  '4',
+		//Total bets:340',
 	],
 	'7' => [
 		/**
@@ -101,6 +128,7 @@ return [
 		'Reference'        =>  '11, 8, 12, 2',
 		'favorite' =>  '5',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'8' => [
@@ -116,6 +144,7 @@ return [
 		'Reference'        =>  '2, 3, 11, 5',
 		'favorite' =>  '2',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'9' => [
@@ -130,6 +159,7 @@ return [
 		'Reference'        =>  '5, 2, 11',
 		'favorite' =>  '5',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 ];

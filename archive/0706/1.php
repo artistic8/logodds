@@ -12,8 +12,16 @@ return [
 		'All Wins'        =>  '10, 2, 1, 9',
 		'Reference'        =>  '8, 6, 12',
 		'favorite' =>  '10',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '50',
+		'WIN 3' =>  '20',
+		'WIN 4' =>  '20',
+		'WIN 6' =>  '40',
+		'WIN 7' =>  '10',
+		'WIN 8' =>  '60',
+		'WIN 9' =>  '50',
+		'WIN 10' =>  '90',
+		'PLACE' =>  '10',
+		//Total bets:340',
 	],
 	'3' => [
 		/**
@@ -26,8 +34,16 @@ return [
 		'All Wins'        =>  '6, 10, 5, 11',
 		'Reference'        =>  '12, 1, 8',
 		'favorite' =>  '6',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '30',
+		'WIN 2' =>  '10',
+		'WIN 3' =>  '10',
+		'WIN 4' =>  '10',
+		'WIN 6' =>  '60',
+		'WIN 7' =>  '10',
+		'WIN 8' =>  '20',
+		'WIN 11' =>  '20',
+		'PLACE' =>  '6',
+		//Total bets:170',
 	],
 	'4' => [
 		/**
@@ -41,8 +57,15 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 2, 5, 11',
 		'favorite' =>  '3',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '10',
+		'WIN 2' =>  '20',
+		'WIN 3' =>  '50',
+		'WIN 4' =>  '40',
+		'WIN 6' =>  '10',
+		'WIN 9' =>  '20',
+		'WIN 11' =>  '20',
+		'PLACE' =>  '3',
+		//Total bets:170',
 	],
 	'5' => [
 		/**
@@ -56,6 +79,7 @@ return [
 		'Reference'        =>  '4, 12, 11, 1, 6',
 		'favorite' =>  '7',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'6' => [
@@ -70,8 +94,16 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '3, 10, 12, 2',
 		'favorite' =>  '6',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '20',
+		'WIN 2' =>  '10',
+		'WIN 3' =>  '20',
+		'WIN 4' =>  '10',
+		'WIN 6' =>  '80',
+		'WIN 7' =>  '10',
+		'WIN 8' =>  '10',
+		'WIN 11' =>  '10',
+		'PLACE' =>  '6',
+		//Total bets:170',
 	],
 	'7' => [
 		/**
@@ -84,8 +116,16 @@ return [
 		'All Wins'        =>  '6, 1, 5, 2, 9, 8',
 		'Reference'        =>  '7, 10, 4',
 		'favorite' =>  '6',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '90',
+		'WIN 2' =>  '50',
+		'WIN 3' =>  '30',
+		'WIN 4' =>  '20',
+		'WIN 6' =>  '130',
+		'WIN 7' =>  '40',
+		'WIN 8' =>  '30',
+		'WIN 11' =>  '20',
+		'PLACE' =>  '6',
+		//Total bets:410',
 	],
 	'8' => [
 		/**
@@ -100,6 +140,7 @@ return [
 		'Reference'        =>  '1, 4, 8, 6, 3, 12',
 		'favorite' =>  '1',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'9' => [
@@ -115,6 +156,7 @@ return [
 		'Reference'        =>  '1, 8, 5, 3',
 		'favorite' =>  '6',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 ];

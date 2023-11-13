@@ -14,6 +14,7 @@ return [
 		'Reference'        =>  '14, 7, 13, 3',
 		'favorite' =>  '14',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'2' => [
@@ -28,8 +29,16 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '11, 5, 3, 8, 6',
 		'favorite' =>  '11',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '10',
+		'WIN 4' =>  '30',
+		'WIN 5' =>  '90',
+		'WIN 7' =>  '40',
+		'WIN 8' =>  '50',
+		'WIN 9' =>  '40',
+		'WIN 10' =>  '50',
+		'WIN 11' =>  '110',
+		'PLACE' =>  '11',
+		//Total bets:420',
 	],
 	'4' => [
 		/**
@@ -42,8 +51,16 @@ return [
 		'All Wins'        =>  '7, 6',
 		'Reference'        =>  '5, 2, 14',
 		'favorite' =>  '5',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 2' =>  '80',
+		'WIN 3' =>  '10',
+		'WIN 5' =>  '110',
+		'WIN 6' =>  '50',
+		'WIN 7' =>  '90',
+		'WIN 8' =>  '10',
+		'WIN 9' =>  '10',
+		'WIN 10' =>  '10',
+		'PLACE' =>  '5',
+		//Total bets:370',
 	],
 	'5' => [
 		/**
@@ -57,8 +74,16 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '14, 3, 6',
 		'favorite' =>  '9',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 1' =>  '10',
+		'WIN 2' =>  '20',
+		'WIN 4' =>  '10',
+		'WIN 6' =>  '30',
+		'WIN 7' =>  '20',
+		'WIN 8' =>  '30',
+		'WIN 9' =>  '40',
+		'WIN 12' =>  '10',
+		'PLACE' =>  '9',
+		//Total bets:170',
 	],
 	'8' => [
 		/**
@@ -72,8 +97,16 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '5, 3, 12, 8, 4',
 		'favorite' =>  '5',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 2' =>  '10',
+		'WIN 3' =>  '70',
+		'WIN 5' =>  '110',
+		'WIN 6' =>  '20',
+		'WIN 7' =>  '10',
+		'WIN 8' =>  '30',
+		'WIN 9' =>  '40',
+		'WIN 10' =>  '20',
+		'PLACE' =>  '5',
+		//Total bets:310',
 	],
 	'9' => [
 		/**
@@ -87,6 +120,7 @@ return [
 		'Reference'        =>  '6, 10, 2, 9, 7',
 		'favorite' =>  '6',
 		'NO BETS!!',
+		'PLACE' =>  '0',
 		//Total bets:0',
 	],
 	'10' => [
@@ -101,7 +135,15 @@ return [
 		//Reference contains 3
 		'Reference'        =>  '7, 10, 3, 4, 9',
 		'favorite' =>  '7',
-		'NO BETS!!',
-		//Total bets:0',
+		'WIN 2' =>  '20',
+		'WIN 3' =>  '40',
+		'WIN 4' =>  '30',
+		'WIN 5' =>  '10',
+		'WIN 7' =>  '80',
+		'WIN 8' =>  '20',
+		'WIN 9' =>  '30',
+		'WIN 11' =>  '20',
+		'PLACE' =>  '7',
+		//Total bets:250',
 	],
 ];
