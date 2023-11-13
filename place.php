@@ -1,0 +1,79 @@
+<?php
+
+function getWeights($odds, $profit = 0, $precision = 10){
+    $weights = [];
+    $totalWeights = 0;
+    foreach($odds as $key => $value){
+        $weights[$key] = 1;
+        $totalWeights += $weights[$key];
+    }
+    $criterion = true;
+    foreach($odds as $key => $value){
+        $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
+    }
+    $iterations = 0;
+    while($criterion === false){
+        $criterion = true;
+        foreach($odds as $key => $value){
+            if($weights[$key] * $odds[$key] < $totalWeights + $profit){
+                $weights[$key] +=1;
+                $totalWeights += 1;
+            }
+            $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
+        }
+        $iterations ++;
+        if($iterations == $precision) return array_fill(1, count($odds), -1);
+    }
+    return $weights;
+}
+
+if(!isset($argv[1])) die("Race Date Not Entered!!\n");
+
+$raceDate = trim($argv[1]);
+$currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
+
+$favFile = __DIR__ . DIRECTORY_SEPARATOR . "favwinqin.php";
+$favData = include($favFile);
+
+$allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
+
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "place.php";
+
+$totalRaces = count($allOdds);
+
+$outtext = "<?php\n\n";
+$outtext .= "return [\n";
+
+foreach($allOdds as $raceNumber => $probas) {
+    $racetext = "";
+    asort($probas);
+    $runners = array_keys($probas);
+    $racetext .= "\t'$raceNumber' => [\n";
+    $racetext .= "\t\t/**\n";
+    $racetext .= "\t\tRace $raceNumber\n";
+    $racetext .= "\t\t*/\n";
+    $first1 = $runners[0];
+
+    $favKeys = explode(", ", $favData[$first1]['place']);
+    $favOdds = [];
+    foreach($favKeys as $someKey){
+        if(isset($allOdds[$raceNumber][$someKey])){
+            $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
+        }
+    }
+    $weights = getWeights($favOdds);
+
+    $totalBets = 0;
+    foreach($weights as $runner => $value){
+        $bet = 10 * $weights[$runner];
+        $totalBets += $bet;
+        $racetext .= "\t\t'PLACE ". $runner ."' =>  '" . $bet . "',\n";
+    }
+    $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+    $racetext .= "\t],\n";
+    $outtext .= $racetext;
+}
+
+$outtext .= "];\n";
+
+file_put_contents($outFile, $outtext);
