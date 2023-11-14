@@ -236,7 +236,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $favOdds = array_slice($favOdds, 0, -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
-    $favOdds = array_unique(array_merge($favOdds, $allQplValues));
+    foreach($allQplValues as $val){
+        if(!isset($favOdds[$val])){
+            $favOdds[$val] = $allOdds[$raceNumber][$val];
+        }
+    }
+    asort($favOdds);
     $weights = getWeights($favOdds, 2, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, -1, true);
