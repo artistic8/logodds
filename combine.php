@@ -21,6 +21,7 @@ foreach($data1 as $raceNumber => $datum) {
     $runners1 = array_keys($bets1);
     $runners2 = array_keys($bets2);
     $pivot = array_values(array_unique(array_merge($runners1, $runners2)));
+    sort($pivot);
     $racetext = "";
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
