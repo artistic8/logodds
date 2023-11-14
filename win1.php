@@ -58,10 +58,10 @@ foreach($allOdds as $raceNumber => $probas) {
             $favOdds[$runner] = $allOdds[$raceNumber][$runner];
         }
     }
-    $weights = getWeights($favOdds, 0, 10);
+    $weights = getWeights($favOdds, 10, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, -1, true);
-        $weights = getWeights($favOdds, 2, 10);
+        $weights = getWeights($favOdds, 10, 10);
     }
     
     $totalBets = 0;

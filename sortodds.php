@@ -231,10 +231,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
         }
     }
-    $weights = getWeights($favOdds, 2, 10);
+    $weights = getWeights($favOdds, 10, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, -1, true);
-        $weights = getWeights($favOdds, 2, 10);
+        $weights = getWeights($favOdds, 10, 10);
     }
     foreach($allQplValues as $val){
         if(!isset($favOdds[$val])){
@@ -243,11 +243,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($favOdds);
     
-    $weights = getWeights($favOdds, 2, 10);
+    $weights = getWeights($favOdds, 10, 10);
    
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, -1, true);
-        $weights = getWeights($favOdds, 2, 10);
+        $weights = getWeights($favOdds, 10, 10);
     }
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
