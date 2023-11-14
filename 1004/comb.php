@@ -11,7 +11,7 @@ return [
 		/**
 		Race 2
 		*/
-		'Favorite' => '3'
+		'Favorite' => '3',
 		'Rest' => ''
 	],
 	'4' => [
@@ -30,14 +30,14 @@ return [
 		/**
 		Race 7
 		*/
-		'Favorite' => '1'
+		'Favorite' => '1',
 		'Rest' => '8, 9, 12'
 	],
 	'8' => [
 		/**
 		Race 8
 		*/
-		'Favorite' => '12'
+		'Favorite' => '12',
 		'Rest' => ''
 	],
 ];
