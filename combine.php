@@ -6,7 +6,7 @@ $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $file1 = $currentDir . DIRECTORY_SEPARATOR . "1.php";
 $file2 = $currentDir . DIRECTORY_SEPARATOR . "win1.php";
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "diff.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "comb.php";
 
 $data1 = include($file1);
 $data2 = include($file2);
@@ -20,7 +20,7 @@ foreach($data1 as $raceNumber => $datum) {
     $bets2 = $data2[$raceNumber]['WIN BETS'];
     $runners1 = array_keys($bets1);
     $runners2 = array_keys($bets2);
-    $pivot = array_diff($runners1, $runners2);
+    $pivot = array_values(array_unique(array_merge($runners1, $runners2)));
     $racetext = "";
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
