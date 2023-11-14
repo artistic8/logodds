@@ -34,7 +34,7 @@ $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
 
-$outFile = $currentDir . DIRECTORY_SEPARATOR . "bets.php";
+$outFile = $currentDir . DIRECTORY_SEPARATOR . "win2.php";
 
 $totalRaces = count($allOdds);
 
@@ -44,25 +44,24 @@ $outtext .= "return [\n";
 foreach($allOdds as $raceNumber => $probas) {
     $racetext = "";
     $showRace = true;
-    asort($probas);
     $runners = array_keys($probas);
+    asort($runners);
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
     $first1 = $runners[0];
 
-    $favKeys = array_slice($runners, 0, 10);
     $favOdds = [];
-    foreach($favKeys as $someKey){
-        if(isset($allOdds[$raceNumber][$someKey])){
-            $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
+    foreach($runners as $runner){
+        if(isset($allOdds[$raceNumber][$runner])){
+            $favOdds[$runner] = $allOdds[$raceNumber][$runner];
         }
     }
-    $weights = getWeights($favOdds, 0, 10);
+    $weights = getWeights($favOdds, 10, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, -1, true);
-        $weights = getWeights($favOdds, 2, 10);
+        $weights = getWeights($favOdds, 10, 10);
     }
     
     $totalBets = 0;
@@ -71,7 +70,7 @@ foreach($allOdds as $raceNumber => $probas) {
         $totalBets += $bet;
         $racetext .= "\t\t'PLACE ". $runner ."' =>  '" . $bet . "',\n";
     }
-    if(30 * $weights[$first1] >= $totalBets) $showRace = false;
+    // if(30 * $weights[$first1] >= $totalBets) $showRace = false;
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t],\n";
     if($showRace) $outtext .= $racetext;
