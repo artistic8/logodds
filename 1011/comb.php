@@ -12,6 +12,7 @@ return [
 			3 =>  10,
 		],
 		//Total bets:70',
+		//Count bets:3',
 	],
 	'7' => [
 		/**
@@ -27,5 +28,6 @@ return [
 			5 =>  10,
 		],
 		//Total bets:250',
+		//Count bets:6',
 	],
 ];

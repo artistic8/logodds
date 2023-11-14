@@ -78,6 +78,7 @@ foreach($data1 as $raceNumber => $datum) {
         }
         $racetext .= "\t\t],\n";
         $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+        $racetext .= "\t\t//Count bets:" . count($weights) . "',\n";
     }
     else $showRace = false;
     $racetext .= "\t],\n";

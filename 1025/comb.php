@@ -14,5 +14,6 @@ return [
 			6 =>  10,
 		],
 		//Total bets:170',
+		//Count bets:5',
 	],
 ];

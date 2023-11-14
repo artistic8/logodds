@@ -14,6 +14,7 @@ return [
 			5 =>  10,
 		],
 		//Total bets:70',
+		//Count bets:5',
 	],
 	'3' => [
 		/**
@@ -28,6 +29,7 @@ return [
 			3 =>  30,
 		],
 		//Total bets:300',
+		//Count bets:5',
 	],
 	'5' => [
 		/**
@@ -41,6 +43,7 @@ return [
 			2 =>  10,
 		],
 		//Total bets:180',
+		//Count bets:4',
 	],
 	'7' => [
 		/**
@@ -54,5 +57,6 @@ return [
 			6 =>  20,
 		],
 		//Total bets:110',
+		//Count bets:4',
 	],
 ];
