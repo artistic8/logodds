@@ -242,12 +242,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     asort($favOdds);
+    
     $weights = getWeights($favOdds, 2, 10);
+   
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
-
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
     $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
@@ -258,8 +259,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Reference'        =>  '" . implode(", ", $forReference).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     $totalBets = 0;
-
-    foreach($favKeys as $someKey){
+    foreach($favOdds as $someKey => $someValue){
         if(!isset($weights[$someKey])) continue;
         $bet = 10 * $weights[$someKey];
         $totalBets += $bet;
