@@ -27,7 +27,7 @@ foreach($data1 as $raceNumber => $datum) {
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
-    if(!empty($pivot)){
+    if(!empty($pivot) && count($pivot) <= 7){
         $racetext .= "\t\t'Pivot' => '" . implode(", ", $pivot) . "'\n";
     }
     else $showRace = false;
