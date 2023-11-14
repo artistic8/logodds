@@ -36,6 +36,10 @@ $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
 
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "win1.php";
 
+$favFile = __DIR__ . DIRECTORY_SEPARATOR . "favwinqin.php";
+$favData = include($favFile);
+
+
 $totalRaces = count($allOdds);
 
 $outtext = "<?php\n\n";
@@ -52,16 +56,18 @@ foreach($allOdds as $raceNumber => $probas) {
     $racetext .= "\t\t*/\n";
     $first1 = $runners[0];
 
+    $favKeys = explode(", ", $favData[$first1]['fav']);
+    
     $favOdds = [];
-    foreach($runners as $runner){
-        if(isset($allOdds[$raceNumber][$runner])){
-            $favOdds[$runner] = $allOdds[$raceNumber][$runner];
+    foreach($favKeys as $someKey){
+        if(isset($allOdds[$raceNumber][$someKey])){
+            $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
         }
     }
-    $weights = getWeights($favOdds, 10, 10);
+    $weights = getWeights($favOdds, 2, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, -1, true);
-        $weights = getWeights($favOdds, 10, 10);
+        $weights = getWeights($favOdds, 2, 10);
     }
     
     $totalBets = 0;
