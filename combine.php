@@ -27,8 +27,16 @@ foreach($data1 as $raceNumber => $datum) {
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
-    if(!empty($pivot) && count($pivot) <= 7){
-        $racetext .= "\t\t'Pivot' => '" . implode(", ", $pivot) . "'\n";
+    if(!empty($pivot)){
+        if(count($pivot) <= 7){
+            $racetext .= "\t\t'Pivot' => '" . implode(", ", $pivot) . "'\n";
+        }
+        else{
+            $runners = explode(", ", $datum['All Runners   ']);
+            $rest = array_diff($runners, $pivot);
+            sort($rest);
+            $racetext .= "\t\t'Rest' => '" . implode(", ", $rest) . "'\n";
+        }
     }
     else $showRace = false;
     $racetext .= "\t],\n";
