@@ -74,14 +74,15 @@ foreach($allOdds as $raceNumber => $probas) {
     $bets = [];
     
     $totalBets = 0;
+    $racetext .= "\t\t'WIN BETS' => [\n";
     foreach($weights as $runner => $value){
         $bet = 10 * $weights[$runner];
         if(isset($bets[$bet])) $bets[$bet][] = $runner;
         else $bets[$bet] = [$runner];
         $totalBets += $bet;
-        $racetext .= "\t\t'PLACE ". $runner ."' =>  '" . $bet . "',\n";
+        $racetext .= "\t\t\t". $runner ." =>  " . $bet . ",\n";
     }
-    // if(30 * $weights[$first1] >= $totalBets) $showRace = false;
+    $racetext .= "\t\t],\n";
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     foreach($bets as $bet => $horses){
         $racetext .= "\t\t'$bet bet' =>'" . implode(", ", $horses) . "',\n";

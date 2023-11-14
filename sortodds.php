@@ -259,12 +259,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Reference'        =>  '" . implode(", ", $forReference).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     $totalBets = 0;
+    $racetext .= "\t\t'WIN BETS' => [\n";
     foreach($favOdds as $someKey => $someValue){
         if(!isset($weights[$someKey])) continue;
         $bet = 10 * $weights[$someKey];
         $totalBets += $bet;
-        $racetext .= "\t\t'WIN ". $someKey ."' =>  '" . $bet . "',\n";
+        $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",\n";
     }
+    $racetext .= "\t\t],\n";
     
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t\t//count:" . count($weights) . "',\n";
