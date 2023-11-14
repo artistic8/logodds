@@ -35,6 +35,7 @@ foreach($data1 as $raceNumber => $datum) {
             $runners = explode(", ", $datum['All Runners   ']);
             $rest = array_diff($runners, $pivot);
             sort($rest);
+            $racetext .= "\t\t'Favorite' => '" . $datum['favorite'] . "'\n";
             $racetext .= "\t\t'Rest' => '" . implode(", ", $rest) . "'\n";
         }
     }
