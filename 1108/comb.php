@@ -17,36 +17,26 @@ return [
 		/**
 		Race 3
 		*/
-		'Favorite' => '8',
-		'Rest' => '11'
 	],
 	'4' => [
 		/**
 		Race 4
 		*/
-		'Favorite' => '1',
-		'Rest' => '11, 12'
 	],
 	'5' => [
 		/**
 		Race 5
 		*/
-		'Favorite' => '8',
-		'Rest' => '3, 11'
 	],
 	'6' => [
 		/**
 		Race 6
 		*/
-		'Favorite' => '1',
-		'Rest' => '4, 8, 9, 11'
 	],
 	'7' => [
 		/**
 		Race 7
 		*/
-		'Favorite' => '4',
-		'Rest' => '3, 5, 12'
 	],
 	'8' => [
 		/**
@@ -58,7 +48,5 @@ return [
 		/**
 		Race 9
 		*/
-		'Favorite' => '10',
-		'Rest' => '2, 12'
 	],
 ];

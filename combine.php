@@ -31,13 +31,6 @@ foreach($data1 as $raceNumber => $datum) {
         if(count($pivot) <= 7){
             $racetext .= "\t\t'Pivot' => '" . implode(", ", $pivot) . "'\n";
         }
-        else{
-            $runners = explode(", ", $datum['All Runners   ']);
-            $rest = array_diff($runners, $pivot);
-            sort($rest);
-            $racetext .= "\t\t'Favorite' => '" . $datum['favorite'] . "',\n";
-            $racetext .= "\t\t'Rest' => '" . implode(", ", $rest) . "'\n";
-        }
     }
     else $showRace = false;
     $racetext .= "\t],\n";
