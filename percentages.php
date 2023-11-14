@@ -29,7 +29,7 @@ foreach($data as $favorite => $datum){
     arsort($percentages);
     $runners = array_keys($percentages);
     $racetext .= "\t\t//Sorted by occurence:\t" . implode(", ", $runners) . ",\n";
-    $toWin = array_slice($runners, 0, 6);
+    $toWin = array_slice($runners, 0, 10);
     $placers = array_slice($runners, 0, 4);
     sort($placers);
     $racetext .= "\t\t'fav' => '" . implode(", ", $toWin) . "',\n";
