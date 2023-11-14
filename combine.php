@@ -57,7 +57,7 @@ foreach($data1 as $raceNumber => $datum) {
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
-    if(!empty($pivot) && count($pivot) <= 7){
+    if(!empty($pivot)){
         $favOdds = [];
         foreach($pivot as $horse){
             $favOdds[$horse] = $allOdds[$raceNumber][$horse];
