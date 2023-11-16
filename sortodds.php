@@ -127,21 +127,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $weights = getWeights($favOdds, 2, 10);
     }
     $selected = array_keys($weights);
-    $showRace = in_array($first1, $selected) && count($weights) > 5;
-    if($showRace){
-        $favKeys = array_slice($runners, 0, 6);
-        $favOdds = [];
-        foreach($favKeys as $someKey){
-            if(isset($allOdds[$raceNumber][$someKey])){
-                $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
-            }
-        }
-        $weights = getWeights($favOdds, 2, 10);
-        while(in_array(-1, $weights)){
-            $favOdds = array_slice($favOdds, 0, -1, true);
-            $weights = getWeights($favOdds, 2, 10);
-        }
-    }
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     $totalBets = 0;
@@ -155,7 +140,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t],\n";
     $racetext .= "\t\t//count:" . count($weights) . "',\n";
     $racetext .= "\t],\n";
-    if($showRace) $outtext .= $racetext;
+    $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
