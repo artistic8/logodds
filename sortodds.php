@@ -27,11 +27,41 @@ function in_my_array($needle, $haystack){
     return false;
 }
 
+function getWeights($odds, $profit = 0, $precision = 10){
+    $weights = [];
+    $totalWeights = 0;
+    foreach($odds as $key => $value){
+        $weights[$key] = 1;
+        $totalWeights += $weights[$key];
+    }
+    $criterion = true;
+    foreach($odds as $key => $value){
+        $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
+    }
+    $iterations = 0;
+    while($criterion === false){
+        $criterion = true;
+        foreach($odds as $key => $value){
+            if($weights[$key] * $odds[$key] < $totalWeights + $profit){
+                $weights[$key] +=1;
+                $totalWeights += 1;
+            }
+            $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
+        }
+        $iterations ++;
+        if($iterations == $precision) return array_fill(0, count($odds), -1);
+    }
+    return $weights;
+}
+
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $step = 1;
 $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
+
+$favFile = __DIR__ . DIRECTORY_SEPARATOR . "favwinqin.php";
+$favData = include($favFile);
 
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
 
@@ -44,7 +74,7 @@ $probas = [];
 $reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
          19, 21, 23, 25, 27, 30, 32, 34, 36];
 
-$blacks = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20,
+$blacks = [2, 4, 6, 8, 2, 11, 13, 15, 17, 20,
           22, 24, 26, 28, 29, 31, 33, 35];
 
 $totalRaces = count($allOdds);
@@ -177,86 +207,55 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($qplsOdds);
     $allQplValues = array_keys($qplsOdds);
-    $tce = array_slice($allQplValues, 0, 6);
-    sort($tce);
-    sort($allWinsValues);
 
-    //keep only the trios that contain wins containing exactly two elements
-    $new2Trios = [];
-    $new3Trios = [];
-    foreach($wins as $winsItem){
-        if(count($winsItem) == 2){
-            $itemValues = array_values($winsItem);
-            foreach($qplTrios as $qplItem){
-                if(in_array($itemValues[0], $qplItem) && in_array($itemValues[1], $qplItem)){
-                    if(!in_my_array($qplItem, $new2Trios)){
-                        $new2Trios[] = $qplItem;
-                    }
-                }
-            }
-        }
-        if(count($winsItem) == 3){
-            $itemValues = array_values($winsItem);
-            foreach($qplTrios as $qplItem){
-                if(in_array($itemValues[0], $qplItem) && in_array($itemValues[1], $qplItem) && in_array($itemValues[2], $qplItem)){
-                    if(!in_my_array($qplItem, $new3Trios)){
-                        $new3Trios[] = $qplItem;
-                    }
-                }
-            }
+    $showRace = true;
+
+    //Sort  allWinsValues by odds
+    $qplsOdds = [];
+    foreach($allWinsValues as $iKey => $iIndex){
+        if(isset($allOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allOdds[$raceNumber][$iIndex];
+        else $showRace = false;
+    }
+    asort($qplsOdds);
+    $allWinsValues = array_keys($qplsOdds);
+    $forReference = array_diff($allQplValues, $allWinsValues);
+
+    //determine odds weights
+    //1. gets first five candidates depening on favorite
+    $favKeys = explode(", ", $favData[$first1]['fav']);
+    
+    $favOdds = [];
+    foreach($favKeys as $someKey){
+        if(isset($allOdds[$raceNumber][$someKey])){
+            $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
         }
     }
-
-    $new2QplValues = [];
-    $new2QPLText = "[";
-    $someCounter = 0;
-    $someLength = count($new2Trios);
-    foreach($new2Trios as $qplItem){
-        $new2QplValues = array_values(array_unique(array_merge($new2QplValues, $qplItem)));
-        $new2QPLText .= "[" . implode(", ", $qplItem) . "]";
-        $someCounter ++;
-        if($someCounter < $someLength) $new2QPLText .= ", ";
-    }
-    $new2QPLText .= "]";
-
-    $new3QplValues = [];
-    $new3QPLText = "[";
-    $someCounter = 0;
-    $someLength = count($new3Trios);
-    foreach($new3Trios as $qplItem){
-        $new3QplValues = array_values(array_unique(array_merge($new3QplValues, $qplItem)));
-        $new3QPLText .= "[" . implode(", ", $qplItem) . "]";
-        $someCounter ++;
-        if($someCounter < $someLength) $new3QPLText .= ", ";
-    }
-    $new3QPLText .= "]";
-
-    $inter = array_intersect($new2QplValues, $new3QplValues);
-    $diff1 = array_diff($new2QplValues, $new3QplValues);
-    $diff2 = array_diff($new3QplValues, $new2QplValues);
-    sort($inter);
-    sort($diff1);
-    sort($diff2);
-    $X = array_intersect($diff1, $allWinsValues);
-
+    $weights = getWeights($favOdds, 2, 10);
+    
     $racetext .= "\t\t'wins' =>  $WINSText ,\n";
-    $racetext .= "\t\t'qpl/trio' =>  $QPLText ,\n";
-    $racetext .= "\t\t'All QPL values'      =>  '" . implode(", ", $allQplValues). "',\n";
-    $racetext .= "\t\t'new 2 qpl/trio' =>  $new2QPLText ,\n";
-    $racetext .= "\t\t'new 3 qpl/trio' =>  $new3QPLText ,\n";
-    sort($new2QplValues);
-    sort($new3QplValues);
-    $racetext .= "\t\t'New 2 QPL values' =>  '" . implode(", ", $new2QplValues). "',\n";
-    $racetext .= "\t\t'New 3 QPL values' =>  '" . implode(", ", $new3QplValues). "',\n";
-    $racetext .= "\t\t'Tce'            =>  '" . implode(", ", $tce). "',\n";
-    $racetext .= "\t\t'diff1'          =>  '" . implode(", ", $diff1). "',\n";
-    $racetext .= "\t\t'diff2'          =>  '" . implode(", ", $diff2). "',\n";
-    $racetext .= "\t\t'inter'          =>  '" . implode(", ", $inter). "',\n";
-    $racetext .= "\t\t'X'          =>  '" . implode(", ", $X). "',\n";
+    $racetext .= "\t\t'qpl/trio'       =>  $QPLText ,\n";
+    $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
+    $racetext .= "\t\t'All QPL values'  =>  '" . implode(", ", $allQplValues).  "',\n";
+    if(in_array(3, $allWinsValues)) $racetext .= "\t\t//All wins contains 3\n";
+    $racetext .= "\t\t'All Wins'        =>  '" . implode(", ", $allWinsValues).  "',\n";
+    if(in_array(3, $forReference)) $racetext .= "\t\t//Reference contains 3\n";
+    $racetext .= "\t\t'Reference'        =>  '" . implode(", ", $forReference).  "',\n";
+    $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
+    $totalBets = 0;
+    $racetext .= "\t\t'WIN BETS' => [\n";
+    foreach($favOdds as $someKey => $someValue){
+        if(!isset($weights[$someKey])) continue;
+        $bet = 10 * $weights[$someKey];
+        $totalBets += $bet;
+        $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",\n";
+    }
+    $racetext .= "\t\t],\n";
+    
+    $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+    $racetext .= "\t\t//count:" . count($weights) . "',\n";
     $racetext .= "\t],\n";
     unset($oldWINS);
     unset($oldQPLTrio);
-    $showRace = !empty($X);
     if($showRace) $outtext .= $racetext;
 }
 
