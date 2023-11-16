@@ -93,6 +93,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     $weights = getWeights($favOdds, 2, 10);
+    while(in_array(-1, $weights)){
+        $favOdds = array_slice($favOdds, 0, -1, true);
+        $weights = getWeights($favOdds, 2, 10);
+    }
     
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
