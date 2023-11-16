@@ -92,25 +92,51 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
         }
     }
+    $oddsCopy = $favOdds;
     $weights = getWeights($favOdds, 2, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
-    
+    $weights2 = getWeights($oddsCopy, 10, 10);
+    while(in_array(-1, $weights2)){
+        $oddsCopy = array_slice($oddsCopy, 0, -1, true);
+        $weights2 = getWeights($oddsCopy, 2, 10);
+    }
+    $keys1 = array_keys($favOdds);
+    $keys2 = array_keys($oddsCopy);
+    $diff1 = array_diff($keys1, $keys2);
+    $limitCount = 0;
+    while(!empty($diff1) && $limitCount < 10){
+        $weights2 = getWeights($oddsCopy, 10, 10);
+        while(in_array(-1, $weights2)){
+            $oddsCopy = array_slice($oddsCopy, 0, -1, true);
+            $weights2 = getWeights($oddsCopy, 2, 10);
+        }
+        $keys1 = array_keys($favOdds);
+        $keys2 = array_keys($oddsCopy);
+        $diff1 = array_diff($keys1, $keys2);
+        $limitCount ++;
+    }
+    foreach($diff1 as $key => $value){
+        unset($favOdds[$value]);
+    }
+    $weights = getWeights($favOdds, 2, 10);
+    while(in_array(-1, $weights)){
+        $favOdds = array_slice($favOdds, 0, -1, true);
+        $weights = getWeights($favOdds, 2, 10);
+    }
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     $totalBets = 0;
     $racetext .= "\t\t'WIN BETS' => [\n";
-    foreach($favOdds as $someKey => $someValue){
-        if(!isset($weights[$someKey])) continue;
-        $bet = 10 * $weights[$someKey];
+    foreach($weights as $someKey => $someValue){
+        $bet = 10 * $someValue;
         $totalBets += $bet;
         $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",\n";
     }
-    $racetext .= "\t\t],\n";
-    
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+    $racetext .= "\t\t],\n";
     $racetext .= "\t\t//count:" . count($weights) . "',\n";
     $racetext .= "\t],\n";
     $outtext .= $racetext;
