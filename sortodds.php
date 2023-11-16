@@ -84,7 +84,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     //determine odds weights
     //1. gets first five candidates depening on favorite
-    $favKeys = array_slice($runners, 1, count($runners) -1);
+    $favKeys = array_slice($runners, 0, count($runners) -1, true);
     $favOdds = [];
     foreach($favKeys as $someKey){
         if(isset($allOdds[$raceNumber][$someKey])){
@@ -98,6 +98,27 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     $racetext .= "\t\t'Place' =>  '" . $first1 . "',\n";
+    $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
+    $weights = getWeights($favOdds, 2, 10);
+     while(in_array(-1, $weights)){
+        $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
+        $weights = getWeights($favOdds, 2, 10);
+    }
+    $weightValues = array_values($weights);
+    $criterion = count($weightValues) == 1 || $weightValues[0] != $weightValues[1];
+    $showRace = $showRace && $criterion;
+    $totalBets = 0;
+    $racetext .= "\t\t'WIN BETS' => [\n";
+    foreach($weights as $someKey => $someValue){
+        $bet = 10 * $someValue;
+        $totalBets += $bet;
+        $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",\n";
+    }
+    $racetext .= "\t\t],\n";
+    
+    $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+    $racetext .= "\t\t//count:" . count($weights) . "',\n";
+
     $racetext .= "\t],\n";
     if($showRace) $outtext .= $racetext;
 }
