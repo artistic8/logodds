@@ -126,8 +126,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $favOdds = array_slice($favOdds, 0, -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
+    $selected = array_keys($weights);
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
+    if(in_array($first1, $selected)){
+        $racetext .= "\t\t//FAVORITE INCLUDED!!',\n";
+    }
     $totalBets = 0;
     $racetext .= "\t\t'WIN BETS' => [\n";
     foreach($weights as $someKey => $someValue){

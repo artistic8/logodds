@@ -7,6 +7,7 @@ return [
 		*/
 		'All Runners   '  =>  '7, 2, 6, 1, 8, 5, 4, 9, 10, 3',
 		'favorite' =>  '7',
+		//FAVORITE INCLUDED!!',
 		'WIN BETS' => [
 			2 =>  30,
 			3 =>  10,
@@ -23,6 +24,7 @@ return [
 		*/
 		'All Runners   '  =>  '3, 6, 4, 8, 2, 10, 1, 7, 13, 11, 14, 9, 12, 5',
 		'favorite' =>  '3',
+		//FAVORITE INCLUDED!!',
 		'WIN BETS' => [
 			1 =>  20,
 			2 =>  20,
@@ -40,6 +42,7 @@ return [
 		*/
 		'All Runners   '  =>  '5, 1, 7, 2, 9, 3, 8, 6, 4, 10',
 		'favorite' =>  '5',
+		//FAVORITE INCLUDED!!',
 		'WIN BETS' => [
 			2 =>  30,
 			3 =>  20,
@@ -106,6 +109,7 @@ return [
 		*/
 		'All Runners   '  =>  '1, 8, 7, 2, 5, 6, 3, 4, 9, 10',
 		'favorite' =>  '1',
+		//FAVORITE INCLUDED!!',
 		'WIN BETS' => [
 			1 =>  90,
 			2 =>  20,
@@ -122,6 +126,7 @@ return [
 		*/
 		'All Runners   '  =>  '2, 1, 4, 6, 3, 7, 5',
 		'favorite' =>  '2',
+		//FAVORITE INCLUDED!!',
 		'WIN BETS' => [
 			2 =>  80,
 			3 =>  20,
@@ -136,6 +141,7 @@ return [
 		*/
 		'All Runners   '  =>  '1, 9, 5, 6, 3, 2, 8, 12, 4, 7, 14, 10, 11, 13',
 		'favorite' =>  '1',
+		//FAVORITE INCLUDED!!',
 		'WIN BETS' => [
 			1 =>  20,
 			2 =>  20,
