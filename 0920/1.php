@@ -1,21 +1,6 @@
 <?php
 
 return [
-	'3' => [
-		/**
-		Race 3
-		*/
-		'All Runners   '  =>  '7, 5, 1, 3, 2, 6',
-		'favorite' =>  '7',
-		'Place' =>  '7',
-		'WIN BETS' => [
-			7 =>  60,
-			5 =>  50,
-			1 =>  50,
-		],
-		//Total bets:160',
-		//count:3',
-	],
 	'4' => [
 		/**
 		Race 4
@@ -33,22 +18,6 @@ return [
 		],
 		//Total bets:400',
 		//count:6',
-	],
-	'5' => [
-		/**
-		Race 5
-		*/
-		'All Runners   '  =>  '3, 7, 2, 5, 9, 4, 6, 1, 8, 10',
-		'favorite' =>  '3',
-		'Place' =>  '3',
-		'WIN BETS' => [
-			3 =>  70,
-			7 =>  30,
-			2 =>  30,
-			5 =>  30,
-		],
-		//Total bets:160',
-		//count:4',
 	],
 	'8' => [
 		/**

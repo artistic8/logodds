@@ -105,7 +105,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $weights = getWeights($favOdds, 2, 10);
     }
     $weightValues = array_values($weights);
-    $criterion = count($weightValues) == 1 || $weightValues[0] != $weightValues[1];
+    $criterion = count($weightValues) > 4 && $weightValues[0] != $weightValues[1];
     $showRace = $showRace && $criterion;
     $totalBets = 0;
     $racetext .= "\t\t'WIN BETS' => [\n";
