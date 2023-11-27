@@ -5,194 +5,99 @@ return [
 		/**
 		Race 1
 		*/
-		'wins' =>  [[2]] ,
-		'qpl/trio'       =>  [[8, 4, 3, 1, 2]] ,
 		'All Runners   '  =>  '2, 3, 1, 7, 8, 9, 4, 5, 13, 6, 11, 12, 10, 14',
-		'All QPL values'  =>  '2, 3, 1, 8, 4',
-		'All Wins'        =>  '2',
-		//Reference contains 3
-		'Reference'        =>  '3, 1, 8, 4',
-		'favorite' =>  '2',
-		'WIN BETS' => [
-			2 =>  70,
-			3 =>  50,
-			1 =>  50,
-			8 =>  30,
-		],
-		//Total bets:200',
-		//count:4',
+		'Total Runners '  =>  14,
+		'WP' => '2',
+		'places' => '10, 14',
+		'places4' => '10, 14',
+		'candidate(k = 14)' => '2',
+		'candidate(k = 12)' => '1',
+		'candidate(k = 11)' => '7',
 	],
 	'2' => [
 		/**
 		Race 2
 		*/
-		'wins' =>  [[10, 11], [11, 2]] ,
-		'qpl/trio'       =>  [[3, 12, 14, 10, 11], [3, 12, 14, 11, 2]] ,
 		'All Runners   '  =>  '3, 10, 11, 2, 12, 4, 14, 6, 5, 9, 8, 1, 7, 13',
-		'All QPL values'  =>  '3, 10, 11, 2, 12, 14',
-		'All Wins'        =>  '10, 11, 2',
-		//Reference contains 3
-		'Reference'        =>  '3, 12, 14',
-		'favorite' =>  '3',
-		'WIN BETS' => [
-			3 =>  100,
-			10 =>  50,
-			11 =>  50,
-			2 =>  30,
-			12 =>  30,
-			4 =>  20,
-		],
-		//Total bets:280',
-		//count:6',
+		'Total Runners '  =>  14,
+		'places' => '4, 14, 6',
+		'places4' => '4, 14, 6',
 	],
 	'3' => [
 		/**
 		Race 3
 		*/
-		'wins' =>  [[10, 4], [1, 4]] ,
-		'qpl/trio'       =>  [[1, 5, 9, 10, 4], [5, 9, 8, 1, 4]] ,
 		'All Runners   '  =>  '1, 5, 10, 9, 4, 8, 3, 2, 6, 7',
-		'All QPL values'  =>  '1, 5, 10, 9, 4, 8',
-		'All Wins'        =>  '1, 10, 4',
-		'Reference'        =>  '5, 9, 8',
-		'favorite' =>  '1',
-		'WIN BETS' => [
-			1 =>  80,
-			5 =>  30,
-			10 =>  20,
-			9 =>  20,
-		],
-		//Total bets:150',
-		//count:4',
+		'Total Runners '  =>  10,
+		'places' => '5, 10, 9',
+		'places4' => '9',
 	],
 	'4' => [
 		/**
 		Race 4
 		*/
-		'wins' =>  [[7]] ,
-		'qpl/trio'       =>  [[4, 2, 8, 12, 7]] ,
 		'All Runners   '  =>  '4, 12, 7, 14, 1, 2, 8, 5, 13, 3, 9, 11, 10',
-		'All QPL values'  =>  '4, 12, 7, 2, 8',
-		'All Wins'        =>  '7',
-		'Reference'        =>  '4, 12, 2, 8',
-		'favorite' =>  '4',
-		'WIN BETS' => [
-			4 =>  100,
-			12 =>  40,
-			7 =>  30,
-			1 =>  30,
-			2 =>  30,
-			8 =>  30,
-			13 =>  20,
-		],
-		//Total bets:280',
-		//count:7',
+		'Total Runners '  =>  13,
+		'places' => '5, 13, 3',
+		'places4' => '5, 13, 3',
 	],
 	'5' => [
 		/**
 		Race 5
 		*/
-		'wins' =>  [[8, 9, 5], [8, 9]] ,
-		'qpl/trio'       =>  [[2, 4, 8, 9, 5]] ,
 		'All Runners   '  =>  '2, 9, 8, 5, 4, 7, 10, 1, 6, 11, 3, 12',
-		'All QPL values'  =>  '2, 9, 8, 5, 4',
-		'All Wins'        =>  '9, 8, 5',
-		'Reference'        =>  '2, 4',
-		'favorite' =>  '2',
-		'WIN BETS' => [
-			2 =>  40,
-			9 =>  40,
-			8 =>  40,
-			5 =>  30,
-			4 =>  30,
-			10 =>  20,
-		],
-		//Total bets:200',
-		//count:6',
+		'Total Runners '  =>  12,
+		'WP' => '2',
+		'places' => '3, 12',
+		'places4' => '3, 12',
+		'candidate(k = 12)' => '2',
 	],
 	'6' => [
 		/**
 		Race 6
 		*/
-		'wins' =>  [[8, 9]] ,
-		'qpl/trio'       =>  [[4, 13, 1, 8, 9]] ,
 		'All Runners   '  =>  '8, 1, 9, 3, 12, 4, 13, 2, 6, 14, 11, 7, 10, 5',
-		'All QPL values'  =>  '8, 1, 9, 4, 13',
-		'All Wins'        =>  '8, 9',
-		'Reference'        =>  '1, 4, 13',
-		'favorite' =>  '8',
-		'WIN BETS' => [
-			8 =>  100,
-			1 =>  60,
-			9 =>  30,
-			4 =>  20,
-			13 =>  20,
-		],
-		//Total bets:230',
-		//count:5',
+		'Total Runners '  =>  14,
+		'places' => '6, 14, 11',
+		'places4' => '6, 14, 11',
+		'candidate(k = 11)' => '3',
+	],
+	'7' => [
+		/**
+		Race 7
+		*/
+		'All Runners   '  =>  '2, 6, 8, 1, 3, 7, 5, 4',
+		'Total Runners '  =>  8,
+		'places' => '6, 8, 1',
+		'places4' => '1',
 	],
 	'8' => [
 		/**
 		Race 8
 		*/
-		'wins' =>  [[10, 7], [7]] ,
-		'qpl/trio'       =>  [[8, 6, 1, 10, 7], [8, 6, 4, 1, 7]] ,
 		'All Runners   '  =>  '8, 10, 6, 4, 7, 1, 3, 14, 9, 2, 13, 12, 11, 5',
-		'All QPL values'  =>  '8, 10, 6, 4, 7, 1',
-		'All Wins'        =>  '10, 7',
-		'Reference'        =>  '8, 6, 4, 1',
-		'favorite' =>  '8',
-		'WIN BETS' => [
-			8 =>  40,
-			10 =>  40,
-			6 =>  30,
-			4 =>  20,
-		],
-		//Total bets:130',
-		//count:4',
+		'Total Runners '  =>  14,
+		'places' => '3, 14, 9',
+		'places4' => '3, 14, 9',
+		'candidate(k = 12)' => '6',
+		'candidate(k = 9)' => '1',
 	],
 	'9' => [
 		/**
 		Race 9
 		*/
-		'wins' =>  [[6]] ,
-		'qpl/trio'       =>  [[4, 2, 12, 7, 6]] ,
 		'All Runners   '  =>  '4, 12, 7, 2, 6, 10, 9, 13, 3, 5, 1, 11, 8',
-		'All QPL values'  =>  '4, 12, 7, 2, 6',
-		'All Wins'        =>  '6',
-		'Reference'        =>  '4, 12, 7, 2',
-		'favorite' =>  '4',
-		'WIN BETS' => [
-			4 =>  100,
-			12 =>  40,
-			7 =>  40,
-			2 =>  40,
-			6 =>  30,
-			10 =>  30,
-		],
-		//Total bets:280',
-		//count:6',
+		'Total Runners '  =>  13,
+		'places' => '9, 13, 3',
+		'places4' => '9, 13, 3',
 	],
 	'10' => [
 		/**
 		Race 10
 		*/
-		'wins' =>  [[1]] ,
-		'qpl/trio'       =>  [[3, 14, 1, 6, 11]] ,
 		'All Runners   '  =>  '3, 14, 6, 11, 2, 4, 1, 10, 9, 8, 5, 7, 12, 13',
-		'All QPL values'  =>  '3, 14, 6, 11, 1',
-		'All Wins'        =>  '1',
-		//Reference contains 3
-		'Reference'        =>  '3, 14, 6, 11',
-		'favorite' =>  '3',
-		'WIN BETS' => [
-			3 =>  100,
-			14 =>  30,
-			6 =>  30,
-			11 =>  20,
-			2 =>  20,
-		],
-		//Total bets:200',
-		//count:5',
+		'Total Runners '  =>  14,
+		'places' => '3, 14, 6',
+		'candidate(k = 9)' => '4',
 	],
 ];
