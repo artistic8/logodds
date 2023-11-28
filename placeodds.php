@@ -47,8 +47,8 @@ for($r = 1; $r <= $totalRaces; $r++){
 
     $outOdds = [];
 
-    for($k = 1; $k < count($winOdds); $k++) {
-        $lineParts = explode("=", $winOdds[$k]);
+    for($k = 1; $k < count($plaOdds); $k++) {
+        $lineParts = explode("=", $pmaOdds[$k]);
         $runner = $lineParts[0];
         $currentOdds = $lineParts[1];
         if($currentOdds != "SCR" && $currentOdds != "Scratched" && !empty($currentOdds) && is_numeric($currentOdds)){
