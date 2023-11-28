@@ -64,7 +64,7 @@ for($r = 1; $r <= $totalRaces; $r++){
     }
 
     foreach($outOdds as $runner => $oddie) {
-        $outtext .= "\t\t$runner => " . $oddie['place'] . "],\n";
+        $outtext .= "\t\t$runner => " . $oddie['place'] . ",\n";
     }
 
     $outtext .= "\t],\n";
