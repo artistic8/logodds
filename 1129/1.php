@@ -30,15 +30,15 @@ return [
 		Race 3
 		*/
 		'Win Odds'  =>  '7, 11, 5, 1, 4, 3, 6, 8, 9, 10, 2',
-		'Pla Odds'  =>  '7, 11, 5, 1, 4, 6, 3, 8, 9, 10, 2',
+		'Pla Odds'  =>  '7, 5, 11, 1, 4, 6, 3, 8, 9, 10, 2',
 		'Total Runners '  =>  11,
 		//Based on win odds
 		'candidate(k = 10)' => '11',
 		'candidate(k = 9)' => '5',
 		'candidate(k = 8)' => '1',
 		//Based on pla odds
-		'candidate(k = 10)' => '11',
-		'candidate(k = 9)' => '5',
+		'candidate(k = 10)' => '5',
+		'candidate(k = 9)' => '11',
 		'candidate(k = 8)' => '1',
 		'candidate(k = 6)' => '6',
 	],
@@ -46,8 +46,8 @@ return [
 		/**
 		Race 4
 		*/
-		'Win Odds'  =>  '7, 2, 5, 6, 10, 8, 1, 4, 11, 12, 3, 9',
-		'Pla Odds'  =>  '7, 6, 2, 10, 5, 1, 8, 4, 11, 12, 3, 9',
+		'Win Odds'  =>  '7, 2, 6, 5, 10, 8, 1, 4, 11, 12, 3, 9',
+		'Pla Odds'  =>  '7, 2, 6, 10, 5, 1, 8, 4, 11, 12, 3, 9',
 		'Total Runners '  =>  12,
 		//Based on win odds
 		//Based on pla odds
@@ -57,7 +57,7 @@ return [
 		Race 5
 		*/
 		'Win Odds'  =>  '5, 3, 1, 11, 2, 7, 9, 10, 8, 4, 6, 12',
-		'Pla Odds'  =>  '5, 3, 1, 11, 2, 9, 7, 8, 10, 6, 4, 12',
+		'Pla Odds'  =>  '5, 3, 1, 11, 2, 9, 7, 8, 10, 4, 6, 12',
 		'Total Runners '  =>  12,
 		//Based on win odds
 		'WP' => '5',
@@ -73,13 +73,12 @@ return [
 		Race 6
 		*/
 		'Win Odds'  =>  '5, 2, 3, 11, 1, 7, 4, 8, 12, 10, 9, 6',
-		'Pla Odds'  =>  '5, 2, 11, 3, 4, 1, 7, 10, 9, 8, 12, 6',
+		'Pla Odds'  =>  '5, 2, 11, 3, 4, 1, 7, 9, 10, 8, 12, 6',
 		'Total Runners '  =>  12,
 		//Based on win odds
 		'candidate(k = 10)' => '3',
 		'candidate(k = 8)' => '1',
 		//Based on pla odds
-		'candidate(k = 9)' => '3',
 		'candidate(k = 7)' => '1',
 	],
 	'7' => [
@@ -87,7 +86,7 @@ return [
 		Race 7
 		*/
 		'Win Odds'  =>  '1, 10, 7, 5, 3, 4, 8, 2, 9, 6',
-		'Pla Odds'  =>  '1, 5, 10, 7, 9, 4, 8, 3, 2, 6',
+		'Pla Odds'  =>  '1, 5, 10, 7, 4, 9, 8, 3, 2, 6',
 		'Total Runners '  =>  10,
 		//Based on win odds
 		'candidate(k = 9)' => '10',
