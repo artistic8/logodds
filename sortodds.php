@@ -1,7 +1,5 @@
 <?php
 
-$blacks = [2, 4, 6, 8, 10, 11, 13];
-
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $step = 1;
@@ -27,12 +25,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $winsArray = $allWinOdds[$raceNumber];
     asort($winsArray);
     $runners = array_keys($winsArray);
-    $runners = array_intersect($runners, $blacks);
     if(isset($allPlaOdds)){
         $plaArray = $allPlaOdds[$raceNumber];
         asort($plaArray);
         $placers = array_keys($plaArray);
-        $placers = array_intersect($placers, $blacks);
     }
     
     $racetext .= "\t'$raceNumber' => [\n";
