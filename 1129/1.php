@@ -18,12 +18,12 @@ return [
 		Race 2
 		*/
 		'Win Odds'  =>  '5, 4, 3, 2, 1, 6, 8, 7',
-		'Pla Odds'  =>  '4, 5, 1, 3, 2, 6, 8, 7',
+		'Pla Odds'  =>  '4, 5, 3, 1, 2, 6, 8, 7',
 		'Total Runners '  =>  8,
 		//Based on win odds
 		'candidate(k = 6)' => '3',
 		//Based on pla odds
-		'candidate(k = 6)' => '1',
+		'candidate(k = 6)' => '3',
 	],
 	'3' => [
 		/**
@@ -84,12 +84,12 @@ return [
 		/**
 		Race 7
 		*/
-		'Win Odds'  =>  '1, 10, 7, 5, 3, 4, 8, 2, 6, 9',
-		'Pla Odds'  =>  '1, 5, 10, 7, 4, 8, 3, 2, 9, 6',
+		'Win Odds'  =>  '1, 10, 7, 5, 3, 4, 8, 2, 9, 6',
+		'Pla Odds'  =>  '1, 5, 10, 7, 9, 4, 8, 3, 2, 6',
 		'Total Runners '  =>  10,
 		//Based on win odds
+		'candidate(k = 9)' => '10',
 		//Based on pla odds
-		'candidate(k = 9)' => '5',
 	],
 	'8' => [
 		/**
