@@ -5,7 +5,7 @@ return [
 		/**
 		Race 1
 		*/
-		'Win Odds'  =>  '3, 9, 8, 7, 2, 6, 1, 5, 4',
+		'Win Odds'  =>  '3, 8, 9, 7, 2, 6, 1, 5, 4',
 		'Pla Odds'  =>  '2, 8, 3, 6, 7, 9, 1, 5, 4',
 		'Total Runners '  =>  9,
 		//Based on win odds
@@ -29,7 +29,7 @@ return [
 		Race 3
 		*/
 		'Win Odds'  =>  '7, 5, 1, 11, 4, 6, 3, 8, 9, 10, 2',
-		'Pla Odds'  =>  '5, 11, 7, 6, 3, 1, 4, 8, 9, 10, 2',
+		'Pla Odds'  =>  '5, 7, 11, 6, 3, 1, 4, 8, 9, 10, 2',
 		'Total Runners '  =>  11,
 		//Based on win odds
 		'candidate(k = 10)' => '5',
@@ -37,8 +37,8 @@ return [
 		'candidate(k = 8)' => '11',
 		'candidate(k = 6)' => '6',
 		//Based on pla odds
-		'candidate(k = 10)' => '11',
-		'candidate(k = 9)' => '7',
+		'candidate(k = 10)' => '7',
+		'candidate(k = 9)' => '11',
 		'candidate(k = 8)' => '6',
 	],
 	'4' => [
@@ -56,12 +56,14 @@ return [
 		Race 5
 		*/
 		'Win Odds'  =>  '5, 1, 3, 11, 2, 7, 9, 10, 8, 4, 6, 12',
-		'Pla Odds'  =>  '3, 1, 5, 11, 2, 9, 7, 10, 8, 6, 12, 4',
+		'Pla Odds'  =>  '3, 1, 5, 11, 2, 9, 7, 10, 8, 6, 4, 12',
 		'Total Runners '  =>  12,
 		//Based on win odds
 		'WP' => '5',
 		'candidate(k = 12)' => '5',
 		//Based on pla odds
+		'WP' => '3',
+		'candidate(k = 12)' => '3',
 		'candidate(k = 7)' => '9',
 	],
 	'6' => [
@@ -69,7 +71,7 @@ return [
 		Race 6
 		*/
 		'Win Odds'  =>  '2, 5, 3, 11, 1, 7, 12, 8, 4, 10, 9, 6',
-		'Pla Odds'  =>  '5, 2, 3, 11, 7, 9, 4, 8, 12, 1, 10, 6',
+		'Pla Odds'  =>  '5, 2, 3, 11, 7, 9, 4, 8, 1, 12, 10, 6',
 		'Total Runners '  =>  12,
 		//Based on win odds
 		'candidate(k = 10)' => '3',
@@ -82,19 +84,21 @@ return [
 		Race 7
 		*/
 		'Win Odds'  =>  '1, 10, 7, 5, 3, 8, 4, 2, 6, 9',
-		'Pla Odds'  =>  '1, 10, 5, 7, 4, 3, 9, 6, 8, 2',
+		'Pla Odds'  =>  '1, 10, 5, 7, 4, 3, 9, 8, 6, 2',
 		'Total Runners '  =>  10,
 		//Based on win odds
 		//Based on pla odds
+		'candidate(k = 8)' => '5',
 	],
 	'8' => [
 		/**
 		Race 8
 		*/
-		'Win Odds'  =>  '2, 5, 8, 4, 6, 1, 11, 9, 3, 7, 12',
-		'Pla Odds'  =>  '5, 8, 2, 4, 6, 11, 9, 1, 7, 3, 12, 10',
+		'Win Odds'  =>  '2, 5, 8, 4, 1, 6, 11, 9, 3, 7, 12',
+		'Pla Odds'  =>  '5, 8, 2, 4, 6, 9, 11, 1, 7, 3, 12',
 		'Total Runners '  =>  11,
 		//Based on win odds
+		'candidate(k = 6)' => '6',
 		//Based on pla odds
 	],
 ];
