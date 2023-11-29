@@ -18,12 +18,12 @@ return [
 		Race 2
 		*/
 		'Win Odds'  =>  '5, 4, 2, 1, 3, 6, 8, 7',
-		'Pla Odds'  =>  '4, 2, 5, 1, 3, 6, 8, 7',
+		'Pla Odds'  =>  '4, 1, 2, 5, 3, 6, 8, 7',
 		'Total Runners '  =>  8,
 		//Based on win odds
 		'candidate(k = 6)' => '2',
 		//Based on pla odds
-		'candidate(k = 6)' => '5',
+		'candidate(k = 6)' => '2',
 	],
 	'3' => [
 		/**
