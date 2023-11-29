@@ -6,12 +6,12 @@ return [
 		Race 1
 		*/
 		'Win Odds'  =>  '3, 9, 7, 8, 2, 6, 1, 5, 4',
-		'Pla Odds'  =>  '9, 3, 2, 7, 8, 6, 1, 5, 4',
+		'Pla Odds'  =>  '9, 3, 7, 8, 2, 6, 1, 5, 4',
 		'Total Runners '  =>  9,
 		//Based on win odds
 		'candidate(k = 6)' => '8',
 		//Based on pla odds
-		'candidate(k = 6)' => '7',
+		'candidate(k = 6)' => '8',
 	],
 	'2' => [
 		/**
