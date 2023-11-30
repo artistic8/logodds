@@ -67,6 +67,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $numberOfWinCandidates = 0;
     $numberOfPlaCandidates = 0;
     $first = $runners[0];
+    $first3 = array_slice($runners, 0, 3);
     $pos = array_search($size, $runners);
     if($pos == count($runners) - 1){
         $racetext .= "\t\t'WP' => '" . $first .  "',\n";
@@ -90,6 +91,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(!empty($blackWinCandidates)){
             $racetext .= "\t\t/** Black selection */\n";
             $racetext .= "\t\t'black win odds candidates' => '" . implode(", ", $blackWinCandidates).  "',\n";
+            $sureWinPlace = array_intersect($blackWinCandidates, $first3);
+            if(!empty($sureWinPlace)){
+                $racetext .= "\t\t'SURE PLACE' => '" . implode(", ", $sureWinPlace).  "',\n";
+            }
         }
     }
     if(isset($placers)){
@@ -112,10 +117,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             }
         }
         if($numberOfPlaCandidates == 0){
-            $racetext .= "\t\t//No pla candidates(Place bet: $first\n";
+            $racetext .= "\t\t//No pla candidates(Place bet: $first <== focus on this one for now)\n";
         }
         if(!empty($blackPlaCandidates)){
             $racetext .= "\t\t'black pla odds candidates' => '" . implode(", ", $blackPlaCandidates).  "',\n";
+            $sureWinPlace = array_intersect($blackPlaCandidates, $first3);
+            if(!empty($sureWinPlace)){
+                $racetext .= "\t\t'SURE PLACE' => '" . implode(", ", $sureWinPlace).  "',\n";
+            }
         }
     }
     $racetext .= "\t],\n";

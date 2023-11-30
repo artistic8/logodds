@@ -81,5 +81,6 @@ return [
 		'win odds candidate(k = 9)' => '1',
 		/** Black selection */
 		'black win odds candidates' => '6',
+		'SURE PLACE' => '6',
 	],
 ];

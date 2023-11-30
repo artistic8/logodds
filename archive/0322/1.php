@@ -11,7 +11,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 9)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 7
+		//No pla candidates(Place bet: 7 <== focus on this one for now)
 	],
 	'2' => [
 		/**
@@ -23,7 +23,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 2)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 2
+		//No pla candidates(Place bet: 2 <== focus on this one for now)
 	],
 	'3' => [
 		/**
@@ -35,7 +35,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 5)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 5
+		//No pla candidates(Place bet: 5 <== focus on this one for now)
 	],
 	'4' => [
 		/**
@@ -47,7 +47,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 1)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 1
+		//No pla candidates(Place bet: 1 <== focus on this one for now)
 	],
 	'5' => [
 		/**
@@ -59,7 +59,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 1)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 6
+		//No pla candidates(Place bet: 6 <== focus on this one for now)
 	],
 	'6' => [
 		/**
@@ -71,7 +71,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 1)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 7
+		//No pla candidates(Place bet: 7 <== focus on this one for now)
 	],
 	'7' => [
 		/**
@@ -85,10 +85,12 @@ return [
 		'win odds candidate(k = 12)' => '2',
 		/** Black selection */
 		'black win odds candidates' => '2',
+		'SURE PLACE' => '2',
 		/** Based on pla odds */
 		'WP' => '6',
 		'pla odds candidate(k = 12)' => '6',
 		'black pla odds candidates' => '6',
+		'SURE PLACE' => '6',
 	],
 	'8' => [
 		/**
@@ -100,8 +102,9 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 4)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 7
+		//No pla candidates(Place bet: 7 <== focus on this one for now)
 		'black pla odds candidates' => '6',
+		'SURE PLACE' => '6',
 	],
 	'9' => [
 		/**
@@ -115,6 +118,7 @@ return [
 		'win odds candidate(k = 12)' => '10',
 		/** Black selection */
 		'black win odds candidates' => '10',
+		'SURE PLACE' => '10',
 		/** Based on pla odds */
 		'WP' => '1',
 		'pla odds candidate(k = 12)' => '1',

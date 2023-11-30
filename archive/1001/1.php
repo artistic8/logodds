@@ -70,6 +70,7 @@ return [
 		'win odds candidate(k = 6)' => '5',
 		/** Black selection */
 		'black win odds candidates' => '8',
+		'SURE PLACE' => '8',
 	],
 	'8' => [
 		/**
@@ -97,5 +98,8 @@ return [
 		'Total Runners '  =>  12,
 		/** Based on win odds */
 		'win odds candidate(k = 7)' => '12',
+		/** Black selection */
+		'black win odds candidates' => '8',
+		'SURE PLACE' => '8',
 	],
 ];

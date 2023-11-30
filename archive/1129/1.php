@@ -41,11 +41,13 @@ return [
 		'win odds candidate(k = 6)' => '6',
 		/** Black selection */
 		'black win odds candidates' => '11, 4, 6',
+		'SURE PLACE' => '11',
 		/** Based on pla odds */
 		'pla odds candidate(k = 10)' => '4',
 		'pla odds candidate(k = 9)' => '11',
 		'pla odds candidate(k = 8)' => '1',
 		'black pla odds candidates' => '4, 11',
+		'SURE PLACE' => '11',
 	],
 	'4' => [
 		/**
@@ -57,7 +59,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 7)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 7
+		//No pla candidates(Place bet: 7 <== focus on this one for now)
 		'black pla odds candidates' => '4, 11',
 	],
 	'5' => [
@@ -87,7 +89,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 3)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 3
+		//No pla candidates(Place bet: 3 <== focus on this one for now)
 		'black pla odds candidates' => '10',
 	],
 	'7' => [
@@ -101,9 +103,11 @@ return [
 		'win odds candidate(k = 8)' => '5',
 		/** Black selection */
 		'black win odds candidates' => '10',
+		'SURE PLACE' => '10',
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 1
+		//No pla candidates(Place bet: 1 <== focus on this one for now)
 		'black pla odds candidates' => '10',
+		'SURE PLACE' => '10',
 	],
 	'8' => [
 		/**
@@ -115,7 +119,7 @@ return [
 		/** Based on win odds */
 		//No win candidates(Place bet: 2)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 8
+		//No pla candidates(Place bet: 8 <== focus on this one for now)
 		'black pla odds candidates' => '10',
 	],
 ];

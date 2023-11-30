@@ -35,6 +35,7 @@ return [
 		'win odds candidate(k = 10)' => '4',
 		/** Black selection */
 		'black win odds candidates' => '4',
+		'SURE PLACE' => '4',
 	],
 	'4' => [
 		/**
@@ -48,6 +49,7 @@ return [
 		'win odds candidate(k = 10)' => '3',
 		/** Black selection */
 		'black win odds candidates' => '2',
+		'SURE PLACE' => '2',
 	],
 	'5' => [
 		/**
@@ -75,6 +77,9 @@ return [
 		'Total Runners '  =>  12,
 		/** Based on win odds */
 		'win odds candidate(k = 9)' => '12',
+		/** Black selection */
+		'black win odds candidates' => '2',
+		'SURE PLACE' => '2',
 	],
 	'8' => [
 		/**
@@ -95,5 +100,6 @@ return [
 		'win odds candidate(k = 11)' => '10',
 		/** Black selection */
 		'black win odds candidates' => '10',
+		'SURE PLACE' => '10',
 	],
 ];
