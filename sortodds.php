@@ -69,8 +69,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $first = $runners[0];
     $first3 = array_slice($runners, 0, 3);
     $pos = array_search($size, $runners);
-    $myList = array_slice($runners, 0, $size - $pos + 2);
-    $racetext .= "\t\t'win bet' => '" . implode(", ", $myList).  "',\n";
     if($pos == count($runners) - 1){
         $racetext .= "\t\t'WP' => '" . $first .  "',\n";
     }
