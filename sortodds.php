@@ -74,11 +74,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     for($k = $size; $k > floor($size / 2); $k --)
     {
+        $blackWinCandidatesIsNew = true;
         $posK = array_search($k, $runners);
         if($posK + 1 == $k && isset($runners[$size - 1 - $posK])){
            $candidate = $runners[$size - 1 - $posK];
-           if(in_array($candidate, $blacks) && !in_array($candidate, $blackWinCandidates)){
+           if($blackWinCandidatesIsNew && in_array($candidate, $blacks) && !in_array($candidate, $blackWinCandidates)){
                 $blackWinCandidates[] = $candidate;
+                $blackWinCandidatesIsNew = false;
            }
            $racetext .= "\t\t'win odds candidate(". "k = $k)" . "' => '" . $candidate .  "',\n";
            $numberOfWinCandidates ++;
