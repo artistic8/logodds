@@ -128,6 +128,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     $racetext .= "\t],\n";
+    unset($oldBlackPlaCandidates);
+    unset($blackPlaCandidates);
+    unset($oldBlackWinCandidates);
+    unset($blackWinCandidates);
     $outtext .= $racetext;
 }
 

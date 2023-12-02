@@ -90,7 +90,6 @@ return [
 		//No win candidates(Place bet: 3)
 		/** Based on pla odds */
 		//No pla candidates(Place bet: 3 <== focus on this one for now)
-		'black pla odds candidates' => '10',
 	],
 	'7' => [
 		/**
@@ -106,8 +105,6 @@ return [
 		'SURE PLACE' => '10',
 		/** Based on pla odds */
 		//No pla candidates(Place bet: 1 <== focus on this one for now)
-		'black pla odds candidates' => '10',
-		'SURE PLACE' => '10',
 	],
 	'8' => [
 		/**
@@ -120,6 +117,5 @@ return [
 		//No win candidates(Place bet: 2)
 		/** Based on pla odds */
 		//No pla candidates(Place bet: 8 <== focus on this one for now)
-		'black pla odds candidates' => '10',
 	],
 ];
