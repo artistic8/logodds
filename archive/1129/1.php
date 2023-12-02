@@ -100,9 +100,6 @@ return [
 		'Total Runners '  =>  10,
 		/** Based on win odds */
 		'win odds candidate(k = 8)' => '5',
-		/** Black selection */
-		'black win odds candidates' => '10',
-		'SURE PLACE' => '10',
 		/** Based on pla odds */
 		//No pla candidates(Place bet: 1 <== focus on this one for now)
 	],

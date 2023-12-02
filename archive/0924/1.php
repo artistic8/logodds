@@ -78,8 +78,6 @@ return [
 		/** Based on win odds */
 		'WP' => '1',
 		'win odds candidate(k = 13)' => '1',
-		/** Black selection */
-		'black win odds candidates' => '4',
 	],
 	'9' => [
 		/**

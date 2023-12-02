@@ -59,9 +59,6 @@ return [
 		'Total Runners '  =>  14,
 		/** Based on win odds */
 		'win odds candidate(k = 10)' => '7',
-		/** Black selection */
-		'black win odds candidates' => '6',
-		'SURE PLACE' => '6',
 	],
 	'7' => [
 		/**

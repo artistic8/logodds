@@ -60,8 +60,6 @@ return [
 		'Total Runners '  =>  9,
 		/** Based on win odds */
 		'win odds candidate(k = 5)' => '5',
-		/** Black selection */
-		'black win odds candidates' => '11',
 	],
 	'7' => [
 		/**
@@ -72,8 +70,6 @@ return [
 		/** Based on win odds */
 		'WP' => '5',
 		'win odds candidate(k = 7)' => '5',
-		/** Black selection */
-		'black win odds candidates' => '11',
 	],
 	'8' => [
 		/**
