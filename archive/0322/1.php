@@ -103,8 +103,6 @@ return [
 		//No win candidates(Place bet: 4)
 		/** Based on pla odds */
 		//No pla candidates(Place bet: 7 <== focus on this one for now)
-		'black pla odds candidates' => '6',
-		'SURE PLACE' => '6',
 	],
 	'9' => [
 		/**
@@ -123,6 +121,5 @@ return [
 		'WP' => '1',
 		'pla odds candidate(k = 12)' => '1',
 		'pla odds candidate(k = 7)' => '5',
-		'black pla odds candidates' => '6',
 	],
 ];
