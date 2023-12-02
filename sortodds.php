@@ -89,14 +89,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if($numberOfWinCandidates == 0){
         $racetext .= "\t\t//No win candidates(Place bet: $first)\n";
     }
-    else{
-        if(!empty($blackWinCandidates)){
-            $racetext .= "\t\t/** Black selection */\n";
-            $racetext .= "\t\t'black win odds candidates' => '" . implode(", ", $blackWinCandidates).  "',\n";
-            $sureWinPlace = array_intersect($blackWinCandidates, $first3);
-            if(!empty($sureWinPlace)){
-                $racetext .= "\t\t'SURE PLACE' => '" . implode(", ", $sureWinPlace).  "',\n";
-            }
+    if(!empty($blackWinCandidates)){
+        $racetext .= "\t\t/** Black selection */\n";
+        $racetext .= "\t\t'black win odds candidates' => '" . implode(", ", $blackWinCandidates).  "',\n";
+        $sureWinPlace = array_intersect($blackWinCandidates, $first3);
+        if(!empty($sureWinPlace)){
+            $racetext .= "\t\t'SURE PLACE' => '" . implode(", ", $sureWinPlace).  "',\n";
         }
     }
     if(isset($placers)){
