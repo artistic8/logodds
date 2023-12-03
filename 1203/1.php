@@ -22,12 +22,12 @@ return [
 		Race 2
 		*/
 		'Win Odds'  =>  '9, 7, 1, 6, 5, 8, 3, 10, 4, 12, 2, 11',
-		'Pla Odds'  =>  '7, 9, 1, 6, 5, 8, 3, 10, 12, 4, 2, 11',
+		'Pla Odds'  =>  '9, 7, 1, 6, 5, 8, 3, 10, 12, 4, 2, 11',
 		'Total Runners '  =>  12,
 		/** Based on win odds */
 		//No win candidates(Place bet: 9)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 7 <== focus on this one for now)
+		//No pla candidates(Place bet: 9 <== focus on this one for now)
 		'black pla odds candidates' => '10',
 	],
 	'3' => [
