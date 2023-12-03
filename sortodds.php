@@ -80,6 +80,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
            $racetext .= "\t\t'win odds candidate(". "k = $k)" . "' => '" . $candidate .  "',\n";
         }
     }
+    //1. Sort  historyW by odds
+    $qplsOdds = [];
+    foreach($historyW as $iIndex){
+        if(isset($allWinOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allWinOdds[$raceNumber][$iIndex];
+    }
+    asort($qplsOdds);
+    $historyW = array_keys($qplsOdds);
     if(!empty($historyW)){
         $racetext .= "\t\t/** Black selection */\n";
         $racetext .= "\t\t'history w' => '" . implode(", ", $historyW).  "',\n";
@@ -103,6 +110,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                 $racetext .= "\t\t'pla odds candidate(". "k = $k)" . "' => '" . $candidate .  "',\n";
             }
         }
+        //1. Sort  historyP by odds
+        $qplsOdds = [];
+        foreach($historyP as $iIndex){
+            if(isset($allPlaOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allPlaOdds[$raceNumber][$iIndex];
+        }
+        asort($qplsOdds);
+        $historyP = array_keys($qplsOdds);
         if(!empty($historyP)){
             $racetext .= "\t\t'history p' => '" . implode(", ", $historyP).  "',\n";
             $sureWinPlace = array_intersect($historyP, $first3);

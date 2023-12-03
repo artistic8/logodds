@@ -38,7 +38,7 @@ return [
 		'history w' => '2',
 		'SURE PLACE' => '2',
 		/** Based on pla odds */
-		'history p' => '8, 10',
+		'history p' => '10, 8',
 		'SURE PLACE' => '10',
 	],
 	'4' => [
@@ -68,8 +68,8 @@ return [
 		'win odds candidate(k = 10)' => '4',
 		'win odds candidate(k = 8)' => '1',
 		/** Black selection */
-		'history w' => '4, 6',
-		'SURE PLACE' => '4, 6',
+		'history w' => '6, 4',
+		'SURE PLACE' => '6, 4',
 		/** Based on pla odds */
 		'pla odds candidate(k = 10)' => '6',
 		'pla odds candidate(k = 8)' => '1',
@@ -100,8 +100,8 @@ return [
 		'history w' => '6, 2',
 		'SURE PLACE' => '6, 2',
 		/** Based on pla odds */
-		'history p' => '2, 4',
-		'SURE PLACE' => '2, 4',
+		'history p' => '4, 2',
+		'SURE PLACE' => '4, 2',
 	],
 	'8' => [
 		/**
@@ -116,7 +116,7 @@ return [
 		'history w' => '8',
 		/** Based on pla odds */
 		'pla odds candidate(k = 12)' => '6',
-		'history p' => '2, 11, 13, 6',
+		'history p' => '13, 6, 11, 2',
 		'SURE PLACE' => '13',
 	],
 	'9' => [
@@ -129,7 +129,7 @@ return [
 		/** Based on win odds */
 		'win odds candidate(k = 12)' => '2',
 		/** Black selection */
-		'history w' => '4, 13, 2',
+		'history w' => '2, 4, 13',
 		'SURE PLACE' => '2',
 		/** Based on pla odds */
 		'history p' => '10, 4, 13',
@@ -144,10 +144,10 @@ return [
 		/** Based on win odds */
 		'win odds candidate(k = 14)' => '4',
 		/** Black selection */
-		'history w' => '8, 4, 11',
+		'history w' => '4, 11, 8',
 		'SURE PLACE' => '4, 11',
 		/** Based on pla odds */
-		'history p' => '4, 8, 11',
+		'history p' => '4, 11, 8',
 		'SURE PLACE' => '4, 11',
 	],
 ];
