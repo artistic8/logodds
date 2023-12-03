@@ -21,8 +21,8 @@ return [
 		/**
 		Race 2
 		*/
-		'Win Odds'  =>  '9, 7, 1, 6, 8, 5, 3, 10, 4, 12, 2, 11',
-		'Pla Odds'  =>  '9, 7, 6, 1, 8, 5, 3, 10, 12, 4, 2, 11',
+		'Win Odds'  =>  '9, 7, 1, 6, 8, 5, 3, 10, 12, 4, 2, 11',
+		'Pla Odds'  =>  '9, 7, 6, 8, 1, 5, 3, 10, 12, 4, 2, 11',
 		'Total Runners '  =>  12,
 		/** Based on win odds */
 		//No win candidates(Place bet: 9)
