@@ -51,8 +51,8 @@ return [
 		/**
 		Race 4
 		*/
-		'Win Odds'  =>  '6, 12, 1, 5, 10, 2, 3, 7, 4, 11, 8, 9',
-		'Pla Odds'  =>  '1, 12, 6, 5, 10, 7, 2, 3, 11, 4, 8, 9',
+		'Win Odds'  =>  '6, 12, 1, 5, 10, 7, 3, 2, 4, 11, 8, 9',
+		'Pla Odds'  =>  '1, 6, 12, 10, 5, 7, 2, 3, 11, 8, 4, 9',
 		'Total Runners '  =>  12,
 		/** Based on win odds */
 		//No win candidates(Place bet: 6)
