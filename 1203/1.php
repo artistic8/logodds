@@ -21,8 +21,8 @@ return [
 		/**
 		Race 2
 		*/
-		'Win Odds'  =>  '9, 7, 1, 6, 5, 3, 8, 10, 4, 2, 12, 11',
-		'Pla Odds'  =>  '9, 7, 6, 1, 5, 8, 3, 10, 4, 12, 2, 11',
+		'Win Odds'  =>  '9, 7, 1, 6, 5, 8, 3, 10, 4, 12, 2, 11',
+		'Pla Odds'  =>  '9, 7, 1, 6, 8, 5, 3, 10, 12, 4, 2, 11',
 		'Total Runners '  =>  12,
 		/** Based on win odds */
 		//No win candidates(Place bet: 9)
@@ -127,13 +127,13 @@ return [
 		/**
 		Race 9
 		*/
-		'Win Odds'  =>  '6, 2, 1, 10, 3, 4, 9, 12, 8, 5, 13, 14, 7, 11',
-		'Pla Odds'  =>  '2, 6, 10, 1, 12, 3, 4, 8, 13, 9, 14, 5, 7, 11',
+		'Win Odds'  =>  '6, 2, 1, 10, 3, 4, 9, 13, 12, 8, 5, 14, 7, 11',
+		'Pla Odds'  =>  '2, 6, 10, 1, 12, 3, 13, 4, 8, 9, 14, 5, 7, 11',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
 		//No win candidates(Place bet: 6)
 		/** Based on pla odds */
-		'pla odds candidate(k = 8)' => '4',
+		//No pla candidates(Place bet: 2 <== focus on this one for now)
 		'black pla odds candidates' => '10, 4',
 	],
 	'10' => [
