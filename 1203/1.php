@@ -127,13 +127,12 @@ return [
 		/**
 		Race 9
 		*/
-		'Win Odds'  =>  '6, 2, 1, 10, 3, 4, 9, 12, 8, 5, 14, 13, 7, 11',
-		'Pla Odds'  =>  '2, 6, 10, 1, 12, 3, 4, 8, 9, 13, 14, 5, 7, 11',
+		'Win Odds'  =>  '6, 2, 1, 10, 3, 4, 9, 12, 8, 5, 13, 14, 7, 11',
+		'Pla Odds'  =>  '2, 6, 10, 1, 12, 3, 4, 8, 13, 9, 14, 5, 7, 11',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
 		//No win candidates(Place bet: 6)
 		/** Based on pla odds */
-		'pla odds candidate(k = 9)' => '3',
 		'pla odds candidate(k = 8)' => '4',
 		'black pla odds candidates' => '10, 4',
 	],
@@ -141,14 +140,16 @@ return [
 		/**
 		Race 10
 		*/
-		'Win Odds'  =>  '4, 5, 8, 11, 12, 3, 6, 1, 2, 10, 13, 7, 14, 9',
+		'Win Odds'  =>  '4, 5, 8, 11, 12, 3, 6, 1, 2, 10, 13, 7, 9, 14',
 		'Pla Odds'  =>  '4, 5, 12, 8, 11, 6, 1, 2, 3, 10, 13, 7, 9, 14',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
+		'WP' => '4',
+		'win odds candidate(k = 14)' => '4',
 		'win odds candidate(k = 10)' => '12',
 		/** Black selection */
-		'black win odds candidates' => '8',
-		'SURE PLACE' => '8',
+		'black win odds candidates' => '8, 4',
+		'SURE PLACE' => '8, 4',
 		/** Based on pla odds */
 		'WP' => '4',
 		'pla odds candidate(k = 14)' => '4',
