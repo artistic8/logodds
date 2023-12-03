@@ -64,14 +64,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $size = count($runners);
     $racetext .= "\t\t/** Based on win odds */\n";
-    $numberOfWinCandidates = 0;
-    $numberOfPlaCandidates = 0;
     $first = $runners[0];
     $first3 = array_slice($runners, 0, 3);
     $pos = array_search($size, $runners);
-    if($pos == count($runners) - 1){
-        $racetext .= "\t\t'WP' => '" . $first .  "',\n";
-    }
     for($k = $size; $k > floor($size / 2); $k --)
     {
         $historyWIsNew = true;
@@ -83,11 +78,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                 $historyWIsNew = false;
            }
            $racetext .= "\t\t'win odds candidate(". "k = $k)" . "' => '" . $candidate .  "',\n";
-           $numberOfWinCandidates ++;
         }
-    }
-    if($numberOfWinCandidates == 0){
-        $racetext .= "\t\t//No win candidates(Place bet: $first)\n";
     }
     if(!empty($historyW)){
         $racetext .= "\t\t/** Black selection */\n";
@@ -101,9 +92,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t/** Based on pla odds */\n";
         $first = $placers[0];
         $pos = array_search($size, $placers);
-        if($pos == count($placers) - 1){
-            $racetext .= "\t\t'WP' => '" . $first .  "',\n";
-        }
         for($k = $size; $k > floor($size / 2); $k --)
         {
             $posK = array_search($k, $placers);
@@ -113,11 +101,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                         $historyP[] = $candidate;
                 }
                 $racetext .= "\t\t'pla odds candidate(". "k = $k)" . "' => '" . $candidate .  "',\n";
-                $numberOfPlaCandidates ++;
             }
-        }
-        if($numberOfPlaCandidates == 0){
-            $racetext .= "\t\t//No pla candidates(Place bet: $first <== focus on this one for now)\n";
         }
         if(!empty($historyP)){
             $racetext .= "\t\t'history p' => '" . implode(", ", $historyP).  "',\n";

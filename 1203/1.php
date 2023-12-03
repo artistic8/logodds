@@ -9,12 +9,10 @@ return [
 		'Pla Odds'  =>  '11, 1, 4, 13, 7, 3, 8, 10, 2, 12, 6, 14, 9, 5',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
-		//No win candidates(Place bet: 11)
 		/** Black selection */
 		'history w' => '11, 10',
 		'SURE PLACE' => '11',
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 11 <== focus on this one for now)
 		'history p' => '10',
 	],
 	'2' => [
@@ -25,9 +23,7 @@ return [
 		'Pla Odds'  =>  '9, 7, 5, 8, 1, 6, 3, 12, 10, 11, 2, 4',
 		'Total Runners '  =>  12,
 		/** Based on win odds */
-		//No win candidates(Place bet: 9)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 9 <== focus on this one for now)
 		'history p' => '10',
 	],
 	'3' => [
@@ -38,12 +34,10 @@ return [
 		'Pla Odds'  =>  '5, 2, 1, 10, 7, 14, 8, 12, 13, 6, 4, 3, 9, 11',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
-		//No win candidates(Place bet: 5)
 		/** Black selection */
 		'history w' => '2',
 		'SURE PLACE' => '2',
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 5 <== focus on this one for now)
 		'history p' => '8, 10',
 		'SURE PLACE' => '10',
 	],
@@ -60,7 +54,6 @@ return [
 		/** Black selection */
 		'history w' => '4',
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 6 <== focus on this one for now)
 		'history p' => '6, 10, 2',
 		'SURE PLACE' => '6',
 	],
@@ -91,9 +84,7 @@ return [
 		'Pla Odds'  =>  '4, 7, 3, 2, 5, 8, 1, 10, 6, 9',
 		'Total Runners '  =>  10,
 		/** Based on win odds */
-		//No win candidates(Place bet: 7)
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 4 <== focus on this one for now)
 		'history p' => '4, 10',
 		'SURE PLACE' => '4',
 	],
@@ -105,12 +96,10 @@ return [
 		'Pla Odds'  =>  '4, 2, 3, 6, 1, 5, 11, 7, 10, 8, 9',
 		'Total Runners '  =>  11,
 		/** Based on win odds */
-		//No win candidates(Place bet: 4)
 		/** Black selection */
 		'history w' => '6, 2',
 		'SURE PLACE' => '6, 2',
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 4 <== focus on this one for now)
 		'history p' => '2, 4',
 		'SURE PLACE' => '2, 4',
 	],
@@ -143,7 +132,6 @@ return [
 		'history w' => '4, 13, 2',
 		'SURE PLACE' => '2',
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 6 <== focus on this one for now)
 		'history p' => '10, 4, 13',
 	],
 	'10' => [
@@ -154,13 +142,11 @@ return [
 		'Pla Odds'  =>  '4, 11, 5, 8, 12, 2, 3, 6, 13, 1, 9, 10, 14, 7',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
-		'WP' => '4',
 		'win odds candidate(k = 14)' => '4',
 		/** Black selection */
 		'history w' => '8, 4, 11',
 		'SURE PLACE' => '4, 11',
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 4 <== focus on this one for now)
 		'history p' => '4, 8, 11',
 		'SURE PLACE' => '4, 11',
 	],
