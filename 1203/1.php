@@ -35,7 +35,7 @@ return [
 		Race 3
 		*/
 		'Win Odds'  =>  '2, 5, 7, 1, 8, 14, 10, 12, 13, 3, 6, 4, 9, 11',
-		'Pla Odds'  =>  '7, 5, 1, 2, 14, 8, 10, 12, 13, 3, 6, 4, 9, 11',
+		'Pla Odds'  =>  '7, 5, 1, 2, 14, 10, 8, 12, 13, 3, 6, 4, 9, 11',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
 		//No win candidates(Place bet: 2)
