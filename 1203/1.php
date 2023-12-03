@@ -34,8 +34,8 @@ return [
 		/**
 		Race 3
 		*/
-		'Win Odds'  =>  '2, 5, 7, 1, 8, 14, 10, 12, 13, 3, 6, 9, 4, 11',
-		'Pla Odds'  =>  '2, 7, 5, 1, 14, 8, 10, 13, 12, 3, 6, 4, 9, 11',
+		'Win Odds'  =>  '2, 5, 7, 1, 8, 14, 10, 12, 13, 3, 6, 4, 9, 11',
+		'Pla Odds'  =>  '7, 2, 5, 1, 14, 8, 10, 13, 12, 3, 6, 4, 9, 11',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
 		//No win candidates(Place bet: 2)
@@ -43,7 +43,7 @@ return [
 		'black win odds candidates' => '2',
 		'SURE PLACE' => '2',
 		/** Based on pla odds */
-		//No pla candidates(Place bet: 2 <== focus on this one for now)
+		//No pla candidates(Place bet: 7 <== focus on this one for now)
 		'black pla odds candidates' => '8, 10',
 	],
 	'4' => [
