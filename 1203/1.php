@@ -146,11 +146,13 @@ return [
 		/**
 		Race 10
 		*/
-		'Win Odds'  =>  '4, 5, 8, 3, 12, 11, 6, 1, 2, 10, 13, 7, 14, 9',
-		'Pla Odds'  =>  '4, 5, 12, 8, 11, 6, 3, 1, 2, 10, 13, 7, 14, 9',
+		'Win Odds'  =>  '4, 5, 8, 3, 11, 12, 6, 1, 2, 10, 13, 7, 9, 14',
+		'Pla Odds'  =>  '4, 5, 12, 8, 11, 6, 3, 1, 2, 10, 13, 14, 7, 9',
 		'Total Runners '  =>  14,
 		/** Based on win odds */
-		'win odds candidate(k = 10)' => '12',
+		'WP' => '4',
+		'win odds candidate(k = 14)' => '4',
+		'win odds candidate(k = 10)' => '11',
 		/** Black selection */
 		'black win odds candidates' => '8, 4, 11',
 		'SURE PLACE' => '8, 4',
