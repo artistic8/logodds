@@ -64,7 +64,7 @@ return [
 		/** Based on win odds */
 		'win odds candidate(k = 13)' => '2',
 		/** Black selection */
-		'black win odds candidates' => '2',
+		'history w' => '2',
 		'SURE PLACE' => '2',
 	],
 	'8' => [

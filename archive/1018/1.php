@@ -12,7 +12,7 @@ return [
 		'win odds candidate(k = 12)' => '3',
 		'win odds candidate(k = 8)' => '11',
 		/** Black selection */
-		'black win odds candidates' => '11',
+		'history w' => '11',
 	],
 	'2' => [
 		/**
@@ -34,7 +34,7 @@ return [
 		'win odds candidate(k = 12)' => '1',
 		'win odds candidate(k = 10)' => '4',
 		/** Black selection */
-		'black win odds candidates' => '4',
+		'history w' => '4',
 		'SURE PLACE' => '4',
 	],
 	'4' => [
@@ -48,7 +48,7 @@ return [
 		'win odds candidate(k = 12)' => '2',
 		'win odds candidate(k = 10)' => '3',
 		/** Black selection */
-		'black win odds candidates' => '2',
+		'history w' => '2',
 		'SURE PLACE' => '2',
 	],
 	'5' => [
@@ -96,7 +96,7 @@ return [
 		/** Based on win odds */
 		'win odds candidate(k = 11)' => '10',
 		/** Black selection */
-		'black win odds candidates' => '10',
+		'history w' => '10',
 		'SURE PLACE' => '10',
 	],
 ];

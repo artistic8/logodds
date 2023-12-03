@@ -30,16 +30,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(isset($oldData)){
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
-            if(isset($oldRaceData['black win odds candidates'])) $oldBlackWinCandidates = $oldRaceData['black win odds candidates'];
-            if(isset($oldRaceData['black pla odds candidates'])) $oldBlackPlaCandidates = $oldRaceData['black pla odds candidates'];
+            if(isset($oldRaceData['history w'])) $historyWs = $oldRaceData['history w'];
+            if(isset($oldRaceData['history p'])) $historyPs = $oldRaceData['history p'];
         }
     }
 
-    if(isset($oldBlackWinCandidates)) $blackWinCandidates = explode(", ", $oldBlackWinCandidates);
-    else $blackWinCandidates = [];
+    if(isset($historyWs)) $historyW = explode(", ", $historyWs);
+    else $historyW = [];
 
-    if(isset($oldBlackPlaCandidates)) $blackPlaCandidates = explode(", ", $oldBlackPlaCandidates);
-    else $blackPlaCandidates = [];
+    if(isset($historyPs)) $historyP = explode(", ", $historyPs);
+    else $historyP = [];
 
     $racetext = "";
     $winsArray = $allWinOdds[$raceNumber];
@@ -74,13 +74,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     for($k = $size; $k > floor($size / 2); $k --)
     {
-        $blackWinCandidatesIsNew = true;
+        $historyWIsNew = true;
         $posK = array_search($k, $runners);
         if($posK + 1 == $k && isset($runners[$size - 1 - $posK])){
            $candidate = $runners[$size - 1 - $posK];
-           if($blackWinCandidatesIsNew && in_array($candidate, $blacks) && !in_array($candidate, $blackWinCandidates)){
-                $blackWinCandidates[] = $candidate;
-                $blackWinCandidatesIsNew = false;
+           if($historyWIsNew && in_array($candidate, $blacks) && !in_array($candidate, $historyW)){
+                $historyW[] = $candidate;
+                $historyWIsNew = false;
            }
            $racetext .= "\t\t'win odds candidate(". "k = $k)" . "' => '" . $candidate .  "',\n";
            $numberOfWinCandidates ++;
@@ -89,10 +89,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if($numberOfWinCandidates == 0){
         $racetext .= "\t\t//No win candidates(Place bet: $first)\n";
     }
-    if(!empty($blackWinCandidates)){
+    if(!empty($historyW)){
         $racetext .= "\t\t/** Black selection */\n";
-        $racetext .= "\t\t'black win odds candidates' => '" . implode(", ", $blackWinCandidates).  "',\n";
-        $sureWinPlace = array_intersect($blackWinCandidates, $first3);
+        $racetext .= "\t\t'history w' => '" . implode(", ", $historyW).  "',\n";
+        $sureWinPlace = array_intersect($historyW, $first3);
         if(!empty($sureWinPlace)){
             $racetext .= "\t\t'SURE PLACE' => '" . implode(", ", $sureWinPlace).  "',\n";
         }
@@ -109,8 +109,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $posK = array_search($k, $placers);
             if($posK + 1 == $k && isset($placers[$size - 1 - $posK])){
                 $candidate = $placers[$size - 1 - $posK];
-                if(in_array($candidate, $blacks) && !in_array($candidate, $blackPlaCandidates)){
-                        $blackPlaCandidates[] = $candidate;
+                if(in_array($candidate, $blacks) && !in_array($candidate, $historyP)){
+                        $historyP[] = $candidate;
                 }
                 $racetext .= "\t\t'pla odds candidate(". "k = $k)" . "' => '" . $candidate .  "',\n";
                 $numberOfPlaCandidates ++;
@@ -119,19 +119,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($numberOfPlaCandidates == 0){
             $racetext .= "\t\t//No pla candidates(Place bet: $first <== focus on this one for now)\n";
         }
-        if(!empty($blackPlaCandidates)){
-            $racetext .= "\t\t'black pla odds candidates' => '" . implode(", ", $blackPlaCandidates).  "',\n";
-            $sureWinPlace = array_intersect($blackPlaCandidates, $first3);
+        if(!empty($historyP)){
+            $racetext .= "\t\t'history p' => '" . implode(", ", $historyP).  "',\n";
+            $sureWinPlace = array_intersect($historyP, $first3);
             if(!empty($sureWinPlace)){
                 $racetext .= "\t\t'SURE PLACE' => '" . implode(", ", $sureWinPlace).  "',\n";
             }
         }
     }
     $racetext .= "\t],\n";
-    unset($oldBlackPlaCandidates);
-    unset($blackPlaCandidates);
-    unset($oldBlackWinCandidates);
-    unset($blackWinCandidates);
+    unset($historyPs);
+    unset($historyP);
+    unset($historyWs);
+    unset($historyW);
     $outtext .= $racetext;
 }
 

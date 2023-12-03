@@ -65,7 +65,7 @@ return [
 		'WP' => '4',
 		'win odds candidate(k = 12)' => '4',
 		/** Black selection */
-		'black win odds candidates' => '4',
+		'history w' => '4',
 		'SURE PLACE' => '4',
 	],
 	'8' => [

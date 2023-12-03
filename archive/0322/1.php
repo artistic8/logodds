@@ -84,12 +84,12 @@ return [
 		'WP' => '2',
 		'win odds candidate(k = 12)' => '2',
 		/** Black selection */
-		'black win odds candidates' => '2',
+		'history w' => '2',
 		'SURE PLACE' => '2',
 		/** Based on pla odds */
 		'WP' => '6',
 		'pla odds candidate(k = 12)' => '6',
-		'black pla odds candidates' => '6',
+		'history p' => '6',
 		'SURE PLACE' => '6',
 	],
 	'8' => [
@@ -115,7 +115,7 @@ return [
 		'WP' => '10',
 		'win odds candidate(k = 12)' => '10',
 		/** Black selection */
-		'black win odds candidates' => '10',
+		'history w' => '10',
 		'SURE PLACE' => '10',
 		/** Based on pla odds */
 		'WP' => '1',

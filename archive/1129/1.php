@@ -12,7 +12,7 @@ return [
 		'win odds candidate(k = 6)' => '7',
 		/** Based on pla odds */
 		'pla odds candidate(k = 6)' => '2',
-		'black pla odds candidates' => '2',
+		'history p' => '2',
 	],
 	'2' => [
 		/**
@@ -25,7 +25,7 @@ return [
 		'win odds candidate(k = 6)' => '3',
 		/** Based on pla odds */
 		'pla odds candidate(k = 6)' => '3',
-		'black pla odds candidates' => '2',
+		'history p' => '2',
 	],
 	'3' => [
 		/**
@@ -40,13 +40,13 @@ return [
 		'win odds candidate(k = 8)' => '4',
 		'win odds candidate(k = 6)' => '6',
 		/** Black selection */
-		'black win odds candidates' => '11, 4, 6',
+		'history w' => '11, 4, 6',
 		'SURE PLACE' => '11',
 		/** Based on pla odds */
 		'pla odds candidate(k = 10)' => '4',
 		'pla odds candidate(k = 9)' => '11',
 		'pla odds candidate(k = 8)' => '1',
-		'black pla odds candidates' => '4, 11',
+		'history p' => '4, 11',
 		'SURE PLACE' => '11',
 	],
 	'4' => [
@@ -60,7 +60,7 @@ return [
 		//No win candidates(Place bet: 7)
 		/** Based on pla odds */
 		//No pla candidates(Place bet: 7 <== focus on this one for now)
-		'black pla odds candidates' => '4, 11',
+		'history p' => '4, 11',
 	],
 	'5' => [
 		/**
@@ -74,10 +74,10 @@ return [
 		'win odds candidate(k = 12)' => '5',
 		'win odds candidate(k = 7)' => '10',
 		/** Black selection */
-		'black win odds candidates' => '10',
+		'history w' => '10',
 		/** Based on pla odds */
 		'pla odds candidate(k = 7)' => '10',
-		'black pla odds candidates' => '10',
+		'history p' => '10',
 	],
 	'6' => [
 		/**

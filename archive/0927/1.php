@@ -48,7 +48,7 @@ return [
 		'win odds candidate(k = 12)' => '8',
 		'win odds candidate(k = 9)' => '11',
 		/** Black selection */
-		'black win odds candidates' => '8, 11',
+		'history w' => '8, 11',
 		'SURE PLACE' => '8',
 	],
 	'6' => [
@@ -88,7 +88,7 @@ return [
 		'WP' => '10',
 		'win odds candidate(k = 11)' => '10',
 		/** Black selection */
-		'black win odds candidates' => '10',
+		'history w' => '10',
 		'SURE PLACE' => '10',
 	],
 ];

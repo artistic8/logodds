@@ -69,7 +69,7 @@ return [
 		'win odds candidate(k = 9)' => '8',
 		'win odds candidate(k = 6)' => '5',
 		/** Black selection */
-		'black win odds candidates' => '8',
+		'history w' => '8',
 		'SURE PLACE' => '8',
 	],
 	'8' => [
