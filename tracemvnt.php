@@ -45,13 +45,13 @@ for($count = count($history); $count > 1; $count --){
     $newContents = include("tmp2.php");
     exec("rm tmp2.php");
     exec("git checkout master");
-    var_dump($oldContents[1]['Win Odds']);
-    var_dump($newContents[1]['Win Odds']); 
-    $oldOdds = explode(", ", $oldContents[1]['Win Odds']);
-    $oldRunnerPosition = array_search(1, $oldOdds);
+    var_dump($oldContents[8]['Win Odds']);
+    var_dump($newContents[8]['Win Odds']); 
+    $oldOdds = explode(", ", $oldContents[8]['Win Odds']);
+    $oldRunnerPosition = array_search(11, $oldOdds);
     var_dump($oldRunnerPosition);
-    $newOdds = explode(", ", $newContents[1]['Win Odds']);
-    $newRunnerPosition = array_search(1, $newOdds);
+    $newOdds = explode(", ", $newContents[8]['Win Odds']);
+    $newRunnerPosition = array_search(11, $newOdds);
     var_dump($newRunnerPosition); die();
     $winOddsPositionDiff = $newRunnerPosition - $oldRunnerPosition;
     foreach($allWinOdds as $raceNumber => $runners){
