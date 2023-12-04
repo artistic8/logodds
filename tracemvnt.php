@@ -44,6 +44,8 @@ for($count = count($history); $count > 1; $count --){
     exec("rm tmp2.php");
     exec("git checkout master");
     foreach($allWinOdds as $raceNumber => $runners){
+        if(!isset($oldContents[$raceNumber]['Win Odds']) 
+        || !isset($newContents[$raceNumber]['Win Odds'])) continue;
         $oldOdds = explode(", ", $oldContents[$raceNumber]['Win Odds']);
         $newOdds = explode(", ", $newContents[$raceNumber]['Win Odds']);
         foreach($runners as $runner => $whatever){
