@@ -31,6 +31,7 @@ foreach($output as $line){
 }
 //limit search to last 50 commits
 $history = array_slice($history, 0, 50);
+$history = ["567f9706f983cba436c3c81c03cc760dbc515d91", "adb4e91cb4ee79621367fc3177068ab11a5380e9"];
 exec("git config --global advice.detachedHead false");
 for($count = count($history); $count > 1; $count --){
     $oldVersion = $history[$count - 1];
@@ -58,7 +59,6 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 $totalRaces= count($allWinOdds);
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
-    if($raceNumber != 8) continue;
     if(!isset($allWinOdds[$raceNumber])) continue;
 
     $racetext = "";
@@ -69,6 +69,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $runnersPositions = $winPositionDifferences[$raceNumber];
     asort($runnersPositions);
+    var_dump($runnersPositions); die();
     $runners = array_keys($runnersPositions);
 
     $racetext .= "\t\t'Runners by odds mvnt'  =>  '" . implode(", ", $runners).  "',\n";
