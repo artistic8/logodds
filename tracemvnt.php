@@ -12,7 +12,6 @@ if(file_exists($plaOddsFile)){
     $allPlaOdds = include($plaOddsFile);
 }
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "$step.php";
-
 //Get win odds (getodds.php) and place odds(placeodds.php) fromthe previous git commit
 $output = array();
 $history = array();
@@ -26,13 +25,24 @@ foreach($output as $line){
 //limit search to last 50 commits
 $history = array_slice($history, 0, 50);
 
-for($count = count($history); $count > 0; $count --){
-    $version = $history[$count - 1];
-    $contents = "";
-    exec("git checkout $version");
-    $contents = file_get_contents("$currentDir/1.php");
-    file_put_contents($outFile, $contents);
+for($count = count($history); $count > 1; $count --){
+    $oldVersion = $history[$count - 1];
+    $newVersion = $history[$count - 2];
+    exec("git checkout $oldVersion");
+    $oldContents = file_get_contents("$currentDir/1.php");
     exec("git checkout master");
+    exec("git checkout $newVersion");
+    $newContents = file_get_contents("$currentDir/1.php");
+    exec("git checkout master");
+    foreach($allWinOdds as $raceNumber => $runners){
+        foreach($runners as $runner => $whatever){
+            var_dump($oldContents[$raceNumber]); die();
+            $oldRunnerPosition = $oldContents[$raceNumber]['Win Odds'];
+            var_dump($oldRunnerPosition); die();
+        }
+    }
+    file_put_contents($outFile, $contents);
+    
     die();
 }
 
