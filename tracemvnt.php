@@ -46,7 +46,7 @@ exec("git config --global advice.detachedHead false");
     exec("rm tmp2.php");
     exec("git checkout master");
     var_dump($oldContents[1]['Win Odds']);
-    var_dump($newContents[1]['Win Odds']); die();
+    var_dump($newContents[1]['Win Odds']); 
     $oldOdds = explode(", ", $oldContents[$raceNumber]['Win Odds']);
     $oldRunnerPosition = array_search(11, $oldOdds);
     var_dump($oldRunnerPosition);
