@@ -54,7 +54,6 @@ for($count = count($history); $count > 1; $count --){
         }
     }
 }
-var_dump($winPositionDifferences[1]); die();
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 $totalRaces= count($allWinOdds);
