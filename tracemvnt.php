@@ -35,11 +35,13 @@ exec("git config --global advice.detachedHead false");
 for($count = count($history); $count > 1; $count --){
     $oldVersion = $history[$count - 1];
     $newVersion = $history[$count - 2];
-    exec("git checkout $oldVersion; cp $currentDir/1.php tmp1.php");
+    exec("git checkout $oldVersion; cp $currentDir/1.php tmp1.php",$command_output,$result_code);
+    if($result_code!== 0) continue;
     $oldContents = include("tmp1.php");
     exec("rm tmp1.php");
     exec("git checkout master");
-    exec("git checkout $newVersion; cp $currentDir/1.php tmp2.php");
+    exec("git checkout $newVersion; cp $currentDir/1.php tmp2.php",$command_output,$result_code);
+    if($result_code!== 0) continue;
     $newContents = include("tmp2.php");
     exec("rm tmp2.php");
     exec("git checkout master");
