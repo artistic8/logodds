@@ -58,6 +58,7 @@ $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 $totalRaces= count($allWinOdds);
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
+    if($raceNumber != 8) continue;
     if(!isset($allWinOdds[$raceNumber])) continue;
 
     $racetext = "";
