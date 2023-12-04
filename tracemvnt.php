@@ -34,9 +34,7 @@ $history = array_slice($history, 0, 50);
 exec("git config --global advice.detachedHead false");
 for($count = count($history); $count > 1; $count --){
     $oldVersion = $history[$count - 1];
-    var_dump($oldVersion);
     $newVersion = $history[$count - 2];
-    var_dump($newVersion);
     exec("git checkout $oldVersion; cp $currentDir/1.php tmp1.php");
     $oldContents = include("tmp1.php");
     exec("rm tmp1.php");
@@ -45,15 +43,6 @@ for($count = count($history); $count > 1; $count --){
     $newContents = include("tmp2.php");
     exec("rm tmp2.php");
     exec("git checkout master");
-    var_dump($oldContents[8]['Win Odds']);
-    var_dump($newContents[8]['Win Odds']); 
-    $oldOdds = explode(", ", $oldContents[8]['Win Odds']);
-    $oldRunnerPosition = array_search(11, $oldOdds);
-    var_dump($oldRunnerPosition);
-    $newOdds = explode(", ", $newContents[8]['Win Odds']);
-    $newRunnerPosition = array_search(11, $newOdds);
-    var_dump($newRunnerPosition); die();
-    $winOddsPositionDiff = $newRunnerPosition - $oldRunnerPosition;
     foreach($allWinOdds as $raceNumber => $runners){
         foreach($runners as $runner => $whatever){
             $oldOdds = explode(", ", $oldContents[$raceNumber]['Win Odds']);
