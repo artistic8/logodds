@@ -68,7 +68,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t*/\n";
 
     $runnersPositions = $winPositionDifferences[$raceNumber];
-    rsort($runnersPositions);
+    asort($runnersPositions);
     var_dump($runnersPositions); die();
     $runners = array_keys($runnersPositions);
 
