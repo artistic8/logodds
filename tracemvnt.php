@@ -69,6 +69,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $runnersPositions = $winPositionDifferences[$raceNumber];
     rsort($runnersPositions);
+    var_dump($runnersPositions); die();
     $runners = array_keys($runnersPositions);
 
     $racetext .= "\t\t'Runners by odds mvnt'  =>  '" . implode(", ", $runners).  "',\n";
