@@ -32,11 +32,11 @@ foreach($output as $line){
 //limit search to last 50 commits
 $history = array_slice($history, 0, 50);
 exec("git config --global advice.detachedHead false");
-// for($count = count($history); $count > 1; $count --){
-    // $oldVersion = $history[$count - 1];
-    $oldVersion = "30217ffa664eabedbcf626fc5133bd071d65fd00";
-    // $newVersion = $history[$count - 2];
-    $newVersion = "76936eef584ca934e2e9241e68d8465bf54ffcfc";
+for($count = count($history); $count > 1; $count --){
+    $oldVersion = $history[$count - 1];
+    var_dump($oldVersion);
+    $newVersion = $history[$count - 2];
+    var_dump($newVersion);
     exec("git checkout $oldVersion; cp $currentDir/1.php tmp1.php");
     $oldContents = include("tmp1.php");
     exec("rm tmp1.php");
@@ -48,10 +48,10 @@ exec("git config --global advice.detachedHead false");
     var_dump($oldContents[1]['Win Odds']);
     var_dump($newContents[1]['Win Odds']); 
     $oldOdds = explode(", ", $oldContents[1]['Win Odds']);
-    $oldRunnerPosition = array_search(11, $oldOdds);
+    $oldRunnerPosition = array_search(1, $oldOdds);
     var_dump($oldRunnerPosition);
     $newOdds = explode(", ", $newContents[1]['Win Odds']);
-    $newRunnerPosition = array_search(11, $newOdds);
+    $newRunnerPosition = array_search(1, $newOdds);
     var_dump($newRunnerPosition); die();
     $winOddsPositionDiff = $newRunnerPosition - $oldRunnerPosition;
     foreach($allWinOdds as $raceNumber => $runners){
@@ -64,7 +64,7 @@ exec("git config --global advice.detachedHead false");
             $winPositionDifferences[$raceNumber][$runner] += $winOddsPositionDiff;
         }
     }
-// }
+}
 var_dump($winPositionDifferences[1]); die();
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
