@@ -11,6 +11,13 @@ $plaOddsFile = $currentDir . DIRECTORY_SEPARATOR . "placeodds.php";
 if(file_exists($plaOddsFile)){
     $allPlaOdds = include($plaOddsFile);
 }
+$winPositionDifferences = [];
+foreach($allWinOdds as $raceNumber => $runners){
+    $winPositionDifferences[$raceNumber] = [];
+    foreach($runners as $runner){
+        $winPositionDifferences[$raceNumber][$runner] = 0;
+    }
+}
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "$step.php";
 //Get win odds (getodds.php) and place odds(placeodds.php) fromthe previous git commit
 $output = array();
@@ -24,28 +31,32 @@ foreach($output as $line){
 }
 //limit search to last 50 commits
 $history = array_slice($history, 0, 50);
-
+exec("git config --global advice.detachedHead false");
 for($count = count($history); $count > 1; $count --){
     $oldVersion = $history[$count - 1];
     $newVersion = $history[$count - 2];
     exec("git checkout $oldVersion");
-    $oldContents = file_get_contents("$currentDir/1.php");
+    $oldContents = include("$currentDir/1.php");
     exec("git checkout master");
     exec("git checkout $newVersion");
-    $newContents = file_get_contents("$currentDir/1.php");
+    $newContents = include("$currentDir/1.php");
     exec("git checkout master");
     foreach($allWinOdds as $raceNumber => $runners){
         foreach($runners as $runner => $whatever){
-            var_dump($oldContents[$raceNumber]); die();
-            $oldRunnerPosition = $oldContents[$raceNumber]['Win Odds'];
-            var_dump($oldRunnerPosition); die();
+            $oldOdds = explode(", ", $oldContents[$raceNumber]['Win Odds']);
+            $oldRunnerPosition = array_search($runner, $oldOdds);
+            $newOdds = explode(", ", $newContents[$raceNumber]['Win Odds']);
+            $newRunnerPosition = array_search($runner, $newOdds);
+            $winOddsPositionDiff = $newRunnerPosition - $oldRunnerPosition;
+            $winPositionDifferences[$raceNumber][$runner] += $winOddsPositionDiff;
         }
     }
-    file_put_contents($outFile, $contents);
-    
-    die();
+   
 }
 
+var_dump($winPositionDifferences); die();
+
+die();
 if(file_exists($outFile)){
     $oldData = include($outFile);
 }
