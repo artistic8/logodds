@@ -47,8 +47,7 @@ for($count = count($history); $count > 1; $count --){
     foreach($allWinOdds as $raceNumber => $runners){
         $oldOdds = explode(", ", $oldContents[$raceNumber]['Win Odds']);
         $newOdds = explode(", ", $newContents[$raceNumber]['Win Odds']);
-        var_dump($oldOdds);
-        var_dump($newOdds);die();
+        var_dump($runners); die();
         foreach($runners as $runner => $whatever){
             $oldRunnerPosition = array_search($runner, $oldOdds);
             $newRunnerPosition = array_search($runner, $newOdds);
