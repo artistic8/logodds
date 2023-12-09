@@ -117,7 +117,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $plaSuggestions = array_intersect($racePlaFavorites[$raceNumber], $negativePlacers);
     $racetext .= "\t\t'Pla suggestions'  =>  '" . implode(", ", $plaSuggestions).  "',\n";
     asort($differences);
-    $racetext .= "\t\t'diff'  =>  '" . implode(", ", $differences).  "',\n";
+    $keys = array_keys($differences);
+    $racetext .= "\t\t'diff'  =>  '" . implode(", ", $keys).  "',\n";
     
     $racetext .= "\t],\n";
     $outtext .= $racetext;
