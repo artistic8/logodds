@@ -46,12 +46,12 @@ for($count = count($history); $count > 1; $count --){
     if($result_code!== 0) continue;
     $oldContents = include("tmp1.php");
     exec("rm tmp1.php");
-    exec("git checkout main");
+    exec("git checkout master");
     exec("git checkout $newVersion; cp $currentDir/1.php tmp2.php",$command_output,$result_code);
     if($result_code!== 0) continue;
     $newContents = include("tmp2.php");
     exec("rm tmp2.php");
-    exec("git checkout main");
+    exec("git checkout master");
     exec("cp $currentDir/1.php tmp3.php",$command_output,$result_code);
     if($result_code!== 0) continue;
     $currentContents = include("tmp3.php");
@@ -93,11 +93,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $runnersPositions = $winPositionDifferences[$raceNumber];
     $negativeRunners = [];
+    $intersections = [];
     asort($runnersPositions);
     $racetext .= "\t\t'win odds mvnt'  =>  '";
     foreach($runnersPositions as $key => $value){
         $racetext .= "$key($value), ";
-        if($value < 0) $negativeRunners[] = $key;
+        if($value < 0) {
+            $negativeRunners[] = $key;
+            if($placePositions[$key] >= 0) $intersections[] = $key;
+        }
     }
     $racetext .= "',\n";
 
@@ -114,6 +118,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'Win suggestions'  =>  '" . implode(", ", $winSuggestions).  "',\n";
     $plaSuggestions = array_intersect($racePlaFavorites[$raceNumber], $negativePlacers);
     $racetext .= "\t\t'Pla suggestions'  =>  '" . implode(", ", $plaSuggestions).  "',\n";
+    $racetext .= "\t\t'inter'  =>  '" . implode(", ", $intersections).  "',\n";
     
     $racetext .= "\t],\n";
     $outtext .= $racetext;
