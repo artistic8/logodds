@@ -102,7 +102,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $racetext .= "',\n";
 
-    
+    $placePositions = $plaPositionDifferences[$raceNumber];
     $negativePlacers = [];
     asort($placePositions);
     $racetext .= "\t\t'pla odds mvnt'  =>  '";
