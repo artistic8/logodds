@@ -67,6 +67,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
 
+    $racetext .= "\t\t'count(set1)'  =>  " . count($set1) . ",\n";
     $racetext .= "\t\t'Set 1 Win Bets'  =>  [\n";
     $total = 0;
     foreach($bets1 as $horse => $bet){
@@ -75,6 +76,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $racetext .= "\t\t],\n";
     $racetext .= "\t\t'Total Bets set 1'  =>  '$total HKD',\n";
+    $racetext .= "\t\t'count(set2)'  =>  " . count($set2) . ",\n";
     $racetext .= "\t\t'Set 2 Win Bets'  =>  [\n";
     $total = 0;
     foreach($bets2 as $horse => $bet){
