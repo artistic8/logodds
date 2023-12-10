@@ -48,12 +48,12 @@ for($count = count($history); $count > 1; $count --){
     if($result_code!== 0) continue;
     $oldContents = include("tmp1.php");
     exec("rm tmp1.php");
-    exec("git checkout master");
+    exec("git checkout main");
     exec("git checkout $newVersion; cp $currentDir/1.php tmp2.php",$command_output,$result_code);
     if($result_code!== 0) continue;
     $newContents = include("tmp2.php");
     exec("rm tmp2.php");
-    exec("git checkout master");
+    exec("git checkout main");
     exec("cp $currentDir/1.php tmp3.php",$command_output,$result_code);
     if($result_code!== 0) continue;
     $currentContents = include("tmp3.php");
@@ -129,22 +129,24 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(abs($value) > 1) $set1[] = $key;
         else $set2[] = $key;
     }
-    if(count($set1) >= count($set2)) $toWin = $set1;
-    else $toWin = $set2;
-    //sort $toWin by win odds
+    //sort $set1 and $set2 by win odds
     $qplsOdds = [];
-    foreach($toWin as $iIndex){
+    foreach($set1 as $iIndex){
         if(isset($allWinOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allWinOdds[$raceNumber][$iIndex];
     }
     asort($qplsOdds);
-    $toWin = array_keys($qplsOdds);
-    $toPlace = array_slice($toWin, 0, 2);
-    $racetext2 .= "\t\t'win'  =>  '" . implode(", ", $toWin).  "',\n";
-    $racetext2 .= "\t\t'place'  =>  '" . implode(", ", $toPlace).  "',\n";
+    $set1 = array_keys($qplsOdds);
+    $qplsOdds = [];
+    foreach($set2 as $iIndex){
+        if(isset($allWinOdds[$raceNumber][$iIndex])) $qplsOdds[$iIndex] = $allWinOdds[$raceNumber][$iIndex];
+    }
+    asort($qplsOdds);
+    $set2 = array_keys($qplsOdds);
     $racetext .= "',\n";
     $racetext .= "\t\t'Set 1'  =>  '" . implode(", ", $set1).  "',\n";
     $racetext .= "\t\t'Set 2'  =>  '" . implode(", ", $set2).  "',\n";
-    $racetext .= "\t\t'place'  =>  '" . implode(", ", $toPlace).  "',\n";
+    $racetext2 .= "\t\t'Set 1'  =>  '" . implode(", ", $set1).  "',\n";
+    $racetext2 .= "\t\t'Set 2'  =>  '" . implode(", ", $set2).  "',\n";
     $racetext .= "\t],\n";
     $racetext2 .= "\t],\n";
     $outtext .= $racetext;

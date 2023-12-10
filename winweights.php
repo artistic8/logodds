@@ -22,7 +22,11 @@ function getWeights($odds, $profit = 0, $precision = 10){
             $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
         }
         $iterations ++;
-        if($iterations == $precision) return array_fill(0, count($odds), -1);
+        if($iterations == $precision) {
+            $failed = [];
+            foreach($odds as $key => $value) $failed[$key] = -1;
+            return $failed;
+        }
     }
     return $weights;
 }
@@ -45,26 +49,40 @@ $outtext .= "return [\n";
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($allWinOdds[$raceNumber])) continue;
     $racetext = "";
-    $winners = explode(", ", $winsFile[$raceNumber]['win']);
-    $weights = [];
-    foreach($winners as $winner){
-        $weights[$winner] = $allWinOdds[$raceNumber][$winner];
+    $set1 = explode(", ", $winsFile[$raceNumber]['Set 1']);
+    $set2 = explode(", ", $winsFile[$raceNumber]['Set 2']);
+    $weights1 = [];
+    $weights2 = [];
+    foreach($set1 as $winner){
+        if(!empty($winner)) $weights1[$winner] = $allWinOdds[$raceNumber][$winner];
     }
-    $bets = getWeights($weights, 1);
+    $bets1 = getWeights($weights1, 1);
+    foreach($set2 as $winner){
+        if(!empty($winner)) $weights2[$winner] = $allWinOdds[$raceNumber][$winner];
+    }
+    $bets2 = getWeights($weights2, 1);
    
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
 
-    $racetext .= "\t\t'Win Bets'  =>  [\n";
+    $racetext .= "\t\t'Set 1 Win Bets'  =>  [\n";
     $total = 0;
-    foreach($bets as $horse => $bet){
+    foreach($bets1 as $horse => $bet){
         $racetext .= "\t\t\t'$horse' => '" . 10 * $bet . " HKD',\n"  ;
         $total += 10 * $bet;
     }
     $racetext .= "\t\t],\n";
-    $racetext .= "\t\t'Total Bets'  =>  '$total HKD'\n";
+    $racetext .= "\t\t'Total Bets set 1'  =>  '$total HKD',\n";
+    $racetext .= "\t\t'Set 2 Win Bets'  =>  [\n";
+    $total = 0;
+    foreach($bets2 as $horse => $bet){
+        $racetext .= "\t\t\t'$horse' => '" . 10 * $bet . " HKD',\n"  ;
+        $total += 10 * $bet;
+    }
+    $racetext .= "\t\t],\n";
+    $racetext .= "\t\t'Total Bets set 2'  =>  '$total HKD'\n";
     $racetext .= "\t],\n";
     $outtext .= $racetext;
 }
