@@ -24,7 +24,7 @@ function getWeights($odds, $profit = 0, $precision = 10){
         $iterations ++;
         if($iterations == $precision) {
             $failed = [];
-            foreach($odds as $key => $value) $failed[$key] = -1;
+            foreach($odds as $key => $value) $failed[$key] = 0;
             return $failed;
         }
     }
