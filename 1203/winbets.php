@@ -55,7 +55,7 @@ return [
 		/**
 		Race 3
 		*/
-		'favorite set'  =>  'Set 2',
+		'favorite set'  =>  'Set 1',
 		'Set 1 Win Bets'  =>  [
 			'5' => '40 HKD',
 			'10' => '30 HKD',
@@ -174,7 +174,7 @@ return [
 		/**
 		Race 8
 		*/
-		'favorite set'  =>  'Set 2',
+		'favorite set'  =>  'Set 1',
 		'Set 1 Win Bets'  =>  [
 			'9' => '40 HKD',
 			'5' => '20 HKD',
@@ -225,7 +225,7 @@ return [
 		/**
 		Race 10
 		*/
-		'favorite set'  =>  'Set 2',
+		'favorite set'  =>  'Set 1',
 		'Set 1 Win Bets'  =>  [
 			'4' => '100 HKD',
 			'11' => '50 HKD',

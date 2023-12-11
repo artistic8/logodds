@@ -51,7 +51,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext = "";
     $set1 = explode(", ", $winsFile[$raceNumber]['Set 1']);
     $set2 = explode(", ", $winsFile[$raceNumber]['Set 2']);
-    $favorite = explode(", ", $winsFile[$raceNumber]['favorite']);
+    $favorite = $winsFile[$raceNumber]['favorite'];
     $weights1 = [];
     $weights2 = [];
     foreach($set1 as $winner){
